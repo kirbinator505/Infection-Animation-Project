@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
 //Name: Bot Rig.ma
-//Last modified: Tue, Apr 18, 2023 03:58:38 PM
+//Last modified: Tue, Apr 18, 2023 10:10:47 PM
 //Codeset: 1252
 file -rdi 1 -ns "bot_body1" -rfn "bot_bodyRN" -op "v=0;" -typ "mayaAscii" "C:/Git repos/Infection-Animation-Project/Infection Animation//scenes/bot body.ma";
 file -r -ns "bot_body1" -dr 1 -rfn "bot_bodyRN" -op "v=0;" -typ "mayaAscii" "C:/Git repos/Infection-Animation-Project/Infection Animation//scenes/bot body.ma";
@@ -15,22 +15,22 @@ fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202205052215-234554116d";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19044)";
-fileInfo "UUID" "8CC8EC1D-4400-5095-C3D7-4EB1F4DE40DC";
+fileInfo "UUID" "C6100881-4FB1-3EF4-211F-639B44E8BAD0";
 createNode transform -s -n "persp";
 	rename -uid "C824FEE6-4250-01DE-8149-D3AEBCFFA1E3";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -50.38350706662289 27.82015378724833 42.795349396845211 ;
-	setAttr ".r" -type "double3" -11.400000000000155 -4007.1999999981385 1.1702830919327581e-15 ;
+	setAttr ".t" -type "double3" 1.0485537381279855 40.386414841001226 51.566317410663387 ;
+	setAttr ".r" -type "double3" -19.200000000002454 -1438.399999999986 -2.9829330145900875e-16 ;
 	setAttr ".rpt" -type "double3" 4.0802904296052088e-15 -1.2222554648065199e-15 -2.9151352310564792e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "114580A6-45DE-3FC7-AAAB-94AAED5575D9";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 69.625315930108556;
+	setAttr ".coi" 61.60460934360944;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 3.5527136788005009e-15 19.977389223551654 0 ;
+	setAttr ".tp" -type "double3" -6.2568037509918213 15.1557297706604 -0.9235844612121582 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "C506B3AB-4A6D-4A01-F31C-ABA4AA6A4589";
@@ -1629,7 +1629,7 @@ createNode joint -n "R_IK_Leg_03_Jnt" -p "R_IK_Leg_02_Jnt";
 	setAttr ".jot" -type "string" "xzy";
 	setAttr ".jo" -type "double3" 0 0 17.694000000000017 ;
 	setAttr ".ssc" no;
-	setAttr ".pa" -type "double3" 8.0836964750893362e-30 -1.0102075700665063e-29 3.6039150999619086e-14 ;
+	setAttr ".pa" -type "double3" 8.0836964750893362e-30 -1.0102075700665064e-29 3.6039150999619086e-14 ;
 	setAttr ".radi" 0.08;
 createNode joint -n "R_IK_Leg_04_Jnt" -p "R_IK_Leg_03_Jnt";
 	rename -uid "52C774D7-425C-E159-FE61-C19A02E45E9D";
@@ -4809,6 +4809,7 @@ createNode parentConstraint -n "R_RK_Arm_01_Jnt_parentConstraint1" -p "R_RK_Arm_
 		1.7763568394002505e-15 ;
 	setAttr ".tg[1].tor" -type "double3" -4.739395799433465e-22 3.0332133116374176e-21 
 		0 ;
+	setAttr ".lr" -type "double3" -9.4422717105948153e-15 -3.8050180786395322e-14 3.1353107390777766e-30 ;
 	setAttr ".rst" -type "double3" -2.5333230000000011 5.225807342412736e-09 3.3713385150235808e-07 ;
 	setAttr ".rsrr" -type "double3" -4.7708320221952752e-15 -1.9025866895805442e-14 
 		9.9392333795735688e-17 ;
@@ -4990,8 +4991,8 @@ createNode joint -n "Cable_IK_Spline_01" -p "Cable_Spline_Grp";
 	rename -uid "0EA9DF99-4351-125B-5312-DB86D766CC2F";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 5;
-	setAttr ".t" -type "double3" 2.3899887499798703e-07 32.631638314416975 -3.6859865800429215 ;
-	setAttr ".r" -type "double3" 4.7995441723922702e-05 4.8222031364219449e-05 89.730140393096121 ;
+	setAttr ".t" -type "double3" 2.3899887499799185e-07 32.631638314416975 -3.6859865800429215 ;
+	setAttr ".r" -type "double3" 4.7995439941326272e-05 4.8222029456680239e-05 89.730140531544734 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 89.969139100121183 87.589536490913815 89.969166406889684 ;
@@ -5001,8 +5002,8 @@ createNode joint -n "Cable_IK_Spline_02" -p "Cable_IK_Spline_01";
 	rename -uid "4D6EE735-4546-6C78-311C-32AA75EA136C";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 6;
-	setAttr ".t" -type "double3" 0.55581349610292663 6.2909153755823753e-17 1.1350015201171363e-16 ;
-	setAttr ".r" -type "double3" 9.6669409918757255e-05 -0.00042501604374239134 -25.62772219322984 ;
+	setAttr ".t" -type "double3" 0.5558134913444519 6.2909153755823753e-17 1.1350015201171363e-16 ;
+	setAttr ".r" -type "double3" 9.6669411590704125e-05 -0.00042501605875230799 -25.627721746646049 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -0.000101710795346929 0.0012893216618106119 -9.0211088580511465 ;
@@ -5011,8 +5012,8 @@ createNode joint -n "Cable_IK_Spline_03" -p "Cable_IK_Spline_02";
 	rename -uid "3FD9C7F0-4D7B-1B48-A40A-0A8EC66F4493";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 7;
-	setAttr ".t" -type "double3" 0.53098268342433164 2.3308437608462536e-15 -8.8910339229286088e-20 ;
-	setAttr ".r" -type "double3" -0.00023671815148921857 0.0032862203303860638 -8.2402053304902037 ;
+	setAttr ".t" -type "double3" 0.53098267316818237 2.3308437608462536e-15 -8.8910339229286088e-20 ;
+	setAttr ".r" -type "double3" -0.0002367181519304643 0.0032862203389232843 -8.2402053244628668 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0.001138562632085736 -0.002937161462684113 -15.439765391272052 ;
@@ -5020,8 +5021,8 @@ createNode joint -n "Cable_IK_Spline_03" -p "Cable_IK_Spline_02";
 createNode joint -n "Cable_IK_Spline_04" -p "Cable_IK_Spline_03";
 	rename -uid "FABEA925-4201-833D-F1A8-9CB5C7B2E319";
 	setAttr ".uoc" 1;
-	setAttr ".t" -type "double3" 0.51632041039545351 1.1209293125372821e-15 5.852318875768128e-20 ;
-	setAttr ".r" -type "double3" -2.4387126227304978e-05 -0.00031929419808525992 8.7353407239234624 ;
+	setAttr ".t" -type "double3" 0.51632040739059448 1.1209293125372821e-15 5.852318875768128e-20 ;
+	setAttr ".r" -type "double3" -2.4387126481229528e-05 -0.0003192942049149887 8.7353406283991593 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -4.0916878502325382e-05 0.00019127386504739024 -24.149198783151224 ;
@@ -5030,8 +5031,8 @@ createNode joint -n "Cable_IK_Spline_05" -p "Cable_IK_Spline_04";
 	rename -uid "C1DF570D-4649-5E30-7BFF-BCABA9CCC6DB";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 1;
-	setAttr ".t" -type "double3" 0.49653972392700402 -1.3283293102856138e-15 -1.2904051045287106e-19 ;
-	setAttr ".r" -type "double3" 0.0019770887389106207 0.0062245148003287317 35.24275361331425 ;
+	setAttr ".t" -type "double3" 0.49653971195220947 -1.3283293102856138e-15 -1.2904051045287106e-19 ;
+	setAttr ".r" -type "double3" 0.0019770886358704957 0.0062245146748744597 35.242752556574779 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0.0086760225916257538 -0.0013771251809776054 -35.496927348618811 ;
@@ -5040,8 +5041,8 @@ createNode joint -n "Cable_IK_Spline_06" -p "Cable_IK_Spline_05";
 	rename -uid "00D9280D-4933-971A-4BBB-07A78613ED71";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 2;
-	setAttr ".t" -type "double3" 0.51624255488838167 1.6050147891256788e-15 -1.6950418820873971e-19 ;
-	setAttr ".r" -type "double3" -0.0003904297629956651 -0.00083557172539055222 50.089664653141121 ;
+	setAttr ".t" -type "double3" 0.51624256372451782 1.6050147891256788e-15 -1.6950418820873971e-19 ;
+	setAttr ".r" -type "double3" -0.0003904297375213783 -0.00083557168502159979 50.089663908927214 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -0.010258426459069823 -0.006079849116858208 -29.937049399753175 ;
@@ -5050,8 +5051,8 @@ createNode joint -n "Cable_IK_Spline_07" -p "Cable_IK_Spline_06";
 	rename -uid "4793C3F2-494B-7EF7-F8CE-22A2A475CD2C";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 3;
-	setAttr ".t" -type "double3" 0.50648892694226366 1.0381370721827805e-16 1.8106712731779179e-19 ;
-	setAttr ".r" -type "double3" -0.0015365038463354768 -0.002824384744709859 57.093588193768994 ;
+	setAttr ".t" -type "double3" 0.50648891925811768 1.0381370721827805e-16 1.8106712731779179e-19 ;
+	setAttr ".r" -type "double3" -0.0015365038580813825 -0.0028243847534670709 57.093588412347913 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -0.0011703908292627217 0.00096460229825518959 -28.872065588188338 ;
@@ -5060,8 +5061,8 @@ createNode joint -n "Cable_IK_Spline_08" -p "Cable_IK_Spline_07";
 	rename -uid "273C09D2-4424-A17E-AA95-938CEDBE0C4A";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 4;
-	setAttr ".t" -type "double3" 0.51373736027616901 -2.3319281075197996e-15 -1.9220618892550422e-19 ;
-	setAttr ".r" -type "double3" -0.00072941827965738125 -0.0015082781823627183 51.617741951954244 ;
+	setAttr ".t" -type "double3" 0.51373738050460815 -2.3319281075197996e-15 -1.9220618892550422e-19 ;
+	setAttr ".r" -type "double3" -0.00072941828614256213 -0.0015082781918381106 51.617742069114769 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -2.5767920623806832e-05 0.00014284844941630433 -20.450835539536637 ;
@@ -5070,8 +5071,8 @@ createNode joint -n "Cable_IK_Spline_09" -p "Cable_IK_Spline_08";
 	rename -uid "C2B11428-4184-A151-B872-4FBF07F3549E";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 5;
-	setAttr ".t" -type "double3" 0.51715852067981061 -5.3397376129085758e-15 4.9928031398471923e-20 ;
-	setAttr ".r" -type "double3" -0.00054682664849044801 -0.0017585110599767479 34.547211051759447 ;
+	setAttr ".t" -type "double3" 0.51715850830078125 -5.3397376129085758e-15 4.9928031398471923e-20 ;
+	setAttr ".r" -type "double3" -0.0005468266221383681 -0.0017585110145760157 34.54721032481946 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 0.00031476524967636915 -0.15004202301468694 ;
@@ -5080,8 +5081,8 @@ createNode joint -n "Cable_IK_Spline_10" -p "Cable_IK_Spline_09";
 	rename -uid "B44638BA-42C2-C249-CC34-D9800D2619A3";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 6;
-	setAttr ".t" -type "double3" 0.50978172710258796 -6.0224166422027517e-15 2.9316862204437182e-18 ;
-	setAttr ".r" -type "double3" -8.4589303846189216e-05 -0.00084476556849963466 11.436328659964969 ;
+	setAttr ".t" -type "double3" 0.50978171825408936 -6.0224166422027517e-15 2.9316862204437182e-18 ;
+	setAttr ".r" -type "double3" -8.4589311540452913e-05 -0.00084476558064602619 11.436329529978686 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -7.5828427003052837e-05 -0.00058091986447137052 14.873730024924294 ;
@@ -5090,8 +5091,8 @@ createNode joint -n "Cable_IK_Spline_11" -p "Cable_IK_Spline_10";
 	rename -uid "D9408CC9-4D39-1829-B434-C5A57DFF4517";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 7;
-	setAttr ".t" -type "double3" 0.53321240816361903 6.2514729346993044e-15 -2.4138487645856991e-21 ;
-	setAttr ".r" -type "double3" 0.00015919737398913816 -0.001928701351629843 -9.4371346575915105 ;
+	setAttr ".t" -type "double3" 0.53321242332458496 6.2514729346993044e-15 -2.4138487645856991e-21 ;
+	setAttr ".r" -type "double3" 0.00015919736937289894 -0.0019287013596686784 -9.4371343460194677 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0.00016259562426039668 0.00074425908089010076 24.647161888543412 ;
@@ -5099,8 +5100,8 @@ createNode joint -n "Cable_IK_Spline_11" -p "Cable_IK_Spline_10";
 createNode joint -n "Cable_IK_Spline_12" -p "Cable_IK_Spline_11";
 	rename -uid "78A76B1F-42E5-1AD6-B229-54ACF719B736";
 	setAttr ".uoc" 1;
-	setAttr ".t" -type "double3" 0.54685778873225399 4.2927813691457709e-16 -3.0484177912056513e-20 ;
-	setAttr ".r" -type "double3" 0.00027904381195715719 -0.0012224708256559278 -25.716319180364792 ;
+	setAttr ".t" -type "double3" 0.54685777425765991 4.2927813691457709e-16 -3.0484177912056513e-20 ;
+	setAttr ".r" -type "double3" 0.00027904381116288836 -0.0012224708377079861 -25.716318864497069 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0.00014676078517024703 0.00047136414627586772 34.588299267063007 ;
@@ -5109,7 +5110,7 @@ createNode joint -n "Cable_IK_Spline_13" -p "Cable_IK_Spline_12";
 	rename -uid "6E133F04-4D95-5644-32E7-A58BC76B596F";
 	setAttr ".uoc" 1;
 	setAttr ".oc" 1;
-	setAttr ".t" -type "double3" 0.52449063650605565 -3.2071930774789427e-15 -2.7550974741934522e-20 ;
+	setAttr ".t" -type "double3" 0.52449065446853638 -3.2071930774789427e-15 -2.7550974741934522e-20 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jot" -type "string" "none";
@@ -5120,8 +5121,8 @@ createNode ikEffector -n "effector20" -p "Cable_IK_Spline_12";
 	setAttr ".hd" yes;
 createNode ikHandle -n "Cable_IK_Handle" -p "Cable_Spline_Grp";
 	rename -uid "2CEE2AF5-4E47-EF4B-9ECE-E9A559C48A01";
-	setAttr ".t" -type "double3" -8.6423824255200818e-05 36.150238892861225 -3.9695183845511415 ;
-	setAttr ".r" -type "double3" -89.982395690977597 -87.525950421199923 -90.018166093407515 ;
+	setAttr ".t" -type "double3" -8.6423824140797282e-05 36.150238893672928 -3.9695183963226732 ;
+	setAttr ".r" -type "double3" -89.982395689033652 -87.525950620364952 -90.018166095324119 ;
 	setAttr ".roc" yes;
 createNode transform -n "Cable_Spline_Curve" -p "Cable_Spline_Grp";
 	rename -uid "C0C823B8-4F48-BE1A-AE42-68B67FA2AEA9";
@@ -5429,7 +5430,7 @@ createNode transform -n "Transform_Ctrl" -p "Transform_Ctrl_Grp";
 	addAttr -ci true -sn "L_Leg_IKFK" -ln "L_Leg_IKFK" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "R_Leg_IKFK" -ln "R_Leg_IKFK" -min 0 -max 1 -at "double";
 	setAttr -k on ".L_Arm_IKFK";
-	setAttr -k on ".R_Arm_IKFK";
+	setAttr -k on ".R_Arm_IKFK" 1;
 	setAttr -k on ".L_Leg_IKFK";
 	setAttr -k on ".R_Leg_IKFK";
 createNode nurbsCurve -n "Transform_CtrlShape" -p "Transform_Ctrl";
@@ -7643,6 +7644,7 @@ createNode transform -n "R_FK_Arm_03_Ctrl" -p "R_FK_Arm_03_Ctrl_Grp";
 	addAttr -ci true -sn "FollowTranslate" -ln "FollowTranslate" -dv 1 -min 0 -max 
 		1 -at "double";
 	addAttr -ci true -sn "FollowRotate" -ln "FollowRotate" -dv 1 -min 0 -max 1 -at "double";
+	setAttr ".t" -type "double3" 0 1.6653345369377348e-16 -6.0463433913009521e-16 ;
 	setAttr ".rp" -type "double3" 0 1.1102230246251565e-16 -1.0464684230271359e-08 ;
 	setAttr ".sp" -type "double3" 0 1.1102230246251565e-16 -1.0464684230271359e-08 ;
 	setAttr -k on ".FollowTranslate";
@@ -9004,7 +9006,7 @@ createNode transform -n "L_FK_Arm_03_Ctrl" -p "L_FK_Arm_03_Ctrl_Grp";
 	addAttr -ci true -sn "FollowTranslate" -ln "FollowTranslate" -dv 1 -min 0 -max 
 		1 -at "double";
 	addAttr -ci true -sn "FollowRotate" -ln "FollowRotate" -dv 1 -min 0 -max 1 -at "double";
-	setAttr ".t" -type "double3" 1.7763568394002505e-15 5.5511151231257827e-17 0 ;
+	setAttr ".t" -type "double3" 0 5.5511151231257285e-17 2.0936552027707006e-15 ;
 	setAttr ".s" -type "double3" 1.0000000000000002 1.0000000000000002 1.0000000000000002 ;
 	setAttr -k on ".FollowTranslate";
 	setAttr -k on ".FollowRotate";
@@ -11901,6 +11903,7 @@ createNode transform -n "Cable_Mid_Ctrl" -p "Cable_Mid_Ctrl_Grp";
 	rename -uid "12304A22-430B-B7EC-FE31-EC83A98B26BC";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
+	setAttr ".t" -type "double3" 6.5192907224963931e-16 0 0 ;
 createNode nurbsCurve -n "Cable_Mid_CtrlShape" -p "Cable_Mid_Ctrl";
 	rename -uid "A136F572-47C6-0E44-8B11-E5B5DB1EB05F";
 	setAttr -k off ".v";
@@ -12989,7 +12992,7 @@ createNode parentConstraint -n "Cable_Orient_parentConstraint1" -p "Cable_Orient
 	setAttr ".rst" -type "double3" -8.5492931319324015e-05 36.156841278076172 -4.059478759765625 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "bot_bodyRNfosterParent1";
-	rename -uid "7AAD8163-4D63-2393-5216-2E953DFDF46E";
+	rename -uid "DE0B5EC7-4699-CCC6-8B1A-9692B70D2AA6";
 createNode parentConstraint -n "pSuperShape1_parentConstraint2" -p "bot_bodyRNfosterParent1";
 	rename -uid "B2344F5F-427E-D175-4994-AEB98BEC2053";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_RK_Leg_01_JntW0" -dv 1 -min 0 -at "double";
@@ -15054,7 +15057,7 @@ createNode parentConstraint -n "pCylinder29_parentConstraint2" -p "bot_bodyRNfos
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.57743123873659785 -0.00153322450149318 0.032138967963261766 ;
 	setAttr ".tg[0].tor" -type "double3" 179.9999996716696 5.2090728864531171 179.8515754159321 ;
-	setAttr ".lr" -type "double3" -8.7488548818480093e-15 1.0952933268322502e-17 -2.8078334297295113e-15 ;
+	setAttr ".lr" -type "double3" 3.4234446971768641e-14 1.264049880277592e-13 1.8613699311596261e-13 ;
 	setAttr ".rst" -type "double3" 0 -3.5527136788005009e-15 -4.4408920985006262e-16 ;
 	setAttr ".rsrr" -type "double3" -8.7488548818480093e-15 1.0952933268322502e-17 -2.8078334297295113e-15 ;
 	setAttr -k on ".w0";
@@ -15115,7 +15118,7 @@ createNode parentConstraint -n "pCylinder28_parentConstraint2" -p "bot_bodyRNfos
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.57760596369605377 0.025545271665659897 0.031012112471400233 ;
 	setAttr ".tg[0].tor" -type "double3" 179.99999981163339 2.9938830891862391 -177.53096276786857 ;
-	setAttr ".lr" -type "double3" 2.5469285535157066e-15 1.2610402350333866e-15 -1.1131941385122306e-14 ;
+	setAttr ".lr" -type "double3" -8.3241079553911346e-16 1.0358835976252164e-13 1.8407460218970104e-13 ;
 	setAttr ".rst" -type "double3" 0 7.1054273576010019e-15 0 ;
 	setAttr ".rsrr" -type "double3" 2.5469285535157066e-15 1.2610402350333868e-15 -1.1131941385122306e-14 ;
 	setAttr -k on ".w0";
@@ -15176,7 +15179,7 @@ createNode parentConstraint -n "pCylinder27_parentConstraint2" -p "bot_bodyRNfos
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.57760597165956673 0.02554388022171139 -0.031012679109807428 ;
 	setAttr ".tg[0].tor" -type "double3" 1.8835453468014051e-07 182.99393592929985 2.4690884525774415 ;
-	setAttr ".lr" -type "double3" -1.8835453004597294e-07 -1.9715595337165296e-14 3.2406590204959497e-23 ;
+	setAttr ".lr" -type "double3" -1.8835454447028533e-07 1.0749727424361799e-13 2.1508501015727662e-13 ;
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 -3.5527136788005009e-15 1.1102230246251565e-16 ;
 	setAttr ".rsrr" -type "double3" -1.8835453004597294e-07 -1.9715595337165296e-14 
 		3.2406590204959497e-23 ;
@@ -15239,7 +15242,7 @@ createNode parentConstraint -n "pCylinder26_parentConstraint2" -p "bot_bodyRNfos
 	setAttr ".tg[0].tot" -type "double3" 0.57729781124732815 -0.0015353797309920481 
 		-0.032170105791970605 ;
 	setAttr ".tg[0].tor" -type "double3" -179.99999966482261 -5.3172064681436852 179.85133340902004 ;
-	setAttr ".lr" -type "double3" 3.6480092513465832e-15 -1.5959919146108841e-15 8.3489560388417351e-15 ;
+	setAttr ".lr" -type "double3" 1.4354349557145149e-13 1.2542111069228979e-13 2.127989866566686e-13 ;
 	setAttr ".rst" -type "double3" 1.7763568394002505e-15 0 6.2450045135165055e-17 ;
 	setAttr ".rsrr" -type "double3" 3.6480092513465832e-15 -1.5959919146108841e-15 8.3489560388417351e-15 ;
 	setAttr -k on ".w0";
@@ -15301,7 +15304,7 @@ createNode parentConstraint -n "pCylinder25_parentConstraint2" -p "bot_bodyRNfos
 	setAttr ".tg[0].tot" -type "double3" 0.51238076539662103 0.0014127595104937996 -0.01515567290865516 ;
 	setAttr ".tg[0].tor" -type "double3" -1.9478753879286439e-05 5.3172065193372715 
 		0.14866475482293906 ;
-	setAttr ".lr" -type "double3" 1.3047156135299485e-18 1.4506600486459973e-15 9.5561385992940208e-18 ;
+	setAttr ".lr" -type "double3" -8.7592109142430766e-15 1.3184178904778702e-13 1.9229183901451712e-13 ;
 	setAttr ".rst" -type "double3" -1.7763568394002505e-15 0 -1.6653345369377348e-16 ;
 	setAttr ".rsrr" -type "double3" 1.3047156135299487e-18 1.4506600486459973e-15 9.5561385992940208e-18 ;
 	setAttr -k on ".w0";
@@ -15362,7 +15365,7 @@ createNode parentConstraint -n "pCylinder24_parentConstraint2" -p "bot_bodyRNfos
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.51245774226091001 -0.015435119492387628 -0.014788921448151693 ;
 	setAttr ".tg[0].tor" -type "double3" 0.0024660720906906491 2.9940421113316966 -2.4689596565472223 ;
-	setAttr ".lr" -type "double3" 1.5281817602110869e-17 1.0067151572907379e-15 -8.6070915841600368e-16 ;
+	setAttr ".lr" -type "double3" 5.4198419377142062e-12 3.0477548733823955e-13 5.131528221315617e-13 ;
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 -3.5527136788005009e-15 0 ;
 	setAttr ".rsrr" -type "double3" 1.5281817602110869e-17 1.0067151572907379e-15 -8.6070915841600368e-16 ;
 	setAttr -k on ".w0";
@@ -15423,7 +15426,7 @@ createNode parentConstraint -n "pCylinder23_parentConstraint2" -p "bot_bodyRNfos
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.51245756253700581 -0.015434646024996113 0.014789872272947591 ;
 	setAttr ".tg[0].tor" -type "double3" -0.002467370331109379 -2.9939893249105389 -2.4689083705643537 ;
-	setAttr ".lr" -type "double3" 4.0129790563599806e-17 1.3984599654166801e-15 1.2319661290134877e-15 ;
+	setAttr ".lr" -type "double3" 2.4752305436072492e-15 1.010858640726625e-13 1.7661828075407847e-13 ;
 	setAttr ".rst" -type "double3" 1.7763568394002505e-15 0 0 ;
 	setAttr ".rsrr" -type "double3" 4.0129790563599806e-17 1.3984599654166801e-15 1.2319661290134877e-15 ;
 	setAttr -k on ".w0";
@@ -15485,7 +15488,7 @@ createNode parentConstraint -n "pCylinder22_parentConstraint2" -p "bot_bodyRNfos
 	setAttr ".tg[0].tot" -type "double3" 0.51244313033240108 0.0014106278415866313 0.015142291044517364 ;
 	setAttr ".tg[0].tor" -type "double3" -2.5448812302574263e-06 -5.2090728807314655 
 		0.14842478530130801 ;
-	setAttr ".lr" -type "double3" -1.8012192576127288e-18 -9.2588078040237391e-16 3.9549309982929621e-17 ;
+	setAttr ".lr" -type "double3" 8.8611860193247641e-15 1.4141518334894451e-13 1.9083968289863386e-13 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 0 -4.4408920985006262e-16 ;
 	setAttr ".rsrr" -type "double3" -5.6837299785086526e-18 -9.2588078052810473e-16 
 		-1.0049794270414787e-17 ;
@@ -15744,7 +15747,7 @@ createNode scaleConstraint -n "pCube13_scaleConstraint1" -p "bot_bodyRNfosterPar
 	setAttr ".o" -type "double3" 0.99999999999999933 1.0000000000000004 1 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent1" -p "bot_bodyRNfosterParent1";
-	rename -uid "D93AA03F-4CB4-013B-A119-DFBD3CC29B9A";
+	rename -uid "07EB8621-464C-DF3A-2A79-FEBA1548376B";
 createNode mesh -n "pCube18ShapeDeformed" -p "fosterParent1";
 	rename -uid "379F13F8-48E1-E0DC-8570-6A91E7193516";
 	setAttr -k off ".v";
@@ -16083,7 +16086,7 @@ createNode scaleConstraint -n "polySurface5_scaleConstraint1" -p "bot_bodyRNfost
 	setAttr ".o" -type "double3" 1 1.0000000000000004 0.99999999999999956 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent2" -p "bot_bodyRNfosterParent1";
-	rename -uid "A6822283-4670-D558-7A48-CEBE7CB10E36";
+	rename -uid "E9736783-426D-283D-3AE8-05A4D771763D";
 createNode mesh -n "pCylinder29ShapeDeformed" -p "fosterParent2";
 	rename -uid "ED36E93E-42C8-A7EB-422B-589FA5A5FF2F";
 	setAttr -k off ".v";
@@ -16095,7 +16098,7 @@ createNode mesh -n "pCylinder29ShapeDeformed" -p "fosterParent2";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "fosterParent3" -p "bot_bodyRNfosterParent1";
-	rename -uid "BD85E651-45D9-4DBF-598D-AF946BA811E7";
+	rename -uid "42022A2D-4015-9702-8261-8E9ED7F4A967";
 createNode mesh -n "pCylinder29ShapeTag" -p "fosterParent3";
 	rename -uid "2172CE74-4DC1-D3E8-4FEC-E39CD82B16CC";
 	setAttr -k off ".v";
@@ -16150,7 +16153,7 @@ createNode scaleConstraint -n "pCylinder29_scaleConstraint1" -p "bot_bodyRNfoste
 	setAttr ".o" -type "double3" 1 0.99999999999999978 1.0000000000000002 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent4" -p "bot_bodyRNfosterParent1";
-	rename -uid "225D363D-49D3-AE79-E3BE-C09C195DDE3E";
+	rename -uid "1400E94C-4BC4-4897-39E6-6E96B65B3866";
 createNode mesh -n "pCylinder28ShapeDeformed" -p "fosterParent4";
 	rename -uid "AD451C2B-45BE-437D-D3E7-15894BF9E602";
 	setAttr -k off ".v";
@@ -16162,7 +16165,7 @@ createNode mesh -n "pCylinder28ShapeDeformed" -p "fosterParent4";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "fosterParent5" -p "bot_bodyRNfosterParent1";
-	rename -uid "C4FE31EE-42E0-4C2B-9E8B-FB8012B66148";
+	rename -uid "D38E35AC-4CCF-576F-75C6-F4888B622274";
 createNode mesh -n "pCylinder28ShapeTag" -p "fosterParent5";
 	rename -uid "7E881151-4AFA-9932-9B02-97BC56C86969";
 	setAttr -k off ".v";
@@ -16216,7 +16219,7 @@ createNode scaleConstraint -n "pCylinder28_scaleConstraint1" -p "bot_bodyRNfoste
 	setAttr ".o" -type "double3" 1 0.99999999999999978 1.0000000000000002 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent6" -p "bot_bodyRNfosterParent1";
-	rename -uid "103A7D99-4ADD-49BE-5EDF-E8A9F94DB401";
+	rename -uid "10E7E187-49F0-3935-D4B1-809585583984";
 createNode mesh -n "pCylinder27ShapeDeformed" -p "fosterParent6";
 	rename -uid "F8E63EC4-4A0D-3184-E076-939CCB45FEB0";
 	setAttr -k off ".v";
@@ -16228,7 +16231,7 @@ createNode mesh -n "pCylinder27ShapeDeformed" -p "fosterParent6";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "fosterParent7" -p "bot_bodyRNfosterParent1";
-	rename -uid "3AF53624-41D6-01EC-4E8A-37B509ADBCFD";
+	rename -uid "0B807C95-4A8F-A18C-97F8-359D1EA98429";
 createNode mesh -n "pCylinder27ShapeTag" -p "fosterParent7";
 	rename -uid "2ED0808C-40E7-E209-63A7-7EBB38F06381";
 	setAttr -k off ".v";
@@ -16282,7 +16285,7 @@ createNode scaleConstraint -n "pCylinder27_scaleConstraint1" -p "bot_bodyRNfoste
 	setAttr ".o" -type "double3" 1 0.99999999999999978 1.0000000000000002 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent8" -p "bot_bodyRNfosterParent1";
-	rename -uid "F1790604-4765-C123-02B6-06A2E0B0460D";
+	rename -uid "9EE61DAF-4571-B322-DB42-7A858BDE33BD";
 createNode mesh -n "pCylinder26ShapeDeformed" -p "fosterParent8";
 	rename -uid "62257B2D-492C-6316-E362-04AC3BBC8B17";
 	setAttr -k off ".v";
@@ -16294,7 +16297,7 @@ createNode mesh -n "pCylinder26ShapeDeformed" -p "fosterParent8";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "fosterParent9" -p "bot_bodyRNfosterParent1";
-	rename -uid "D4404941-44B7-FB95-9E70-5FB39660B5A8";
+	rename -uid "427DFEA8-4899-E0C7-B8D2-3ABA34A04E5A";
 createNode mesh -n "pCylinder26ShapeTag" -p "fosterParent9";
 	rename -uid "8B577D1C-41CD-E21A-D449-BAA1C339A2D6";
 	setAttr -k off ".v";
@@ -16348,7 +16351,7 @@ createNode scaleConstraint -n "pCylinder26_scaleConstraint1" -p "bot_bodyRNfoste
 	setAttr ".o" -type "double3" 1 0.99999999999999978 1.0000000000000002 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent10" -p "bot_bodyRNfosterParent1";
-	rename -uid "FFC96E47-4768-5029-AE01-E6B45A68EB52";
+	rename -uid "2595F27C-4089-17CA-8C98-0CA263720BB7";
 createNode mesh -n "pCylinder25ShapeDeformed" -p "fosterParent10";
 	rename -uid "905A705A-40E6-9266-DA3D-60971493E062";
 	setAttr -k off ".v";
@@ -16360,7 +16363,7 @@ createNode mesh -n "pCylinder25ShapeDeformed" -p "fosterParent10";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "fosterParent11" -p "bot_bodyRNfosterParent1";
-	rename -uid "3312705E-45EC-9100-B735-A4B6F9E7563B";
+	rename -uid "DBB71980-41D8-0164-103E-B5BA3ECDBFF0";
 createNode mesh -n "pCylinder25ShapeTag" -p "fosterParent11";
 	rename -uid "7459C65A-4FE5-3E42-1E78-2B8B82097C61";
 	setAttr -k off ".v";
@@ -16414,7 +16417,7 @@ createNode scaleConstraint -n "pCylinder25_scaleConstraint1" -p "bot_bodyRNfoste
 	setAttr ".o" -type "double3" 1 0.99999999999999933 1.0000000000000004 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent12" -p "bot_bodyRNfosterParent1";
-	rename -uid "2FCEAB09-4594-A6D1-DFE4-F8BC25DBCBDC";
+	rename -uid "9D59C3BB-4F9D-91BD-115B-6DADADE71E69";
 createNode mesh -n "pCylinder24ShapeDeformed" -p "fosterParent12";
 	rename -uid "8A354839-4AE7-9C87-62C9-8B87093D699B";
 	setAttr -k off ".v";
@@ -16426,7 +16429,7 @@ createNode mesh -n "pCylinder24ShapeDeformed" -p "fosterParent12";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "fosterParent13" -p "bot_bodyRNfosterParent1";
-	rename -uid "3D8C3D56-4CFB-B082-99EA-11A71D8BA7C9";
+	rename -uid "4BB7FE67-4BCC-E6DD-D52E-ABB74F5BA5A8";
 createNode mesh -n "pCylinder24ShapeTag" -p "fosterParent13";
 	rename -uid "C661EE7A-43A0-FC4F-5CC3-BD95181353B0";
 	setAttr -k off ".v";
@@ -16478,7 +16481,7 @@ createNode scaleConstraint -n "pCylinder24_scaleConstraint1" -p "bot_bodyRNfoste
 	setAttr ".o" -type "double3" 1 0.99999999999999933 1.0000000000000004 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent14" -p "bot_bodyRNfosterParent1";
-	rename -uid "2048907F-4752-4245-1A61-0D8D42CD8D25";
+	rename -uid "84C242A1-433E-B514-2144-0B85EF4C69B7";
 createNode mesh -n "pCylinder23ShapeDeformed" -p "fosterParent14";
 	rename -uid "74C74927-4A38-95D7-ACA4-3385158C3ABA";
 	setAttr -k off ".v";
@@ -16490,7 +16493,7 @@ createNode mesh -n "pCylinder23ShapeDeformed" -p "fosterParent14";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "fosterParent15" -p "bot_bodyRNfosterParent1";
-	rename -uid "5DD31089-4974-A500-E5D0-E1AA6BC89EB5";
+	rename -uid "BB8AE12B-4821-86D7-A5E9-01B08FEFCA62";
 createNode mesh -n "pCylinder23ShapeTag" -p "fosterParent15";
 	rename -uid "8024739A-4A33-9590-27F0-10874A9D3361";
 	setAttr -k off ".v";
@@ -16543,7 +16546,7 @@ createNode scaleConstraint -n "pCylinder23_scaleConstraint1" -p "bot_bodyRNfoste
 	setAttr ".o" -type "double3" 1 0.99999999999999933 1.0000000000000004 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent16" -p "bot_bodyRNfosterParent1";
-	rename -uid "C72650F8-42A9-294E-7F39-45A00B1F7B26";
+	rename -uid "4FCABAFD-40F2-B879-6328-BFB5BD3C0926";
 createNode mesh -n "pCylinder22ShapeDeformed" -p "fosterParent16";
 	rename -uid "0ECD9278-4CE3-8A96-40F9-EFAA5B771E74";
 	setAttr -k off ".v";
@@ -16555,7 +16558,7 @@ createNode mesh -n "pCylinder22ShapeDeformed" -p "fosterParent16";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "fosterParent17" -p "bot_bodyRNfosterParent1";
-	rename -uid "90968ACF-4BA6-18B8-FD76-ED8630B6D62A";
+	rename -uid "98C19441-466D-081B-2E9B-36BE3E8F572E";
 createNode mesh -n "pCylinder22ShapeTag" -p "fosterParent17";
 	rename -uid "DA8BA160-4647-EDD6-8206-3589C9AEE95B";
 	setAttr -k off ".v";
@@ -17285,22 +17288,22 @@ createNode scaleConstraint -n "Lens_scaleConstraint1" -p "bot_bodyRNfosterParent
 	setAttr ".o" -type "double3" 1.110559518340873 1.1105595183408723 1.1105595183408721 ;
 	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "402783E5-489B-3DC9-CD5E-1892C95E15B2";
+	rename -uid "ABBFD8EB-44BA-F427-85BF-159B55C60D2F";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "BDBB6176-4193-0980-2DB8-C788D79379F9";
+	rename -uid "10D6DF18-4E28-F306-EAAE-0CA576BD1B47";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "B1D13DF5-49C7-EF6F-870D-9BA8D6B1615F";
+	rename -uid "242C7B2F-4435-1D3F-045B-6FAC5BA8702A";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "A42E3945-4602-2CBA-50F8-F78AE3FA21EB";
+	rename -uid "64655233-42A0-1C42-DDFB-CD802F9A1F94";
 	setAttr ".cdl" 2;
 	setAttr -s 3 ".dli[1:2]"  1 2;
 	setAttr -s 3 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "FBC8BE84-4E73-02C5-3D67-B79948BE29C3";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "833E4E35-4151-B73E-D689-42A740AC46B8";
+	rename -uid "8D1F8C66-4F47-C493-DC98-9E94DB3570D9";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "0B768C97-4A60-2A48-5D17-E88B49930A33";
 	setAttr ".g" yes;
@@ -18749,7 +18752,7 @@ createNode reference -n "bot_bodyRN";
 		"bot_bodyRN" 1
 		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:pPlane50Shape.worldMesh" 
 		"bot_bodyRN.placeHolderList[236]" ""
-		"bot_bodyRN" 1718
+		"bot_bodyRN" 1723
 		0 "|bot_body1:Locator_000" "|Bot" "-s -r "
 		0 "|bot_body1:Bot_Geo" "|Bot" "-s -r "
 		0 "|bot_bodyRNfosterParent1|Lens_scaleConstraint1" "|Bot|bot_body1:Bot_Geo|bot_body1:Head|bot_body1:Lens" 
@@ -19288,14 +19291,22 @@ createNode reference -n "bot_bodyRN";
 		
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50" "scale" " -type \"double3\" 1 1 1"
 		
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface13" 
+		"visibility" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface13|bot_body1:polySurfaceShape21" 
 		"intermediateObject" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface13|bot_body1:polySurfaceShape21" 
 		"vertexColorSource" " 2"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14" 
+		"visibility" " 1"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:transform1" 
+		"visibility" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube18|bot_body1:pCube18Shape" 
 		"intermediateObject" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube18|bot_body1:pCube18Shape" 
 		"vertexColorSource" " 2"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13" "visibility" 
+		" 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41" "visibility" 
 		" 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm" "visibility" " 1"
@@ -19363,6 +19374,8 @@ createNode reference -n "bot_bodyRN";
 		"intermediateObject" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8|bot_body1:pCylinderShape8" 
 		"intermediateObject" " 1"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2" "visibility" 
+		" 0"
 		2 "bot_body1:Geo_Layer" "displayType" " 0"
 		2 "bot_body1:Geo_Layer" "visibility" " 1"
 		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:Head|bot_body1:Lens.translateX" 
@@ -24330,290 +24343,289 @@ createNode skinCluster -n "skinCluster2";
 createNode skinCluster -n "skinCluster3";
 	rename -uid "5C11EBB2-49C0-8965-89BC-3B823259E409";
 	setAttr -s 282 ".wl";
-	setAttr ".wl[0:249].w"
-		2 0 0.0015581914571888243 1 0.99844180854281117
-		2 0 0.001558184833418065 1 0.99844181516658204
-		2 0 0.0054391639602620907 1 0.99456083603973788
-		2 0 0.00074725299135333515 1 0.99925274700864664
-		2 0 0.0035643811120407327 1 0.99643561888795928
-		2 0 0.0045082525677268472 1 0.9954917474322732
-		2 0 0.004508233725454034 1 0.99549176627454594
-		2 0 0.003564375286709449 1 0.9964356247132905
-		2 0 0.0033058000829693525 1 0.99669419991703068
-		2 0 0.0033058057392494956 1 0.99669419426075057
-		2 0 0.0036620234844709416 1 0.99633797651552902
-		2 0 0.0036620354099682248 1 0.99633796459003188
-		2 0 0.0044047538587200022 1 0.99559524614128003
-		2 0 0.0044047673818522395 1 0.99559523261814775
-		2 0 0.0045076980699982261 1 0.99549230193000182
-		2 0 0.0045077133324129982 1 0.99549228666758705
-		2 0 0.0047116400123194679 1 0.99528835998768062
-		2 0 0.0031671417713301556 1 0.99683285822866985
-		2 0 0.0039512204551169746 1 0.99604877954488302
-		2 0 0.0039512028849665948 1 0.99604879711503336
-		2 0 0.0031671360854241817 1 0.99683286391457582
-		2 0 0.0029454899959436964 1 0.99705451000405632
-		2 0 0.002945495311904254 1 0.99705450468809576
-		2 0 0.0032462552383055619 1 0.99675374476169443
-		2 0 0.0032462664237522961 1 0.99675373357624775
-		2 0 0.0038638010715153631 1 0.99613619892848471
-		2 0 0.0038638136846888571 1 0.9961361863153112
-		2 0 0.0039455185448729387 1 0.99605448145512709
-		2 0 0.0039455299470976838 1 0.99605447005290237
-		2 0 0.002740643946594918 1 0.9972593560534051
-		2 0 0.0031657977657790046 1 0.99683420223422103
-		2 0 0.0025463146992495641 1 0.99745368530075051
-		2 0 0.0012981552711799126 1 0.99870184472882007
-		2 0 0.0028593918625166304 1 0.9971406081374834
-		2 0 0.0025463160529898489 1 0.99745368394701017
-		2 0 0.0012981483131984319 1 0.99870185168680159
-		2 0 0.0028593697330119962 1 0.99714063026698796
-		2 0 0.0037380271613363415 1 0.99626197283866369
-		2 0 0.0010563269802923323 1 0.99894367301970766
-		2 0 0.0032728340735758109 1 0.9967271659264243
-		2 0 0.0032728463751113246 1 0.99672715362488873
-		2 0 0.0010563333369652823 1 0.99894366666303469
-		2 0 0.003738038103603015 1 0.99626196189639704
-		2 0 8.3300865004304003e-05 1 0.9999166991349957
-		2 0 0.00047062204564612953 1 0.99952937795435393
-		2 0 0.00054262652546751221 1 0.99945737347453256
-		2 0 0.00056916487696890758 1 0.9994308351230311
-		2 0 0.00078344830080849905 1 0.99921655169919155
-		2 0 0.0008147923783827694 1 0.99918520762161722
-		2 0 0.00081263722023941184 1 0.99918736277976061
-		2 0 0.0010870056558172358 1 0.99891299434418279
-		2 0 0.00079153642161090517 1 0.99920846357838911
-		2 0 0.00079273078752478427 1 0.99920726921247527
-		2 0 0.00076168044101587718 1 0.99923831955898412
-		2 0 0.00055024197765192635 1 0.99944975802234814
-		2 0 0.00052420799376543578 1 0.9994757920062346
-		2 0 0.00045435211716171858 1 0.99954564788283828
-		2 0 8.4780089055210131e-05 1 0.99991521991094479
-		2 0 0.00026907851405282858 1 0.99973092148594722
-		2 0 0.00030484848024768242 1 0.9996951515197523
-		2 0 0.00031486221750756503 1 0.99968513778249246
-		2 0 0.00040537099744307372 1 0.99959462900255691
-		2 0 0.00041942171613329693 1 0.99958057828386659
-		2 0 0.00041547456880388077 1 0.99958452543119614
-		2 0 0.00056508104505513144 1 0.99943491895494485
-		2 0 0.00051895357040144694 1 0.99948104642959856
-		2 0 0.00052824809438596935 1 0.9994717519056141
-		2 0 0.00051321965911351396 1 0.99948678034088645
-		2 0 0.00041297403338994845 1 0.99958702596660998
-		2 0 0.00040122400541088522 1 0.99959877599458913
-		2 0 0.00035506641124827227 1 0.99964493358875173
-		2 0 7.552799447683779e-05 1 0.99992447200552326
-		2 0 4.1781445937347309e-05 1 0.99995821855406264
-		2 0 0.00033877642087802112 1 0.99966122357912202
-		2 0 2.5390582373030076e-07 1 0.9999997460941763
-		2 0 0.0002061612415857088 1 0.99979383875841432
-		2 0 0.00028749789018309299 1 0.99971250210981688
-		2 0 0.00022652438804477378 1 0.99977347561195529
-		2 0 0.00014419882893462797 1 0.99985580117106532
-		2 0 0.00012260928539587344 1 0.99987739071460413
-		2 0 0.00018005530054477826 1 0.99981994469945523
-		2 0 0.00015138176955974665 1 0.99984861823044024
-		2 0 0.00021305316085659643 1 0.99978694683914349
-		2 0 0.00021633006586156469 1 0.99978366993413847
-		2 0 0.00027733820418771195 1 0.99972266179581237
-		2 0 0.00022537006890382911 1 0.99977462993109623
-		2 0 0.00028297166025397944 1 0.99971702833974607
-		2 0 3.1852874957699025e-05 1 0.99996814712504234
-		2 0 1.8779206804017136e-05 1 0.99998122079319607
-		2 0 1.8537870788131359e-05 1 0.99998146212921191
-		2 0 8.0881086766383914e-05 1 0.9999191189132336
-		2 0 9.6581404516544179e-05 1 0.99990341859548348
-		2 0 9.1467914389768435e-05 1 0.99990853208561026
-		2 0 1.7228056967013994e-05 1 0.99998277194303298
-		2 0 9.2804098111313969e-05 1 0.9999071959018887
-		2 0 1.7935484707864056e-05 1 0.99998206451529215
-		2 0 8.1170158815236065e-05 1 0.99991882984118474
-		2 0 1.8001063418468782e-05 1 0.99998199893658157
-		2 0 7.4441175401839511e-05 1 0.99992555882459822
-		2 0 1.7345269481221298e-05 1 0.99998265473051873
-		2 0 4.5617941587910367e-06 1 0.99999543820584125
-		2 0 0.00010212756181674678 1 0.99989787243818329
-		2 0 1.0006252994025207e-05 1 0.99998999374700592
-		2 0 4.2303186588078238e-05 1 0.99995769681341196
-		2 0 0.00012750862759514507 1 0.99987249137240486
-		2 0 6.3687195453371182e-05 1 0.99993631280454665
-		2 0 2.1336074309638843e-05 1 0.99997866392569035
-		2 0 8.419602224210317e-05 1 0.99991580397775792
-		2 0 0.00014889417836916476 1 0.99985110582163084
-		2 0 7.711470961347623e-06 1 0.99999228852903865
-		2 0 4.9979773452686891e-05 1 0.99995002022654733
-		2 0 9.1170290976225448e-06 1 0.99999088297090244
-		2 0 1.7894430692928152e-05 1 0.99998210556930711
-		2 0 0.00019268400371205181 1 0.99980731599628792
-		2 0 0.00012676128993531821 1 0.99987323871006473
-		2 0 0.0006310833893094401 1 0.99936891661069061
-		2 0 0.00072302931821468792 1 0.99927697068178534
-		2 0 0.00075784347195665097 1 0.99924215652804338
-		2 0 0.0010364495754113061 1 0.99896355042458873
-		2 0 0.0010769477366890303 1 0.99892305226331102
-		2 0 0.0010759230169663466 1 0.99892407698303376
-		2 0 0.0014506520647645977 1 0.99854934793523542
-		2 0 0.0010759265731468686 1 0.99892407342685308
-		2 0 0.0010769553645626946 1 0.99892304463543735
-		2 0 0.0010364549966020182 1 0.99896354500339801
-		2 0 0.00075784793448263903 1 0.99924215206551736
-		2 0 0.00072303145809045745 1 0.9992769685419095
-		2 0 0.00063108540296229014 1 0.99936891459703769
-		2 0 0.00012676282380396845 1 0.99987323717619614
-		2 0 0.00050012928440860537 1 0.99949987071559143
-		2 0 0.00056220241310204133 1 0.99943779758689799
-		2 0 0.000581981150721922 1 0.99941801884927806
-		2 0 0.00074576720961317896 1 0.99925423279038683
-		2 0 0.00076997161488289356 1 0.9992300283851171
-		2 0 0.00076550419924617443 1 0.99923449580075385
-		2 0 0.0010033456045873248 1 0.99899665439541263
-		2 0 0.00086037469857455444 1 0.99913962530142542
-		2 0 0.0008689262487318331 1 0.99913107375126819
-		2 0 0.0008429002577413679 1 0.99915709974225864
-		2 0 0.00066068711685713516 1 0.99933931288314282
-		2 0 0.00063745548385855976 1 0.99936254451614148
-		2 0 0.00056417699383902713 1 0.99943582300616096
-		2 0 0.00027065873027482288 1 0.99972934126972512
-		2 0 0.00099888219197534619 1 0.9990011178080247
-		2 0 0.0011230885109581722 1 0.99887691148904179
-		2 0 0.0011700985770671326 1 0.99882990142293282
-		2 0 0.0015405374264658154 1 0.99845946257353424
-		2 0 0.0015937137925370257 1 0.99840628620746297
-		2 0 0.0015927135232219245 1 0.99840728647677812
-		2 0 0.0020810194680634699 1 0.99791898053193651
-		2 0 0.0015927189269927501 1 0.99840728107300725
-		2 0 0.0015937236969077485 1 0.9984062763030922
-		2 0 0.0015405444844585245 1 0.99845945551554149
-		2 0 0.0011701045053729546 1 0.99882989549462708
-		2 0 0.001123091367170538 1 0.99887690863282952
-		2 0 0.0009988849058456485 1 0.99900111509415435
-		2 0 0.00027066113456040292 1 0.99972933886543958
-		2 0 0.00089729514380618592 1 0.99910270485619379
-		2 0 0.001000471017249804 1 0.99899952898275024
-		2 0 0.0010361963551877849 1 0.99896380364481219
-		2 0 0.0013156505964692796 1 0.99868434940353079
-		2 0 0.0013554740118214862 1 0.99864452598817854
-		2 0 0.001350922852315298 1 0.9986490771476848
-		2 0 0.0017183159446920392 1 0.99828168405530793
-		2 0 0.0014115039316181417 1 0.99858849606838185
-		2 0 0.0014174033425515405 1 0.99858259665744853
-		2 0 0.0013744149819750618 1 0.9986255850180249
-		2 0 0.0010636883559254765 1 0.99893631164407459
-		2 0 0.0010223702094889439 1 0.99897762979051108
-		2 0 0.00090992060354231469 1 0.99909007939645778
-		2 0 0.00065291530468785958 1 0.99934708469531219
-		2 0 0.0017721378879507119 1 0.99822786211204928
-		2 0 0.0019493448848042652 1 0.99805065511519575
-		2 0 0.0020163049969891414 1 0.99798369500301087
-		2 0 0.0025346352742242283 1 0.99746536472577574
-		2 0 0.0026079277161946942 1 0.99739207228380533
-		2 0 0.0026070348325338884 1 0.99739296516746601
-		2 0 0.0032733666879166384 1 0.99672663331208333
-		2 0 0.0026070457602873458 1 0.99739295423971264
-		2 0 0.002607941213413738 1 0.99739205878658621
-		2 0 0.0025346449256562547 1 0.99746535507434375
-		2 0 0.0020163133059732429 1 0.99798368669402671
-		2 0 0.0019493489135407975 1 0.9980506510864593
-		2 0 0.0017721417593105355 1 0.99822785824068949
-		2 0 0.00065291930881340851 1 0.99934708069118661
-		2 0 0.0015869297882587403 1 0.9984130702117413
-		2 0 0.0017426454372194353 1 0.99825735456278064
-		2 0 0.001799071277446387 1 0.99820092872255362
-		2 0 0.0022440124621513386 1 0.99775598753784867
-		2 0 0.0023072851103255517 1 0.99769271488967448
-		2 0 0.0023034528736370075 1 0.99769654712636302
-		2 0 0.0028578754908915463 1 0.99714212450910844
-		2 0 0.0023040697933083823 1 0.99769593020669167
-		2 0 0.0023076909288629152 1 0.99769230907113704
-		2 0 0.0022440481336688089 1 0.99775595186633115
-		2 0 0.0017990633004364778 1 0.99820093669956356
-		2 0 0.0017426416494269849 1 0.99825735835057305
-		2 0 0.0015869261442877376 1 0.99841307385571221
-		2 0 6.8774594221999029e-05 1 0.99993122540577806
-		2 0 0.00022966775987033448 1 0.99977033224012968
-		2 0 0.00025821206636556768 1 0.99974178793363444
-		2 0 0.00026293093907035021 1 0.99973706906092974
-		2 0 0.0003121595548589755 1 0.99968784044514103
-		2 0 0.00032022793556845698 1 0.99967977206443159
-		2 0 0.00031124145226918594 1 0.99968875854773076
-		2 0 0.00030426985017590518 1 0.99969573014982416
-		2 0 0.00021349260519418301 1 0.99978650739480579
-		2 0 0.00021672695932440413 1 0.9997832730406756
-		2 0 0.00020906781570473841 1 0.99979093218429527
-		2 0 0.00016319159323191878 1 0.99983680840676814
-		2 0 0.000158864961774337 1 0.99984113503822569
-		2 0 0.00013938274398786059 1 0.99986061725601216
-		2 0 6.8119154459145848e-05 1 0.99993188084554074
-		2 0 0.00036550749816245806 1 0.99963449250183756
-		2 0 0.00042127940752872283 1 0.99957872059247133
-		2 0 0.0004406588526585917 1 0.99955934114734146
-		2 0 0.00060091257908142213 1 0.99939908742091854
-		2 0 0.00062470071201185719 1 0.99937529928798818
-		2 0 0.00062135461619619841 1 0.99937864538380383
-		2 0 0.00081446012827756384 1 0.99918553987172243
-		2 0 0.00058170837478721906 1 0.99941829162521278
-		2 0 0.00058298694372581502 1 0.99941701305627417
-		2 0 0.00055935258787125661 1 0.99944064741212879
-		2 0 0.00040070496715217469 1 0.99959929503284783
-		2 0 0.00038158531495834357 1 0.99961841468504176
-		2 0 0.00032916389749274364 1 0.99967083610250718
-		2 0 5.6965673786388467e-05 1 0.99994303432621356
-		2 0 0.00015588107999560543 1 0.99984411892000435
-		2 0 0.00017310214306510521 1 0.9998268978569349
-		2 0 0.00017358684256130644 1 0.9998264131574387
-		2 0 0.0001918315476767274 1 0.99980816845232334
-		2 0 0.00019562028018311404 1 0.99980437971981684
-		2 0 0.00018742879953495014 1 0.99981257120046507
-		2 0 0.00015486162381317213 1 0.99984513837618683
-		2 0 0.00010225400265356494 1 0.99989774599734649
-		2 0 0.00010473734941319578 1 0.99989526265058681
-		2 0 0.00010092158497438941 1 0.99989907841502557
-		2 0 8.0770255857979186e-05 1 0.99991922974414205
-		2 0 7.9520823989077461e-05 1 0.9999204791760109
-		2 0 6.9701160692074531e-05 1 0.99993029883930795
-		2 0 6.5127478878444401e-05 1 0.99993487252112156
-		2 0 0.00028610625309391817 1 0.99971389374690611
-		2 0 0.00032936804454114488 1 0.99967063195545891
-		2 0 0.00034336110759364676 1 0.99965663889240641
-		2 0 0.00046256495113237224 1 0.99953743504886761
-		2 0 0.0004805625952171474 1 0.99951943740478288
-		2 0 0.00047651690301229901 1 0.99952348309698769
-		2 0 0.0006093574434461711 1 0.99939064255655385
-		2 0 0.00042605207033883107 1 0.99957394792966114
-		2 0 0.00042733537348317103 1 0.99957266462651684;
-	setAttr ".wl[250:281].w"
-		2 0 0.00040940261317326602 1 0.99959059738682676
-		2 0 0.0002908861264070205 1 0.99970911387359307
-		2 0 0.00027694816546349827 1 0.99972305183453647
-		2 0 0.00023775180460943457 1 0.99976224819539061
-		2 0 4.8234255293083568e-05 1 0.99995176574470701
-		2 0 0.00011380049147494886 1 0.99988619950852509
-		2 0 0.00012373408298498232 1 0.99987626591701506
-		2 0 0.00012164344006086927 1 0.99987835655993917
-		2 0 0.00012134419481771909 1 0.99987865580518231
-		2 0 0.00012257178790209283 1 0.9998774282120978
-		2 0 0.00011530416100251459 1 0.99988469583899753
-		2 0 7.342004723597495e-05 1 0.99992657995276402
-		2 0 4.4695238628842243e-05 1 0.99995530476137118
-		2 0 4.6479852383124404e-05 1 0.99995352014761685
-		2 0 4.4831830617715062e-05 1 0.99995516816938224
-		2 0 3.8354469429956515e-05 1 0.9999616455305701
-		2 0 3.8594908963332557e-05 1 0.9999614050910367
-		2 0 3.419724835199353e-05 1 0.99996580275164804
-		2 0 7.1450011741432942e-05 1 0.99992854998825853
-		2 0 0.00022589152182101355 1 0.99977410847817905
-		2 0 0.00025948669379812037 1 0.99974051330620184
-		2 0 0.00026942693942729796 1 0.99973057306057267
-		2 0 0.00035742810395665667 1 0.99964257189604333
-		2 0 0.00037098811717709305 1 0.99962901188282294
-		2 0 0.00036658497032049169 1 0.99963341502967951
-		2 0 0.00045496349813841736 1 0.99954503650186166
-		2 0 0.00031069832969028157 1 0.99968930167030967
-		2 0 0.00031193326242958942 1 0.99968806673757038
-		2 0 0.00029837974113347088 1 0.99970162025886644
-		2 0 0.00021033765848915619 1 0.9997896623415109
-		2 0 0.00020027231858175802 1 0.99979972768141823
-		2 0 0.00017109892609000786 1 0.99982890107390998;
+	setAttr ".wl[0:281].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.28831222653388977 1 0.71168777346611023
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1
+		1 1 1;
 	setAttr -s 2 ".pm";
 	setAttr ".pm[0]" -type "matrix" 4.7207175243410025e-08 9.2414183481947399e-08 -0.99999999999999456 0
 		 -0.99619659885043887 0.087134014247105263 -3.8975208835909879e-08 0 0.08713401424710121 0.99619659885043643 9.6176045838572708e-08 0
@@ -27858,78 +27870,78 @@ createNode skinCluster -n "skinCluster4";
 createNode skinCluster -n "skinCluster5";
 	rename -uid "0D41B9FD-4632-3B2E-CC2C-B1A40C2E5789";
 	setAttr -s 282 ".wl";
-	setAttr ".wl[0:249].w"
-		2 0 0.0015581986092270295 1 0.99844180139077299
-		2 0 0.0015581861434837659 1 0.9984418138565162
-		2 0 0.0054391371209820717 1 0.9945608628790179
-		2 0 0.0007472561798936968 1 0.99925274382010632
-		2 0 0.0035643743662600565 1 0.99643562563374
-		2 0 0.0045082375094884462 1 0.99549176249051152
-		2 0 0.0045082144334761915 1 0.99549178556652385
-		2 0 0.0035643637255246014 1 0.9964356362744754
-		2 0 0.0033057902530888011 1 0.99669420974691125
-		2 0 0.0033058005793410719 1 0.99669419942065896
-		2 0 0.0036620110827078286 1 0.99633798891729219
-		2 0 0.0036620277471493229 1 0.9963379722528507
-		2 0 0.0044047353946448506 1 0.99559526460535519
-		2 0 0.0044047532049893484 1 0.99559524679501055
-		2 0 0.0045076786046834294 1 0.99549232139531652
-		2 0 0.0045076978820838502 1 0.99549230211791617
-		2 0 0.0047116881164616436 1 0.99528831188353839
-		2 0 0.003167170457331035 1 0.99683282954266894
-		2 0 0.0039512591675056694 1 0.99604874083249428
-		2 0 0.0039512376646234125 1 0.99604876233537654
-		2 0 0.00316716026140246 1 0.9968328397385976
-		2 0 0.0029455117923326657 1 0.9970544882076674
-		2 0 0.0029455214895883295 1 0.99705447851041162
-		2 0 0.0032462805626009106 1 0.9967537194373991
-		2 0 0.0032462961804297962 1 0.99675370381957018
-		2 0 0.0038638347170777488 1 0.99613616528292226
-		2 0 0.0038638513147605511 1 0.99613614868523948
-		2 0 0.0039455536308151745 1 0.99605444636918483
-		2 0 0.0039455687597659654 1 0.99605443124023407
-		2 0 0.0027406696464338074 1 0.99725933035356618
-		2 0 0.0031657870111176595 1 0.99683421298888242
-		2 0 0.0025463370252322682 1 0.99745366297476779
-		2 0 0.0012981613526144907 1 0.99870183864738549
-		2 0 0.0028593882526435268 1 0.99714061174735646
-		2 0 0.0025463346646855752 1 0.99745366533531443
-		2 0 0.0012981516829781538 1 0.9987018483170218
-		2 0 0.002859362164259503 1 0.99714063783574047
-		2 0 0.0037380129122185674 1 0.99626198708778146
-		2 0 0.0010563301080738754 1 0.99894366989192618
-		2 0 0.0032728621986005944 1 0.99672713780139943
-		2 0 0.0032728777080022293 1 0.99672712229199778
-		2 0 0.0010563383543649282 1 0.99894366164563508
-		2 0 0.003738027307984052 1 0.996261972692016
-		2 0 8.3301310546189588e-05 1 0.99991669868945388
-		2 0 0.00047062129187578375 1 0.99952937870812419
-		2 0 0.00054262552584977987 1 0.99945737447415017
-		2 0 0.00056916372856869748 1 0.99943083627143126
-		2 0 0.00078344597749866222 1 0.99921655402250131
-		2 0 0.00081478988209954847 1 0.9991852101179004
-		2 0 0.00081263464454828899 1 0.99918736535545172
-		2 0 0.0010870003458973408 1 0.99891299965410263
-		2 0 0.00079153215126188828 1 0.99920846784873807
-		2 0 0.00079272650672547581 1 0.99920727349327454
-		2 0 0.00076167633401077745 1 0.99923832366598919
-		2 0 0.00055023906818906659 1 0.99944976093181093
-		2 0 0.00052420523720382746 1 0.99947579476279624
-		2 0 0.00045434973974149364 1 0.99954565026025854
-		2 0 8.477950019681311e-05 1 0.99991522049980319
-		2 0 0.0002690812375575027 1 0.99973091876244247
-		2 0 0.00030485157415139946 1 0.9996951484258485
-		2 0 0.00031486543460761997 1 0.99968513456539243
-		2 0 0.00040537522314043986 1 0.99959462477685956
-		2 0 0.00041942609138631852 1 0.99958057390861377
-		2 0 0.00041547891239429585 1 0.99958452108760576
-		2 0 0.00056508655301074388 1 0.9994349134469892
-		2 0 0.00051895745152705946 1 0.99948104254847292
-		2 0 0.00052825196641738317 1 0.99947174803358263
-		2 0 0.00051322336140518577 1 0.99948677663859486
-		2 0 0.00041297653823391968 1 0.99958702346176609
-		2 0 0.0004012263521821087 1 0.99959877364781791
-		2 0 0.00035506839312884908 1 0.99964493160687118
+	setAttr ".wl[0:281].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
+		2 0 0.5 1 0.5
 		2 0 7.5528267493060077e-05 1 0.99992447173250698
 		2 0 4.1781087390467162e-05 1 0.9999582189126095
 		2 0 0.0003387753092923801 1 0.99966122469070762
@@ -27973,147 +27985,146 @@ createNode skinCluster -n "skinCluster5";
 		2 0 9.1171890581325857e-06 1 0.99999088281094184
 		2 0 1.7894498232506238e-05 1 0.99998210550176758
 		2 0 0.00019268440783272209 1 0.99980731559216729
-		2 0 0.00012676070394902002 1 0.99987323929605099
-		2 0 0.00063108054486909256 1 0.99936891945513096
-		2 0 0.00072302598246967644 1 0.99927697401753035
-		2 0 0.00075783991882016227 1 0.99924216008117983
-		2 0 0.0010364443248065576 1 0.99896355567519346
-		2 0 0.0010769422399353836 1 0.99892305776006463
-		2 0 0.0010759175006866189 1 0.9989240824993133
-		2 0 0.0014506445453530161 1 0.99854935545464696
-		2 0 0.0010759226322791177 1 0.99892407736772093
-		2 0 0.001076951529738409 1 0.99892304847026159
-		2 0 0.0010364514158083035 1 0.99896354858419167
-		2 0 0.0007578461089043332 1 0.99924215389109572
-		2 0 0.00072302985983912355 1 0.99927697014016093
-		2 0 0.00063108419197108645 1 0.99936891580802889
-		2 0 0.00012676357928679562 1 0.99987323642071324
-		2 0 0.00050013407158765091 1 0.99949986592841245
-		2 0 0.00056220782902180347 1 0.99943779217097828
-		2 0 0.00058198679910484918 1 0.99941801320089518
-		2 0 0.00074577466805798951 1 0.99925422533194208
-		2 0 0.00076997933302765283 1 0.99923002066697242
-		2 0 0.00076551189228730142 1 0.99923448810771265
-		2 0 0.001003355371042647 1 0.99899664462895732
-		2 0 0.00086038149135880945 1 0.99913961850864119
-		2 0 0.00086893300046975847 1 0.99913106699953025
-		2 0 0.00084290672201905309 1 0.99915709327798097
-		2 0 0.0006606915258892572 1 0.99933930847411079
-		2 0 0.00063745961789964968 1 0.99936254038210037
-		2 0 0.0005641805245964294 1 0.99943581947540361
-		2 0 0.00027065817548201386 1 0.999729341824518
-		2 0 0.00099887836878154667 1 0.99900112163121846
-		2 0 0.001123084009154591 1 0.99887691599084538
-		2 0 0.0011700937658602653 1 0.9988299062341397
-		2 0 0.0015405302406400446 1 0.99845946975935995
-		2 0 0.0015937062664860358 1 0.99840629373351386
-		2 0 0.0015927059580718348 1 0.99840729404192818
-		2 0 0.0020810090508823855 1 0.99791899094911762
-		2 0 0.0015927134206522656 1 0.99840728657934774
-		2 0 0.0015937183423800759 1 0.99840628165761991
-		2 0 0.0015405394854049498 1 0.99845946051459511
-		2 0 0.0011701020011878943 1 0.99882989799881206
-		2 0 0.0011230891928163164 1 0.99887691080718366
-		2 0 0.00099888329182884071 1 0.99900111670817116
-		2 0 0.00027066268569483714 1 0.99972933731430513
-		2 0 0.0008973033920536928 1 0.99910269660794637
-		2 0 0.001000480309730609 1 0.99899951969026934
-		2 0 0.0010362060639265874 1 0.99896379393607349
-		2 0 0.001315663435756276 1 0.99868433656424371
-		2 0 0.0013554872891732826 1 0.99864451271082677
-		2 0 0.0013509361259718346 1 0.99864906387402819
-		2 0 0.0017183327907862218 1 0.99828166720921385
-		2 0 0.0014115155754121928 1 0.99858848442458781
-		2 0 0.0014174148835658846 1 0.99858258511643416
-		2 0 0.0013744260460061184 1 0.99862557395399387
-		2 0 0.0010636959637508997 1 0.99893630403624911
-		2 0 0.0010223773497407575 1 0.99897762265025913
-		2 0 0.00090992676984087033 1 0.99909007323015908
-		2 0 0.00065291514658476755 1 0.99934708485341528
-		2 0 0.0017721320603397578 1 0.99822786793966023
-		2 0 0.0019493380150582486 1 0.99805066198494174
-		2 0 0.0020162976365146142 1 0.99798370236348544
-		2 0 0.0025346242524899205 1 0.99746537574751004
-		2 0 0.0026079161809116577 1 0.99739208381908839
-		2 0 0.0026070232151343734 1 0.9973929767848656
-		2 0 0.0032733506298039312 1 0.99672664937019606
-		2 0 0.0026070369769932303 1 0.99739296302300673
-		2 0 0.0026079326669858289 1 0.99739206733301422
-		2 0 0.0025346369222104749 1 0.99746536307778944
-		2 0 0.0020163092063717187 1 0.99798369079362825
-		2 0 0.0019493453457536955 1 0.99805065465424636
-		2 0 0.0017721391011191704 1 0.99822786089888094
-		2 0 0.00065292266744417535 1 0.99934707733255579
-		2 0 0.0015869440964488006 1 0.99841305590355123
-		2 0 0.0017426613555909258 1 0.99825733864440902
-		2 0 0.0017990878679502754 1 0.99820091213204976
-		2 0 0.0022440341401882284 1 0.99775596585981186
-		2 0 0.0023073075115774911 1 0.99769269248842252
-		2 0 0.0023034753195822922 1 0.9976965246804177
-		2 0 0.0028579039383055207 1 0.99714209606169446
-		2 0 0.0023040895800483783 1 0.99769591041995165
-		2 0 0.0023077105267725242 1 0.99769228947322752
-		2 0 0.0022440669894658932 1 0.997755933010534
-		2 0 0.0017990768325812255 1 0.99820092316741882
-		2 0 0.0017426544673269865 1 0.99825734553267309
-		2 0 0.0015869374728307857 1 0.99841306252716921
-		2 0 6.8774093162061225e-05 1 0.99993122590683803
-		2 0 0.00022966883685996201 1 0.99977033116314007
-		2 0 0.00025821336169638842 1 0.9997417866383036
-		2 0 0.00026293232382032202 1 0.99973706767617965
-		2 0 0.00031216162235022722 1 0.99968783837764985
-		2 0 0.00032023010090598671 1 0.99967976989909402
-		2 0 0.00031124361215952858 1 0.99968875638784049
-		2 0 0.00030427284585258303 1 0.99969572715414745
-		2 0 0.00021349497516953486 1 0.99978650502483046
-		2 0 0.00021672935991374267 1 0.99978327064008632
-		2 0 0.00020907013360801411 1 0.99979092986639206
-		2 0 0.00016319337916047226 1 0.99983680662083951
-		2 0 0.00015886668786366405 1 0.99984113331213631
-		2 0 0.00013938425829039303 1 0.99986061574170959
-		2 0 6.8119453477355726e-05 1 0.9999318805465226
-		2 0 0.00036550741798727695 1 0.99963449258201276
-		2 0 0.00042127918200457514 1 0.99957872081799548
-		2 0 0.0004406585198606424 1 0.99955934148013936
-		2 0 0.00060091140569622269 1 0.99939908859430382
-		2 0 0.00062469941467043985 1 0.99937530058532953
-		2 0 0.00062135324222808562 1 0.99937864675777188
-		2 0 0.00081445644571860381 1 0.99918554355428135
-		2 0 0.0005817050444867182 1 0.99941829495551326
-		2 0 0.00058298358215310732 1 0.99941701641784686
-		2 0 0.00055934934783092021 1 0.99944065065216903
-		2 0 0.00040070255606015226 1 0.99959929744393994
-		2 0 0.00038158300773785382 1 0.99961841699226217
-		2 0 0.00032916188439835648 1 0.99967083811560165
-		2 0 5.696522932029216e-05 1 0.9999430347706797
-		2 0 0.00015588163202511757 1 0.99984411836797493
-		2 0 0.00017310282519969068 1 0.99982689717480033
-		2 0 0.00017358757536887443 1 0.99982641242463111
-		2 0 0.00019183266370343188 1 0.99980816733629652
-		2 0 0.00019562145127465327 1 0.99980437854872539
-		2 0 0.00018742996050161742 1 0.99981257003949842
-		2 0 0.00015486317609357799 1 0.99984513682390641
-		2 0 0.0001022552387110716 1 0.9998977447612889
-		2 0 0.00010473861162472552 1 0.99989526138837526
-		2 0 0.00010092280410480072 1 0.99989907719589521
-		2 0 8.0771218460022251e-05 1 0.99991922878154005
-		2 0 7.9521762163114291e-05 1 0.99992047823783692
-		2 0 6.9701982792834381e-05 1 0.99993029801720723
-		2 0 6.5127685075007128e-05 1 0.99993487231492506
-		2 0 0.00028610662973200309 1 0.99971389337026795
-		2 0 0.00032936834559391175 1 0.99967063165440606
-		2 0 0.00034336132973744355 1 0.99965663867026255
-		2 0 0.00046256456741789506 1 0.99953743543258211
-		2 0 0.00048056212255472366 1 0.99951943787744524
-		2 0 0.00047651635580011199 1 0.99952348364419985
-		2 0 0.00060935491952234541 1 0.9993906450804777
-		2 0 0.00042604945189472868 1 0.99957395054810516
-		2 0 0.00042733271185799908 1 0.99957266728814209;
-	setAttr ".wl[250:281].w"
-		2 0 0.00040940003622211957 1 0.99959059996377786
-		2 0 0.00029088411979305204 1 0.99970911588020694
-		2 0 0.00027694622843295823 1 0.99972305377156712
-		2 0 0.0002377500987032554 1 0.9997622499012967
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.69999998807907104 1 0.30000001192092896
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		2 0 0.89999997615814209 1 0.10000002384185791
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.30000001192092896 1 0.69999998807907104
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
+		2 0 0.10000000149011612 1 0.89999999850988388
 		2 0 4.8233857861999791e-05 1 0.99995176614213799
 		2 0 0.00011380073700631886 1 0.99988619926299371
 		2 0 0.00012373440719797078 1 0.99987626559280207
@@ -31378,11 +31389,6 @@ createNode skinCluster -n "skinCluster6";
 	setAttr ".ucm" yes;
 	setAttr -s 10 ".ifcl";
 	setAttr -s 10 ".ifcl";
-createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
-	rename -uid "93DD635B-4F3E-175B-5E64-AFB157A98B90";
-	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" 2986.3733563420233 -798.80949206768639 ;
-	setAttr ".tgi[0].vh" -type "double2" 4401.7215881766988 229.7618956319873 ;
 createNode ikSpringSolver -s -n "ikSpringSolver";
 	rename -uid "656C33DD-4522-AC7E-FD40-34B69209492B";
 createNode skinCluster -n "skinCluster7";
@@ -31504,6 +31510,90 @@ createNode dagPose -n "bindPose4";
 	setAttr -s 13 ".g[0:12]" yes yes yes yes yes yes yes yes yes no yes 
 		no no;
 	setAttr ".bp" yes;
+createNode multiplyDivide -n "Cable_IK_Spline_02_Length_MD";
+	rename -uid "11B6E7FA-4E86-B85E-EE1F-5389C08AB8A6";
+	setAttr ".i1" -type "float3" 0.55581349 0 0 ;
+createNode multiplyDivide -n "Cable_IK_Spline_03_Length_MD";
+	rename -uid "11F28741-444C-DA4F-8581-228BF69342C6";
+	setAttr ".i1" -type "float3" 0.53098267 0 0 ;
+createNode multiplyDivide -n "Cable_IK_Spline_04_Length_MD";
+	rename -uid "509D6937-4B58-865F-4B60-E3AD4F0CBD41";
+	setAttr ".i1" -type "float3" 0.51632041 0 0 ;
+createNode multiplyDivide -n "Cable_IK_Spline_05_Length_MD";
+	rename -uid "58AF8C7C-444C-BB31-6B9E-61AC67C3423D";
+	setAttr ".i1" -type "float3" 0.49653971 0 0 ;
+createNode multiplyDivide -n "Cable_IK_Spline_06_Length_MD";
+	rename -uid "56F73A28-45BC-9BB0-0ED0-06BF005E6A29";
+	setAttr ".i1" -type "float3" 0.51624256 0 0 ;
+createNode multiplyDivide -n "Cable_IK_Spline_07_Length_MD";
+	rename -uid "BB4C8F3A-49FC-6C1C-3EA1-BA97D2E6EA3E";
+	setAttr ".i1" -type "float3" 0.50648892 0 0 ;
+createNode multiplyDivide -n "Cable_IK_Spline_08_Length_MD";
+	rename -uid "EA274DE2-4FE1-B1DE-5F88-0B9FD2FF58FE";
+	setAttr ".i1" -type "float3" 0.51373738 0 0 ;
+createNode multiplyDivide -n "Cable_IK_Spline_09_Length_MD";
+	rename -uid "CDCBBA74-46DF-9839-B781-65871E772536";
+	setAttr ".i1" -type "float3" 0.51715851 0 0 ;
+createNode multiplyDivide -n "Cable_IK_Spline_10_Length_MD";
+	rename -uid "9EAFCAD1-49F2-B3E8-4BD5-55B4FC91B10A";
+	setAttr ".i1" -type "float3" 0.50978172 0 0 ;
+createNode multiplyDivide -n "Cable_IK_Spline_11_Length_MD";
+	rename -uid "CBFBA6BF-4417-8966-0AE4-678929A41AE0";
+	setAttr ".i1" -type "float3" 0.53321242 0 0 ;
+createNode multiplyDivide -n "Cable_IK_Spline_12_Length_MD";
+	rename -uid "17074BC4-4AE1-59E8-C96D-96BBEC465D6C";
+	setAttr ".i1" -type "float3" 0.54685777 0 0 ;
+createNode multiplyDivide -n "Cable_IK_Spline_13_Length_MD";
+	rename -uid "B9D057B6-4368-C951-F896-46A8D0D30CB7";
+	setAttr ".i1" -type "float3" 0.52449065 0 0 ;
+createNode curveInfo -n "Cable_Spline_Curve_Curve_info";
+	rename -uid "190369A6-4427-2B95-EC9C-4CBC1D02A34D";
+createNode multiplyDivide -n "Cable_Spline_Curve_Ratio_MD";
+	rename -uid "E8EECE79-4998-A5EE-1AC3-3980C695B665";
+	setAttr ".op" 2;
+	setAttr ".i2" -type "float3" 6.3190327 1 1 ;
+createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
+	rename -uid "603828DF-45A1-53FF-5AE5-58BDC369AECB";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" 3962.3559610379916 -720.99863443898448 ;
+	setAttr ".tgi[0].vh" -type "double2" 5285.8853356786985 243.36223197417453 ;
+	setAttr -s 12 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" 3427.142822265625;
+	setAttr ".tgi[0].ni[0].y" -241.42857360839844;
+	setAttr ".tgi[0].ni[0].nvs" 18304;
+	setAttr ".tgi[0].ni[1].x" 2491.428466796875;
+	setAttr ".tgi[0].ni[1].y" -191.42857360839844;
+	setAttr ".tgi[0].ni[1].nvs" 18304;
+	setAttr ".tgi[0].ni[2].x" 2812.857177734375;
+	setAttr ".tgi[0].ni[2].y" -241.42857360839844;
+	setAttr ".tgi[0].ni[2].nvs" 18304;
+	setAttr ".tgi[0].ni[3].x" 4405.93994140625;
+	setAttr ".tgi[0].ni[3].y" -159.85331726074219;
+	setAttr ".tgi[0].ni[3].nvs" 18305;
+	setAttr ".tgi[0].ni[4].x" 2491.428466796875;
+	setAttr ".tgi[0].ni[4].y" -394.28570556640625;
+	setAttr ".tgi[0].ni[4].nvs" 18304;
+	setAttr ".tgi[0].ni[5].x" 2491.428466796875;
+	setAttr ".tgi[0].ni[5].y" -90;
+	setAttr ".tgi[0].ni[5].nvs" 18304;
+	setAttr ".tgi[0].ni[6].x" 3755.71435546875;
+	setAttr ".tgi[0].ni[6].y" -241.42857360839844;
+	setAttr ".tgi[0].ni[6].nvs" 18304;
+	setAttr ".tgi[0].ni[7].x" 2491.428466796875;
+	setAttr ".tgi[0].ni[7].y" -292.85714721679688;
+	setAttr ".tgi[0].ni[7].nvs" 18304;
+	setAttr ".tgi[0].ni[8].x" 3120;
+	setAttr ".tgi[0].ni[8].y" -241.42857360839844;
+	setAttr ".tgi[0].ni[8].nvs" 18304;
+	setAttr ".tgi[0].ni[9].x" 4077.142822265625;
+	setAttr ".tgi[0].ni[9].y" -241.42857360839844;
+	setAttr ".tgi[0].ni[9].nvs" 18304;
+	setAttr ".tgi[0].ni[10].x" 4715.71435546875;
+	setAttr ".tgi[0].ni[10].y" -191.42857360839844;
+	setAttr ".tgi[0].ni[10].nvs" 18304;
+	setAttr ".tgi[0].ni[11].x" 4077.142822265625;
+	setAttr ".tgi[0].ni[11].y" -140;
+	setAttr ".tgi[0].ni[11].nvs" 18304;
 select -ne :time1;
 	setAttr ".o" -40;
 	setAttr ".unw" -40;
@@ -31521,7 +31611,7 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 11 ".u";
+	setAttr -s 25 ".u";
 select -ne :defaultRenderingList1;
 	setAttr -s 2 ".r";
 select -ne :initialShadingGroup;
@@ -31557,8 +31647,8 @@ connectAttr "Lens_parentConstraint1.crx" "bot_bodyRN.phl[240]";
 connectAttr "Lens_parentConstraint1.cry" "bot_bodyRN.phl[241]";
 connectAttr "Lens_parentConstraint1.crz" "bot_bodyRN.phl[242]";
 connectAttr "bot_bodyRN.phl[243]" "Lens_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[244]" "Lens_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[245]" "Lens_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[244]" "Lens_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[245]" "Lens_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[246]" "Lens_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[247]" "Lens_parentConstraint1.crt";
 connectAttr "Lens_scaleConstraint1.csx" "bot_bodyRN.phl[248]";
@@ -31571,8 +31661,8 @@ connectAttr "Head_parentConstraint1.crx" "bot_bodyRN.phl[254]";
 connectAttr "Head_parentConstraint1.cry" "bot_bodyRN.phl[255]";
 connectAttr "Head_parentConstraint1.crz" "bot_bodyRN.phl[256]";
 connectAttr "bot_bodyRN.phl[257]" "Head_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[258]" "Head_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[259]" "Head_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[258]" "Head_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[259]" "Head_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[260]" "Head_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[261]" "Head_parentConstraint1.crt";
 connectAttr "Head_scaleConstraint1.csx" "bot_bodyRN.phl[262]";
@@ -31585,8 +31675,8 @@ connectAttr "HeadBase_parentConstraint1.crx" "bot_bodyRN.phl[268]";
 connectAttr "HeadBase_parentConstraint1.cry" "bot_bodyRN.phl[269]";
 connectAttr "HeadBase_parentConstraint1.crz" "bot_bodyRN.phl[270]";
 connectAttr "bot_bodyRN.phl[271]" "HeadBase_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[272]" "HeadBase_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[273]" "HeadBase_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[272]" "HeadBase_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[273]" "HeadBase_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[274]" "HeadBase_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[275]" "HeadBase_parentConstraint1.crt";
 connectAttr "HeadBase_scaleConstraint1.csx" "bot_bodyRN.phl[276]";
@@ -31599,8 +31689,8 @@ connectAttr "Neck_parentConstraint1.crx" "bot_bodyRN.phl[282]";
 connectAttr "Neck_parentConstraint1.cry" "bot_bodyRN.phl[283]";
 connectAttr "Neck_parentConstraint1.crz" "bot_bodyRN.phl[284]";
 connectAttr "bot_bodyRN.phl[285]" "Neck_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[286]" "Neck_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[287]" "Neck_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[286]" "Neck_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[287]" "Neck_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[288]" "Neck_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[289]" "Neck_parentConstraint1.crt";
 connectAttr "Neck_scaleConstraint1.csx" "bot_bodyRN.phl[290]";
@@ -31613,8 +31703,8 @@ connectAttr "Eye_parentConstraint1.crx" "bot_bodyRN.phl[296]";
 connectAttr "Eye_parentConstraint1.cry" "bot_bodyRN.phl[297]";
 connectAttr "Eye_parentConstraint1.crz" "bot_bodyRN.phl[298]";
 connectAttr "bot_bodyRN.phl[299]" "Eye_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[300]" "Eye_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[301]" "Eye_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[300]" "Eye_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[301]" "Eye_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[302]" "Eye_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[303]" "Eye_parentConstraint1.crt";
 connectAttr "Eye_scaleConstraint1.csx" "bot_bodyRN.phl[304]";
@@ -31628,8 +31718,8 @@ connectAttr "HeadPort_parentConstraint1.crx" "bot_bodyRN.phl[311]";
 connectAttr "HeadPort_parentConstraint1.cry" "bot_bodyRN.phl[312]";
 connectAttr "HeadPort_parentConstraint1.crz" "bot_bodyRN.phl[313]";
 connectAttr "bot_bodyRN.phl[314]" "HeadPort_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[315]" "HeadPort_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[316]" "HeadPort_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[315]" "HeadPort_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[316]" "HeadPort_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[317]" "HeadPort_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[318]" "HeadPort_parentConstraint1.crt";
 connectAttr "HeadPort_scaleConstraint1.csx" "bot_bodyRN.phl[319]";
@@ -31642,8 +31732,8 @@ connectAttr "pPlane16_parentConstraint1.crx" "bot_bodyRN.phl[325]";
 connectAttr "pPlane16_parentConstraint1.cry" "bot_bodyRN.phl[326]";
 connectAttr "pPlane16_parentConstraint1.crz" "bot_bodyRN.phl[327]";
 connectAttr "bot_bodyRN.phl[328]" "pPlane16_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[329]" "pPlane16_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[330]" "pPlane16_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[329]" "pPlane16_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[330]" "pPlane16_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[331]" "pPlane16_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[332]" "pPlane16_parentConstraint1.crt";
 connectAttr "pPlane16_scaleConstraint1.csx" "bot_bodyRN.phl[333]";
@@ -31656,8 +31746,8 @@ connectAttr "pTorus4_parentConstraint1.crx" "bot_bodyRN.phl[339]";
 connectAttr "pTorus4_parentConstraint1.cry" "bot_bodyRN.phl[340]";
 connectAttr "pTorus4_parentConstraint1.crz" "bot_bodyRN.phl[341]";
 connectAttr "bot_bodyRN.phl[342]" "pTorus4_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[343]" "pTorus4_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[344]" "pTorus4_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[343]" "pTorus4_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[344]" "pTorus4_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[345]" "pTorus4_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[346]" "pTorus4_parentConstraint1.crt";
 connectAttr "pTorus4_scaleConstraint1.csx" "bot_bodyRN.phl[347]";
@@ -31670,8 +31760,8 @@ connectAttr "Chest_Cable_parentConstraint1.crx" "bot_bodyRN.phl[353]";
 connectAttr "Chest_Cable_parentConstraint1.cry" "bot_bodyRN.phl[354]";
 connectAttr "Chest_Cable_parentConstraint1.crz" "bot_bodyRN.phl[355]";
 connectAttr "bot_bodyRN.phl[356]" "Chest_Cable_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[357]" "Chest_Cable_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[358]" "Chest_Cable_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[357]" "Chest_Cable_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[358]" "Chest_Cable_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[359]" "Chest_Cable_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[360]" "Chest_Cable_parentConstraint1.crt";
 connectAttr "Chest_Cable_scaleConstraint1.csx" "bot_bodyRN.phl[361]";
@@ -31684,8 +31774,8 @@ connectAttr "pTorus1_parentConstraint1.crx" "bot_bodyRN.phl[367]";
 connectAttr "pTorus1_parentConstraint1.cry" "bot_bodyRN.phl[368]";
 connectAttr "pTorus1_parentConstraint1.crz" "bot_bodyRN.phl[369]";
 connectAttr "bot_bodyRN.phl[370]" "pTorus1_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[371]" "pTorus1_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[372]" "pTorus1_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[371]" "pTorus1_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[372]" "pTorus1_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[373]" "pTorus1_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[374]" "pTorus1_parentConstraint1.crt";
 connectAttr "pTorus1_scaleConstraint1.csx" "bot_bodyRN.phl[375]";
@@ -31698,8 +31788,8 @@ connectAttr "pTorus3_parentConstraint1.crx" "bot_bodyRN.phl[381]";
 connectAttr "pTorus3_parentConstraint1.cry" "bot_bodyRN.phl[382]";
 connectAttr "pTorus3_parentConstraint1.crz" "bot_bodyRN.phl[383]";
 connectAttr "bot_bodyRN.phl[384]" "pTorus3_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[385]" "pTorus3_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[386]" "pTorus3_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[385]" "pTorus3_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[386]" "pTorus3_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[387]" "pTorus3_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[388]" "pTorus3_parentConstraint1.crt";
 connectAttr "pTorus3_scaleConstraint1.csx" "bot_bodyRN.phl[389]";
@@ -31714,8 +31804,8 @@ connectAttr "pCylinder13_parentConstraint1.crx" "bot_bodyRN.phl[397]";
 connectAttr "pCylinder13_parentConstraint1.cry" "bot_bodyRN.phl[398]";
 connectAttr "pCylinder13_parentConstraint1.crz" "bot_bodyRN.phl[399]";
 connectAttr "bot_bodyRN.phl[400]" "pCylinder13_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[401]" "pCylinder13_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[402]" "pCylinder13_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[401]" "pCylinder13_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[402]" "pCylinder13_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[403]" "pCylinder13_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[404]" "pCylinder13_parentConstraint1.crt";
 connectAttr "pCylinder13_scaleConstraint1.csx" "bot_bodyRN.phl[405]";
@@ -31728,8 +31818,8 @@ connectAttr "Hip_Armor_parentConstraint1.crx" "bot_bodyRN.phl[411]";
 connectAttr "Hip_Armor_parentConstraint1.cry" "bot_bodyRN.phl[412]";
 connectAttr "Hip_Armor_parentConstraint1.crz" "bot_bodyRN.phl[413]";
 connectAttr "bot_bodyRN.phl[414]" "Hip_Armor_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[415]" "Hip_Armor_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[416]" "Hip_Armor_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[415]" "Hip_Armor_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[416]" "Hip_Armor_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[417]" "Hip_Armor_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[418]" "Hip_Armor_parentConstraint1.crt";
 connectAttr "Hip_Armor_scaleConstraint1.csx" "bot_bodyRN.phl[419]";
@@ -31742,8 +31832,8 @@ connectAttr "Hip_parentConstraint1.crx" "bot_bodyRN.phl[425]";
 connectAttr "Hip_parentConstraint1.cry" "bot_bodyRN.phl[426]";
 connectAttr "Hip_parentConstraint1.crz" "bot_bodyRN.phl[427]";
 connectAttr "bot_bodyRN.phl[428]" "Hip_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[429]" "Hip_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[430]" "Hip_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[429]" "Hip_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[430]" "Hip_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[431]" "Hip_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[432]" "Hip_parentConstraint1.crt";
 connectAttr "Hip_scaleConstraint1.csx" "bot_bodyRN.phl[433]";
@@ -31756,8 +31846,8 @@ connectAttr "Back_Ports_parentConstraint1.crx" "bot_bodyRN.phl[439]";
 connectAttr "Back_Ports_parentConstraint1.cry" "bot_bodyRN.phl[440]";
 connectAttr "Back_Ports_parentConstraint1.crz" "bot_bodyRN.phl[441]";
 connectAttr "bot_bodyRN.phl[442]" "Back_Ports_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[443]" "Back_Ports_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[444]" "Back_Ports_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[443]" "Back_Ports_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[444]" "Back_Ports_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[445]" "Back_Ports_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[446]" "Back_Ports_parentConstraint1.crt";
 connectAttr "Back_Ports_scaleConstraint1.csx" "bot_bodyRN.phl[447]";
@@ -31770,8 +31860,8 @@ connectAttr "L_Shold_Pist_Base_parentConstraint1.crx" "bot_bodyRN.phl[453]";
 connectAttr "L_Shold_Pist_Base_parentConstraint1.cry" "bot_bodyRN.phl[454]";
 connectAttr "L_Shold_Pist_Base_parentConstraint1.crz" "bot_bodyRN.phl[455]";
 connectAttr "bot_bodyRN.phl[456]" "L_Shold_Pist_Base_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[457]" "L_Shold_Pist_Base_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[458]" "L_Shold_Pist_Base_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[457]" "L_Shold_Pist_Base_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[458]" "L_Shold_Pist_Base_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[459]" "L_Shold_Pist_Base_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[460]" "L_Shold_Pist_Base_parentConstraint1.crt";
 connectAttr "L_Shold_Pist_Base_scaleConstraint1.csx" "bot_bodyRN.phl[461]";
@@ -31784,8 +31874,8 @@ connectAttr "L_Clav_Pist_Base_parentConstraint1.crx" "bot_bodyRN.phl[467]";
 connectAttr "L_Clav_Pist_Base_parentConstraint1.cry" "bot_bodyRN.phl[468]";
 connectAttr "L_Clav_Pist_Base_parentConstraint1.crz" "bot_bodyRN.phl[469]";
 connectAttr "bot_bodyRN.phl[470]" "L_Clav_Pist_Base_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[471]" "L_Clav_Pist_Base_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[472]" "L_Clav_Pist_Base_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[471]" "L_Clav_Pist_Base_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[472]" "L_Clav_Pist_Base_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[473]" "L_Clav_Pist_Base_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[474]" "L_Clav_Pist_Base_parentConstraint1.crt";
 connectAttr "L_Clav_Pist_Base_scaleConstraint1.csx" "bot_bodyRN.phl[475]";
@@ -31798,8 +31888,8 @@ connectAttr "pCylinder22_parentConstraint1.crx" "bot_bodyRN.phl[481]";
 connectAttr "pCylinder22_parentConstraint1.cry" "bot_bodyRN.phl[482]";
 connectAttr "pCylinder22_parentConstraint1.crz" "bot_bodyRN.phl[483]";
 connectAttr "bot_bodyRN.phl[484]" "pCylinder22_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[485]" "pCylinder22_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[486]" "pCylinder22_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[485]" "pCylinder22_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[486]" "pCylinder22_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[487]" "pCylinder22_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[488]" "pCylinder22_parentConstraint1.crt";
 connectAttr "pCylinder22_scaleConstraint1.csx" "bot_bodyRN.phl[489]";
@@ -31814,8 +31904,8 @@ connectAttr "pCylinder23_parentConstraint1.crx" "bot_bodyRN.phl[496]";
 connectAttr "pCylinder23_parentConstraint1.cry" "bot_bodyRN.phl[497]";
 connectAttr "pCylinder23_parentConstraint1.crz" "bot_bodyRN.phl[498]";
 connectAttr "bot_bodyRN.phl[499]" "pCylinder23_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[500]" "pCylinder23_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[501]" "pCylinder23_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[500]" "pCylinder23_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[501]" "pCylinder23_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[502]" "pCylinder23_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[503]" "pCylinder23_parentConstraint1.crt";
 connectAttr "pCylinder23_scaleConstraint1.csx" "bot_bodyRN.phl[504]";
@@ -31830,8 +31920,8 @@ connectAttr "pCylinder24_parentConstraint1.crx" "bot_bodyRN.phl[511]";
 connectAttr "pCylinder24_parentConstraint1.cry" "bot_bodyRN.phl[512]";
 connectAttr "pCylinder24_parentConstraint1.crz" "bot_bodyRN.phl[513]";
 connectAttr "bot_bodyRN.phl[514]" "pCylinder24_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[515]" "pCylinder24_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[516]" "pCylinder24_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[515]" "pCylinder24_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[516]" "pCylinder24_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[517]" "pCylinder24_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[518]" "pCylinder24_parentConstraint1.crt";
 connectAttr "pCylinder24_scaleConstraint1.csx" "bot_bodyRN.phl[519]";
@@ -31846,8 +31936,8 @@ connectAttr "pCylinder25_parentConstraint1.crx" "bot_bodyRN.phl[526]";
 connectAttr "pCylinder25_parentConstraint1.cry" "bot_bodyRN.phl[527]";
 connectAttr "pCylinder25_parentConstraint1.crz" "bot_bodyRN.phl[528]";
 connectAttr "bot_bodyRN.phl[529]" "pCylinder25_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[530]" "pCylinder25_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[531]" "pCylinder25_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[530]" "pCylinder25_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[531]" "pCylinder25_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[532]" "pCylinder25_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[533]" "pCylinder25_parentConstraint1.crt";
 connectAttr "pCylinder25_scaleConstraint1.csx" "bot_bodyRN.phl[534]";
@@ -31862,8 +31952,8 @@ connectAttr "pCylinder26_parentConstraint1.crx" "bot_bodyRN.phl[541]";
 connectAttr "pCylinder26_parentConstraint1.cry" "bot_bodyRN.phl[542]";
 connectAttr "pCylinder26_parentConstraint1.crz" "bot_bodyRN.phl[543]";
 connectAttr "bot_bodyRN.phl[544]" "pCylinder26_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[545]" "pCylinder26_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[546]" "pCylinder26_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[545]" "pCylinder26_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[546]" "pCylinder26_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[547]" "pCylinder26_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[548]" "pCylinder26_parentConstraint1.crt";
 connectAttr "pCylinder26_scaleConstraint1.csx" "bot_bodyRN.phl[549]";
@@ -31878,8 +31968,8 @@ connectAttr "pCylinder27_parentConstraint1.crx" "bot_bodyRN.phl[556]";
 connectAttr "pCylinder27_parentConstraint1.cry" "bot_bodyRN.phl[557]";
 connectAttr "pCylinder27_parentConstraint1.crz" "bot_bodyRN.phl[558]";
 connectAttr "bot_bodyRN.phl[559]" "pCylinder27_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[560]" "pCylinder27_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[561]" "pCylinder27_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[560]" "pCylinder27_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[561]" "pCylinder27_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[562]" "pCylinder27_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[563]" "pCylinder27_parentConstraint1.crt";
 connectAttr "pCylinder27_scaleConstraint1.csx" "bot_bodyRN.phl[564]";
@@ -31894,8 +31984,8 @@ connectAttr "pCylinder28_parentConstraint1.crx" "bot_bodyRN.phl[571]";
 connectAttr "pCylinder28_parentConstraint1.cry" "bot_bodyRN.phl[572]";
 connectAttr "pCylinder28_parentConstraint1.crz" "bot_bodyRN.phl[573]";
 connectAttr "bot_bodyRN.phl[574]" "pCylinder28_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[575]" "pCylinder28_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[576]" "pCylinder28_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[575]" "pCylinder28_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[576]" "pCylinder28_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[577]" "pCylinder28_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[578]" "pCylinder28_parentConstraint1.crt";
 connectAttr "pCylinder28_scaleConstraint1.csx" "bot_bodyRN.phl[579]";
@@ -31910,8 +32000,8 @@ connectAttr "pCylinder29_parentConstraint1.crx" "bot_bodyRN.phl[586]";
 connectAttr "pCylinder29_parentConstraint1.cry" "bot_bodyRN.phl[587]";
 connectAttr "pCylinder29_parentConstraint1.crz" "bot_bodyRN.phl[588]";
 connectAttr "bot_bodyRN.phl[589]" "pCylinder29_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[590]" "pCylinder29_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[591]" "pCylinder29_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[590]" "pCylinder29_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[591]" "pCylinder29_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[592]" "pCylinder29_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[593]" "pCylinder29_parentConstraint1.crt";
 connectAttr "pCylinder29_scaleConstraint1.csx" "bot_bodyRN.phl[594]";
@@ -31926,8 +32016,8 @@ connectAttr "polySurface5_parentConstraint1.crx" "bot_bodyRN.phl[601]";
 connectAttr "polySurface5_parentConstraint1.cry" "bot_bodyRN.phl[602]";
 connectAttr "polySurface5_parentConstraint1.crz" "bot_bodyRN.phl[603]";
 connectAttr "bot_bodyRN.phl[604]" "polySurface5_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[605]" "polySurface5_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[606]" "polySurface5_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[605]" "polySurface5_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[606]" "polySurface5_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[607]" "polySurface5_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[608]" "polySurface5_parentConstraint1.crt";
 connectAttr "polySurface5_scaleConstraint1.csx" "bot_bodyRN.phl[609]";
@@ -31940,8 +32030,8 @@ connectAttr "pCylinder1_parentConstraint1.crx" "bot_bodyRN.phl[615]";
 connectAttr "pCylinder1_parentConstraint1.cry" "bot_bodyRN.phl[616]";
 connectAttr "pCylinder1_parentConstraint1.crz" "bot_bodyRN.phl[617]";
 connectAttr "bot_bodyRN.phl[618]" "pCylinder1_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[619]" "pCylinder1_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[620]" "pCylinder1_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[619]" "pCylinder1_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[620]" "pCylinder1_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[621]" "pCylinder1_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[622]" "pCylinder1_parentConstraint1.crt";
 connectAttr "pCylinder1_scaleConstraint1.csx" "bot_bodyRN.phl[623]";
@@ -31954,8 +32044,8 @@ connectAttr "pCube12_parentConstraint1.crx" "bot_bodyRN.phl[629]";
 connectAttr "pCube12_parentConstraint1.cry" "bot_bodyRN.phl[630]";
 connectAttr "pCube12_parentConstraint1.crz" "bot_bodyRN.phl[631]";
 connectAttr "bot_bodyRN.phl[632]" "pCube12_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[633]" "pCube12_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[634]" "pCube12_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[633]" "pCube12_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[634]" "pCube12_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[635]" "pCube12_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[636]" "pCube12_parentConstraint1.crt";
 connectAttr "pCube12_scaleConstraint1.csx" "bot_bodyRN.phl[637]";
@@ -31968,8 +32058,8 @@ connectAttr "polySurface10_parentConstraint1.crx" "bot_bodyRN.phl[643]";
 connectAttr "polySurface10_parentConstraint1.cry" "bot_bodyRN.phl[644]";
 connectAttr "polySurface10_parentConstraint1.crz" "bot_bodyRN.phl[645]";
 connectAttr "bot_bodyRN.phl[646]" "polySurface10_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[647]" "polySurface10_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[648]" "polySurface10_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[647]" "polySurface10_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[648]" "polySurface10_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[649]" "polySurface10_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[650]" "polySurface10_parentConstraint1.crt";
 connectAttr "polySurface10_scaleConstraint1.csx" "bot_bodyRN.phl[651]";
@@ -31982,8 +32072,8 @@ connectAttr "polySurface11_parentConstraint1.crx" "bot_bodyRN.phl[657]";
 connectAttr "polySurface11_parentConstraint1.cry" "bot_bodyRN.phl[658]";
 connectAttr "polySurface11_parentConstraint1.crz" "bot_bodyRN.phl[659]";
 connectAttr "bot_bodyRN.phl[660]" "polySurface11_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[661]" "polySurface11_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[662]" "polySurface11_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[661]" "polySurface11_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[662]" "polySurface11_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[663]" "polySurface11_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[664]" "polySurface11_parentConstraint1.crt";
 connectAttr "polySurface11_scaleConstraint1.csx" "bot_bodyRN.phl[665]";
@@ -31996,8 +32086,8 @@ connectAttr "polySurface12_parentConstraint1.crx" "bot_bodyRN.phl[671]";
 connectAttr "polySurface12_parentConstraint1.cry" "bot_bodyRN.phl[672]";
 connectAttr "polySurface12_parentConstraint1.crz" "bot_bodyRN.phl[673]";
 connectAttr "bot_bodyRN.phl[674]" "polySurface12_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[675]" "polySurface12_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[676]" "polySurface12_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[675]" "polySurface12_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[676]" "polySurface12_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[677]" "polySurface12_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[678]" "polySurface12_parentConstraint1.crt";
 connectAttr "polySurface12_scaleConstraint1.csx" "bot_bodyRN.phl[679]";
@@ -32012,8 +32102,8 @@ connectAttr "polySurface14_parentConstraint1.crx" "bot_bodyRN.phl[687]";
 connectAttr "polySurface14_parentConstraint1.cry" "bot_bodyRN.phl[688]";
 connectAttr "polySurface14_parentConstraint1.crz" "bot_bodyRN.phl[689]";
 connectAttr "bot_bodyRN.phl[690]" "polySurface14_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[691]" "polySurface14_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[692]" "polySurface14_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[691]" "polySurface14_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[692]" "polySurface14_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[693]" "polySurface14_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[694]" "polySurface14_parentConstraint1.crt";
 connectAttr "polySurface14_scaleConstraint1.csx" "bot_bodyRN.phl[695]";
@@ -32028,8 +32118,8 @@ connectAttr "pCube13_parentConstraint1.crx" "bot_bodyRN.phl[703]";
 connectAttr "pCube13_parentConstraint1.cry" "bot_bodyRN.phl[704]";
 connectAttr "pCube13_parentConstraint1.crz" "bot_bodyRN.phl[705]";
 connectAttr "bot_bodyRN.phl[706]" "pCube13_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[707]" "pCube13_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[708]" "pCube13_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[707]" "pCube13_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[708]" "pCube13_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[709]" "pCube13_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[710]" "pCube13_parentConstraint1.crt";
 connectAttr "pCube13_scaleConstraint1.csx" "bot_bodyRN.phl[711]";
@@ -32042,8 +32132,8 @@ connectAttr "polySurface4_parentConstraint1.crx" "bot_bodyRN.phl[717]";
 connectAttr "polySurface4_parentConstraint1.cry" "bot_bodyRN.phl[718]";
 connectAttr "polySurface4_parentConstraint1.crz" "bot_bodyRN.phl[719]";
 connectAttr "bot_bodyRN.phl[720]" "polySurface4_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[721]" "polySurface4_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[722]" "polySurface4_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[721]" "polySurface4_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[722]" "polySurface4_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[723]" "polySurface4_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[724]" "polySurface4_parentConstraint1.crt";
 connectAttr "polySurface4_scaleConstraint1.csx" "bot_bodyRN.phl[725]";
@@ -32056,8 +32146,8 @@ connectAttr "pPlane41_parentConstraint1.crx" "bot_bodyRN.phl[731]";
 connectAttr "pPlane41_parentConstraint1.cry" "bot_bodyRN.phl[732]";
 connectAttr "pPlane41_parentConstraint1.crz" "bot_bodyRN.phl[733]";
 connectAttr "bot_bodyRN.phl[734]" "pPlane41_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[735]" "pPlane41_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[736]" "pPlane41_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[735]" "pPlane41_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[736]" "pPlane41_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[737]" "pPlane41_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[738]" "pPlane41_parentConstraint1.crt";
 connectAttr "pPlane41_scaleConstraint1.csx" "bot_bodyRN.phl[739]";
@@ -32070,8 +32160,8 @@ connectAttr "Shoulder_clav_parentConstraint1.crx" "bot_bodyRN.phl[745]";
 connectAttr "Shoulder_clav_parentConstraint1.cry" "bot_bodyRN.phl[746]";
 connectAttr "Shoulder_clav_parentConstraint1.crz" "bot_bodyRN.phl[747]";
 connectAttr "bot_bodyRN.phl[748]" "Shoulder_clav_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[749]" "Shoulder_clav_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[750]" "Shoulder_clav_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[749]" "Shoulder_clav_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[750]" "Shoulder_clav_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[751]" "Shoulder_clav_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[752]" "Shoulder_clav_parentConstraint1.crt";
 connectAttr "Shoulder_clav_scaleConstraint1.csx" "bot_bodyRN.phl[753]";
@@ -32084,8 +32174,8 @@ connectAttr "L_Shold_Pist_Base_parentConstraint2.crx" "bot_bodyRN.phl[759]";
 connectAttr "L_Shold_Pist_Base_parentConstraint2.cry" "bot_bodyRN.phl[760]";
 connectAttr "L_Shold_Pist_Base_parentConstraint2.crz" "bot_bodyRN.phl[761]";
 connectAttr "bot_bodyRN.phl[762]" "L_Shold_Pist_Base_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[763]" "L_Shold_Pist_Base_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[764]" "L_Shold_Pist_Base_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[763]" "L_Shold_Pist_Base_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[764]" "L_Shold_Pist_Base_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[765]" "L_Shold_Pist_Base_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[766]" "L_Shold_Pist_Base_parentConstraint2.crt";
 connectAttr "L_Shold_Pist_Base_scaleConstraint2.csx" "bot_bodyRN.phl[767]";
@@ -32098,8 +32188,8 @@ connectAttr "L_Clav_Pist_Base_parentConstraint2.crx" "bot_bodyRN.phl[773]";
 connectAttr "L_Clav_Pist_Base_parentConstraint2.cry" "bot_bodyRN.phl[774]";
 connectAttr "L_Clav_Pist_Base_parentConstraint2.crz" "bot_bodyRN.phl[775]";
 connectAttr "bot_bodyRN.phl[776]" "L_Clav_Pist_Base_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[777]" "L_Clav_Pist_Base_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[778]" "L_Clav_Pist_Base_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[777]" "L_Clav_Pist_Base_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[778]" "L_Clav_Pist_Base_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[779]" "L_Clav_Pist_Base_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[780]" "L_Clav_Pist_Base_parentConstraint2.crt";
 connectAttr "L_Clav_Pist_Base_scaleConstraint2.csx" "bot_bodyRN.phl[781]";
@@ -32112,8 +32202,8 @@ connectAttr "pCylinder22_parentConstraint2.crx" "bot_bodyRN.phl[787]";
 connectAttr "pCylinder22_parentConstraint2.cry" "bot_bodyRN.phl[788]";
 connectAttr "pCylinder22_parentConstraint2.crz" "bot_bodyRN.phl[789]";
 connectAttr "bot_bodyRN.phl[790]" "pCylinder22_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[791]" "pCylinder22_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[792]" "pCylinder22_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[791]" "pCylinder22_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[792]" "pCylinder22_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[793]" "pCylinder22_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[794]" "pCylinder22_parentConstraint2.crt";
 connectAttr "pCylinder22_scaleConstraint2.csx" "bot_bodyRN.phl[795]";
@@ -32128,8 +32218,8 @@ connectAttr "pCylinder23_parentConstraint2.crx" "bot_bodyRN.phl[802]";
 connectAttr "pCylinder23_parentConstraint2.cry" "bot_bodyRN.phl[803]";
 connectAttr "pCylinder23_parentConstraint2.crz" "bot_bodyRN.phl[804]";
 connectAttr "bot_bodyRN.phl[805]" "pCylinder23_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[806]" "pCylinder23_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[807]" "pCylinder23_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[806]" "pCylinder23_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[807]" "pCylinder23_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[808]" "pCylinder23_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[809]" "pCylinder23_parentConstraint2.crt";
 connectAttr "pCylinder23_scaleConstraint2.csx" "bot_bodyRN.phl[810]";
@@ -32144,8 +32234,8 @@ connectAttr "pCylinder24_parentConstraint2.crx" "bot_bodyRN.phl[817]";
 connectAttr "pCylinder24_parentConstraint2.cry" "bot_bodyRN.phl[818]";
 connectAttr "pCylinder24_parentConstraint2.crz" "bot_bodyRN.phl[819]";
 connectAttr "bot_bodyRN.phl[820]" "pCylinder24_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[821]" "pCylinder24_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[822]" "pCylinder24_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[821]" "pCylinder24_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[822]" "pCylinder24_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[823]" "pCylinder24_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[824]" "pCylinder24_parentConstraint2.crt";
 connectAttr "pCylinder24_scaleConstraint2.csx" "bot_bodyRN.phl[825]";
@@ -32160,8 +32250,8 @@ connectAttr "pCylinder25_parentConstraint2.crx" "bot_bodyRN.phl[832]";
 connectAttr "pCylinder25_parentConstraint2.cry" "bot_bodyRN.phl[833]";
 connectAttr "pCylinder25_parentConstraint2.crz" "bot_bodyRN.phl[834]";
 connectAttr "bot_bodyRN.phl[835]" "pCylinder25_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[836]" "pCylinder25_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[837]" "pCylinder25_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[836]" "pCylinder25_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[837]" "pCylinder25_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[838]" "pCylinder25_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[839]" "pCylinder25_parentConstraint2.crt";
 connectAttr "pCylinder25_scaleConstraint2.csx" "bot_bodyRN.phl[840]";
@@ -32176,8 +32266,8 @@ connectAttr "pCylinder26_parentConstraint2.crx" "bot_bodyRN.phl[847]";
 connectAttr "pCylinder26_parentConstraint2.cry" "bot_bodyRN.phl[848]";
 connectAttr "pCylinder26_parentConstraint2.crz" "bot_bodyRN.phl[849]";
 connectAttr "bot_bodyRN.phl[850]" "pCylinder26_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[851]" "pCylinder26_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[852]" "pCylinder26_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[851]" "pCylinder26_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[852]" "pCylinder26_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[853]" "pCylinder26_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[854]" "pCylinder26_parentConstraint2.crt";
 connectAttr "pCylinder26_scaleConstraint2.csx" "bot_bodyRN.phl[855]";
@@ -32192,8 +32282,8 @@ connectAttr "pCylinder27_parentConstraint2.crx" "bot_bodyRN.phl[862]";
 connectAttr "pCylinder27_parentConstraint2.cry" "bot_bodyRN.phl[863]";
 connectAttr "pCylinder27_parentConstraint2.crz" "bot_bodyRN.phl[864]";
 connectAttr "bot_bodyRN.phl[865]" "pCylinder27_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[866]" "pCylinder27_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[867]" "pCylinder27_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[866]" "pCylinder27_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[867]" "pCylinder27_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[868]" "pCylinder27_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[869]" "pCylinder27_parentConstraint2.crt";
 connectAttr "pCylinder27_scaleConstraint2.csx" "bot_bodyRN.phl[870]";
@@ -32208,8 +32298,8 @@ connectAttr "pCylinder28_parentConstraint2.crx" "bot_bodyRN.phl[877]";
 connectAttr "pCylinder28_parentConstraint2.cry" "bot_bodyRN.phl[878]";
 connectAttr "pCylinder28_parentConstraint2.crz" "bot_bodyRN.phl[879]";
 connectAttr "bot_bodyRN.phl[880]" "pCylinder28_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[881]" "pCylinder28_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[882]" "pCylinder28_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[881]" "pCylinder28_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[882]" "pCylinder28_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[883]" "pCylinder28_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[884]" "pCylinder28_parentConstraint2.crt";
 connectAttr "pCylinder28_scaleConstraint2.csx" "bot_bodyRN.phl[885]";
@@ -32224,8 +32314,8 @@ connectAttr "pCylinder29_parentConstraint2.crx" "bot_bodyRN.phl[892]";
 connectAttr "pCylinder29_parentConstraint2.cry" "bot_bodyRN.phl[893]";
 connectAttr "pCylinder29_parentConstraint2.crz" "bot_bodyRN.phl[894]";
 connectAttr "bot_bodyRN.phl[895]" "pCylinder29_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[896]" "pCylinder29_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[897]" "pCylinder29_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[896]" "pCylinder29_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[897]" "pCylinder29_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[898]" "pCylinder29_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[899]" "pCylinder29_parentConstraint2.crt";
 connectAttr "pCylinder29_scaleConstraint2.csx" "bot_bodyRN.phl[900]";
@@ -32240,8 +32330,8 @@ connectAttr "polySurface5_parentConstraint2.crx" "bot_bodyRN.phl[907]";
 connectAttr "polySurface5_parentConstraint2.cry" "bot_bodyRN.phl[908]";
 connectAttr "polySurface5_parentConstraint2.crz" "bot_bodyRN.phl[909]";
 connectAttr "bot_bodyRN.phl[910]" "polySurface5_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[911]" "polySurface5_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[912]" "polySurface5_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[911]" "polySurface5_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[912]" "polySurface5_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[913]" "polySurface5_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[914]" "polySurface5_parentConstraint2.crt";
 connectAttr "polySurface5_scaleConstraint2.csx" "bot_bodyRN.phl[915]";
@@ -32254,8 +32344,8 @@ connectAttr "pCylinder1_parentConstraint2.crx" "bot_bodyRN.phl[921]";
 connectAttr "pCylinder1_parentConstraint2.cry" "bot_bodyRN.phl[922]";
 connectAttr "pCylinder1_parentConstraint2.crz" "bot_bodyRN.phl[923]";
 connectAttr "bot_bodyRN.phl[924]" "pCylinder1_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[925]" "pCylinder1_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[926]" "pCylinder1_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[925]" "pCylinder1_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[926]" "pCylinder1_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[927]" "pCylinder1_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[928]" "pCylinder1_parentConstraint2.crt";
 connectAttr "pCylinder1_scaleConstraint2.csx" "bot_bodyRN.phl[929]";
@@ -32268,8 +32358,8 @@ connectAttr "pCube12_parentConstraint2.crx" "bot_bodyRN.phl[935]";
 connectAttr "pCube12_parentConstraint2.cry" "bot_bodyRN.phl[936]";
 connectAttr "pCube12_parentConstraint2.crz" "bot_bodyRN.phl[937]";
 connectAttr "bot_bodyRN.phl[938]" "pCube12_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[939]" "pCube12_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[940]" "pCube12_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[939]" "pCube12_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[940]" "pCube12_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[941]" "pCube12_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[942]" "pCube12_parentConstraint2.crt";
 connectAttr "pCube12_scaleConstraint2.csx" "bot_bodyRN.phl[943]";
@@ -32282,8 +32372,8 @@ connectAttr "polySurface15_parentConstraint1.crx" "bot_bodyRN.phl[949]";
 connectAttr "polySurface15_parentConstraint1.cry" "bot_bodyRN.phl[950]";
 connectAttr "polySurface15_parentConstraint1.crz" "bot_bodyRN.phl[951]";
 connectAttr "bot_bodyRN.phl[952]" "polySurface15_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[953]" "polySurface15_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[954]" "polySurface15_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[953]" "polySurface15_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[954]" "polySurface15_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[955]" "polySurface15_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[956]" "polySurface15_parentConstraint1.crt";
 connectAttr "polySurface15_scaleConstraint1.csx" "bot_bodyRN.phl[957]";
@@ -32296,8 +32386,8 @@ connectAttr "polySurface16_parentConstraint1.crx" "bot_bodyRN.phl[963]";
 connectAttr "polySurface16_parentConstraint1.cry" "bot_bodyRN.phl[964]";
 connectAttr "polySurface16_parentConstraint1.crz" "bot_bodyRN.phl[965]";
 connectAttr "bot_bodyRN.phl[966]" "polySurface16_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[967]" "polySurface16_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[968]" "polySurface16_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[967]" "polySurface16_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[968]" "polySurface16_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[969]" "polySurface16_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[970]" "polySurface16_parentConstraint1.crt";
 connectAttr "polySurface16_scaleConstraint1.csx" "bot_bodyRN.phl[971]";
@@ -32310,8 +32400,8 @@ connectAttr "polySurface17_parentConstraint1.crx" "bot_bodyRN.phl[977]";
 connectAttr "polySurface17_parentConstraint1.cry" "bot_bodyRN.phl[978]";
 connectAttr "polySurface17_parentConstraint1.crz" "bot_bodyRN.phl[979]";
 connectAttr "bot_bodyRN.phl[980]" "polySurface17_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[981]" "polySurface17_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[982]" "polySurface17_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[981]" "polySurface17_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[982]" "polySurface17_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[983]" "polySurface17_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[984]" "polySurface17_parentConstraint1.crt";
 connectAttr "polySurface17_scaleConstraint1.csx" "bot_bodyRN.phl[985]";
@@ -32326,8 +32416,8 @@ connectAttr "polySurface19_parentConstraint1.crx" "bot_bodyRN.phl[993]";
 connectAttr "polySurface19_parentConstraint1.cry" "bot_bodyRN.phl[994]";
 connectAttr "polySurface19_parentConstraint1.crz" "bot_bodyRN.phl[995]";
 connectAttr "bot_bodyRN.phl[996]" "polySurface19_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[997]" "polySurface19_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[998]" "polySurface19_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[997]" "polySurface19_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[998]" "polySurface19_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[999]" "polySurface19_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1000]" "polySurface19_parentConstraint1.crt";
 connectAttr "polySurface19_scaleConstraint1.csx" "bot_bodyRN.phl[1001]";
@@ -32342,8 +32432,8 @@ connectAttr "pCube13_parentConstraint2.crx" "bot_bodyRN.phl[1009]";
 connectAttr "pCube13_parentConstraint2.cry" "bot_bodyRN.phl[1010]";
 connectAttr "pCube13_parentConstraint2.crz" "bot_bodyRN.phl[1011]";
 connectAttr "bot_bodyRN.phl[1012]" "pCube13_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1013]" "pCube13_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1014]" "pCube13_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1013]" "pCube13_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1014]" "pCube13_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1015]" "pCube13_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1016]" "pCube13_parentConstraint2.crt";
 connectAttr "pCube13_scaleConstraint2.csx" "bot_bodyRN.phl[1017]";
@@ -32356,8 +32446,8 @@ connectAttr "polySurface4_parentConstraint2.crx" "bot_bodyRN.phl[1023]";
 connectAttr "polySurface4_parentConstraint2.cry" "bot_bodyRN.phl[1024]";
 connectAttr "polySurface4_parentConstraint2.crz" "bot_bodyRN.phl[1025]";
 connectAttr "bot_bodyRN.phl[1026]" "polySurface4_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1027]" "polySurface4_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1028]" "polySurface4_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1027]" "polySurface4_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1028]" "polySurface4_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1029]" "polySurface4_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1030]" "polySurface4_parentConstraint2.crt";
 connectAttr "polySurface4_scaleConstraint2.csx" "bot_bodyRN.phl[1031]";
@@ -32370,8 +32460,8 @@ connectAttr "pPlane41_parentConstraint2.crx" "bot_bodyRN.phl[1037]";
 connectAttr "pPlane41_parentConstraint2.cry" "bot_bodyRN.phl[1038]";
 connectAttr "pPlane41_parentConstraint2.crz" "bot_bodyRN.phl[1039]";
 connectAttr "bot_bodyRN.phl[1040]" "pPlane41_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1041]" "pPlane41_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1042]" "pPlane41_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1041]" "pPlane41_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1042]" "pPlane41_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1043]" "pPlane41_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1044]" "pPlane41_parentConstraint2.crt";
 connectAttr "pPlane41_scaleConstraint2.csx" "bot_bodyRN.phl[1045]";
@@ -32384,8 +32474,8 @@ connectAttr "Shoulder_clav_parentConstraint2.crx" "bot_bodyRN.phl[1051]";
 connectAttr "Shoulder_clav_parentConstraint2.cry" "bot_bodyRN.phl[1052]";
 connectAttr "Shoulder_clav_parentConstraint2.crz" "bot_bodyRN.phl[1053]";
 connectAttr "bot_bodyRN.phl[1054]" "Shoulder_clav_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1055]" "Shoulder_clav_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1056]" "Shoulder_clav_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1055]" "Shoulder_clav_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1056]" "Shoulder_clav_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1057]" "Shoulder_clav_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1058]" "Shoulder_clav_parentConstraint2.crt";
 connectAttr "Shoulder_clav_scaleConstraint2.csx" "bot_bodyRN.phl[1059]";
@@ -32398,8 +32488,8 @@ connectAttr "pCylinder6_parentConstraint1.crx" "bot_bodyRN.phl[1065]";
 connectAttr "pCylinder6_parentConstraint1.cry" "bot_bodyRN.phl[1066]";
 connectAttr "pCylinder6_parentConstraint1.crz" "bot_bodyRN.phl[1067]";
 connectAttr "bot_bodyRN.phl[1068]" "pCylinder6_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1069]" "pCylinder6_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1070]" "pCylinder6_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1069]" "pCylinder6_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1070]" "pCylinder6_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1071]" "pCylinder6_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1072]" "pCylinder6_parentConstraint1.crt";
 connectAttr "pCylinder6_scaleConstraint1.csx" "bot_bodyRN.phl[1073]";
@@ -32412,8 +32502,8 @@ connectAttr "polySurface9_parentConstraint1.crx" "bot_bodyRN.phl[1079]";
 connectAttr "polySurface9_parentConstraint1.cry" "bot_bodyRN.phl[1080]";
 connectAttr "polySurface9_parentConstraint1.crz" "bot_bodyRN.phl[1081]";
 connectAttr "bot_bodyRN.phl[1082]" "polySurface9_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1083]" "polySurface9_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1084]" "polySurface9_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1083]" "polySurface9_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1084]" "polySurface9_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1085]" "polySurface9_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1086]" "polySurface9_parentConstraint1.crt";
 connectAttr "polySurface9_scaleConstraint1.csx" "bot_bodyRN.phl[1087]";
@@ -32427,8 +32517,8 @@ connectAttr "pCylinder9_parentConstraint1.crx" "bot_bodyRN.phl[1094]";
 connectAttr "pCylinder9_parentConstraint1.cry" "bot_bodyRN.phl[1095]";
 connectAttr "pCylinder9_parentConstraint1.crz" "bot_bodyRN.phl[1096]";
 connectAttr "bot_bodyRN.phl[1097]" "pCylinder9_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1098]" "pCylinder9_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1099]" "pCylinder9_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1098]" "pCylinder9_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1099]" "pCylinder9_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1100]" "pCylinder9_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1101]" "pCylinder9_parentConstraint1.crt";
 connectAttr "pCylinder9_scaleConstraint1.csx" "bot_bodyRN.phl[1102]";
@@ -32441,8 +32531,8 @@ connectAttr "polySurface8_parentConstraint1.crx" "bot_bodyRN.phl[1108]";
 connectAttr "polySurface8_parentConstraint1.cry" "bot_bodyRN.phl[1109]";
 connectAttr "polySurface8_parentConstraint1.crz" "bot_bodyRN.phl[1110]";
 connectAttr "bot_bodyRN.phl[1111]" "polySurface8_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1112]" "polySurface8_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1113]" "polySurface8_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1112]" "polySurface8_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1113]" "polySurface8_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1114]" "polySurface8_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1115]" "polySurface8_parentConstraint1.crt";
 connectAttr "polySurface8_scaleConstraint1.csx" "bot_bodyRN.phl[1116]";
@@ -32456,8 +32546,8 @@ connectAttr "pCube23_parentConstraint1.crx" "bot_bodyRN.phl[1123]";
 connectAttr "pCube23_parentConstraint1.cry" "bot_bodyRN.phl[1124]";
 connectAttr "pCube23_parentConstraint1.crz" "bot_bodyRN.phl[1125]";
 connectAttr "bot_bodyRN.phl[1126]" "pCube23_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1127]" "pCube23_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1128]" "pCube23_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1127]" "pCube23_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1128]" "pCube23_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1129]" "pCube23_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1130]" "pCube23_parentConstraint1.crt";
 connectAttr "pCube23_scaleConstraint1.csx" "bot_bodyRN.phl[1131]";
@@ -32470,8 +32560,8 @@ connectAttr "pCylinder7_parentConstraint1.crx" "bot_bodyRN.phl[1137]";
 connectAttr "pCylinder7_parentConstraint1.cry" "bot_bodyRN.phl[1138]";
 connectAttr "pCylinder7_parentConstraint1.crz" "bot_bodyRN.phl[1139]";
 connectAttr "bot_bodyRN.phl[1140]" "pCylinder7_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1141]" "pCylinder7_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1142]" "pCylinder7_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1141]" "pCylinder7_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1142]" "pCylinder7_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1143]" "pCylinder7_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1144]" "pCylinder7_parentConstraint1.crt";
 connectAttr "pCylinder7_scaleConstraint1.csx" "bot_bodyRN.phl[1145]";
@@ -32485,8 +32575,8 @@ connectAttr "pCube24_parentConstraint1.crx" "bot_bodyRN.phl[1152]";
 connectAttr "pCube24_parentConstraint1.cry" "bot_bodyRN.phl[1153]";
 connectAttr "pCube24_parentConstraint1.crz" "bot_bodyRN.phl[1154]";
 connectAttr "bot_bodyRN.phl[1155]" "pCube24_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1156]" "pCube24_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1157]" "pCube24_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1156]" "pCube24_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1157]" "pCube24_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1158]" "pCube24_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1159]" "pCube24_parentConstraint1.crt";
 connectAttr "pCube24_scaleConstraint1.csx" "bot_bodyRN.phl[1160]";
@@ -32499,8 +32589,8 @@ connectAttr "polySurface6_parentConstraint1.crx" "bot_bodyRN.phl[1166]";
 connectAttr "polySurface6_parentConstraint1.cry" "bot_bodyRN.phl[1167]";
 connectAttr "polySurface6_parentConstraint1.crz" "bot_bodyRN.phl[1168]";
 connectAttr "bot_bodyRN.phl[1169]" "polySurface6_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1170]" "polySurface6_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1171]" "polySurface6_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1170]" "polySurface6_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1171]" "polySurface6_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1172]" "polySurface6_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1173]" "polySurface6_parentConstraint1.crt";
 connectAttr "polySurface6_scaleConstraint1.csx" "bot_bodyRN.phl[1174]";
@@ -32514,8 +32604,8 @@ connectAttr "pCylinder8_parentConstraint1.crx" "bot_bodyRN.phl[1181]";
 connectAttr "pCylinder8_parentConstraint1.cry" "bot_bodyRN.phl[1182]";
 connectAttr "pCylinder8_parentConstraint1.crz" "bot_bodyRN.phl[1183]";
 connectAttr "bot_bodyRN.phl[1184]" "pCylinder8_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1185]" "pCylinder8_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1186]" "pCylinder8_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1185]" "pCylinder8_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1186]" "pCylinder8_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1187]" "pCylinder8_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1188]" "pCylinder8_parentConstraint1.crt";
 connectAttr "pCylinder8_scaleConstraint1.csx" "bot_bodyRN.phl[1189]";
@@ -32529,8 +32619,8 @@ connectAttr "pCube25_parentConstraint1.crx" "bot_bodyRN.phl[1196]";
 connectAttr "pCube25_parentConstraint1.cry" "bot_bodyRN.phl[1197]";
 connectAttr "pCube25_parentConstraint1.crz" "bot_bodyRN.phl[1198]";
 connectAttr "bot_bodyRN.phl[1199]" "pCube25_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1200]" "pCube25_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1201]" "pCube25_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1200]" "pCube25_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1201]" "pCube25_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1202]" "pCube25_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1203]" "pCube25_parentConstraint1.crt";
 connectAttr "pCube25_scaleConstraint1.csx" "bot_bodyRN.phl[1204]";
@@ -32543,8 +32633,8 @@ connectAttr "pPlane45_parentConstraint1.ctx" "bot_bodyRN.phl[1210]";
 connectAttr "pPlane45_parentConstraint1.cty" "bot_bodyRN.phl[1211]";
 connectAttr "pPlane45_parentConstraint1.ctz" "bot_bodyRN.phl[1212]";
 connectAttr "bot_bodyRN.phl[1213]" "pPlane45_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1214]" "pPlane45_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1215]" "pPlane45_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1214]" "pPlane45_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1215]" "pPlane45_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1216]" "pPlane45_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1217]" "pPlane45_parentConstraint1.crt";
 connectAttr "pPlane45_scaleConstraint1.csx" "bot_bodyRN.phl[1218]";
@@ -32557,8 +32647,8 @@ connectAttr "pCube22_parentConstraint1.crx" "bot_bodyRN.phl[1224]";
 connectAttr "pCube22_parentConstraint1.cry" "bot_bodyRN.phl[1225]";
 connectAttr "pCube22_parentConstraint1.crz" "bot_bodyRN.phl[1226]";
 connectAttr "bot_bodyRN.phl[1227]" "pCube22_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1228]" "pCube22_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1229]" "pCube22_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1228]" "pCube22_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1229]" "pCube22_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1230]" "pCube22_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1231]" "pCube22_parentConstraint1.crt";
 connectAttr "pCube22_scaleConstraint1.csx" "bot_bodyRN.phl[1232]";
@@ -32571,8 +32661,8 @@ connectAttr "pCylinder4_parentConstraint3.crx" "bot_bodyRN.phl[1238]";
 connectAttr "pCylinder4_parentConstraint3.cry" "bot_bodyRN.phl[1239]";
 connectAttr "pCylinder4_parentConstraint3.crz" "bot_bodyRN.phl[1240]";
 connectAttr "bot_bodyRN.phl[1241]" "pCylinder4_parentConstraint3.cro";
-connectAttr "bot_bodyRN.phl[1242]" "pCylinder4_scaleConstraint3.cpim";
-connectAttr "bot_bodyRN.phl[1243]" "pCylinder4_parentConstraint3.cpim";
+connectAttr "bot_bodyRN.phl[1242]" "pCylinder4_parentConstraint3.cpim";
+connectAttr "bot_bodyRN.phl[1243]" "pCylinder4_scaleConstraint3.cpim";
 connectAttr "bot_bodyRN.phl[1244]" "pCylinder4_parentConstraint3.crp";
 connectAttr "bot_bodyRN.phl[1245]" "pCylinder4_parentConstraint3.crt";
 connectAttr "pCylinder4_scaleConstraint3.csx" "bot_bodyRN.phl[1246]";
@@ -32585,8 +32675,8 @@ connectAttr "pCylinder5_parentConstraint1.crx" "bot_bodyRN.phl[1252]";
 connectAttr "pCylinder5_parentConstraint1.cry" "bot_bodyRN.phl[1253]";
 connectAttr "pCylinder5_parentConstraint1.crz" "bot_bodyRN.phl[1254]";
 connectAttr "bot_bodyRN.phl[1255]" "pCylinder5_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1256]" "pCylinder5_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1257]" "pCylinder5_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1256]" "pCylinder5_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1257]" "pCylinder5_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1258]" "pCylinder5_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1259]" "pCylinder5_parentConstraint1.crt";
 connectAttr "pCylinder5_scaleConstraint1.csx" "bot_bodyRN.phl[1260]";
@@ -32599,8 +32689,8 @@ connectAttr "pCube21_parentConstraint1.crx" "bot_bodyRN.phl[1266]";
 connectAttr "pCube21_parentConstraint1.cry" "bot_bodyRN.phl[1267]";
 connectAttr "pCube21_parentConstraint1.crz" "bot_bodyRN.phl[1268]";
 connectAttr "bot_bodyRN.phl[1269]" "pCube21_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1270]" "pCube21_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1271]" "pCube21_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1270]" "pCube21_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1271]" "pCube21_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1272]" "pCube21_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1273]" "pCube21_parentConstraint1.crt";
 connectAttr "pCube21_scaleConstraint1.csx" "bot_bodyRN.phl[1274]";
@@ -32613,8 +32703,8 @@ connectAttr "pCylinder3_parentConstraint1.crx" "bot_bodyRN.phl[1280]";
 connectAttr "pCylinder3_parentConstraint1.cry" "bot_bodyRN.phl[1281]";
 connectAttr "pCylinder3_parentConstraint1.crz" "bot_bodyRN.phl[1282]";
 connectAttr "bot_bodyRN.phl[1283]" "pCylinder3_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1284]" "pCylinder3_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1285]" "pCylinder3_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1284]" "pCylinder3_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1285]" "pCylinder3_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1286]" "pCylinder3_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1287]" "pCylinder3_parentConstraint1.crt";
 connectAttr "pCylinder3_scaleConstraint1.csx" "bot_bodyRN.phl[1288]";
@@ -32627,8 +32717,8 @@ connectAttr "pCylinder2_parentConstraint1.crx" "bot_bodyRN.phl[1294]";
 connectAttr "pCylinder2_parentConstraint1.cry" "bot_bodyRN.phl[1295]";
 connectAttr "pCylinder2_parentConstraint1.crz" "bot_bodyRN.phl[1296]";
 connectAttr "bot_bodyRN.phl[1297]" "pCylinder2_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1298]" "pCylinder2_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1299]" "pCylinder2_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1298]" "pCylinder2_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1299]" "pCylinder2_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1300]" "pCylinder2_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1301]" "pCylinder2_parentConstraint1.crt";
 connectAttr "pCylinder2_scaleConstraint1.csx" "bot_bodyRN.phl[1302]";
@@ -32641,8 +32731,8 @@ connectAttr "pCube20_parentConstraint1.crx" "bot_bodyRN.phl[1308]";
 connectAttr "pCube20_parentConstraint1.cry" "bot_bodyRN.phl[1309]";
 connectAttr "pCube20_parentConstraint1.crz" "bot_bodyRN.phl[1310]";
 connectAttr "bot_bodyRN.phl[1311]" "pCube20_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1312]" "pCube20_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1313]" "pCube20_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1312]" "pCube20_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1313]" "pCube20_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1314]" "pCube20_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1315]" "pCube20_parentConstraint1.crt";
 connectAttr "pCube20_scaleConstraint1.csx" "bot_bodyRN.phl[1316]";
@@ -32655,8 +32745,8 @@ connectAttr "pSuperShape1_parentConstraint1.crx" "bot_bodyRN.phl[1322]";
 connectAttr "pSuperShape1_parentConstraint1.cry" "bot_bodyRN.phl[1323]";
 connectAttr "pSuperShape1_parentConstraint1.crz" "bot_bodyRN.phl[1324]";
 connectAttr "bot_bodyRN.phl[1325]" "pSuperShape1_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1326]" "pSuperShape1_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1327]" "pSuperShape1_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1326]" "pSuperShape1_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1327]" "pSuperShape1_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[1328]" "pSuperShape1_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[1329]" "pSuperShape1_parentConstraint1.crt";
 connectAttr "pSuperShape1_scaleConstraint1.csx" "bot_bodyRN.phl[1330]";
@@ -32669,8 +32759,8 @@ connectAttr "pCylinder6_parentConstraint2.crx" "bot_bodyRN.phl[1336]";
 connectAttr "pCylinder6_parentConstraint2.cry" "bot_bodyRN.phl[1337]";
 connectAttr "pCylinder6_parentConstraint2.crz" "bot_bodyRN.phl[1338]";
 connectAttr "bot_bodyRN.phl[1339]" "pCylinder6_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1340]" "pCylinder6_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1341]" "pCylinder6_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1340]" "pCylinder6_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1341]" "pCylinder6_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1342]" "pCylinder6_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1343]" "pCylinder6_parentConstraint2.crt";
 connectAttr "pCylinder6_scaleConstraint2.csx" "bot_bodyRN.phl[1344]";
@@ -32683,8 +32773,8 @@ connectAttr "polySurface9_parentConstraint2.crx" "bot_bodyRN.phl[1350]";
 connectAttr "polySurface9_parentConstraint2.cry" "bot_bodyRN.phl[1351]";
 connectAttr "polySurface9_parentConstraint2.crz" "bot_bodyRN.phl[1352]";
 connectAttr "bot_bodyRN.phl[1353]" "polySurface9_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1354]" "polySurface9_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1355]" "polySurface9_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1354]" "polySurface9_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1355]" "polySurface9_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1356]" "polySurface9_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1357]" "polySurface9_parentConstraint2.crt";
 connectAttr "polySurface9_scaleConstraint2.csx" "bot_bodyRN.phl[1358]";
@@ -32697,8 +32787,8 @@ connectAttr "pCylinder9_parentConstraint2.crx" "bot_bodyRN.phl[1364]";
 connectAttr "pCylinder9_parentConstraint2.cry" "bot_bodyRN.phl[1365]";
 connectAttr "pCylinder9_parentConstraint2.crz" "bot_bodyRN.phl[1366]";
 connectAttr "bot_bodyRN.phl[1367]" "pCylinder9_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1368]" "pCylinder9_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1369]" "pCylinder9_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1368]" "pCylinder9_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1369]" "pCylinder9_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1370]" "pCylinder9_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1371]" "pCylinder9_parentConstraint2.crt";
 connectAttr "pCylinder9_scaleConstraint2.csx" "bot_bodyRN.phl[1372]";
@@ -32711,8 +32801,8 @@ connectAttr "polySurface8_parentConstraint2.crx" "bot_bodyRN.phl[1378]";
 connectAttr "polySurface8_parentConstraint2.cry" "bot_bodyRN.phl[1379]";
 connectAttr "polySurface8_parentConstraint2.crz" "bot_bodyRN.phl[1380]";
 connectAttr "bot_bodyRN.phl[1381]" "polySurface8_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1382]" "polySurface8_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1383]" "polySurface8_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1382]" "polySurface8_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1383]" "polySurface8_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1384]" "polySurface8_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1385]" "polySurface8_parentConstraint2.crt";
 connectAttr "polySurface8_scaleConstraint2.csx" "bot_bodyRN.phl[1386]";
@@ -32725,8 +32815,8 @@ connectAttr "pCube23_parentConstraint2.crx" "bot_bodyRN.phl[1392]";
 connectAttr "pCube23_parentConstraint2.cry" "bot_bodyRN.phl[1393]";
 connectAttr "pCube23_parentConstraint2.crz" "bot_bodyRN.phl[1394]";
 connectAttr "bot_bodyRN.phl[1395]" "pCube23_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1396]" "pCube23_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1397]" "pCube23_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1396]" "pCube23_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1397]" "pCube23_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1398]" "pCube23_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1399]" "pCube23_parentConstraint2.crt";
 connectAttr "pCube23_scaleConstraint2.csx" "bot_bodyRN.phl[1400]";
@@ -32739,8 +32829,8 @@ connectAttr "pCylinder7_parentConstraint2.crx" "bot_bodyRN.phl[1406]";
 connectAttr "pCylinder7_parentConstraint2.cry" "bot_bodyRN.phl[1407]";
 connectAttr "pCylinder7_parentConstraint2.crz" "bot_bodyRN.phl[1408]";
 connectAttr "bot_bodyRN.phl[1409]" "pCylinder7_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1410]" "pCylinder7_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1411]" "pCylinder7_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1410]" "pCylinder7_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1411]" "pCylinder7_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1412]" "pCylinder7_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1413]" "pCylinder7_parentConstraint2.crt";
 connectAttr "pCylinder7_scaleConstraint2.csx" "bot_bodyRN.phl[1414]";
@@ -32753,8 +32843,8 @@ connectAttr "pCube24_parentConstraint2.crx" "bot_bodyRN.phl[1420]";
 connectAttr "pCube24_parentConstraint2.cry" "bot_bodyRN.phl[1421]";
 connectAttr "pCube24_parentConstraint2.crz" "bot_bodyRN.phl[1422]";
 connectAttr "bot_bodyRN.phl[1423]" "pCube24_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1424]" "pCube24_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1425]" "pCube24_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1424]" "pCube24_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1425]" "pCube24_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1426]" "pCube24_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1427]" "pCube24_parentConstraint2.crt";
 connectAttr "pCube24_scaleConstraint2.csx" "bot_bodyRN.phl[1428]";
@@ -32767,8 +32857,8 @@ connectAttr "polySurface6_parentConstraint2.crx" "bot_bodyRN.phl[1434]";
 connectAttr "polySurface6_parentConstraint2.cry" "bot_bodyRN.phl[1435]";
 connectAttr "polySurface6_parentConstraint2.crz" "bot_bodyRN.phl[1436]";
 connectAttr "bot_bodyRN.phl[1437]" "polySurface6_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1438]" "polySurface6_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1439]" "polySurface6_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1438]" "polySurface6_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1439]" "polySurface6_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1440]" "polySurface6_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1441]" "polySurface6_parentConstraint2.crt";
 connectAttr "polySurface6_scaleConstraint2.csx" "bot_bodyRN.phl[1442]";
@@ -32781,8 +32871,8 @@ connectAttr "pCylinder8_parentConstraint2.crx" "bot_bodyRN.phl[1448]";
 connectAttr "pCylinder8_parentConstraint2.cry" "bot_bodyRN.phl[1449]";
 connectAttr "pCylinder8_parentConstraint2.crz" "bot_bodyRN.phl[1450]";
 connectAttr "bot_bodyRN.phl[1451]" "pCylinder8_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1452]" "pCylinder8_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1453]" "pCylinder8_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1452]" "pCylinder8_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1453]" "pCylinder8_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1454]" "pCylinder8_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1455]" "pCylinder8_parentConstraint2.crt";
 connectAttr "pCylinder8_scaleConstraint2.csx" "bot_bodyRN.phl[1456]";
@@ -32795,8 +32885,8 @@ connectAttr "pCube25_parentConstraint2.crx" "bot_bodyRN.phl[1462]";
 connectAttr "pCube25_parentConstraint2.cry" "bot_bodyRN.phl[1463]";
 connectAttr "pCube25_parentConstraint2.crz" "bot_bodyRN.phl[1464]";
 connectAttr "bot_bodyRN.phl[1465]" "pCube25_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1466]" "pCube25_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1467]" "pCube25_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1466]" "pCube25_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1467]" "pCube25_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1468]" "pCube25_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1469]" "pCube25_parentConstraint2.crt";
 connectAttr "pCube25_scaleConstraint2.csx" "bot_bodyRN.phl[1470]";
@@ -32809,8 +32899,8 @@ connectAttr "pPlane45_parentConstraint2.crx" "bot_bodyRN.phl[1476]";
 connectAttr "pPlane45_parentConstraint2.cry" "bot_bodyRN.phl[1477]";
 connectAttr "pPlane45_parentConstraint2.crz" "bot_bodyRN.phl[1478]";
 connectAttr "bot_bodyRN.phl[1479]" "pPlane45_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1480]" "pPlane45_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1481]" "pPlane45_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1480]" "pPlane45_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1481]" "pPlane45_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1482]" "pPlane45_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1483]" "pPlane45_parentConstraint2.crt";
 connectAttr "pPlane45_scaleConstraint2.csx" "bot_bodyRN.phl[1484]";
@@ -32823,8 +32913,8 @@ connectAttr "pCube22_parentConstraint2.crx" "bot_bodyRN.phl[1490]";
 connectAttr "pCube22_parentConstraint2.cry" "bot_bodyRN.phl[1491]";
 connectAttr "pCube22_parentConstraint2.crz" "bot_bodyRN.phl[1492]";
 connectAttr "bot_bodyRN.phl[1493]" "pCube22_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1494]" "pCube22_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1495]" "pCube22_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1494]" "pCube22_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1495]" "pCube22_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1496]" "pCube22_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1497]" "pCube22_parentConstraint2.crt";
 connectAttr "pCube22_scaleConstraint2.csx" "bot_bodyRN.phl[1498]";
@@ -32837,8 +32927,8 @@ connectAttr "pCylinder4_parentConstraint2.crx" "bot_bodyRN.phl[1504]";
 connectAttr "pCylinder4_parentConstraint2.cry" "bot_bodyRN.phl[1505]";
 connectAttr "pCylinder4_parentConstraint2.crz" "bot_bodyRN.phl[1506]";
 connectAttr "bot_bodyRN.phl[1507]" "pCylinder4_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1508]" "pCylinder4_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1509]" "pCylinder4_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1508]" "pCylinder4_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1509]" "pCylinder4_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1510]" "pCylinder4_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1511]" "pCylinder4_parentConstraint2.crt";
 connectAttr "pCylinder4_scaleConstraint2.csx" "bot_bodyRN.phl[1512]";
@@ -32851,8 +32941,8 @@ connectAttr "pCylinder5_parentConstraint2.crx" "bot_bodyRN.phl[1518]";
 connectAttr "pCylinder5_parentConstraint2.cry" "bot_bodyRN.phl[1519]";
 connectAttr "pCylinder5_parentConstraint2.crz" "bot_bodyRN.phl[1520]";
 connectAttr "bot_bodyRN.phl[1521]" "pCylinder5_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1522]" "pCylinder5_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1523]" "pCylinder5_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1522]" "pCylinder5_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1523]" "pCylinder5_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1524]" "pCylinder5_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1525]" "pCylinder5_parentConstraint2.crt";
 connectAttr "pCylinder5_scaleConstraint2.csx" "bot_bodyRN.phl[1526]";
@@ -32865,8 +32955,8 @@ connectAttr "pCube21_parentConstraint2.crx" "bot_bodyRN.phl[1532]";
 connectAttr "pCube21_parentConstraint2.cry" "bot_bodyRN.phl[1533]";
 connectAttr "pCube21_parentConstraint2.crz" "bot_bodyRN.phl[1534]";
 connectAttr "bot_bodyRN.phl[1535]" "pCube21_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1536]" "pCube21_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1537]" "pCube21_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1536]" "pCube21_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1537]" "pCube21_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1538]" "pCube21_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1539]" "pCube21_parentConstraint2.crt";
 connectAttr "pCube21_scaleConstraint2.csx" "bot_bodyRN.phl[1540]";
@@ -32879,8 +32969,8 @@ connectAttr "pCylinder3_parentConstraint2.crx" "bot_bodyRN.phl[1546]";
 connectAttr "pCylinder3_parentConstraint2.cry" "bot_bodyRN.phl[1547]";
 connectAttr "pCylinder3_parentConstraint2.crz" "bot_bodyRN.phl[1548]";
 connectAttr "bot_bodyRN.phl[1549]" "pCylinder3_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1550]" "pCylinder3_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1551]" "pCylinder3_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1550]" "pCylinder3_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1551]" "pCylinder3_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1552]" "pCylinder3_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1553]" "pCylinder3_parentConstraint2.crt";
 connectAttr "pCylinder3_scaleConstraint2.csx" "bot_bodyRN.phl[1554]";
@@ -32893,8 +32983,8 @@ connectAttr "pCylinder2_parentConstraint2.crx" "bot_bodyRN.phl[1560]";
 connectAttr "pCylinder2_parentConstraint2.cry" "bot_bodyRN.phl[1561]";
 connectAttr "pCylinder2_parentConstraint2.crz" "bot_bodyRN.phl[1562]";
 connectAttr "bot_bodyRN.phl[1563]" "pCylinder2_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1564]" "pCylinder2_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1565]" "pCylinder2_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1564]" "pCylinder2_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1565]" "pCylinder2_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1566]" "pCylinder2_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1567]" "pCylinder2_parentConstraint2.crt";
 connectAttr "pCylinder2_scaleConstraint2.csx" "bot_bodyRN.phl[1568]";
@@ -32907,8 +32997,8 @@ connectAttr "pCube20_parentConstraint2.crx" "bot_bodyRN.phl[1574]";
 connectAttr "pCube20_parentConstraint2.cry" "bot_bodyRN.phl[1575]";
 connectAttr "pCube20_parentConstraint2.crz" "bot_bodyRN.phl[1576]";
 connectAttr "bot_bodyRN.phl[1577]" "pCube20_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1578]" "pCube20_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1579]" "pCube20_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1578]" "pCube20_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1579]" "pCube20_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1580]" "pCube20_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1581]" "pCube20_parentConstraint2.crt";
 connectAttr "pCube20_scaleConstraint2.csx" "bot_bodyRN.phl[1582]";
@@ -32921,8 +33011,8 @@ connectAttr "pSuperShape1_parentConstraint2.crx" "bot_bodyRN.phl[1588]";
 connectAttr "pSuperShape1_parentConstraint2.cry" "bot_bodyRN.phl[1589]";
 connectAttr "pSuperShape1_parentConstraint2.crz" "bot_bodyRN.phl[1590]";
 connectAttr "bot_bodyRN.phl[1591]" "pSuperShape1_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1592]" "pSuperShape1_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1593]" "pSuperShape1_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1592]" "pSuperShape1_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1593]" "pSuperShape1_scaleConstraint2.cpim";
 connectAttr "bot_bodyRN.phl[1594]" "pSuperShape1_parentConstraint2.crp";
 connectAttr "bot_bodyRN.phl[1595]" "pSuperShape1_parentConstraint2.crt";
 connectAttr "pSuperShape1_scaleConstraint2.csx" "bot_bodyRN.phl[1596]";
@@ -33197,10 +33287,10 @@ connectAttr "L_FK_Hip_Ctrl.s" "L_FK_Leg_01_Jnt_scaleConstraint1.tg[0].ts";
 connectAttr "L_FK_Hip_Ctrl.pm" "L_FK_Leg_01_Jnt_scaleConstraint1.tg[0].tpm";
 connectAttr "L_FK_Leg_01_Jnt_scaleConstraint1.w0" "L_FK_Leg_01_Jnt_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Hip_Jnt.s" "L_IK_Leg_01_Jnt.is";
 connectAttr "L_IK_Leg_01_Jnt_pointConstraint1.ctx" "L_IK_Leg_01_Jnt.tx";
 connectAttr "L_IK_Leg_01_Jnt_pointConstraint1.cty" "L_IK_Leg_01_Jnt.ty";
 connectAttr "L_IK_Leg_01_Jnt_pointConstraint1.ctz" "L_IK_Leg_01_Jnt.tz";
+connectAttr "Hip_Jnt.s" "L_IK_Leg_01_Jnt.is";
 connectAttr "L_IK_Leg_01_Jnt.s" "L_IK_Leg_02_Jnt.is";
 connectAttr "L_IK_Leg_02_Jnt.s" "L_IK_Leg_03_Jnt.is";
 connectAttr "L_IK_Leg_03_Jnt.s" "L_IK_Leg_04_Jnt.is";
@@ -36127,17 +36217,29 @@ connectAttr "R_Pist_Base_4_aimConstraint1.w0" "R_Pist_Base_4_aimConstraint1.tg[0
 		;
 connectAttr "R_Pist_Base_4_Up.wm" "R_Pist_Base_4_aimConstraint1.wum";
 connectAttr "Cable_IK_Spline_01.s" "Cable_IK_Spline_02.is";
+connectAttr "Cable_IK_Spline_02_Length_MD.ox" "Cable_IK_Spline_02.tx";
 connectAttr "Cable_IK_Spline_02.s" "Cable_IK_Spline_03.is";
+connectAttr "Cable_IK_Spline_03_Length_MD.ox" "Cable_IK_Spline_03.tx";
 connectAttr "Cable_IK_Spline_03.s" "Cable_IK_Spline_04.is";
+connectAttr "Cable_IK_Spline_04_Length_MD.ox" "Cable_IK_Spline_04.tx";
 connectAttr "Cable_IK_Spline_04.s" "Cable_IK_Spline_05.is";
+connectAttr "Cable_IK_Spline_05_Length_MD.ox" "Cable_IK_Spline_05.tx";
 connectAttr "Cable_IK_Spline_05.s" "Cable_IK_Spline_06.is";
+connectAttr "Cable_IK_Spline_06_Length_MD.ox" "Cable_IK_Spline_06.tx";
 connectAttr "Cable_IK_Spline_06.s" "Cable_IK_Spline_07.is";
+connectAttr "Cable_IK_Spline_07_Length_MD.ox" "Cable_IK_Spline_07.tx";
 connectAttr "Cable_IK_Spline_07.s" "Cable_IK_Spline_08.is";
+connectAttr "Cable_IK_Spline_08_Length_MD.ox" "Cable_IK_Spline_08.tx";
 connectAttr "Cable_IK_Spline_08.s" "Cable_IK_Spline_09.is";
+connectAttr "Cable_IK_Spline_09_Length_MD.ox" "Cable_IK_Spline_09.tx";
 connectAttr "Cable_IK_Spline_09.s" "Cable_IK_Spline_10.is";
+connectAttr "Cable_IK_Spline_10_Length_MD.ox" "Cable_IK_Spline_10.tx";
 connectAttr "Cable_IK_Spline_10.s" "Cable_IK_Spline_11.is";
+connectAttr "Cable_IK_Spline_11_Length_MD.ox" "Cable_IK_Spline_11.tx";
 connectAttr "Cable_IK_Spline_11.s" "Cable_IK_Spline_12.is";
+connectAttr "Cable_IK_Spline_12_Length_MD.ox" "Cable_IK_Spline_12.tx";
 connectAttr "Cable_IK_Spline_12.s" "Cable_IK_Spline_13.is";
+connectAttr "Cable_IK_Spline_13_Length_MD.ox" "Cable_IK_Spline_13.tx";
 connectAttr "Cable_IK_Spline_13.tx" "effector20.tx";
 connectAttr "Cable_IK_Spline_13.ty" "effector20.ty";
 connectAttr "Cable_IK_Spline_13.tz" "effector20.tz";
@@ -43825,6 +43927,7 @@ connectAttr "L_RK_Arm_Rot_Jnt.liw" "skinCluster3.lw[0]";
 connectAttr "L_Hand_0.liw" "skinCluster3.lw[1]";
 connectAttr "L_RK_Arm_Rot_Jnt.obcc" "skinCluster3.ifcl[0]";
 connectAttr "L_Hand_0.obcc" "skinCluster3.ifcl[1]";
+connectAttr "L_RK_Arm_Rot_Jnt.msg" "skinCluster3.ptt";
 connectAttr "Bot.msg" "bindPose2.m[0]";
 connectAttr "ROOT.msg" "bindPose2.m[1]";
 connectAttr "Cog_Jnt.msg" "bindPose2.m[2]";
@@ -43917,6 +44020,7 @@ connectAttr "R_RK_Arm_Rot_Jnt.liw" "skinCluster5.lw[0]";
 connectAttr "R_Hand_0.liw" "skinCluster5.lw[1]";
 connectAttr "R_RK_Arm_Rot_Jnt.obcc" "skinCluster5.ifcl[0]";
 connectAttr "R_Hand_0.obcc" "skinCluster5.ifcl[1]";
+connectAttr "R_RK_Arm_Rot_Jnt.msg" "skinCluster5.ptt";
 connectAttr "Bot.msg" "bindPose3.m[0]";
 connectAttr "ROOT.msg" "bindPose3.m[1]";
 connectAttr "Cog_Jnt.msg" "bindPose3.m[2]";
@@ -44039,6 +44143,42 @@ connectAttr "bindPose4.m[8]" "bindPose4.p[9]";
 connectAttr "bindPose4.m[6]" "bindPose4.p[10]";
 connectAttr "bindPose4.m[10]" "bindPose4.p[11]";
 connectAttr "bindPose4.m[6]" "bindPose4.p[12]";
+connectAttr "Cable_Spline_Curve_Ratio_MD.ox" "Cable_IK_Spline_02_Length_MD.i2x";
+connectAttr "Cable_Spline_Curve_Ratio_MD.ox" "Cable_IK_Spline_03_Length_MD.i2x";
+connectAttr "Cable_Spline_Curve_Ratio_MD.ox" "Cable_IK_Spline_04_Length_MD.i2x";
+connectAttr "Cable_Spline_Curve_Ratio_MD.ox" "Cable_IK_Spline_05_Length_MD.i2x";
+connectAttr "Cable_Spline_Curve_Ratio_MD.ox" "Cable_IK_Spline_06_Length_MD.i2x";
+connectAttr "Cable_Spline_Curve_Ratio_MD.ox" "Cable_IK_Spline_07_Length_MD.i2x";
+connectAttr "Cable_Spline_Curve_Ratio_MD.ox" "Cable_IK_Spline_08_Length_MD.i2x";
+connectAttr "Cable_Spline_Curve_Ratio_MD.ox" "Cable_IK_Spline_09_Length_MD.i2x";
+connectAttr "Cable_Spline_Curve_Ratio_MD.ox" "Cable_IK_Spline_10_Length_MD.i2x";
+connectAttr "Cable_Spline_Curve_Ratio_MD.ox" "Cable_IK_Spline_11_Length_MD.i2x";
+connectAttr "Cable_Spline_Curve_Ratio_MD.ox" "Cable_IK_Spline_12_Length_MD.i2x";
+connectAttr "Cable_Spline_Curve_Ratio_MD.ox" "Cable_IK_Spline_13_Length_MD.i2x";
+connectAttr "Cable_Spline_CurveShape.l" "Cable_Spline_Curve_Curve_info.ic";
+connectAttr "Cable_Spline_Curve_Curve_info.al" "Cable_Spline_Curve_Ratio_MD.i1x"
+		;
+connectAttr "Cable_Spline_Curve_Curve_info.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "Cable_Head_Base_Jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "skinCluster7.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[2].dn";
+connectAttr "Cable_IK_Spline_13.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "Cable_Spline_CurveShapeOrig.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "Cable_Torso_Base_Jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "Cable_Spline_Curve_Ratio_MD.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "Cable_Mid_Jnt.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[7].dn";
+connectAttr "Cable_Spline_CurveShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "Cable_IK_Spline_13_Length_MD.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "effector20.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[10].dn";
+connectAttr "Cable_IK_Spline_12.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+		;
 connectAttr "L_Pist_Rot_Rev.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "R_Pist_Rot_Rev.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "L_IK_Len_Ratio_MD.msg" ":defaultRenderUtilityList1.u" -na;
@@ -44052,6 +44192,34 @@ connectAttr "L_Arm_IKFKRev.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "R_Arm_IKFKRev.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "L_Leg_IKFKRev.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "R_Leg_IKFKRev.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "Cable_IK_Spline_02_Length_MD.msg" ":defaultRenderUtilityList1.u" -na
+		;
+connectAttr "Cable_IK_Spline_03_Length_MD.msg" ":defaultRenderUtilityList1.u" -na
+		;
+connectAttr "Cable_IK_Spline_04_Length_MD.msg" ":defaultRenderUtilityList1.u" -na
+		;
+connectAttr "Cable_IK_Spline_05_Length_MD.msg" ":defaultRenderUtilityList1.u" -na
+		;
+connectAttr "Cable_IK_Spline_06_Length_MD.msg" ":defaultRenderUtilityList1.u" -na
+		;
+connectAttr "Cable_IK_Spline_07_Length_MD.msg" ":defaultRenderUtilityList1.u" -na
+		;
+connectAttr "Cable_IK_Spline_08_Length_MD.msg" ":defaultRenderUtilityList1.u" -na
+		;
+connectAttr "Cable_IK_Spline_09_Length_MD.msg" ":defaultRenderUtilityList1.u" -na
+		;
+connectAttr "Cable_IK_Spline_10_Length_MD.msg" ":defaultRenderUtilityList1.u" -na
+		;
+connectAttr "Cable_IK_Spline_11_Length_MD.msg" ":defaultRenderUtilityList1.u" -na
+		;
+connectAttr "Cable_IK_Spline_12_Length_MD.msg" ":defaultRenderUtilityList1.u" -na
+		;
+connectAttr "Cable_IK_Spline_13_Length_MD.msg" ":defaultRenderUtilityList1.u" -na
+		;
+connectAttr "Cable_Spline_Curve_Curve_info.msg" ":defaultRenderUtilityList1.u" -na
+		;
+connectAttr "Cable_Spline_Curve_Ratio_MD.msg" ":defaultRenderUtilityList1.u" -na
+		;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "pPlane50ShapeDeformed.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "EyeShapeDeformed.iog" ":initialShadingGroup.dsm" -na;

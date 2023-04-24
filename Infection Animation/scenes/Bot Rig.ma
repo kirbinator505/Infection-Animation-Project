@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
 //Name: Bot Rig.ma
-//Last modified: Tue, Apr 18, 2023 10:10:47 PM
+//Last modified: Mon, Apr 24, 2023 02:30:31 AM
 //Codeset: 1252
 file -rdi 1 -ns "bot_body1" -rfn "bot_bodyRN" -op "v=0;" -typ "mayaAscii" "C:/Git repos/Infection-Animation-Project/Infection Animation//scenes/bot body.ma";
 file -r -ns "bot_body1" -dr 1 -rfn "bot_bodyRN" -op "v=0;" -typ "mayaAscii" "C:/Git repos/Infection-Animation-Project/Infection Animation//scenes/bot body.ma";
@@ -8,25 +8,24 @@ requires maya "2023";
 requires -nodeType "ikSpringSolver" "ikSpringSolver" "1.0";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.1.2";
 requires "stereoCamera" "10.0";
-requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202205052215-234554116d";
 fileInfo "osv" "Windows 10 Home v2009 (Build: 19044)";
-fileInfo "UUID" "C6100881-4FB1-3EF4-211F-639B44E8BAD0";
+fileInfo "UUID" "6FC8EBF6-4417-5EBC-8F0E-F491348532B2";
 createNode transform -s -n "persp";
 	rename -uid "C824FEE6-4250-01DE-8149-D3AEBCFFA1E3";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.0485537381279855 40.386414841001226 51.566317410663387 ;
-	setAttr ".r" -type "double3" -19.200000000002454 -1438.399999999986 -2.9829330145900875e-16 ;
+	setAttr ".t" -type "double3" 7.9002766384177097 52.04370703810352 78.578104841803409 ;
+	setAttr ".r" -type "double3" -22.200000000000671 -1433.9999999999986 -1.9987962911350496e-16 ;
 	setAttr ".rpt" -type "double3" 4.0802904296052088e-15 -1.2222554648065199e-15 -2.9151352310564792e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "114580A6-45DE-3FC7-AAAB-94AAED5575D9";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 61.60460934360944;
+	setAttr ".coi" 84.703738812684236;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -4809,7 +4808,6 @@ createNode parentConstraint -n "R_RK_Arm_01_Jnt_parentConstraint1" -p "R_RK_Arm_
 		1.7763568394002505e-15 ;
 	setAttr ".tg[1].tor" -type "double3" -4.739395799433465e-22 3.0332133116374176e-21 
 		0 ;
-	setAttr ".lr" -type "double3" -9.4422717105948153e-15 -3.8050180786395322e-14 3.1353107390777766e-30 ;
 	setAttr ".rst" -type "double3" -2.5333230000000011 5.225807342412736e-09 3.3713385150235808e-07 ;
 	setAttr ".rsrr" -type "double3" -4.7708320221952752e-15 -1.9025866895805442e-14 
 		9.9392333795735688e-17 ;
@@ -5430,7 +5428,7 @@ createNode transform -n "Transform_Ctrl" -p "Transform_Ctrl_Grp";
 	addAttr -ci true -sn "L_Leg_IKFK" -ln "L_Leg_IKFK" -min 0 -max 1 -at "double";
 	addAttr -ci true -sn "R_Leg_IKFK" -ln "R_Leg_IKFK" -min 0 -max 1 -at "double";
 	setAttr -k on ".L_Arm_IKFK";
-	setAttr -k on ".R_Arm_IKFK" 1;
+	setAttr -k on ".R_Arm_IKFK";
 	setAttr -k on ".L_Leg_IKFK";
 	setAttr -k on ".R_Leg_IKFK";
 createNode nurbsCurve -n "Transform_CtrlShape" -p "Transform_Ctrl";
@@ -12992,7 +12990,7 @@ createNode parentConstraint -n "Cable_Orient_parentConstraint1" -p "Cable_Orient
 	setAttr ".rst" -type "double3" -8.5492931319324015e-05 36.156841278076172 -4.059478759765625 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "bot_bodyRNfosterParent1";
-	rename -uid "DE0B5EC7-4699-CCC6-8B1A-9692B70D2AA6";
+	rename -uid "9869FD1B-421F-1865-E02F-548CF9F414A8";
 createNode parentConstraint -n "pSuperShape1_parentConstraint2" -p "bot_bodyRNfosterParent1";
 	rename -uid "B2344F5F-427E-D175-4994-AEB98BEC2053";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_RK_Leg_01_JntW0" -dv 1 -min 0 -at "double";
@@ -15017,6 +15015,114 @@ createNode scaleConstraint -n "polySurface5_scaleConstraint2" -p "bot_bodyRNfost
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1.0000000000000002 1.0000000000000007 0.99999999999999956 ;
 	setAttr -k on ".w0";
+createNode parentConstraint -n "pCylinder37_parentConstraint1" -p "bot_bodyRNfosterParent1";
+	rename -uid "5CC1FD1F-4CA7-BB09-B9C0-6C87DB4A419F";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Pist_Base_4W0" -dv 1 -min 0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "R_Pist_Shold_4W1" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" 1.095617783159641 -6.1298621641725504e-05 0.0084983384322008249 ;
+	setAttr ".tg[0].tor" -type "double3" 179.99999967166957 5.2090728864532467 179.85157541593227 ;
+	setAttr ".tg[1].tot" -type "double3" 1.0306296747554438 -6.1298949049160001e-05 
+		-0.0084983384298396025 ;
+	setAttr ".tg[1].tor" -type "double3" -2.5448812217205848e-06 -5.2090728807316076 
+		0.14842478530111636 ;
+	setAttr ".lr" -type "double3" -2.9615150300063074e-14 -1.3641549903049385e-13 -1.8551673949521733e-13 ;
+	setAttr ".rst" -type "double3" -8.8817841970012523e-16 -3.5527136788005009e-15 -8.8817841970012523e-16 ;
+	setAttr ".rsrr" -type "double3" -3.6920057539628481e-15 -2.0479490394232041e-15 
+		4.3557166853992688e-15 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode parentConstraint -n "pCylinder36_parentConstraint1" -p "bot_bodyRNfosterParent1";
+	rename -uid "868A5CA0-4557-043F-0DD9-F9856DD128EE";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Pist_Shold_3W0" -dv 1 -min 0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "R_Pist_Base_3W1" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" 1.026963069823831 0.00506598569053196 -0.0031728081169148936 ;
+	setAttr ".tg[0].tor" -type "double3" -0.0024673703311026271 -2.993989324910638 -2.4689083705645305 ;
+	setAttr ".tg[1].tot" -type "double3" 1.0926276035456084 0.0050661222486709789 0.0031725900656960349 ;
+	setAttr ".tg[1].tor" -type "double3" 179.99999981163339 2.993883089186343 -177.5309627678684 ;
+	setAttr ".rst" -type "double3" 0 3.5527136788005009e-15 0 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode parentConstraint -n "pCylinder35_parentConstraint1" -p "bot_bodyRNfosterParent1";
+	rename -uid "6D69CF9D-4FB6-F971-B4D3-149F796BC7C6";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Pist_Shold_2W0" -dv 1 -min 0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "R_Pist_Base_2W1" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" 1.0272213875710143 0.005053713285931849 0.0081124282523232782 ;
+	setAttr ".tg[0].tor" -type "double3" 0.0024660720852440147 2.9940421113313911 -2.4689596565477352 ;
+	setAttr ".tg[1].tot" -type "double3" 1.0923696169696733 0.0050540622696502169 -0.0081122108392213121 ;
+	setAttr ".tg[1].tor" -type "double3" 1.8835453468014051e-07 182.99393592929977 2.4690884525776453 ;
+	setAttr ".lr" -type "double3" -179.99998451979181 0.00018819640416327494 -0.00011146382413118709 ;
+	setAttr ".rst" -type "double3" 0 7.1054273576010019e-15 0 ;
+	setAttr ".rsrr" -type "double3" -179.99998452005562 6.569785497583103e-06 -4.0470335326599543e-06 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode parentConstraint -n "pCylinder34_parentConstraint1" -p "bot_bodyRNfosterParent1";
+	rename -uid "45DB84E8-40C1-9A10-00E8-17BBB5B936F0";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Pist_Shold_1W0" -dv 1 -min 0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "R_Pist_Base_1W1" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" 1.0289346125306276 -6.1304571655540485e-05 
+		0.0085072167059946913 ;
+	setAttr ".tg[0].tor" -type "double3" -1.9478753888419633e-05 5.3172065193371427 
+		0.14866475482274594 ;
+	setAttr ".tg[1].tot" -type "double3" 1.0938516583813382 -6.1307500956786498e-05 
+		-0.0085072166848847441 ;
+	setAttr ".tg[1].tor" -type "double3" -179.99999966482275 -5.3172064681435591 179.85133340902027 ;
+	setAttr ".lr" -type "double3" -6.0693890884494107e-14 -1.275881162454581e-13 -1.9335446559685151e-13 ;
+	setAttr ".rst" -type "double3" -1.7763568394002505e-15 3.5527136788005009e-15 -5.5511151231257827e-17 ;
+	setAttr ".rsrr" -type "double3" 4.8732062093246065e-15 7.1843060153173468e-16 5.0489871617489525e-15 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
 createNode mesh -n "pCylinder29ShapeDeformed" -p "bot_bodyRNfosterParent1";
 	rename -uid "D5C0937D-4490-6F31-30B7-7DB97DFCB180";
 	setAttr -k off ".v";
@@ -15057,7 +15163,7 @@ createNode parentConstraint -n "pCylinder29_parentConstraint2" -p "bot_bodyRNfos
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.57743123873659785 -0.00153322450149318 0.032138967963261766 ;
 	setAttr ".tg[0].tor" -type "double3" 179.9999996716696 5.2090728864531171 179.8515754159321 ;
-	setAttr ".lr" -type "double3" 3.4234446971768641e-14 1.264049880277592e-13 1.8613699311596261e-13 ;
+	setAttr ".lr" -type "double3" -8.7488548818480093e-15 1.0952933268322502e-17 -2.8078334297295113e-15 ;
 	setAttr ".rst" -type "double3" 0 -3.5527136788005009e-15 -4.4408920985006262e-16 ;
 	setAttr ".rsrr" -type "double3" -8.7488548818480093e-15 1.0952933268322502e-17 -2.8078334297295113e-15 ;
 	setAttr -k on ".w0";
@@ -15118,7 +15224,7 @@ createNode parentConstraint -n "pCylinder28_parentConstraint2" -p "bot_bodyRNfos
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.57760596369605377 0.025545271665659897 0.031012112471400233 ;
 	setAttr ".tg[0].tor" -type "double3" 179.99999981163339 2.9938830891862391 -177.53096276786857 ;
-	setAttr ".lr" -type "double3" -8.3241079553911346e-16 1.0358835976252164e-13 1.8407460218970104e-13 ;
+	setAttr ".lr" -type "double3" 2.5469285535157066e-15 1.2610402350333866e-15 -1.1131941385122306e-14 ;
 	setAttr ".rst" -type "double3" 0 7.1054273576010019e-15 0 ;
 	setAttr ".rsrr" -type "double3" 2.5469285535157066e-15 1.2610402350333868e-15 -1.1131941385122306e-14 ;
 	setAttr -k on ".w0";
@@ -15179,7 +15285,7 @@ createNode parentConstraint -n "pCylinder27_parentConstraint2" -p "bot_bodyRNfos
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.57760597165956673 0.02554388022171139 -0.031012679109807428 ;
 	setAttr ".tg[0].tor" -type "double3" 1.8835453468014051e-07 182.99393592929985 2.4690884525774415 ;
-	setAttr ".lr" -type "double3" -1.8835454447028533e-07 1.0749727424361799e-13 2.1508501015727662e-13 ;
+	setAttr ".lr" -type "double3" -1.8835453004597294e-07 -1.9715595337165296e-14 3.2406590204959497e-23 ;
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 -3.5527136788005009e-15 1.1102230246251565e-16 ;
 	setAttr ".rsrr" -type "double3" -1.8835453004597294e-07 -1.9715595337165296e-14 
 		3.2406590204959497e-23 ;
@@ -15242,7 +15348,7 @@ createNode parentConstraint -n "pCylinder26_parentConstraint2" -p "bot_bodyRNfos
 	setAttr ".tg[0].tot" -type "double3" 0.57729781124732815 -0.0015353797309920481 
 		-0.032170105791970605 ;
 	setAttr ".tg[0].tor" -type "double3" -179.99999966482261 -5.3172064681436852 179.85133340902004 ;
-	setAttr ".lr" -type "double3" 1.4354349557145149e-13 1.2542111069228979e-13 2.127989866566686e-13 ;
+	setAttr ".lr" -type "double3" 3.6480092513465832e-15 -1.5959919146108841e-15 8.3489560388417351e-15 ;
 	setAttr ".rst" -type "double3" 1.7763568394002505e-15 0 6.2450045135165055e-17 ;
 	setAttr ".rsrr" -type "double3" 3.6480092513465832e-15 -1.5959919146108841e-15 8.3489560388417351e-15 ;
 	setAttr -k on ".w0";
@@ -15304,7 +15410,7 @@ createNode parentConstraint -n "pCylinder25_parentConstraint2" -p "bot_bodyRNfos
 	setAttr ".tg[0].tot" -type "double3" 0.51238076539662103 0.0014127595104937996 -0.01515567290865516 ;
 	setAttr ".tg[0].tor" -type "double3" -1.9478753879286439e-05 5.3172065193372715 
 		0.14866475482293906 ;
-	setAttr ".lr" -type "double3" -8.7592109142430766e-15 1.3184178904778702e-13 1.9229183901451712e-13 ;
+	setAttr ".lr" -type "double3" 1.3047156135299485e-18 1.4506600486459973e-15 9.5561385992940208e-18 ;
 	setAttr ".rst" -type "double3" -1.7763568394002505e-15 0 -1.6653345369377348e-16 ;
 	setAttr ".rsrr" -type "double3" 1.3047156135299487e-18 1.4506600486459973e-15 9.5561385992940208e-18 ;
 	setAttr -k on ".w0";
@@ -15365,7 +15471,7 @@ createNode parentConstraint -n "pCylinder24_parentConstraint2" -p "bot_bodyRNfos
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.51245774226091001 -0.015435119492387628 -0.014788921448151693 ;
 	setAttr ".tg[0].tor" -type "double3" 0.0024660720906906491 2.9940421113316966 -2.4689596565472223 ;
-	setAttr ".lr" -type "double3" 5.4198419377142062e-12 3.0477548733823955e-13 5.131528221315617e-13 ;
+	setAttr ".lr" -type "double3" 1.5281817602110869e-17 1.0067151572907379e-15 -8.6070915841600368e-16 ;
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 -3.5527136788005009e-15 0 ;
 	setAttr ".rsrr" -type "double3" 1.5281817602110869e-17 1.0067151572907379e-15 -8.6070915841600368e-16 ;
 	setAttr -k on ".w0";
@@ -15426,7 +15532,7 @@ createNode parentConstraint -n "pCylinder23_parentConstraint2" -p "bot_bodyRNfos
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 0.51245756253700581 -0.015434646024996113 0.014789872272947591 ;
 	setAttr ".tg[0].tor" -type "double3" -0.002467370331109379 -2.9939893249105389 -2.4689083705643537 ;
-	setAttr ".lr" -type "double3" 2.4752305436072492e-15 1.010858640726625e-13 1.7661828075407847e-13 ;
+	setAttr ".lr" -type "double3" 4.0129790563599806e-17 1.3984599654166801e-15 1.2319661290134877e-15 ;
 	setAttr ".rst" -type "double3" 1.7763568394002505e-15 0 0 ;
 	setAttr ".rsrr" -type "double3" 4.0129790563599806e-17 1.3984599654166801e-15 1.2319661290134877e-15 ;
 	setAttr -k on ".w0";
@@ -15488,7 +15594,7 @@ createNode parentConstraint -n "pCylinder22_parentConstraint2" -p "bot_bodyRNfos
 	setAttr ".tg[0].tot" -type "double3" 0.51244313033240108 0.0014106278415866313 0.015142291044517364 ;
 	setAttr ".tg[0].tor" -type "double3" -2.5448812302574263e-06 -5.2090728807314655 
 		0.14842478530130801 ;
-	setAttr ".lr" -type "double3" 8.8611860193247641e-15 1.4141518334894451e-13 1.9083968289863386e-13 ;
+	setAttr ".lr" -type "double3" -1.8012192576127288e-18 -9.2588078040237391e-16 3.9549309982929621e-17 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 0 -4.4408920985006262e-16 ;
 	setAttr ".rsrr" -type "double3" -5.6837299785086526e-18 -9.2588078052810473e-16 
 		-1.0049794270414787e-17 ;
@@ -15747,7 +15853,7 @@ createNode scaleConstraint -n "pCube13_scaleConstraint1" -p "bot_bodyRNfosterPar
 	setAttr ".o" -type "double3" 0.99999999999999933 1.0000000000000004 1 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent1" -p "bot_bodyRNfosterParent1";
-	rename -uid "07EB8621-464C-DF3A-2A79-FEBA1548376B";
+	rename -uid "30BE5CBB-4587-D774-D0C3-BCB009146866";
 createNode mesh -n "pCube18ShapeDeformed" -p "fosterParent1";
 	rename -uid "379F13F8-48E1-E0DC-8570-6A91E7193516";
 	setAttr -k off ".v";
@@ -16085,8 +16191,113 @@ createNode scaleConstraint -n "polySurface5_scaleConstraint1" -p "bot_bodyRNfost
 	setAttr ".erp" yes;
 	setAttr ".o" -type "double3" 1 1.0000000000000004 0.99999999999999956 ;
 	setAttr -k on ".w0";
+createNode parentConstraint -n "pCylinder33_parentConstraint1" -p "bot_bodyRNfosterParent1";
+	rename -uid "ECF91769-4252-430E-E502-C2B58EA89D90";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Pist_Shold_4W0" -dv 1 -min 0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Pist_Base_4W1" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" 1.0306296746043762 -6.095412710749315e-05 0.0084983409165522161 ;
+	setAttr ".tg[0].tor" -type "double3" 0.0023319859510418216 185.20907889935629 0.14821283327504212 ;
+	setAttr ".tg[1].tot" -type "double3" 1.0956177831650757 -6.0375269189449909e-05 
+		-0.0084983450486801893 ;
+	setAttr ".tg[1].tor" -type "double3" 0.0062508143115151005 5.2090889826243068 -0.1478570409979191 ;
+	setAttr ".rst" -type "double3" 8.8817841970012523e-16 3.5527136788005009e-15 -4.4408920985006262e-16 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode parentConstraint -n "pCylinder32_parentConstraint1" -p "bot_bodyRNfosterParent1";
+	rename -uid "3306686E-4E30-E05B-C42F-4A9E72ED7FBB";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Pist_Shold_3W0" -dv 1 -min 0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Pist_Base_3W1" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" 1.0256782937109787 0.0050896834907234734 0.0081528904057162066 ;
+	setAttr ".tg[0].tor" -type "double3" -179.99731972178222 -2.9959551252871179 177.52902249701904 ;
+	setAttr ".tg[1].tot" -type "double3" 1.092369067707267 0.0050892153073860413 -0.0081531826643668204 ;
+	setAttr ".tg[1].tor" -type "double3" -0.00061133843763602682 2.9960969708034391 
+		2.4708054610683208 ;
+	setAttr ".lr" -type "double3" -1.1110690500358056e-17 3.6188130724779367e-17 1.1597112174320021e-17 ;
+	setAttr ".rst" -type "double3" -8.8817841970012523e-16 -3.5527136788005009e-15 -8.8817841970012523e-16 ;
+	setAttr ".rsrr" -type "double3" -1.1110690500358056e-17 3.6188130724779367e-17 1.1597112174320021e-17 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode parentConstraint -n "pCylinder31_parentConstraint1" -p "bot_bodyRNfosterParent1";
+	rename -uid "F37F0F5B-498E-D2D8-9150-4D8A4446CF87";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Pist_Shold_2W0" -dv 1 -min 0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Pist_Base_2W1" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" 1.027221387412236 0.0050540621253247764 -0.008112210926868868 ;
+	setAttr ".tg[0].tor" -type "double3" -179.99999887856771 2.9939359697724015 177.53091159676646 ;
+	setAttr ".tg[1].tot" -type "double3" 1.0923696169759021 0.0050539758697674131 0.0081122646650897412 ;
+	setAttr ".tg[1].tor" -type "double3" 0.00061060060516557432 -2.9939622147310052 
+		2.4690565698396454 ;
+	setAttr ".rst" -type "double3" 0 0 -1.1102230246251565e-16 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode parentConstraint -n "pCylinder30_parentConstraint1" -p "bot_bodyRNfosterParent1";
+	rename -uid "96EA2962-4866-D190-F8F5-9DBAC8C10CC2";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Pist_Shold_1W0" -dv 1 -min 0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Pist_Base_1W1" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" 1.0289346123812377 -6.1307478379291069e-05 
+		-0.0085072166935774018 ;
+	setAttr ".tg[0].tor" -type "double3" 7.3471372919431179e-08 174.68279353074121 0.14866656752258839 ;
+	setAttr ".tg[1].tot" -type "double3" 1.0938516583872575 -0.00058308768133485955 
+		0.0084874320753836052 ;
+	setAttr ".tg[1].tor" -type "double3" 3.5322534958420828 -5.2980425221831293 -0.47551356910096237 ;
+	setAttr ".lr" -type "double3" -3.6735689223289977e-08 -4.131390516483973e-15 5.743737722591809e-15 ;
+	setAttr ".rst" -type "double3" 0 3.5527136788005009e-15 0 ;
+	setAttr ".rsrr" -type "double3" -3.6735689223289977e-08 -4.131390516483973e-15 5.743737722591809e-15 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
 createNode fosterParent -n "fosterParent2" -p "bot_bodyRNfosterParent1";
-	rename -uid "E9736783-426D-283D-3AE8-05A4D771763D";
+	rename -uid "A74779C7-4058-B8A8-FB1E-C7B8C05AD92F";
 createNode mesh -n "pCylinder29ShapeDeformed" -p "fosterParent2";
 	rename -uid "ED36E93E-42C8-A7EB-422B-589FA5A5FF2F";
 	setAttr -k off ".v";
@@ -16098,7 +16309,7 @@ createNode mesh -n "pCylinder29ShapeDeformed" -p "fosterParent2";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "fosterParent3" -p "bot_bodyRNfosterParent1";
-	rename -uid "42022A2D-4015-9702-8261-8E9ED7F4A967";
+	rename -uid "7938A590-456E-A7E9-1430-749572ACA54D";
 createNode mesh -n "pCylinder29ShapeTag" -p "fosterParent3";
 	rename -uid "2172CE74-4DC1-D3E8-4FEC-E39CD82B16CC";
 	setAttr -k off ".v";
@@ -16153,7 +16364,7 @@ createNode scaleConstraint -n "pCylinder29_scaleConstraint1" -p "bot_bodyRNfoste
 	setAttr ".o" -type "double3" 1 0.99999999999999978 1.0000000000000002 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent4" -p "bot_bodyRNfosterParent1";
-	rename -uid "1400E94C-4BC4-4897-39E6-6E96B65B3866";
+	rename -uid "85870F82-4B07-0AA0-25EF-32BC95E9C9DF";
 createNode mesh -n "pCylinder28ShapeDeformed" -p "fosterParent4";
 	rename -uid "AD451C2B-45BE-437D-D3E7-15894BF9E602";
 	setAttr -k off ".v";
@@ -16165,7 +16376,7 @@ createNode mesh -n "pCylinder28ShapeDeformed" -p "fosterParent4";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "fosterParent5" -p "bot_bodyRNfosterParent1";
-	rename -uid "D38E35AC-4CCF-576F-75C6-F4888B622274";
+	rename -uid "7143DB9D-4AA2-E30D-FFB0-6E94508B8B7B";
 createNode mesh -n "pCylinder28ShapeTag" -p "fosterParent5";
 	rename -uid "7E881151-4AFA-9932-9B02-97BC56C86969";
 	setAttr -k off ".v";
@@ -16219,7 +16430,7 @@ createNode scaleConstraint -n "pCylinder28_scaleConstraint1" -p "bot_bodyRNfoste
 	setAttr ".o" -type "double3" 1 0.99999999999999978 1.0000000000000002 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent6" -p "bot_bodyRNfosterParent1";
-	rename -uid "10E7E187-49F0-3935-D4B1-809585583984";
+	rename -uid "18ECF77F-4202-8DEC-A6B2-88BA64B36ED0";
 createNode mesh -n "pCylinder27ShapeDeformed" -p "fosterParent6";
 	rename -uid "F8E63EC4-4A0D-3184-E076-939CCB45FEB0";
 	setAttr -k off ".v";
@@ -16231,7 +16442,7 @@ createNode mesh -n "pCylinder27ShapeDeformed" -p "fosterParent6";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "fosterParent7" -p "bot_bodyRNfosterParent1";
-	rename -uid "0B807C95-4A8F-A18C-97F8-359D1EA98429";
+	rename -uid "56FCA1F7-4E5A-CA95-247F-70B3226C7E70";
 createNode mesh -n "pCylinder27ShapeTag" -p "fosterParent7";
 	rename -uid "2ED0808C-40E7-E209-63A7-7EBB38F06381";
 	setAttr -k off ".v";
@@ -16285,7 +16496,7 @@ createNode scaleConstraint -n "pCylinder27_scaleConstraint1" -p "bot_bodyRNfoste
 	setAttr ".o" -type "double3" 1 0.99999999999999978 1.0000000000000002 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent8" -p "bot_bodyRNfosterParent1";
-	rename -uid "9EE61DAF-4571-B322-DB42-7A858BDE33BD";
+	rename -uid "88F86B4D-4BA2-B737-675F-238C21E67899";
 createNode mesh -n "pCylinder26ShapeDeformed" -p "fosterParent8";
 	rename -uid "62257B2D-492C-6316-E362-04AC3BBC8B17";
 	setAttr -k off ".v";
@@ -16297,7 +16508,7 @@ createNode mesh -n "pCylinder26ShapeDeformed" -p "fosterParent8";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "fosterParent9" -p "bot_bodyRNfosterParent1";
-	rename -uid "427DFEA8-4899-E0C7-B8D2-3ABA34A04E5A";
+	rename -uid "C3E8BE62-4EDD-0097-A152-01BE75413377";
 createNode mesh -n "pCylinder26ShapeTag" -p "fosterParent9";
 	rename -uid "8B577D1C-41CD-E21A-D449-BAA1C339A2D6";
 	setAttr -k off ".v";
@@ -16351,7 +16562,7 @@ createNode scaleConstraint -n "pCylinder26_scaleConstraint1" -p "bot_bodyRNfoste
 	setAttr ".o" -type "double3" 1 0.99999999999999978 1.0000000000000002 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent10" -p "bot_bodyRNfosterParent1";
-	rename -uid "2595F27C-4089-17CA-8C98-0CA263720BB7";
+	rename -uid "883839A4-4D97-5F44-AE38-078A2DA7F92D";
 createNode mesh -n "pCylinder25ShapeDeformed" -p "fosterParent10";
 	rename -uid "905A705A-40E6-9266-DA3D-60971493E062";
 	setAttr -k off ".v";
@@ -16363,7 +16574,7 @@ createNode mesh -n "pCylinder25ShapeDeformed" -p "fosterParent10";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "fosterParent11" -p "bot_bodyRNfosterParent1";
-	rename -uid "DBB71980-41D8-0164-103E-B5BA3ECDBFF0";
+	rename -uid "B8896998-439D-12CA-71E4-39A36C4613B1";
 createNode mesh -n "pCylinder25ShapeTag" -p "fosterParent11";
 	rename -uid "7459C65A-4FE5-3E42-1E78-2B8B82097C61";
 	setAttr -k off ".v";
@@ -16417,7 +16628,7 @@ createNode scaleConstraint -n "pCylinder25_scaleConstraint1" -p "bot_bodyRNfoste
 	setAttr ".o" -type "double3" 1 0.99999999999999933 1.0000000000000004 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent12" -p "bot_bodyRNfosterParent1";
-	rename -uid "9D59C3BB-4F9D-91BD-115B-6DADADE71E69";
+	rename -uid "AEE52B3B-421E-4CA0-B444-C294E5E44953";
 createNode mesh -n "pCylinder24ShapeDeformed" -p "fosterParent12";
 	rename -uid "8A354839-4AE7-9C87-62C9-8B87093D699B";
 	setAttr -k off ".v";
@@ -16429,7 +16640,7 @@ createNode mesh -n "pCylinder24ShapeDeformed" -p "fosterParent12";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "fosterParent13" -p "bot_bodyRNfosterParent1";
-	rename -uid "4BB7FE67-4BCC-E6DD-D52E-ABB74F5BA5A8";
+	rename -uid "3A084FE2-4ED1-B175-2567-979A8AFD028C";
 createNode mesh -n "pCylinder24ShapeTag" -p "fosterParent13";
 	rename -uid "C661EE7A-43A0-FC4F-5CC3-BD95181353B0";
 	setAttr -k off ".v";
@@ -16481,7 +16692,7 @@ createNode scaleConstraint -n "pCylinder24_scaleConstraint1" -p "bot_bodyRNfoste
 	setAttr ".o" -type "double3" 1 0.99999999999999933 1.0000000000000004 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent14" -p "bot_bodyRNfosterParent1";
-	rename -uid "84C242A1-433E-B514-2144-0B85EF4C69B7";
+	rename -uid "63933E12-46C4-B4AF-C860-1B8DF7CF8C76";
 createNode mesh -n "pCylinder23ShapeDeformed" -p "fosterParent14";
 	rename -uid "74C74927-4A38-95D7-ACA4-3385158C3ABA";
 	setAttr -k off ".v";
@@ -16493,7 +16704,7 @@ createNode mesh -n "pCylinder23ShapeDeformed" -p "fosterParent14";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "fosterParent15" -p "bot_bodyRNfosterParent1";
-	rename -uid "BB8AE12B-4821-86D7-A5E9-01B08FEFCA62";
+	rename -uid "5A72392C-474A-55E6-6D57-D78508DCB712";
 createNode mesh -n "pCylinder23ShapeTag" -p "fosterParent15";
 	rename -uid "8024739A-4A33-9590-27F0-10874A9D3361";
 	setAttr -k off ".v";
@@ -16546,7 +16757,7 @@ createNode scaleConstraint -n "pCylinder23_scaleConstraint1" -p "bot_bodyRNfoste
 	setAttr ".o" -type "double3" 1 0.99999999999999933 1.0000000000000004 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "fosterParent16" -p "bot_bodyRNfosterParent1";
-	rename -uid "4FCABAFD-40F2-B879-6328-BFB5BD3C0926";
+	rename -uid "AE79AFB4-4EAB-378D-8800-FABF139D8ED1";
 createNode mesh -n "pCylinder22ShapeDeformed" -p "fosterParent16";
 	rename -uid "0ECD9278-4CE3-8A96-40F9-EFAA5B771E74";
 	setAttr -k off ".v";
@@ -16558,7 +16769,7 @@ createNode mesh -n "pCylinder22ShapeDeformed" -p "fosterParent16";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode fosterParent -n "fosterParent17" -p "bot_bodyRNfosterParent1";
-	rename -uid "98C19441-466D-081B-2E9B-36BE3E8F572E";
+	rename -uid "02A7BADC-49CD-499D-9788-BFBFDC568203";
 createNode mesh -n "pCylinder22ShapeTag" -p "fosterParent17";
 	rename -uid "DA8BA160-4647-EDD6-8206-3589C9AEE95B";
 	setAttr -k off ".v";
@@ -17288,22 +17499,22 @@ createNode scaleConstraint -n "Lens_scaleConstraint1" -p "bot_bodyRNfosterParent
 	setAttr ".o" -type "double3" 1.110559518340873 1.1105595183408723 1.1105595183408721 ;
 	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "ABBFD8EB-44BA-F427-85BF-159B55C60D2F";
+	rename -uid "E8BC172C-40E5-C16B-8B2A-9AB5B1651E8D";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "10D6DF18-4E28-F306-EAAE-0CA576BD1B47";
+	rename -uid "6B862766-4C79-0100-956C-F5ADD6906D91";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "242C7B2F-4435-1D3F-045B-6FAC5BA8702A";
+	rename -uid "89912892-48C7-56A2-B03B-BE846AE64193";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "64655233-42A0-1C42-DDFB-CD802F9A1F94";
+	rename -uid "4DC8CF39-44EA-98A6-3D4C-DFA5C2AE55F4";
 	setAttr ".cdl" 2;
 	setAttr -s 3 ".dli[1:2]"  1 2;
 	setAttr -s 3 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "FBC8BE84-4E73-02C5-3D67-B79948BE29C3";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "8D1F8C66-4F47-C493-DC98-9E94DB3570D9";
+	rename -uid "8E717425-4E4C-A303-F02E-ACBC88A898A7";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "0B768C97-4A60-2A48-5D17-E88B49930A33";
 	setAttr ".g" yes;
@@ -17323,7 +17534,7 @@ createNode script -n "bot_body:uiConfigurationScriptNode";
 		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1\n            -height 1\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"|persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
 		+ "            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 1\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n"
 		+ "            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n"
-		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1042\n            -height 727\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 0\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1319\n            -height 727\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
 		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
 		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n"
@@ -17350,8 +17561,8 @@ createNode script -n "bot_body:uiConfigurationScriptNode";
 		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
 		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 0\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n"
 		+ "\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 1\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1042\\n    -height 727\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 1\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1042\\n    -height 727\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 1\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 727\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 1\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 0\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 727\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "bot_body:sceneConfigurationScriptNode";
@@ -17383,7 +17594,7 @@ createNode polyBevel3 -n "bot_body:polyBevel2";
 createNode reference -n "bot_bodyRN";
 	rename -uid "EB84F371-465E-3E2D-A07D-688513769661";
 	setAttr -s 17 ".fs";
-	setAttr -s 1363 ".phl";
+	setAttr -s 1443 ".phl";
 	setAttr ".phl[236]" 0;
 	setAttr ".phl[237]" 0;
 	setAttr ".phl[238]" 0;
@@ -18747,12 +18958,92 @@ createNode reference -n "bot_bodyRN";
 	setAttr ".phl[1596]" 0;
 	setAttr ".phl[1597]" 0;
 	setAttr ".phl[1598]" 0;
+	setAttr ".phl[1599]" 0;
+	setAttr ".phl[1600]" 0;
+	setAttr ".phl[1601]" 0;
+	setAttr ".phl[1602]" 0;
+	setAttr ".phl[1603]" 0;
+	setAttr ".phl[1604]" 0;
+	setAttr ".phl[1605]" 0;
+	setAttr ".phl[1606]" 0;
+	setAttr ".phl[1607]" 0;
+	setAttr ".phl[1608]" 0;
+	setAttr ".phl[1609]" 0;
+	setAttr ".phl[1610]" 0;
+	setAttr ".phl[1611]" 0;
+	setAttr ".phl[1612]" 0;
+	setAttr ".phl[1613]" 0;
+	setAttr ".phl[1614]" 0;
+	setAttr ".phl[1615]" 0;
+	setAttr ".phl[1616]" 0;
+	setAttr ".phl[1617]" 0;
+	setAttr ".phl[1618]" 0;
+	setAttr ".phl[1619]" 0;
+	setAttr ".phl[1620]" 0;
+	setAttr ".phl[1621]" 0;
+	setAttr ".phl[1622]" 0;
+	setAttr ".phl[1623]" 0;
+	setAttr ".phl[1624]" 0;
+	setAttr ".phl[1625]" 0;
+	setAttr ".phl[1626]" 0;
+	setAttr ".phl[1627]" 0;
+	setAttr ".phl[1628]" 0;
+	setAttr ".phl[1629]" 0;
+	setAttr ".phl[1630]" 0;
+	setAttr ".phl[1631]" 0;
+	setAttr ".phl[1632]" 0;
+	setAttr ".phl[1633]" 0;
+	setAttr ".phl[1634]" 0;
+	setAttr ".phl[1635]" 0;
+	setAttr ".phl[1636]" 0;
+	setAttr ".phl[1637]" 0;
+	setAttr ".phl[1638]" 0;
+	setAttr ".phl[1639]" 0;
+	setAttr ".phl[1640]" 0;
+	setAttr ".phl[1641]" 0;
+	setAttr ".phl[1642]" 0;
+	setAttr ".phl[1643]" 0;
+	setAttr ".phl[1644]" 0;
+	setAttr ".phl[1645]" 0;
+	setAttr ".phl[1646]" 0;
+	setAttr ".phl[1647]" 0;
+	setAttr ".phl[1648]" 0;
+	setAttr ".phl[1649]" 0;
+	setAttr ".phl[1650]" 0;
+	setAttr ".phl[1651]" 0;
+	setAttr ".phl[1652]" 0;
+	setAttr ".phl[1653]" 0;
+	setAttr ".phl[1654]" 0;
+	setAttr ".phl[1655]" 0;
+	setAttr ".phl[1656]" 0;
+	setAttr ".phl[1657]" 0;
+	setAttr ".phl[1658]" 0;
+	setAttr ".phl[1659]" 0;
+	setAttr ".phl[1660]" 0;
+	setAttr ".phl[1661]" 0;
+	setAttr ".phl[1662]" 0;
+	setAttr ".phl[1663]" 0;
+	setAttr ".phl[1664]" 0;
+	setAttr ".phl[1665]" 0;
+	setAttr ".phl[1666]" 0;
+	setAttr ".phl[1667]" 0;
+	setAttr ".phl[1668]" 0;
+	setAttr ".phl[1669]" 0;
+	setAttr ".phl[1670]" 0;
+	setAttr ".phl[1671]" 0;
+	setAttr ".phl[1672]" 0;
+	setAttr ".phl[1673]" 0;
+	setAttr ".phl[1674]" 0;
+	setAttr ".phl[1675]" 0;
+	setAttr ".phl[1676]" 0;
+	setAttr ".phl[1677]" 0;
+	setAttr ".phl[1678]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"bot_bodyRN"
 		"bot_bodyRN" 1
 		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:pPlane50Shape.worldMesh" 
 		"bot_bodyRN.placeHolderList[236]" ""
-		"bot_bodyRN" 1723
+		"bot_bodyRN" 1833
 		0 "|bot_body1:Locator_000" "|Bot" "-s -r "
 		0 "|bot_body1:Bot_Geo" "|Bot" "-s -r "
 		0 "|bot_bodyRNfosterParent1|Lens_scaleConstraint1" "|Bot|bot_body1:Bot_Geo|bot_body1:Head|bot_body1:Lens" 
@@ -18895,6 +19186,14 @@ createNode reference -n "bot_bodyRN";
 		"-s -r "
 		0 "|bot_bodyRNfosterParent1|fosterParent2|pCylinder29ShapeDeformed" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29" 
 		"-s -r "
+		0 "|bot_bodyRNfosterParent1|pCylinder30_parentConstraint1" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder30" 
+		"-s -r "
+		0 "|bot_bodyRNfosterParent1|pCylinder31_parentConstraint1" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder31" 
+		"-s -r "
+		0 "|bot_bodyRNfosterParent1|pCylinder32_parentConstraint1" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder32" 
+		"-s -r "
+		0 "|bot_bodyRNfosterParent1|pCylinder33_parentConstraint1" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder33" 
+		"-s -r "
 		0 "|bot_bodyRNfosterParent1|polySurface5_scaleConstraint1" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5" 
 		"-s -r "
 		0 "|bot_bodyRNfosterParent1|polySurface5_parentConstraint1" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5" 
@@ -19018,6 +19317,14 @@ createNode reference -n "bot_bodyRN";
 		0 "|bot_bodyRNfosterParent1|pCylinder29ShapeTag" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29" 
 		"-s -r "
 		0 "|bot_bodyRNfosterParent1|pCylinder29ShapeDeformed" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29" 
+		"-s -r "
+		0 "|bot_bodyRNfosterParent1|pCylinder34_parentConstraint1" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder34" 
+		"-s -r "
+		0 "|bot_bodyRNfosterParent1|pCylinder35_parentConstraint1" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder35" 
+		"-s -r "
+		0 "|bot_bodyRNfosterParent1|pCylinder36_parentConstraint1" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder36" 
+		"-s -r "
+		0 "|bot_bodyRNfosterParent1|pCylinder37_parentConstraint1" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder37" 
 		"-s -r "
 		0 "|bot_bodyRNfosterParent1|polySurface5_scaleConstraint2" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5" 
 		"-s -r "
@@ -19291,6 +19598,10 @@ createNode reference -n "bot_bodyRN";
 		
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50" "scale" " -type \"double3\" 1 1 1"
 		
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11|bot_body1:polySurfaceShape19" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12|bot_body1:polySurfaceShape20" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface13" 
 		"visibility" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface13|bot_body1:polySurfaceShape21" 
@@ -19314,44 +19625,78 @@ createNode reference -n "bot_bodyRN";
 		" 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base" 
 		"visibility" " 1"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base|bot_body1:L_Shold_Pist_BaseShape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base" 
 		"visibility" " 1"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base|bot_body1:L_Clav_Pist_BaseShape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22|bot_body1:pCylinder22Shape" 
 		"intermediateObject" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22|bot_body1:pCylinder22Shape" 
 		"uvPivot" " -type \"double2\" 0.50000005960464478 0.5"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22|bot_body1:pCylinder22Shape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23|bot_body1:pCylinder23Shape" 
 		"intermediateObject" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23|bot_body1:pCylinder23Shape" 
 		"uvPivot" " -type \"double2\" 0.50000005960464478 0.5"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23|bot_body1:pCylinder23Shape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24|bot_body1:pCylinder24Shape" 
 		"intermediateObject" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24|bot_body1:pCylinder24Shape" 
 		"uvPivot" " -type \"double2\" 0.50000005960464478 0.5"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24|bot_body1:pCylinder24Shape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25|bot_body1:pCylinder25Shape" 
 		"intermediateObject" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25|bot_body1:pCylinder25Shape" 
 		"uvPivot" " -type \"double2\" 0.50000005960464478 0.5"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25|bot_body1:pCylinder25Shape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26|bot_body1:pCylinder26Shape" 
 		"intermediateObject" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26|bot_body1:pCylinder26Shape" 
 		"uvPivot" " -type \"double2\" 0.50000005960464478 0.5"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26|bot_body1:pCylinder26Shape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27|bot_body1:pCylinder27Shape" 
 		"intermediateObject" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27|bot_body1:pCylinder27Shape" 
 		"uvPivot" " -type \"double2\" 0.50000005960464478 0.5"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27|bot_body1:pCylinder27Shape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28|bot_body1:pCylinder28Shape" 
 		"intermediateObject" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28|bot_body1:pCylinder28Shape" 
 		"uvPivot" " -type \"double2\" 0.50000005960464478 0.5"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28|bot_body1:pCylinder28Shape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29|bot_body1:pCylinder29Shape" 
 		"intermediateObject" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29|bot_body1:pCylinder29Shape" 
 		"uvPivot" " -type \"double2\" 0.50000005960464478 0.5"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29|bot_body1:pCylinder29Shape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5|bot_body1:polySurfaceShape5" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1|bot_body1:pCylinderShape1" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12|bot_body1:pCubeShape12" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15|bot_body1:polySurfaceShape23" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16|bot_body1:polySurfaceShape24" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17|bot_body1:polySurfaceShape25" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface18|bot_body1:polySurfaceShape26" 
 		"intermediateObject" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface18|bot_body1:polySurfaceShape26" 
 		"vertexColorSource" " 2"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19|bot_body1:polySurfaceShape27" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:transform2|bot_body1:pPlane50Shape" 
 		"intermediateObject" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:transform2|bot_body1:pPlane50Shape" 
@@ -19360,8 +19705,14 @@ createNode reference -n "bot_bodyRN";
 		"intermediateObject" " 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube18|bot_body1:pCube18Shape" 
 		"vertexColorSource" " 2"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13|bot_body1:pCubeShape13" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4|bot_body1:polySurfaceShape4" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41" "visibility" 
 		" 1"
+		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41|bot_body1:pPlane41Shape" 
+		"uvSet[0].uvSetName" " -type \"string\" \"map1\""
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav" "visibility" 
 		" 1"
 		2 "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9|bot_body1:polySurfaceShape17" 
@@ -20100,2008 +20451,2168 @@ createNode reference -n "bot_bodyRN";
 		"bot_bodyRN.placeHolderList[596]" ""
 		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29|bot_body1:pCylinder29Shape.worldMesh" 
 		"bot_bodyRN.placeHolderList[597]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder30.translateX" 
 		"bot_bodyRN.placeHolderList[598]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder30.translateY" 
 		"bot_bodyRN.placeHolderList[599]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.translateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder30.translateZ" 
 		"bot_bodyRN.placeHolderList[600]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder30.rotateX" 
 		"bot_bodyRN.placeHolderList[601]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.rotateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder30.rotateY" 
 		"bot_bodyRN.placeHolderList[602]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder30.rotateZ" 
 		"bot_bodyRN.placeHolderList[603]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder30.rotateOrder" 
 		"bot_bodyRN.placeHolderList[604]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder30.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[605]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder30.rotatePivot" 
 		"bot_bodyRN.placeHolderList[606]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.rotatePivot" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder30.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[607]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder31.translateX" 
 		"bot_bodyRN.placeHolderList[608]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder31.translateY" 
 		"bot_bodyRN.placeHolderList[609]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder31.translateZ" 
 		"bot_bodyRN.placeHolderList[610]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder31.rotateX" 
 		"bot_bodyRN.placeHolderList[611]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder31.rotateY" 
 		"bot_bodyRN.placeHolderList[612]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder31.rotateZ" 
 		"bot_bodyRN.placeHolderList[613]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder31.rotateOrder" 
 		"bot_bodyRN.placeHolderList[614]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder31.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[615]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder31.rotatePivot" 
 		"bot_bodyRN.placeHolderList[616]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder31.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[617]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder32.translateX" 
 		"bot_bodyRN.placeHolderList[618]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder32.translateY" 
 		"bot_bodyRN.placeHolderList[619]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder32.translateZ" 
 		"bot_bodyRN.placeHolderList[620]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder32.rotateX" 
 		"bot_bodyRN.placeHolderList[621]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder32.rotateY" 
 		"bot_bodyRN.placeHolderList[622]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder32.rotateZ" 
 		"bot_bodyRN.placeHolderList[623]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.scaleY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder32.rotateOrder" 
 		"bot_bodyRN.placeHolderList[624]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.scaleZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder32.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[625]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder32.rotatePivot" 
 		"bot_bodyRN.placeHolderList[626]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder32.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[627]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.translateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder33.translateX" 
 		"bot_bodyRN.placeHolderList[628]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder33.translateY" 
 		"bot_bodyRN.placeHolderList[629]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.rotateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder33.translateZ" 
 		"bot_bodyRN.placeHolderList[630]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder33.rotateX" 
 		"bot_bodyRN.placeHolderList[631]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder33.rotateY" 
 		"bot_bodyRN.placeHolderList[632]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder33.rotateZ" 
 		"bot_bodyRN.placeHolderList[633]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder33.rotateOrder" 
 		"bot_bodyRN.placeHolderList[634]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.rotatePivot" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder33.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[635]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.rotatePivotTranslate" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder33.rotatePivot" 
 		"bot_bodyRN.placeHolderList[636]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.scaleX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder33.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[637]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.translateX" 
 		"bot_bodyRN.placeHolderList[638]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.translateY" 
 		"bot_bodyRN.placeHolderList[639]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.translateZ" 
 		"bot_bodyRN.placeHolderList[640]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.rotateX" 
 		"bot_bodyRN.placeHolderList[641]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.translateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.rotateY" 
 		"bot_bodyRN.placeHolderList[642]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.rotateZ" 
 		"bot_bodyRN.placeHolderList[643]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.rotateOrder" 
 		"bot_bodyRN.placeHolderList[644]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[645]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[646]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.rotatePivot" 
 		"bot_bodyRN.placeHolderList[647]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[648]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.scaleX" 
 		"bot_bodyRN.placeHolderList[649]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.scaleY" 
 		"bot_bodyRN.placeHolderList[650]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface5.scaleZ" 
 		"bot_bodyRN.placeHolderList[651]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.translateX" 
 		"bot_bodyRN.placeHolderList[652]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.translateY" 
 		"bot_bodyRN.placeHolderList[653]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.translateZ" 
 		"bot_bodyRN.placeHolderList[654]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.rotateX" 
 		"bot_bodyRN.placeHolderList[655]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.translateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.rotateY" 
 		"bot_bodyRN.placeHolderList[656]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.rotateZ" 
 		"bot_bodyRN.placeHolderList[657]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.rotateOrder" 
 		"bot_bodyRN.placeHolderList[658]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[659]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[660]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.rotatePivot" 
 		"bot_bodyRN.placeHolderList[661]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[662]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.scaleX" 
 		"bot_bodyRN.placeHolderList[663]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.scaleY" 
 		"bot_bodyRN.placeHolderList[664]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCylinder1.scaleZ" 
 		"bot_bodyRN.placeHolderList[665]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.translateX" 
 		"bot_bodyRN.placeHolderList[666]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.translateY" 
 		"bot_bodyRN.placeHolderList[667]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.translateZ" 
 		"bot_bodyRN.placeHolderList[668]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.rotateX" 
 		"bot_bodyRN.placeHolderList[669]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.translateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.rotateY" 
 		"bot_bodyRN.placeHolderList[670]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.rotateZ" 
 		"bot_bodyRN.placeHolderList[671]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.rotateOrder" 
 		"bot_bodyRN.placeHolderList[672]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[673]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[674]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.rotatePivot" 
 		"bot_bodyRN.placeHolderList[675]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[676]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.scaleX" 
 		"bot_bodyRN.placeHolderList[677]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.scaleY" 
 		"bot_bodyRN.placeHolderList[678]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube12.scaleZ" 
 		"bot_bodyRN.placeHolderList[679]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.translateX" 
 		"bot_bodyRN.placeHolderList[680]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.translateY" 
 		"bot_bodyRN.placeHolderList[681]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface13|bot_body1:polySurfaceShape21.outMesh" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.translateZ" 
 		"bot_bodyRN.placeHolderList[682]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface13|bot_body1:polySurfaceShape21.worldMesh" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.rotateX" 
 		"bot_bodyRN.placeHolderList[683]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.rotateY" 
 		"bot_bodyRN.placeHolderList[684]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.rotateZ" 
 		"bot_bodyRN.placeHolderList[685]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.rotateOrder" 
 		"bot_bodyRN.placeHolderList[686]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[687]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[688]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.rotatePivot" 
 		"bot_bodyRN.placeHolderList[689]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[690]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.scaleX" 
 		"bot_bodyRN.placeHolderList[691]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.scaleY" 
 		"bot_bodyRN.placeHolderList[692]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface10.scaleZ" 
 		"bot_bodyRN.placeHolderList[693]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.translateX" 
 		"bot_bodyRN.placeHolderList[694]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.translateY" 
 		"bot_bodyRN.placeHolderList[695]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.translateZ" 
 		"bot_bodyRN.placeHolderList[696]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.rotateX" 
 		"bot_bodyRN.placeHolderList[697]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube18|bot_body1:pCube18Shape.outMesh" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.rotateY" 
 		"bot_bodyRN.placeHolderList[698]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube18|bot_body1:pCube18Shape.worldMesh" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.rotateZ" 
 		"bot_bodyRN.placeHolderList[699]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.rotateOrder" 
 		"bot_bodyRN.placeHolderList[700]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[701]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[702]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.rotatePivot" 
 		"bot_bodyRN.placeHolderList[703]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[704]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.scaleX" 
 		"bot_bodyRN.placeHolderList[705]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.scaleY" 
 		"bot_bodyRN.placeHolderList[706]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface11.scaleZ" 
 		"bot_bodyRN.placeHolderList[707]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.translateX" 
 		"bot_bodyRN.placeHolderList[708]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.translateY" 
 		"bot_bodyRN.placeHolderList[709]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.translateZ" 
 		"bot_bodyRN.placeHolderList[710]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.rotateX" 
 		"bot_bodyRN.placeHolderList[711]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.rotateY" 
 		"bot_bodyRN.placeHolderList[712]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.rotateZ" 
 		"bot_bodyRN.placeHolderList[713]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.rotateOrder" 
 		"bot_bodyRN.placeHolderList[714]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[715]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[716]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.rotatePivot" 
 		"bot_bodyRN.placeHolderList[717]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[718]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.scaleX" 
 		"bot_bodyRN.placeHolderList[719]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.scaleY" 
 		"bot_bodyRN.placeHolderList[720]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface12.scaleZ" 
 		"bot_bodyRN.placeHolderList[721]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface13|bot_body1:polySurfaceShape21.worldMesh" 
 		"bot_bodyRN.placeHolderList[722]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.rotatePivot" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface13|bot_body1:polySurfaceShape21.outMesh" 
 		"bot_bodyRN.placeHolderList[723]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.translateX" 
 		"bot_bodyRN.placeHolderList[724]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.translateY" 
 		"bot_bodyRN.placeHolderList[725]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.translateZ" 
 		"bot_bodyRN.placeHolderList[726]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.rotateX" 
 		"bot_bodyRN.placeHolderList[727]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.rotateY" 
 		"bot_bodyRN.placeHolderList[728]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.rotateZ" 
 		"bot_bodyRN.placeHolderList[729]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.rotateOrder" 
 		"bot_bodyRN.placeHolderList[730]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[731]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[732]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.rotatePivot" 
 		"bot_bodyRN.placeHolderList[733]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[734]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.scaleX" 
 		"bot_bodyRN.placeHolderList[735]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.scaleY" 
 		"bot_bodyRN.placeHolderList[736]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane50|bot_body1:polySurface14.scaleZ" 
 		"bot_bodyRN.placeHolderList[737]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.rotatePivotTranslate" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube18|bot_body1:pCube18Shape.worldMesh" 
 		"bot_bodyRN.placeHolderList[738]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.scaleX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube18|bot_body1:pCube18Shape.outMesh" 
 		"bot_bodyRN.placeHolderList[739]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.translateX" 
 		"bot_bodyRN.placeHolderList[740]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.translateY" 
 		"bot_bodyRN.placeHolderList[741]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.translateZ" 
 		"bot_bodyRN.placeHolderList[742]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.rotateX" 
 		"bot_bodyRN.placeHolderList[743]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.translateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.rotateY" 
 		"bot_bodyRN.placeHolderList[744]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.rotateZ" 
 		"bot_bodyRN.placeHolderList[745]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.rotateOrder" 
 		"bot_bodyRN.placeHolderList[746]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[747]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[748]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.rotatePivot" 
 		"bot_bodyRN.placeHolderList[749]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[750]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.scaleX" 
 		"bot_bodyRN.placeHolderList[751]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.scaleY" 
 		"bot_bodyRN.placeHolderList[752]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pCube13.scaleZ" 
 		"bot_bodyRN.placeHolderList[753]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.translateX" 
 		"bot_bodyRN.placeHolderList[754]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.translateY" 
 		"bot_bodyRN.placeHolderList[755]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.translateZ" 
 		"bot_bodyRN.placeHolderList[756]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.rotateX" 
 		"bot_bodyRN.placeHolderList[757]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.translateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.rotateY" 
 		"bot_bodyRN.placeHolderList[758]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.rotateZ" 
 		"bot_bodyRN.placeHolderList[759]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.rotateOrder" 
 		"bot_bodyRN.placeHolderList[760]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[761]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[762]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.rotatePivot" 
 		"bot_bodyRN.placeHolderList[763]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[764]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.scaleX" 
 		"bot_bodyRN.placeHolderList[765]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.scaleY" 
 		"bot_bodyRN.placeHolderList[766]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:polySurface4.scaleZ" 
 		"bot_bodyRN.placeHolderList[767]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.translateX" 
 		"bot_bodyRN.placeHolderList[768]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.translateY" 
 		"bot_bodyRN.placeHolderList[769]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.translateZ" 
 		"bot_bodyRN.placeHolderList[770]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.rotateX" 
 		"bot_bodyRN.placeHolderList[771]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.translateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.rotateY" 
 		"bot_bodyRN.placeHolderList[772]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.rotateZ" 
 		"bot_bodyRN.placeHolderList[773]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.rotateOrder" 
 		"bot_bodyRN.placeHolderList[774]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[775]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[776]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.rotatePivot" 
 		"bot_bodyRN.placeHolderList[777]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[778]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.scaleX" 
 		"bot_bodyRN.placeHolderList[779]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.scaleY" 
 		"bot_bodyRN.placeHolderList[780]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:pPlane41.scaleZ" 
 		"bot_bodyRN.placeHolderList[781]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.translateX" 
 		"bot_bodyRN.placeHolderList[782]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.translateY" 
 		"bot_bodyRN.placeHolderList[783]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.translateZ" 
 		"bot_bodyRN.placeHolderList[784]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.rotateX" 
 		"bot_bodyRN.placeHolderList[785]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.translateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.rotateY" 
 		"bot_bodyRN.placeHolderList[786]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.rotateZ" 
 		"bot_bodyRN.placeHolderList[787]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.rotateOrder" 
 		"bot_bodyRN.placeHolderList[788]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[789]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[790]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.rotatePivot" 
 		"bot_bodyRN.placeHolderList[791]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[792]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.scaleX" 
 		"bot_bodyRN.placeHolderList[793]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.scaleY" 
 		"bot_bodyRN.placeHolderList[794]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Arm|bot_body1:Shoulder_clav.scaleZ" 
 		"bot_bodyRN.placeHolderList[795]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.translateX" 
 		"bot_bodyRN.placeHolderList[796]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.translateY" 
 		"bot_bodyRN.placeHolderList[797]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22|bot_body1:pCylinder22Shape.worldMesh" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.translateZ" 
 		"bot_bodyRN.placeHolderList[798]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.rotateX" 
 		"bot_bodyRN.placeHolderList[799]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.rotateY" 
 		"bot_bodyRN.placeHolderList[800]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.translateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.rotateZ" 
 		"bot_bodyRN.placeHolderList[801]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.rotateOrder" 
 		"bot_bodyRN.placeHolderList[802]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[803]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[804]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.rotatePivot" 
 		"bot_bodyRN.placeHolderList[805]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[806]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.scaleX" 
 		"bot_bodyRN.placeHolderList[807]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.scaleY" 
 		"bot_bodyRN.placeHolderList[808]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Shold_Pist_Base.scaleZ" 
 		"bot_bodyRN.placeHolderList[809]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.translateX" 
 		"bot_bodyRN.placeHolderList[810]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.translateY" 
 		"bot_bodyRN.placeHolderList[811]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.translateZ" 
 		"bot_bodyRN.placeHolderList[812]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23|bot_body1:pCylinder23Shape.worldMesh" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.rotateX" 
 		"bot_bodyRN.placeHolderList[813]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.rotateY" 
 		"bot_bodyRN.placeHolderList[814]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.rotateZ" 
 		"bot_bodyRN.placeHolderList[815]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.rotateOrder" 
 		"bot_bodyRN.placeHolderList[816]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[817]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[818]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.rotatePivot" 
 		"bot_bodyRN.placeHolderList[819]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[820]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.scaleX" 
 		"bot_bodyRN.placeHolderList[821]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.scaleY" 
 		"bot_bodyRN.placeHolderList[822]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:L_Clav_Pist_Base.scaleZ" 
 		"bot_bodyRN.placeHolderList[823]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.translateX" 
 		"bot_bodyRN.placeHolderList[824]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.translateY" 
 		"bot_bodyRN.placeHolderList[825]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.translateZ" 
 		"bot_bodyRN.placeHolderList[826]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.rotateX" 
 		"bot_bodyRN.placeHolderList[827]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24|bot_body1:pCylinder24Shape.worldMesh" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.rotateY" 
 		"bot_bodyRN.placeHolderList[828]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.rotateZ" 
 		"bot_bodyRN.placeHolderList[829]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.rotateOrder" 
 		"bot_bodyRN.placeHolderList[830]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[831]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[832]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.rotatePivot" 
 		"bot_bodyRN.placeHolderList[833]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[834]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.scaleX" 
 		"bot_bodyRN.placeHolderList[835]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.scaleY" 
 		"bot_bodyRN.placeHolderList[836]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22.scaleZ" 
 		"bot_bodyRN.placeHolderList[837]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.rotatePivot" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder22|bot_body1:pCylinder22Shape.worldMesh" 
 		"bot_bodyRN.placeHolderList[838]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.translateX" 
 		"bot_bodyRN.placeHolderList[839]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.translateY" 
 		"bot_bodyRN.placeHolderList[840]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.translateZ" 
 		"bot_bodyRN.placeHolderList[841]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.rotateX" 
 		"bot_bodyRN.placeHolderList[842]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25|bot_body1:pCylinder25Shape.worldMesh" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.rotateY" 
 		"bot_bodyRN.placeHolderList[843]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.rotateZ" 
 		"bot_bodyRN.placeHolderList[844]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.rotateOrder" 
 		"bot_bodyRN.placeHolderList[845]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[846]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[847]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.rotatePivot" 
 		"bot_bodyRN.placeHolderList[848]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[849]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.scaleX" 
 		"bot_bodyRN.placeHolderList[850]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.scaleY" 
 		"bot_bodyRN.placeHolderList[851]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23.scaleZ" 
 		"bot_bodyRN.placeHolderList[852]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.rotatePivot" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder23|bot_body1:pCylinder23Shape.worldMesh" 
 		"bot_bodyRN.placeHolderList[853]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.translateX" 
 		"bot_bodyRN.placeHolderList[854]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.translateY" 
 		"bot_bodyRN.placeHolderList[855]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.translateZ" 
 		"bot_bodyRN.placeHolderList[856]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.rotateX" 
 		"bot_bodyRN.placeHolderList[857]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26|bot_body1:pCylinder26Shape.worldMesh" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.rotateY" 
 		"bot_bodyRN.placeHolderList[858]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.rotateZ" 
 		"bot_bodyRN.placeHolderList[859]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.rotateOrder" 
 		"bot_bodyRN.placeHolderList[860]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[861]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[862]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.rotatePivot" 
 		"bot_bodyRN.placeHolderList[863]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[864]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.scaleX" 
 		"bot_bodyRN.placeHolderList[865]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.scaleY" 
 		"bot_bodyRN.placeHolderList[866]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24.scaleZ" 
 		"bot_bodyRN.placeHolderList[867]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.rotatePivot" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder24|bot_body1:pCylinder24Shape.worldMesh" 
 		"bot_bodyRN.placeHolderList[868]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.translateX" 
 		"bot_bodyRN.placeHolderList[869]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.translateY" 
 		"bot_bodyRN.placeHolderList[870]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.translateZ" 
 		"bot_bodyRN.placeHolderList[871]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.rotateX" 
 		"bot_bodyRN.placeHolderList[872]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27|bot_body1:pCylinder27Shape.worldMesh" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.rotateY" 
 		"bot_bodyRN.placeHolderList[873]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.rotateZ" 
 		"bot_bodyRN.placeHolderList[874]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.rotateOrder" 
 		"bot_bodyRN.placeHolderList[875]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[876]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[877]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.rotatePivot" 
 		"bot_bodyRN.placeHolderList[878]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[879]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.scaleX" 
 		"bot_bodyRN.placeHolderList[880]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.scaleY" 
 		"bot_bodyRN.placeHolderList[881]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25.scaleZ" 
 		"bot_bodyRN.placeHolderList[882]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.rotatePivot" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder25|bot_body1:pCylinder25Shape.worldMesh" 
 		"bot_bodyRN.placeHolderList[883]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.translateX" 
 		"bot_bodyRN.placeHolderList[884]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.translateY" 
 		"bot_bodyRN.placeHolderList[885]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.translateZ" 
 		"bot_bodyRN.placeHolderList[886]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.rotateX" 
 		"bot_bodyRN.placeHolderList[887]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28|bot_body1:pCylinder28Shape.worldMesh" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.rotateY" 
 		"bot_bodyRN.placeHolderList[888]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.rotateZ" 
 		"bot_bodyRN.placeHolderList[889]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.rotateOrder" 
 		"bot_bodyRN.placeHolderList[890]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[891]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[892]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.rotatePivot" 
 		"bot_bodyRN.placeHolderList[893]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[894]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.scaleX" 
 		"bot_bodyRN.placeHolderList[895]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.scaleY" 
 		"bot_bodyRN.placeHolderList[896]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26.scaleZ" 
 		"bot_bodyRN.placeHolderList[897]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.rotatePivot" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder26|bot_body1:pCylinder26Shape.worldMesh" 
 		"bot_bodyRN.placeHolderList[898]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.translateX" 
 		"bot_bodyRN.placeHolderList[899]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.translateY" 
 		"bot_bodyRN.placeHolderList[900]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.translateZ" 
 		"bot_bodyRN.placeHolderList[901]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.rotateX" 
 		"bot_bodyRN.placeHolderList[902]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29|bot_body1:pCylinder29Shape.worldMesh" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.rotateY" 
 		"bot_bodyRN.placeHolderList[903]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.rotateZ" 
 		"bot_bodyRN.placeHolderList[904]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.rotateOrder" 
 		"bot_bodyRN.placeHolderList[905]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[906]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[907]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.rotatePivot" 
 		"bot_bodyRN.placeHolderList[908]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[909]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.scaleX" 
 		"bot_bodyRN.placeHolderList[910]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.scaleY" 
 		"bot_bodyRN.placeHolderList[911]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27.scaleZ" 
 		"bot_bodyRN.placeHolderList[912]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.rotatePivot" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder27|bot_body1:pCylinder27Shape.worldMesh" 
 		"bot_bodyRN.placeHolderList[913]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.translateX" 
 		"bot_bodyRN.placeHolderList[914]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.translateY" 
 		"bot_bodyRN.placeHolderList[915]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.translateZ" 
 		"bot_bodyRN.placeHolderList[916]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.rotateX" 
 		"bot_bodyRN.placeHolderList[917]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.rotateY" 
 		"bot_bodyRN.placeHolderList[918]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.rotateZ" 
 		"bot_bodyRN.placeHolderList[919]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.rotateOrder" 
 		"bot_bodyRN.placeHolderList[920]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[921]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[922]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.rotatePivot" 
 		"bot_bodyRN.placeHolderList[923]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[924]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.scaleX" 
 		"bot_bodyRN.placeHolderList[925]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.scaleY" 
 		"bot_bodyRN.placeHolderList[926]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28.scaleZ" 
 		"bot_bodyRN.placeHolderList[927]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.rotatePivotTranslate" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder28|bot_body1:pCylinder28Shape.worldMesh" 
 		"bot_bodyRN.placeHolderList[928]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.translateX" 
 		"bot_bodyRN.placeHolderList[929]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.translateY" 
 		"bot_bodyRN.placeHolderList[930]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.translateZ" 
 		"bot_bodyRN.placeHolderList[931]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.rotateX" 
 		"bot_bodyRN.placeHolderList[932]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.rotateY" 
 		"bot_bodyRN.placeHolderList[933]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.translateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.rotateZ" 
 		"bot_bodyRN.placeHolderList[934]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.rotateOrder" 
 		"bot_bodyRN.placeHolderList[935]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[936]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[937]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.rotatePivot" 
 		"bot_bodyRN.placeHolderList[938]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[939]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.scaleX" 
 		"bot_bodyRN.placeHolderList[940]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.scaleY" 
 		"bot_bodyRN.placeHolderList[941]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29.scaleZ" 
 		"bot_bodyRN.placeHolderList[942]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.scaleX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder29|bot_body1:pCylinder29Shape.worldMesh" 
 		"bot_bodyRN.placeHolderList[943]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder34.translateX" 
 		"bot_bodyRN.placeHolderList[944]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder34.translateY" 
 		"bot_bodyRN.placeHolderList[945]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder34.translateZ" 
 		"bot_bodyRN.placeHolderList[946]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder34.rotateX" 
 		"bot_bodyRN.placeHolderList[947]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.translateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder34.rotateY" 
 		"bot_bodyRN.placeHolderList[948]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder34.rotateZ" 
 		"bot_bodyRN.placeHolderList[949]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder34.rotateOrder" 
 		"bot_bodyRN.placeHolderList[950]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder34.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[951]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder34.rotatePivot" 
 		"bot_bodyRN.placeHolderList[952]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder34.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[953]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder35.translateX" 
 		"bot_bodyRN.placeHolderList[954]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder35.translateY" 
 		"bot_bodyRN.placeHolderList[955]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder35.translateZ" 
 		"bot_bodyRN.placeHolderList[956]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder35.rotateX" 
 		"bot_bodyRN.placeHolderList[957]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder35.rotateY" 
 		"bot_bodyRN.placeHolderList[958]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder35.rotateZ" 
 		"bot_bodyRN.placeHolderList[959]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder35.rotateOrder" 
 		"bot_bodyRN.placeHolderList[960]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder35.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[961]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder35.rotatePivot" 
 		"bot_bodyRN.placeHolderList[962]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder35.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[963]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.rotateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder36.translateX" 
 		"bot_bodyRN.placeHolderList[964]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder36.translateY" 
 		"bot_bodyRN.placeHolderList[965]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder36.translateZ" 
 		"bot_bodyRN.placeHolderList[966]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder36.rotateX" 
 		"bot_bodyRN.placeHolderList[967]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder36.rotateY" 
 		"bot_bodyRN.placeHolderList[968]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder36.rotateZ" 
 		"bot_bodyRN.placeHolderList[969]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.rotatePivotTranslate" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder36.rotateOrder" 
 		"bot_bodyRN.placeHolderList[970]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.scaleX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder36.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[971]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.scaleY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder36.rotatePivot" 
 		"bot_bodyRN.placeHolderList[972]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.scaleZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder36.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[973]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder37.translateX" 
 		"bot_bodyRN.placeHolderList[974]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder37.translateY" 
 		"bot_bodyRN.placeHolderList[975]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.translateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder37.translateZ" 
 		"bot_bodyRN.placeHolderList[976]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder37.rotateX" 
 		"bot_bodyRN.placeHolderList[977]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.rotateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder37.rotateY" 
 		"bot_bodyRN.placeHolderList[978]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder37.rotateZ" 
 		"bot_bodyRN.placeHolderList[979]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder37.rotateOrder" 
 		"bot_bodyRN.placeHolderList[980]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder37.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[981]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder37.rotatePivot" 
 		"bot_bodyRN.placeHolderList[982]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.rotatePivot" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Should_Pistons|bot_body1:pCylinder37.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[983]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.translateX" 
 		"bot_bodyRN.placeHolderList[984]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.translateY" 
 		"bot_bodyRN.placeHolderList[985]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.translateZ" 
 		"bot_bodyRN.placeHolderList[986]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.rotateX" 
 		"bot_bodyRN.placeHolderList[987]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface18|bot_body1:polySurfaceShape26.outMesh" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.rotateY" 
 		"bot_bodyRN.placeHolderList[988]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface18|bot_body1:polySurfaceShape26.worldMesh" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.rotateZ" 
 		"bot_bodyRN.placeHolderList[989]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.rotateOrder" 
 		"bot_bodyRN.placeHolderList[990]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[991]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[992]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.rotatePivot" 
 		"bot_bodyRN.placeHolderList[993]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[994]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.scaleX" 
 		"bot_bodyRN.placeHolderList[995]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.scaleY" 
 		"bot_bodyRN.placeHolderList[996]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface5.scaleZ" 
 		"bot_bodyRN.placeHolderList[997]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.translateX" 
 		"bot_bodyRN.placeHolderList[998]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.translateY" 
 		"bot_bodyRN.placeHolderList[999]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.translateZ" 
 		"bot_bodyRN.placeHolderList[1000]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.rotateX" 
 		"bot_bodyRN.placeHolderList[1001]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.rotateY" 
 		"bot_bodyRN.placeHolderList[1002]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.rotateZ" 
 		"bot_bodyRN.placeHolderList[1003]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube18|bot_body1:pCube18Shape.outMesh" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1004]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube18|bot_body1:pCube18Shape.worldMesh" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1005]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1006]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1007]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1008]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.scaleX" 
 		"bot_bodyRN.placeHolderList[1009]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.rotateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.scaleY" 
 		"bot_bodyRN.placeHolderList[1010]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCylinder1.scaleZ" 
 		"bot_bodyRN.placeHolderList[1011]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.translateX" 
 		"bot_bodyRN.placeHolderList[1012]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.translateY" 
 		"bot_bodyRN.placeHolderList[1013]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.translateZ" 
 		"bot_bodyRN.placeHolderList[1014]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.rotateX" 
 		"bot_bodyRN.placeHolderList[1015]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.rotateY" 
 		"bot_bodyRN.placeHolderList[1016]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.rotateZ" 
 		"bot_bodyRN.placeHolderList[1017]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.scaleY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1018]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.scaleZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1019]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1020]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1021]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1022]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.scaleX" 
 		"bot_bodyRN.placeHolderList[1023]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.rotateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.scaleY" 
 		"bot_bodyRN.placeHolderList[1024]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube12.scaleZ" 
 		"bot_bodyRN.placeHolderList[1025]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.translateX" 
 		"bot_bodyRN.placeHolderList[1026]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.translateY" 
 		"bot_bodyRN.placeHolderList[1027]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.translateZ" 
 		"bot_bodyRN.placeHolderList[1028]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.rotateX" 
 		"bot_bodyRN.placeHolderList[1029]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.rotateY" 
 		"bot_bodyRN.placeHolderList[1030]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.rotateZ" 
 		"bot_bodyRN.placeHolderList[1031]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.scaleY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1032]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.scaleZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1033]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1034]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1035]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1036]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.scaleX" 
 		"bot_bodyRN.placeHolderList[1037]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.rotateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.scaleY" 
 		"bot_bodyRN.placeHolderList[1038]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface15.scaleZ" 
 		"bot_bodyRN.placeHolderList[1039]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.translateX" 
 		"bot_bodyRN.placeHolderList[1040]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.translateY" 
 		"bot_bodyRN.placeHolderList[1041]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.translateZ" 
 		"bot_bodyRN.placeHolderList[1042]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.rotateX" 
 		"bot_bodyRN.placeHolderList[1043]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.rotateY" 
 		"bot_bodyRN.placeHolderList[1044]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.rotateZ" 
 		"bot_bodyRN.placeHolderList[1045]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.scaleY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1046]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.scaleZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1047]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1048]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1049]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1050]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.scaleX" 
 		"bot_bodyRN.placeHolderList[1051]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.rotateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.scaleY" 
 		"bot_bodyRN.placeHolderList[1052]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface16.scaleZ" 
 		"bot_bodyRN.placeHolderList[1053]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.translateX" 
 		"bot_bodyRN.placeHolderList[1054]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.translateY" 
 		"bot_bodyRN.placeHolderList[1055]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.translateZ" 
 		"bot_bodyRN.placeHolderList[1056]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.rotateX" 
 		"bot_bodyRN.placeHolderList[1057]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.rotateY" 
 		"bot_bodyRN.placeHolderList[1058]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.rotateZ" 
 		"bot_bodyRN.placeHolderList[1059]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.scaleY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1060]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.scaleZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1061]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1062]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1063]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1064]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.scaleX" 
 		"bot_bodyRN.placeHolderList[1065]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.rotateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.scaleY" 
 		"bot_bodyRN.placeHolderList[1066]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface17.scaleZ" 
 		"bot_bodyRN.placeHolderList[1067]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface18|bot_body1:polySurfaceShape26.outMesh" 
 		"bot_bodyRN.placeHolderList[1068]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface18|bot_body1:polySurfaceShape26.worldMesh" 
 		"bot_bodyRN.placeHolderList[1069]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.translateX" 
 		"bot_bodyRN.placeHolderList[1070]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.translateY" 
 		"bot_bodyRN.placeHolderList[1071]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.translateZ" 
 		"bot_bodyRN.placeHolderList[1072]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.rotateX" 
 		"bot_bodyRN.placeHolderList[1073]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.rotateY" 
 		"bot_bodyRN.placeHolderList[1074]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.rotateZ" 
 		"bot_bodyRN.placeHolderList[1075]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1076]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1077]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1078]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1079]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1080]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.scaleX" 
 		"bot_bodyRN.placeHolderList[1081]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.scaleY" 
 		"bot_bodyRN.placeHolderList[1082]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane50|bot_body1:polySurface19.scaleZ" 
 		"bot_bodyRN.placeHolderList[1083]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube18|bot_body1:pCube18Shape.outMesh" 
 		"bot_bodyRN.placeHolderList[1084]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.rotatePivot" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube18|bot_body1:pCube18Shape.worldMesh" 
 		"bot_bodyRN.placeHolderList[1085]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.translateX" 
 		"bot_bodyRN.placeHolderList[1086]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.translateY" 
 		"bot_bodyRN.placeHolderList[1087]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.translateZ" 
 		"bot_bodyRN.placeHolderList[1088]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.rotateX" 
 		"bot_bodyRN.placeHolderList[1089]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9|bot_body1:polySurfaceShape17.worldMesh" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.rotateY" 
 		"bot_bodyRN.placeHolderList[1090]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.rotateZ" 
 		"bot_bodyRN.placeHolderList[1091]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1092]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1093]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1094]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1095]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1096]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.scaleX" 
 		"bot_bodyRN.placeHolderList[1097]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.scaleY" 
 		"bot_bodyRN.placeHolderList[1098]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pCube13.scaleZ" 
 		"bot_bodyRN.placeHolderList[1099]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.translateX" 
 		"bot_bodyRN.placeHolderList[1100]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.translateY" 
 		"bot_bodyRN.placeHolderList[1101]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.translateZ" 
 		"bot_bodyRN.placeHolderList[1102]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.rotateX" 
 		"bot_bodyRN.placeHolderList[1103]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.rotateY" 
 		"bot_bodyRN.placeHolderList[1104]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.rotateZ" 
 		"bot_bodyRN.placeHolderList[1105]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1106]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1107]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1108]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1109]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1110]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.scaleX" 
 		"bot_bodyRN.placeHolderList[1111]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.scaleY" 
 		"bot_bodyRN.placeHolderList[1112]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:polySurface4.scaleZ" 
 		"bot_bodyRN.placeHolderList[1113]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.translateX" 
 		"bot_bodyRN.placeHolderList[1114]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.translateY" 
 		"bot_bodyRN.placeHolderList[1115]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.translateZ" 
 		"bot_bodyRN.placeHolderList[1116]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.rotateX" 
 		"bot_bodyRN.placeHolderList[1117]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.rotateY" 
 		"bot_bodyRN.placeHolderList[1118]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8|bot_body1:polySurfaceShape16.worldMesh" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.rotateZ" 
 		"bot_bodyRN.placeHolderList[1119]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1120]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1121]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1122]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1123]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1124]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.scaleX" 
 		"bot_bodyRN.placeHolderList[1125]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.scaleY" 
 		"bot_bodyRN.placeHolderList[1126]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:pPlane41.scaleZ" 
 		"bot_bodyRN.placeHolderList[1127]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.translateX" 
 		"bot_bodyRN.placeHolderList[1128]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.translateY" 
 		"bot_bodyRN.placeHolderList[1129]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.translateZ" 
 		"bot_bodyRN.placeHolderList[1130]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.rotateX" 
 		"bot_bodyRN.placeHolderList[1131]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.rotateY" 
 		"bot_bodyRN.placeHolderList[1132]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.rotateZ" 
 		"bot_bodyRN.placeHolderList[1133]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1134]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1135]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1136]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1137]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1138]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.scaleX" 
 		"bot_bodyRN.placeHolderList[1139]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.scaleY" 
 		"bot_bodyRN.placeHolderList[1140]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Arm|bot_body1:Shoulder_clav.scaleZ" 
 		"bot_bodyRN.placeHolderList[1141]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.translateX" 
 		"bot_bodyRN.placeHolderList[1142]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.translateY" 
 		"bot_bodyRN.placeHolderList[1143]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.translateZ" 
 		"bot_bodyRN.placeHolderList[1144]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.rotateX" 
 		"bot_bodyRN.placeHolderList[1145]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.rotateY" 
 		"bot_bodyRN.placeHolderList[1146]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.rotateZ" 
 		"bot_bodyRN.placeHolderList[1147]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7|bot_body1:pCylinderShape7.worldMesh" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1148]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1149]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1150]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1151]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1152]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.rotateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.scaleX" 
 		"bot_bodyRN.placeHolderList[1153]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.scaleY" 
 		"bot_bodyRN.placeHolderList[1154]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder6.scaleZ" 
 		"bot_bodyRN.placeHolderList[1155]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.translateX" 
 		"bot_bodyRN.placeHolderList[1156]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.translateY" 
 		"bot_bodyRN.placeHolderList[1157]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.translateZ" 
 		"bot_bodyRN.placeHolderList[1158]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.rotateX" 
 		"bot_bodyRN.placeHolderList[1159]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.rotateY" 
 		"bot_bodyRN.placeHolderList[1160]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.rotateZ" 
 		"bot_bodyRN.placeHolderList[1161]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.scaleZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1162]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1163]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1164]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1165]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1166]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.rotateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.scaleX" 
 		"bot_bodyRN.placeHolderList[1167]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.scaleY" 
 		"bot_bodyRN.placeHolderList[1168]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9.scaleZ" 
 		"bot_bodyRN.placeHolderList[1169]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface9|bot_body1:polySurfaceShape17.worldMesh" 
 		"bot_bodyRN.placeHolderList[1170]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.translateX" 
 		"bot_bodyRN.placeHolderList[1171]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.translateY" 
 		"bot_bodyRN.placeHolderList[1172]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.translateZ" 
 		"bot_bodyRN.placeHolderList[1173]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.rotateX" 
 		"bot_bodyRN.placeHolderList[1174]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.rotateY" 
 		"bot_bodyRN.placeHolderList[1175]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.rotateZ" 
 		"bot_bodyRN.placeHolderList[1176]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6|bot_body1:polySurfaceShape14.worldMesh" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1177]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1178]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1179]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1180]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1181]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.rotateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.scaleX" 
 		"bot_bodyRN.placeHolderList[1182]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.scaleY" 
 		"bot_bodyRN.placeHolderList[1183]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder9.scaleZ" 
 		"bot_bodyRN.placeHolderList[1184]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.translateX" 
 		"bot_bodyRN.placeHolderList[1185]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.translateY" 
 		"bot_bodyRN.placeHolderList[1186]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.translateZ" 
 		"bot_bodyRN.placeHolderList[1187]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.rotateX" 
 		"bot_bodyRN.placeHolderList[1188]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.rotateY" 
 		"bot_bodyRN.placeHolderList[1189]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.rotateZ" 
 		"bot_bodyRN.placeHolderList[1190]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.scaleZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1191]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8|bot_body1:pCylinderShape8.worldMesh" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1192]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1193]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1194]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1195]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.rotateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.scaleX" 
 		"bot_bodyRN.placeHolderList[1196]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.rotateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.scaleY" 
 		"bot_bodyRN.placeHolderList[1197]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8.scaleZ" 
 		"bot_bodyRN.placeHolderList[1198]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface8|bot_body1:polySurfaceShape16.worldMesh" 
 		"bot_bodyRN.placeHolderList[1199]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.translateX" 
 		"bot_bodyRN.placeHolderList[1200]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.translateY" 
 		"bot_bodyRN.placeHolderList[1201]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.translateZ" 
 		"bot_bodyRN.placeHolderList[1202]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.rotateX" 
 		"bot_bodyRN.placeHolderList[1203]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.rotateY" 
 		"bot_bodyRN.placeHolderList[1204]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.rotateZ" 
 		"bot_bodyRN.placeHolderList[1205]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.scaleZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1206]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1207]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1208]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1209]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1210]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.scaleX" 
 		"bot_bodyRN.placeHolderList[1211]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.translateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.scaleY" 
 		"bot_bodyRN.placeHolderList[1212]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube23.scaleZ" 
 		"bot_bodyRN.placeHolderList[1213]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.translateX" 
 		"bot_bodyRN.placeHolderList[1214]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.translateY" 
 		"bot_bodyRN.placeHolderList[1215]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.translateZ" 
 		"bot_bodyRN.placeHolderList[1216]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.rotateX" 
 		"bot_bodyRN.placeHolderList[1217]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.rotateY" 
 		"bot_bodyRN.placeHolderList[1218]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.rotateZ" 
 		"bot_bodyRN.placeHolderList[1219]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.scaleZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1220]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1221]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1222]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1223]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1224]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.rotateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.scaleX" 
 		"bot_bodyRN.placeHolderList[1225]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.scaleY" 
 		"bot_bodyRN.placeHolderList[1226]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7.scaleZ" 
 		"bot_bodyRN.placeHolderList[1227]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder7|bot_body1:pCylinderShape7.worldMesh" 
 		"bot_bodyRN.placeHolderList[1228]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.translateX" 
 		"bot_bodyRN.placeHolderList[1229]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.translateY" 
 		"bot_bodyRN.placeHolderList[1230]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.translateZ" 
 		"bot_bodyRN.placeHolderList[1231]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.rotateX" 
 		"bot_bodyRN.placeHolderList[1232]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.rotateY" 
 		"bot_bodyRN.placeHolderList[1233]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.rotateZ" 
 		"bot_bodyRN.placeHolderList[1234]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1235]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1236]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1237]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1238]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1239]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.scaleX" 
 		"bot_bodyRN.placeHolderList[1240]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.scaleY" 
 		"bot_bodyRN.placeHolderList[1241]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube24.scaleZ" 
 		"bot_bodyRN.placeHolderList[1242]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.translateX" 
 		"bot_bodyRN.placeHolderList[1243]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.translateY" 
 		"bot_bodyRN.placeHolderList[1244]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.translateZ" 
 		"bot_bodyRN.placeHolderList[1245]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.rotateX" 
 		"bot_bodyRN.placeHolderList[1246]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.rotateY" 
 		"bot_bodyRN.placeHolderList[1247]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.rotateZ" 
 		"bot_bodyRN.placeHolderList[1248]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.translateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1249]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1250]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1251]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1252]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1253]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.rotateZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.scaleX" 
 		"bot_bodyRN.placeHolderList[1254]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.scaleY" 
 		"bot_bodyRN.placeHolderList[1255]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6.scaleZ" 
 		"bot_bodyRN.placeHolderList[1256]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.parentInverseMatrix" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:polySurface6|bot_body1:polySurfaceShape14.worldMesh" 
 		"bot_bodyRN.placeHolderList[1257]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.translateX" 
 		"bot_bodyRN.placeHolderList[1258]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.translateY" 
 		"bot_bodyRN.placeHolderList[1259]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.translateZ" 
 		"bot_bodyRN.placeHolderList[1260]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.rotateX" 
 		"bot_bodyRN.placeHolderList[1261]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.rotateY" 
 		"bot_bodyRN.placeHolderList[1262]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.rotateZ" 
 		"bot_bodyRN.placeHolderList[1263]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.translateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1264]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1265]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1266]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1267]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1268]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.rotateOrder" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.scaleX" 
 		"bot_bodyRN.placeHolderList[1269]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.scaleY" 
 		"bot_bodyRN.placeHolderList[1270]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8.scaleZ" 
 		"bot_bodyRN.placeHolderList[1271]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.rotatePivot" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder8|bot_body1:pCylinderShape8.worldMesh" 
 		"bot_bodyRN.placeHolderList[1272]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.translateX" 
 		"bot_bodyRN.placeHolderList[1273]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.translateY" 
 		"bot_bodyRN.placeHolderList[1274]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.translateZ" 
 		"bot_bodyRN.placeHolderList[1275]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.rotateX" 
 		"bot_bodyRN.placeHolderList[1276]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.rotateY" 
 		"bot_bodyRN.placeHolderList[1277]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.rotateZ" 
 		"bot_bodyRN.placeHolderList[1278]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1279]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1280]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1281]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1282]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1283]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.scaleX" 
 		"bot_bodyRN.placeHolderList[1284]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.scaleY" 
 		"bot_bodyRN.placeHolderList[1285]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube25.scaleZ" 
 		"bot_bodyRN.placeHolderList[1286]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.rotateX" 
 		"bot_bodyRN.placeHolderList[1287]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.rotateY" 
 		"bot_bodyRN.placeHolderList[1288]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.rotateZ" 
 		"bot_bodyRN.placeHolderList[1289]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.translateX" 
 		"bot_bodyRN.placeHolderList[1290]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.translateY" 
 		"bot_bodyRN.placeHolderList[1291]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.translateZ" 
 		"bot_bodyRN.placeHolderList[1292]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1293]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1294]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1295]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1296]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1297]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.scaleX" 
 		"bot_bodyRN.placeHolderList[1298]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.scaleY" 
 		"bot_bodyRN.placeHolderList[1299]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pPlane45.scaleZ" 
 		"bot_bodyRN.placeHolderList[1300]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.translateX" 
 		"bot_bodyRN.placeHolderList[1301]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.translateY" 
 		"bot_bodyRN.placeHolderList[1302]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.translateZ" 
 		"bot_bodyRN.placeHolderList[1303]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.rotateX" 
 		"bot_bodyRN.placeHolderList[1304]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.rotateY" 
 		"bot_bodyRN.placeHolderList[1305]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.rotateZ" 
 		"bot_bodyRN.placeHolderList[1306]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1307]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1308]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1309]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1310]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1311]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.scaleX" 
 		"bot_bodyRN.placeHolderList[1312]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.scaleY" 
 		"bot_bodyRN.placeHolderList[1313]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube22.scaleZ" 
 		"bot_bodyRN.placeHolderList[1314]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.translateX" 
 		"bot_bodyRN.placeHolderList[1315]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.translateY" 
 		"bot_bodyRN.placeHolderList[1316]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.translateZ" 
 		"bot_bodyRN.placeHolderList[1317]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.rotateX" 
 		"bot_bodyRN.placeHolderList[1318]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.rotateY" 
 		"bot_bodyRN.placeHolderList[1319]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.rotateZ" 
 		"bot_bodyRN.placeHolderList[1320]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1321]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1322]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1323]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1324]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1325]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.scaleX" 
 		"bot_bodyRN.placeHolderList[1326]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.scaleY" 
 		"bot_bodyRN.placeHolderList[1327]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder4.scaleZ" 
 		"bot_bodyRN.placeHolderList[1328]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.translateX" 
 		"bot_bodyRN.placeHolderList[1329]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.translateY" 
 		"bot_bodyRN.placeHolderList[1330]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.translateZ" 
 		"bot_bodyRN.placeHolderList[1331]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.rotateX" 
 		"bot_bodyRN.placeHolderList[1332]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.rotateY" 
 		"bot_bodyRN.placeHolderList[1333]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.rotateZ" 
 		"bot_bodyRN.placeHolderList[1334]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1335]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1336]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1337]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1338]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1339]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.scaleX" 
 		"bot_bodyRN.placeHolderList[1340]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.scaleY" 
 		"bot_bodyRN.placeHolderList[1341]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder5.scaleZ" 
 		"bot_bodyRN.placeHolderList[1342]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.translateX" 
 		"bot_bodyRN.placeHolderList[1343]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.translateY" 
 		"bot_bodyRN.placeHolderList[1344]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.translateZ" 
 		"bot_bodyRN.placeHolderList[1345]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.rotateX" 
 		"bot_bodyRN.placeHolderList[1346]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.rotateY" 
 		"bot_bodyRN.placeHolderList[1347]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.rotateZ" 
 		"bot_bodyRN.placeHolderList[1348]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1349]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1350]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1351]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1352]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1353]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.scaleX" 
 		"bot_bodyRN.placeHolderList[1354]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.scaleY" 
 		"bot_bodyRN.placeHolderList[1355]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube21.scaleZ" 
 		"bot_bodyRN.placeHolderList[1356]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.translateX" 
 		"bot_bodyRN.placeHolderList[1357]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.translateY" 
 		"bot_bodyRN.placeHolderList[1358]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.translateZ" 
 		"bot_bodyRN.placeHolderList[1359]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.rotateX" 
 		"bot_bodyRN.placeHolderList[1360]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.rotateY" 
 		"bot_bodyRN.placeHolderList[1361]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.rotateZ" 
 		"bot_bodyRN.placeHolderList[1362]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1363]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1364]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1365]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1366]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1367]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.scaleX" 
 		"bot_bodyRN.placeHolderList[1368]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.scaleY" 
 		"bot_bodyRN.placeHolderList[1369]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder3.scaleZ" 
 		"bot_bodyRN.placeHolderList[1370]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.translateX" 
 		"bot_bodyRN.placeHolderList[1371]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.translateY" 
 		"bot_bodyRN.placeHolderList[1372]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.translateZ" 
 		"bot_bodyRN.placeHolderList[1373]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.rotateX" 
 		"bot_bodyRN.placeHolderList[1374]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.rotateY" 
 		"bot_bodyRN.placeHolderList[1375]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.rotateZ" 
 		"bot_bodyRN.placeHolderList[1376]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1377]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1378]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1379]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1380]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1381]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.scaleX" 
 		"bot_bodyRN.placeHolderList[1382]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.scaleY" 
 		"bot_bodyRN.placeHolderList[1383]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCylinder2.scaleZ" 
 		"bot_bodyRN.placeHolderList[1384]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.translateX" 
 		"bot_bodyRN.placeHolderList[1385]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.translateY" 
 		"bot_bodyRN.placeHolderList[1386]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.translateZ" 
 		"bot_bodyRN.placeHolderList[1387]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.rotateX" 
 		"bot_bodyRN.placeHolderList[1388]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.rotateY" 
 		"bot_bodyRN.placeHolderList[1389]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.rotateZ" 
 		"bot_bodyRN.placeHolderList[1390]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1391]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1392]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1393]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1394]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1395]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.scaleX" 
 		"bot_bodyRN.placeHolderList[1396]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.scaleY" 
 		"bot_bodyRN.placeHolderList[1397]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pCube20.scaleZ" 
 		"bot_bodyRN.placeHolderList[1398]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.translateX" 
 		"bot_bodyRN.placeHolderList[1399]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.translateY" 
 		"bot_bodyRN.placeHolderList[1400]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.translateZ" 
 		"bot_bodyRN.placeHolderList[1401]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.rotateX" 
 		"bot_bodyRN.placeHolderList[1402]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.rotateY" 
 		"bot_bodyRN.placeHolderList[1403]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.rotateZ" 
 		"bot_bodyRN.placeHolderList[1404]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1405]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1406]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1407]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1408]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1409]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.scaleX" 
 		"bot_bodyRN.placeHolderList[1410]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.scaleY" 
 		"bot_bodyRN.placeHolderList[1411]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:L_Leg|bot_body1:pSuperShape1.scaleZ" 
 		"bot_bodyRN.placeHolderList[1412]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.translateX" 
 		"bot_bodyRN.placeHolderList[1413]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.translateY" 
 		"bot_bodyRN.placeHolderList[1414]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.translateZ" 
 		"bot_bodyRN.placeHolderList[1415]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.rotateX" 
 		"bot_bodyRN.placeHolderList[1416]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.rotateY" 
 		"bot_bodyRN.placeHolderList[1417]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.rotateZ" 
 		"bot_bodyRN.placeHolderList[1418]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1419]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1420]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1421]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1422]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1423]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.scaleX" 
 		"bot_bodyRN.placeHolderList[1424]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.scaleY" 
 		"bot_bodyRN.placeHolderList[1425]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder6.scaleZ" 
 		"bot_bodyRN.placeHolderList[1426]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.translateX" 
 		"bot_bodyRN.placeHolderList[1427]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.translateY" 
 		"bot_bodyRN.placeHolderList[1428]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.translateZ" 
 		"bot_bodyRN.placeHolderList[1429]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.rotateX" 
 		"bot_bodyRN.placeHolderList[1430]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.rotateY" 
 		"bot_bodyRN.placeHolderList[1431]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.rotateZ" 
 		"bot_bodyRN.placeHolderList[1432]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1433]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1434]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1435]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1436]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1437]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.scaleX" 
 		"bot_bodyRN.placeHolderList[1438]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.scaleY" 
 		"bot_bodyRN.placeHolderList[1439]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface9.scaleZ" 
 		"bot_bodyRN.placeHolderList[1440]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.translateX" 
 		"bot_bodyRN.placeHolderList[1441]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.translateY" 
 		"bot_bodyRN.placeHolderList[1442]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.translateZ" 
 		"bot_bodyRN.placeHolderList[1443]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.rotateX" 
 		"bot_bodyRN.placeHolderList[1444]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.rotateY" 
 		"bot_bodyRN.placeHolderList[1445]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.rotateZ" 
 		"bot_bodyRN.placeHolderList[1446]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1447]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1448]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1449]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1450]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1451]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.scaleX" 
 		"bot_bodyRN.placeHolderList[1452]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.scaleY" 
 		"bot_bodyRN.placeHolderList[1453]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder9.scaleZ" 
 		"bot_bodyRN.placeHolderList[1454]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.translateX" 
 		"bot_bodyRN.placeHolderList[1455]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.translateY" 
 		"bot_bodyRN.placeHolderList[1456]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.translateZ" 
 		"bot_bodyRN.placeHolderList[1457]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.rotateX" 
 		"bot_bodyRN.placeHolderList[1458]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.rotateY" 
 		"bot_bodyRN.placeHolderList[1459]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.rotateZ" 
 		"bot_bodyRN.placeHolderList[1460]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1461]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1462]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1463]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1464]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1465]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.scaleX" 
 		"bot_bodyRN.placeHolderList[1466]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.scaleY" 
 		"bot_bodyRN.placeHolderList[1467]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface8.scaleZ" 
 		"bot_bodyRN.placeHolderList[1468]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.translateX" 
 		"bot_bodyRN.placeHolderList[1469]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.translateY" 
 		"bot_bodyRN.placeHolderList[1470]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.translateZ" 
 		"bot_bodyRN.placeHolderList[1471]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.rotateX" 
 		"bot_bodyRN.placeHolderList[1472]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.rotateY" 
 		"bot_bodyRN.placeHolderList[1473]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.rotateZ" 
 		"bot_bodyRN.placeHolderList[1474]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1475]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1476]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1477]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1478]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1479]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.scaleX" 
 		"bot_bodyRN.placeHolderList[1480]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.scaleY" 
 		"bot_bodyRN.placeHolderList[1481]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube23.scaleZ" 
 		"bot_bodyRN.placeHolderList[1482]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.translateX" 
 		"bot_bodyRN.placeHolderList[1483]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.translateY" 
 		"bot_bodyRN.placeHolderList[1484]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.translateZ" 
 		"bot_bodyRN.placeHolderList[1485]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.rotateX" 
 		"bot_bodyRN.placeHolderList[1486]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.rotateY" 
 		"bot_bodyRN.placeHolderList[1487]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.rotateZ" 
 		"bot_bodyRN.placeHolderList[1488]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1489]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1490]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1491]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1492]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1493]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.scaleX" 
 		"bot_bodyRN.placeHolderList[1494]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.scaleY" 
 		"bot_bodyRN.placeHolderList[1495]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder7.scaleZ" 
 		"bot_bodyRN.placeHolderList[1496]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.translateX" 
 		"bot_bodyRN.placeHolderList[1497]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.translateY" 
 		"bot_bodyRN.placeHolderList[1498]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.translateZ" 
 		"bot_bodyRN.placeHolderList[1499]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.rotateX" 
 		"bot_bodyRN.placeHolderList[1500]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.rotateY" 
 		"bot_bodyRN.placeHolderList[1501]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.rotateZ" 
 		"bot_bodyRN.placeHolderList[1502]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1503]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1504]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1505]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1506]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1507]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.scaleX" 
 		"bot_bodyRN.placeHolderList[1508]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.scaleY" 
 		"bot_bodyRN.placeHolderList[1509]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube24.scaleZ" 
 		"bot_bodyRN.placeHolderList[1510]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.translateX" 
 		"bot_bodyRN.placeHolderList[1511]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.translateY" 
 		"bot_bodyRN.placeHolderList[1512]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.translateZ" 
 		"bot_bodyRN.placeHolderList[1513]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.rotateX" 
 		"bot_bodyRN.placeHolderList[1514]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.rotateY" 
 		"bot_bodyRN.placeHolderList[1515]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.rotateZ" 
 		"bot_bodyRN.placeHolderList[1516]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1517]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1518]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1519]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1520]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1521]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.scaleX" 
 		"bot_bodyRN.placeHolderList[1522]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.scaleY" 
 		"bot_bodyRN.placeHolderList[1523]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:polySurface6.scaleZ" 
 		"bot_bodyRN.placeHolderList[1524]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.translateX" 
 		"bot_bodyRN.placeHolderList[1525]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.translateY" 
 		"bot_bodyRN.placeHolderList[1526]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.translateZ" 
 		"bot_bodyRN.placeHolderList[1527]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.rotateX" 
 		"bot_bodyRN.placeHolderList[1528]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.rotateY" 
 		"bot_bodyRN.placeHolderList[1529]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.rotateZ" 
 		"bot_bodyRN.placeHolderList[1530]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1531]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1532]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1533]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1534]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1535]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.scaleX" 
 		"bot_bodyRN.placeHolderList[1536]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.scaleY" 
 		"bot_bodyRN.placeHolderList[1537]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder8.scaleZ" 
 		"bot_bodyRN.placeHolderList[1538]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.translateX" 
 		"bot_bodyRN.placeHolderList[1539]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.translateY" 
 		"bot_bodyRN.placeHolderList[1540]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.translateZ" 
 		"bot_bodyRN.placeHolderList[1541]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.rotateX" 
 		"bot_bodyRN.placeHolderList[1542]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.rotateY" 
 		"bot_bodyRN.placeHolderList[1543]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.rotateZ" 
 		"bot_bodyRN.placeHolderList[1544]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1545]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1546]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1547]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1548]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1549]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.scaleX" 
 		"bot_bodyRN.placeHolderList[1550]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.scaleY" 
 		"bot_bodyRN.placeHolderList[1551]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube25.scaleZ" 
 		"bot_bodyRN.placeHolderList[1552]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.translateX" 
 		"bot_bodyRN.placeHolderList[1553]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.translateY" 
 		"bot_bodyRN.placeHolderList[1554]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.translateZ" 
 		"bot_bodyRN.placeHolderList[1555]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.rotateX" 
 		"bot_bodyRN.placeHolderList[1556]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.rotateY" 
 		"bot_bodyRN.placeHolderList[1557]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.rotateZ" 
 		"bot_bodyRN.placeHolderList[1558]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1559]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1560]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1561]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1562]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1563]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.scaleX" 
 		"bot_bodyRN.placeHolderList[1564]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.scaleY" 
 		"bot_bodyRN.placeHolderList[1565]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pPlane45.scaleZ" 
 		"bot_bodyRN.placeHolderList[1566]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.translateX" 
 		"bot_bodyRN.placeHolderList[1567]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.translateY" 
 		"bot_bodyRN.placeHolderList[1568]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.translateZ" 
 		"bot_bodyRN.placeHolderList[1569]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.rotateX" 
 		"bot_bodyRN.placeHolderList[1570]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.rotateY" 
 		"bot_bodyRN.placeHolderList[1571]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.rotateZ" 
 		"bot_bodyRN.placeHolderList[1572]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1573]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1574]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1575]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1576]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1577]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.scaleX" 
 		"bot_bodyRN.placeHolderList[1578]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.scaleY" 
 		"bot_bodyRN.placeHolderList[1579]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube22.scaleZ" 
 		"bot_bodyRN.placeHolderList[1580]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.translateX" 
 		"bot_bodyRN.placeHolderList[1581]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.translateY" 
 		"bot_bodyRN.placeHolderList[1582]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.translateZ" 
 		"bot_bodyRN.placeHolderList[1583]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.rotateX" 
 		"bot_bodyRN.placeHolderList[1584]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.translateX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.rotateY" 
 		"bot_bodyRN.placeHolderList[1585]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.translateY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.rotateZ" 
 		"bot_bodyRN.placeHolderList[1586]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.translateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.rotateOrder" 
 		"bot_bodyRN.placeHolderList[1587]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.rotateX" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1588]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.rotateY" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.parentInverseMatrix" 
 		"bot_bodyRN.placeHolderList[1589]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.rotateZ" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.rotatePivot" 
 		"bot_bodyRN.placeHolderList[1590]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.rotateOrder" 
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.rotatePivotTranslate" 
 		"bot_bodyRN.placeHolderList[1591]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.scaleX" 
 		"bot_bodyRN.placeHolderList[1592]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.parentInverseMatrix" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.scaleY" 
 		"bot_bodyRN.placeHolderList[1593]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.rotatePivot" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder4.scaleZ" 
 		"bot_bodyRN.placeHolderList[1594]" ""
-		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.rotatePivotTranslate" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.translateX" 
 		"bot_bodyRN.placeHolderList[1595]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.scaleX" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.translateY" 
 		"bot_bodyRN.placeHolderList[1596]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.scaleY" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.translateZ" 
 		"bot_bodyRN.placeHolderList[1597]" ""
-		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.scaleZ" 
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.rotateX" 
 		"bot_bodyRN.placeHolderList[1598]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.rotateY" 
+		"bot_bodyRN.placeHolderList[1599]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.rotateZ" 
+		"bot_bodyRN.placeHolderList[1600]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.rotateOrder" 
+		"bot_bodyRN.placeHolderList[1601]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.parentInverseMatrix" 
+		"bot_bodyRN.placeHolderList[1602]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.parentInverseMatrix" 
+		"bot_bodyRN.placeHolderList[1603]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.rotatePivot" 
+		"bot_bodyRN.placeHolderList[1604]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.rotatePivotTranslate" 
+		"bot_bodyRN.placeHolderList[1605]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.scaleX" 
+		"bot_bodyRN.placeHolderList[1606]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.scaleY" 
+		"bot_bodyRN.placeHolderList[1607]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder5.scaleZ" 
+		"bot_bodyRN.placeHolderList[1608]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.translateX" 
+		"bot_bodyRN.placeHolderList[1609]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.translateY" 
+		"bot_bodyRN.placeHolderList[1610]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.translateZ" 
+		"bot_bodyRN.placeHolderList[1611]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.rotateX" 
+		"bot_bodyRN.placeHolderList[1612]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.rotateY" 
+		"bot_bodyRN.placeHolderList[1613]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.rotateZ" 
+		"bot_bodyRN.placeHolderList[1614]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.rotateOrder" 
+		"bot_bodyRN.placeHolderList[1615]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.parentInverseMatrix" 
+		"bot_bodyRN.placeHolderList[1616]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.parentInverseMatrix" 
+		"bot_bodyRN.placeHolderList[1617]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.rotatePivot" 
+		"bot_bodyRN.placeHolderList[1618]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.rotatePivotTranslate" 
+		"bot_bodyRN.placeHolderList[1619]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.scaleX" 
+		"bot_bodyRN.placeHolderList[1620]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.scaleY" 
+		"bot_bodyRN.placeHolderList[1621]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube21.scaleZ" 
+		"bot_bodyRN.placeHolderList[1622]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.translateX" 
+		"bot_bodyRN.placeHolderList[1623]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.translateY" 
+		"bot_bodyRN.placeHolderList[1624]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.translateZ" 
+		"bot_bodyRN.placeHolderList[1625]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.rotateX" 
+		"bot_bodyRN.placeHolderList[1626]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.rotateY" 
+		"bot_bodyRN.placeHolderList[1627]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.rotateZ" 
+		"bot_bodyRN.placeHolderList[1628]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.rotateOrder" 
+		"bot_bodyRN.placeHolderList[1629]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.parentInverseMatrix" 
+		"bot_bodyRN.placeHolderList[1630]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.parentInverseMatrix" 
+		"bot_bodyRN.placeHolderList[1631]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.rotatePivot" 
+		"bot_bodyRN.placeHolderList[1632]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.rotatePivotTranslate" 
+		"bot_bodyRN.placeHolderList[1633]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.scaleX" 
+		"bot_bodyRN.placeHolderList[1634]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.scaleY" 
+		"bot_bodyRN.placeHolderList[1635]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder3.scaleZ" 
+		"bot_bodyRN.placeHolderList[1636]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.translateX" 
+		"bot_bodyRN.placeHolderList[1637]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.translateY" 
+		"bot_bodyRN.placeHolderList[1638]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.translateZ" 
+		"bot_bodyRN.placeHolderList[1639]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.rotateX" 
+		"bot_bodyRN.placeHolderList[1640]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.rotateY" 
+		"bot_bodyRN.placeHolderList[1641]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.rotateZ" 
+		"bot_bodyRN.placeHolderList[1642]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.rotateOrder" 
+		"bot_bodyRN.placeHolderList[1643]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.parentInverseMatrix" 
+		"bot_bodyRN.placeHolderList[1644]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.parentInverseMatrix" 
+		"bot_bodyRN.placeHolderList[1645]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.rotatePivot" 
+		"bot_bodyRN.placeHolderList[1646]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.rotatePivotTranslate" 
+		"bot_bodyRN.placeHolderList[1647]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.scaleX" 
+		"bot_bodyRN.placeHolderList[1648]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.scaleY" 
+		"bot_bodyRN.placeHolderList[1649]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCylinder2.scaleZ" 
+		"bot_bodyRN.placeHolderList[1650]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.translateX" 
+		"bot_bodyRN.placeHolderList[1651]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.translateY" 
+		"bot_bodyRN.placeHolderList[1652]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.translateZ" 
+		"bot_bodyRN.placeHolderList[1653]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.rotateX" 
+		"bot_bodyRN.placeHolderList[1654]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.rotateY" 
+		"bot_bodyRN.placeHolderList[1655]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.rotateZ" 
+		"bot_bodyRN.placeHolderList[1656]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.rotateOrder" 
+		"bot_bodyRN.placeHolderList[1657]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.parentInverseMatrix" 
+		"bot_bodyRN.placeHolderList[1658]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.parentInverseMatrix" 
+		"bot_bodyRN.placeHolderList[1659]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.rotatePivot" 
+		"bot_bodyRN.placeHolderList[1660]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.rotatePivotTranslate" 
+		"bot_bodyRN.placeHolderList[1661]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.scaleX" 
+		"bot_bodyRN.placeHolderList[1662]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.scaleY" 
+		"bot_bodyRN.placeHolderList[1663]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pCube20.scaleZ" 
+		"bot_bodyRN.placeHolderList[1664]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.translateX" 
+		"bot_bodyRN.placeHolderList[1665]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.translateY" 
+		"bot_bodyRN.placeHolderList[1666]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.translateZ" 
+		"bot_bodyRN.placeHolderList[1667]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.rotateX" 
+		"bot_bodyRN.placeHolderList[1668]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.rotateY" 
+		"bot_bodyRN.placeHolderList[1669]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.rotateZ" 
+		"bot_bodyRN.placeHolderList[1670]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.rotateOrder" 
+		"bot_bodyRN.placeHolderList[1671]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.parentInverseMatrix" 
+		"bot_bodyRN.placeHolderList[1672]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.parentInverseMatrix" 
+		"bot_bodyRN.placeHolderList[1673]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.rotatePivot" 
+		"bot_bodyRN.placeHolderList[1674]" ""
+		5 3 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.rotatePivotTranslate" 
+		"bot_bodyRN.placeHolderList[1675]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.scaleX" 
+		"bot_bodyRN.placeHolderList[1676]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.scaleY" 
+		"bot_bodyRN.placeHolderList[1677]" ""
+		5 4 "bot_bodyRN" "|Bot|bot_body1:Bot_Geo|bot_body1:R_Leg|bot_body1:pSuperShape1.scaleZ" 
+		"bot_bodyRN.placeHolderList[1678]" ""
 		8 "|Bot|bot_body1:Bot_Geo|bot_body1:Torso|bot_body1:pCube4" "translateX"
 		8 "|Bot|bot_body1:Bot_Geo|bot_body1:Torso|bot_body1:pCube4" "translateY"
 		8 "|Bot|bot_body1:Bot_Geo|bot_body1:Torso|bot_body1:pCube4" "translateZ"
@@ -31615,9 +32126,9 @@ select -ne :defaultRenderUtilityList1;
 select -ne :defaultRenderingList1;
 	setAttr -s 2 ".r";
 select -ne :initialShadingGroup;
-	setAttr -s 131 ".dsm";
+	setAttr -s 138 ".dsm";
 	setAttr ".ro" yes;
-	setAttr -s 58 ".gn";
+	setAttr -s 57 ".gn";
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultRenderGlobals;
@@ -31639,7 +32150,7 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
-	setAttr -s 4 ".sol";
+	setAttr -s 3 ".sol";
 connectAttr "Lens_parentConstraint1.ctx" "bot_bodyRN.phl[237]";
 connectAttr "Lens_parentConstraint1.cty" "bot_bodyRN.phl[238]";
 connectAttr "Lens_parentConstraint1.ctz" "bot_bodyRN.phl[239]";
@@ -31647,8 +32158,8 @@ connectAttr "Lens_parentConstraint1.crx" "bot_bodyRN.phl[240]";
 connectAttr "Lens_parentConstraint1.cry" "bot_bodyRN.phl[241]";
 connectAttr "Lens_parentConstraint1.crz" "bot_bodyRN.phl[242]";
 connectAttr "bot_bodyRN.phl[243]" "Lens_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[244]" "Lens_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[245]" "Lens_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[244]" "Lens_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[245]" "Lens_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[246]" "Lens_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[247]" "Lens_parentConstraint1.crt";
 connectAttr "Lens_scaleConstraint1.csx" "bot_bodyRN.phl[248]";
@@ -31661,8 +32172,8 @@ connectAttr "Head_parentConstraint1.crx" "bot_bodyRN.phl[254]";
 connectAttr "Head_parentConstraint1.cry" "bot_bodyRN.phl[255]";
 connectAttr "Head_parentConstraint1.crz" "bot_bodyRN.phl[256]";
 connectAttr "bot_bodyRN.phl[257]" "Head_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[258]" "Head_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[259]" "Head_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[258]" "Head_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[259]" "Head_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[260]" "Head_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[261]" "Head_parentConstraint1.crt";
 connectAttr "Head_scaleConstraint1.csx" "bot_bodyRN.phl[262]";
@@ -31675,8 +32186,8 @@ connectAttr "HeadBase_parentConstraint1.crx" "bot_bodyRN.phl[268]";
 connectAttr "HeadBase_parentConstraint1.cry" "bot_bodyRN.phl[269]";
 connectAttr "HeadBase_parentConstraint1.crz" "bot_bodyRN.phl[270]";
 connectAttr "bot_bodyRN.phl[271]" "HeadBase_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[272]" "HeadBase_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[273]" "HeadBase_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[272]" "HeadBase_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[273]" "HeadBase_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[274]" "HeadBase_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[275]" "HeadBase_parentConstraint1.crt";
 connectAttr "HeadBase_scaleConstraint1.csx" "bot_bodyRN.phl[276]";
@@ -31689,8 +32200,8 @@ connectAttr "Neck_parentConstraint1.crx" "bot_bodyRN.phl[282]";
 connectAttr "Neck_parentConstraint1.cry" "bot_bodyRN.phl[283]";
 connectAttr "Neck_parentConstraint1.crz" "bot_bodyRN.phl[284]";
 connectAttr "bot_bodyRN.phl[285]" "Neck_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[286]" "Neck_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[287]" "Neck_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[286]" "Neck_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[287]" "Neck_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[288]" "Neck_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[289]" "Neck_parentConstraint1.crt";
 connectAttr "Neck_scaleConstraint1.csx" "bot_bodyRN.phl[290]";
@@ -31703,8 +32214,8 @@ connectAttr "Eye_parentConstraint1.crx" "bot_bodyRN.phl[296]";
 connectAttr "Eye_parentConstraint1.cry" "bot_bodyRN.phl[297]";
 connectAttr "Eye_parentConstraint1.crz" "bot_bodyRN.phl[298]";
 connectAttr "bot_bodyRN.phl[299]" "Eye_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[300]" "Eye_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[301]" "Eye_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[300]" "Eye_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[301]" "Eye_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[302]" "Eye_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[303]" "Eye_parentConstraint1.crt";
 connectAttr "Eye_scaleConstraint1.csx" "bot_bodyRN.phl[304]";
@@ -31718,8 +32229,8 @@ connectAttr "HeadPort_parentConstraint1.crx" "bot_bodyRN.phl[311]";
 connectAttr "HeadPort_parentConstraint1.cry" "bot_bodyRN.phl[312]";
 connectAttr "HeadPort_parentConstraint1.crz" "bot_bodyRN.phl[313]";
 connectAttr "bot_bodyRN.phl[314]" "HeadPort_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[315]" "HeadPort_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[316]" "HeadPort_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[315]" "HeadPort_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[316]" "HeadPort_scaleConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[317]" "HeadPort_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[318]" "HeadPort_parentConstraint1.crt";
 connectAttr "HeadPort_scaleConstraint1.csx" "bot_bodyRN.phl[319]";
@@ -31732,8 +32243,8 @@ connectAttr "pPlane16_parentConstraint1.crx" "bot_bodyRN.phl[325]";
 connectAttr "pPlane16_parentConstraint1.cry" "bot_bodyRN.phl[326]";
 connectAttr "pPlane16_parentConstraint1.crz" "bot_bodyRN.phl[327]";
 connectAttr "bot_bodyRN.phl[328]" "pPlane16_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[329]" "pPlane16_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[330]" "pPlane16_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[329]" "pPlane16_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[330]" "pPlane16_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[331]" "pPlane16_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[332]" "pPlane16_parentConstraint1.crt";
 connectAttr "pPlane16_scaleConstraint1.csx" "bot_bodyRN.phl[333]";
@@ -31746,8 +32257,8 @@ connectAttr "pTorus4_parentConstraint1.crx" "bot_bodyRN.phl[339]";
 connectAttr "pTorus4_parentConstraint1.cry" "bot_bodyRN.phl[340]";
 connectAttr "pTorus4_parentConstraint1.crz" "bot_bodyRN.phl[341]";
 connectAttr "bot_bodyRN.phl[342]" "pTorus4_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[343]" "pTorus4_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[344]" "pTorus4_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[343]" "pTorus4_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[344]" "pTorus4_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[345]" "pTorus4_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[346]" "pTorus4_parentConstraint1.crt";
 connectAttr "pTorus4_scaleConstraint1.csx" "bot_bodyRN.phl[347]";
@@ -31760,8 +32271,8 @@ connectAttr "Chest_Cable_parentConstraint1.crx" "bot_bodyRN.phl[353]";
 connectAttr "Chest_Cable_parentConstraint1.cry" "bot_bodyRN.phl[354]";
 connectAttr "Chest_Cable_parentConstraint1.crz" "bot_bodyRN.phl[355]";
 connectAttr "bot_bodyRN.phl[356]" "Chest_Cable_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[357]" "Chest_Cable_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[358]" "Chest_Cable_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[357]" "Chest_Cable_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[358]" "Chest_Cable_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[359]" "Chest_Cable_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[360]" "Chest_Cable_parentConstraint1.crt";
 connectAttr "Chest_Cable_scaleConstraint1.csx" "bot_bodyRN.phl[361]";
@@ -31774,8 +32285,8 @@ connectAttr "pTorus1_parentConstraint1.crx" "bot_bodyRN.phl[367]";
 connectAttr "pTorus1_parentConstraint1.cry" "bot_bodyRN.phl[368]";
 connectAttr "pTorus1_parentConstraint1.crz" "bot_bodyRN.phl[369]";
 connectAttr "bot_bodyRN.phl[370]" "pTorus1_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[371]" "pTorus1_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[372]" "pTorus1_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[371]" "pTorus1_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[372]" "pTorus1_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[373]" "pTorus1_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[374]" "pTorus1_parentConstraint1.crt";
 connectAttr "pTorus1_scaleConstraint1.csx" "bot_bodyRN.phl[375]";
@@ -31788,8 +32299,8 @@ connectAttr "pTorus3_parentConstraint1.crx" "bot_bodyRN.phl[381]";
 connectAttr "pTorus3_parentConstraint1.cry" "bot_bodyRN.phl[382]";
 connectAttr "pTorus3_parentConstraint1.crz" "bot_bodyRN.phl[383]";
 connectAttr "bot_bodyRN.phl[384]" "pTorus3_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[385]" "pTorus3_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[386]" "pTorus3_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[385]" "pTorus3_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[386]" "pTorus3_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[387]" "pTorus3_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[388]" "pTorus3_parentConstraint1.crt";
 connectAttr "pTorus3_scaleConstraint1.csx" "bot_bodyRN.phl[389]";
@@ -31804,8 +32315,8 @@ connectAttr "pCylinder13_parentConstraint1.crx" "bot_bodyRN.phl[397]";
 connectAttr "pCylinder13_parentConstraint1.cry" "bot_bodyRN.phl[398]";
 connectAttr "pCylinder13_parentConstraint1.crz" "bot_bodyRN.phl[399]";
 connectAttr "bot_bodyRN.phl[400]" "pCylinder13_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[401]" "pCylinder13_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[402]" "pCylinder13_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[401]" "pCylinder13_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[402]" "pCylinder13_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[403]" "pCylinder13_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[404]" "pCylinder13_parentConstraint1.crt";
 connectAttr "pCylinder13_scaleConstraint1.csx" "bot_bodyRN.phl[405]";
@@ -31818,8 +32329,8 @@ connectAttr "Hip_Armor_parentConstraint1.crx" "bot_bodyRN.phl[411]";
 connectAttr "Hip_Armor_parentConstraint1.cry" "bot_bodyRN.phl[412]";
 connectAttr "Hip_Armor_parentConstraint1.crz" "bot_bodyRN.phl[413]";
 connectAttr "bot_bodyRN.phl[414]" "Hip_Armor_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[415]" "Hip_Armor_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[416]" "Hip_Armor_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[415]" "Hip_Armor_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[416]" "Hip_Armor_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[417]" "Hip_Armor_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[418]" "Hip_Armor_parentConstraint1.crt";
 connectAttr "Hip_Armor_scaleConstraint1.csx" "bot_bodyRN.phl[419]";
@@ -31832,8 +32343,8 @@ connectAttr "Hip_parentConstraint1.crx" "bot_bodyRN.phl[425]";
 connectAttr "Hip_parentConstraint1.cry" "bot_bodyRN.phl[426]";
 connectAttr "Hip_parentConstraint1.crz" "bot_bodyRN.phl[427]";
 connectAttr "bot_bodyRN.phl[428]" "Hip_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[429]" "Hip_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[430]" "Hip_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[429]" "Hip_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[430]" "Hip_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[431]" "Hip_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[432]" "Hip_parentConstraint1.crt";
 connectAttr "Hip_scaleConstraint1.csx" "bot_bodyRN.phl[433]";
@@ -31846,8 +32357,8 @@ connectAttr "Back_Ports_parentConstraint1.crx" "bot_bodyRN.phl[439]";
 connectAttr "Back_Ports_parentConstraint1.cry" "bot_bodyRN.phl[440]";
 connectAttr "Back_Ports_parentConstraint1.crz" "bot_bodyRN.phl[441]";
 connectAttr "bot_bodyRN.phl[442]" "Back_Ports_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[443]" "Back_Ports_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[444]" "Back_Ports_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[443]" "Back_Ports_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[444]" "Back_Ports_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[445]" "Back_Ports_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[446]" "Back_Ports_parentConstraint1.crt";
 connectAttr "Back_Ports_scaleConstraint1.csx" "bot_bodyRN.phl[447]";
@@ -31860,8 +32371,8 @@ connectAttr "L_Shold_Pist_Base_parentConstraint1.crx" "bot_bodyRN.phl[453]";
 connectAttr "L_Shold_Pist_Base_parentConstraint1.cry" "bot_bodyRN.phl[454]";
 connectAttr "L_Shold_Pist_Base_parentConstraint1.crz" "bot_bodyRN.phl[455]";
 connectAttr "bot_bodyRN.phl[456]" "L_Shold_Pist_Base_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[457]" "L_Shold_Pist_Base_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[458]" "L_Shold_Pist_Base_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[457]" "L_Shold_Pist_Base_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[458]" "L_Shold_Pist_Base_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[459]" "L_Shold_Pist_Base_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[460]" "L_Shold_Pist_Base_parentConstraint1.crt";
 connectAttr "L_Shold_Pist_Base_scaleConstraint1.csx" "bot_bodyRN.phl[461]";
@@ -31874,8 +32385,8 @@ connectAttr "L_Clav_Pist_Base_parentConstraint1.crx" "bot_bodyRN.phl[467]";
 connectAttr "L_Clav_Pist_Base_parentConstraint1.cry" "bot_bodyRN.phl[468]";
 connectAttr "L_Clav_Pist_Base_parentConstraint1.crz" "bot_bodyRN.phl[469]";
 connectAttr "bot_bodyRN.phl[470]" "L_Clav_Pist_Base_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[471]" "L_Clav_Pist_Base_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[472]" "L_Clav_Pist_Base_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[471]" "L_Clav_Pist_Base_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[472]" "L_Clav_Pist_Base_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[473]" "L_Clav_Pist_Base_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[474]" "L_Clav_Pist_Base_parentConstraint1.crt";
 connectAttr "L_Clav_Pist_Base_scaleConstraint1.csx" "bot_bodyRN.phl[475]";
@@ -31888,8 +32399,8 @@ connectAttr "pCylinder22_parentConstraint1.crx" "bot_bodyRN.phl[481]";
 connectAttr "pCylinder22_parentConstraint1.cry" "bot_bodyRN.phl[482]";
 connectAttr "pCylinder22_parentConstraint1.crz" "bot_bodyRN.phl[483]";
 connectAttr "bot_bodyRN.phl[484]" "pCylinder22_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[485]" "pCylinder22_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[486]" "pCylinder22_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[485]" "pCylinder22_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[486]" "pCylinder22_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[487]" "pCylinder22_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[488]" "pCylinder22_parentConstraint1.crt";
 connectAttr "pCylinder22_scaleConstraint1.csx" "bot_bodyRN.phl[489]";
@@ -31904,8 +32415,8 @@ connectAttr "pCylinder23_parentConstraint1.crx" "bot_bodyRN.phl[496]";
 connectAttr "pCylinder23_parentConstraint1.cry" "bot_bodyRN.phl[497]";
 connectAttr "pCylinder23_parentConstraint1.crz" "bot_bodyRN.phl[498]";
 connectAttr "bot_bodyRN.phl[499]" "pCylinder23_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[500]" "pCylinder23_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[501]" "pCylinder23_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[500]" "pCylinder23_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[501]" "pCylinder23_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[502]" "pCylinder23_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[503]" "pCylinder23_parentConstraint1.crt";
 connectAttr "pCylinder23_scaleConstraint1.csx" "bot_bodyRN.phl[504]";
@@ -31920,8 +32431,8 @@ connectAttr "pCylinder24_parentConstraint1.crx" "bot_bodyRN.phl[511]";
 connectAttr "pCylinder24_parentConstraint1.cry" "bot_bodyRN.phl[512]";
 connectAttr "pCylinder24_parentConstraint1.crz" "bot_bodyRN.phl[513]";
 connectAttr "bot_bodyRN.phl[514]" "pCylinder24_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[515]" "pCylinder24_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[516]" "pCylinder24_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[515]" "pCylinder24_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[516]" "pCylinder24_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[517]" "pCylinder24_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[518]" "pCylinder24_parentConstraint1.crt";
 connectAttr "pCylinder24_scaleConstraint1.csx" "bot_bodyRN.phl[519]";
@@ -31936,8 +32447,8 @@ connectAttr "pCylinder25_parentConstraint1.crx" "bot_bodyRN.phl[526]";
 connectAttr "pCylinder25_parentConstraint1.cry" "bot_bodyRN.phl[527]";
 connectAttr "pCylinder25_parentConstraint1.crz" "bot_bodyRN.phl[528]";
 connectAttr "bot_bodyRN.phl[529]" "pCylinder25_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[530]" "pCylinder25_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[531]" "pCylinder25_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[530]" "pCylinder25_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[531]" "pCylinder25_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[532]" "pCylinder25_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[533]" "pCylinder25_parentConstraint1.crt";
 connectAttr "pCylinder25_scaleConstraint1.csx" "bot_bodyRN.phl[534]";
@@ -31952,8 +32463,8 @@ connectAttr "pCylinder26_parentConstraint1.crx" "bot_bodyRN.phl[541]";
 connectAttr "pCylinder26_parentConstraint1.cry" "bot_bodyRN.phl[542]";
 connectAttr "pCylinder26_parentConstraint1.crz" "bot_bodyRN.phl[543]";
 connectAttr "bot_bodyRN.phl[544]" "pCylinder26_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[545]" "pCylinder26_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[546]" "pCylinder26_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[545]" "pCylinder26_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[546]" "pCylinder26_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[547]" "pCylinder26_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[548]" "pCylinder26_parentConstraint1.crt";
 connectAttr "pCylinder26_scaleConstraint1.csx" "bot_bodyRN.phl[549]";
@@ -31968,8 +32479,8 @@ connectAttr "pCylinder27_parentConstraint1.crx" "bot_bodyRN.phl[556]";
 connectAttr "pCylinder27_parentConstraint1.cry" "bot_bodyRN.phl[557]";
 connectAttr "pCylinder27_parentConstraint1.crz" "bot_bodyRN.phl[558]";
 connectAttr "bot_bodyRN.phl[559]" "pCylinder27_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[560]" "pCylinder27_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[561]" "pCylinder27_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[560]" "pCylinder27_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[561]" "pCylinder27_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[562]" "pCylinder27_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[563]" "pCylinder27_parentConstraint1.crt";
 connectAttr "pCylinder27_scaleConstraint1.csx" "bot_bodyRN.phl[564]";
@@ -31984,8 +32495,8 @@ connectAttr "pCylinder28_parentConstraint1.crx" "bot_bodyRN.phl[571]";
 connectAttr "pCylinder28_parentConstraint1.cry" "bot_bodyRN.phl[572]";
 connectAttr "pCylinder28_parentConstraint1.crz" "bot_bodyRN.phl[573]";
 connectAttr "bot_bodyRN.phl[574]" "pCylinder28_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[575]" "pCylinder28_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[576]" "pCylinder28_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[575]" "pCylinder28_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[576]" "pCylinder28_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[577]" "pCylinder28_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[578]" "pCylinder28_parentConstraint1.crt";
 connectAttr "pCylinder28_scaleConstraint1.csx" "bot_bodyRN.phl[579]";
@@ -32000,8 +32511,8 @@ connectAttr "pCylinder29_parentConstraint1.crx" "bot_bodyRN.phl[586]";
 connectAttr "pCylinder29_parentConstraint1.cry" "bot_bodyRN.phl[587]";
 connectAttr "pCylinder29_parentConstraint1.crz" "bot_bodyRN.phl[588]";
 connectAttr "bot_bodyRN.phl[589]" "pCylinder29_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[590]" "pCylinder29_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[591]" "pCylinder29_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[590]" "pCylinder29_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[591]" "pCylinder29_parentConstraint1.cpim";
 connectAttr "bot_bodyRN.phl[592]" "pCylinder29_parentConstraint1.crp";
 connectAttr "bot_bodyRN.phl[593]" "pCylinder29_parentConstraint1.crt";
 connectAttr "pCylinder29_scaleConstraint1.csx" "bot_bodyRN.phl[594]";
@@ -32009,1015 +32520,1095 @@ connectAttr "pCylinder29_scaleConstraint1.csy" "bot_bodyRN.phl[595]";
 connectAttr "pCylinder29_scaleConstraint1.csz" "bot_bodyRN.phl[596]";
 connectAttr "bot_bodyRN.phl[597]" "|bot_bodyRNfosterParent1|fosterParent3|pCylinder29ShapeTag.i"
 		;
-connectAttr "polySurface5_parentConstraint1.ctx" "bot_bodyRN.phl[598]";
-connectAttr "polySurface5_parentConstraint1.cty" "bot_bodyRN.phl[599]";
-connectAttr "polySurface5_parentConstraint1.ctz" "bot_bodyRN.phl[600]";
-connectAttr "polySurface5_parentConstraint1.crx" "bot_bodyRN.phl[601]";
-connectAttr "polySurface5_parentConstraint1.cry" "bot_bodyRN.phl[602]";
-connectAttr "polySurface5_parentConstraint1.crz" "bot_bodyRN.phl[603]";
-connectAttr "bot_bodyRN.phl[604]" "polySurface5_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[605]" "polySurface5_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[606]" "polySurface5_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[607]" "polySurface5_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[608]" "polySurface5_parentConstraint1.crt";
-connectAttr "polySurface5_scaleConstraint1.csx" "bot_bodyRN.phl[609]";
-connectAttr "polySurface5_scaleConstraint1.csy" "bot_bodyRN.phl[610]";
-connectAttr "polySurface5_scaleConstraint1.csz" "bot_bodyRN.phl[611]";
-connectAttr "pCylinder1_parentConstraint1.ctx" "bot_bodyRN.phl[612]";
-connectAttr "pCylinder1_parentConstraint1.cty" "bot_bodyRN.phl[613]";
-connectAttr "pCylinder1_parentConstraint1.ctz" "bot_bodyRN.phl[614]";
-connectAttr "pCylinder1_parentConstraint1.crx" "bot_bodyRN.phl[615]";
-connectAttr "pCylinder1_parentConstraint1.cry" "bot_bodyRN.phl[616]";
-connectAttr "pCylinder1_parentConstraint1.crz" "bot_bodyRN.phl[617]";
-connectAttr "bot_bodyRN.phl[618]" "pCylinder1_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[619]" "pCylinder1_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[620]" "pCylinder1_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[621]" "pCylinder1_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[622]" "pCylinder1_parentConstraint1.crt";
-connectAttr "pCylinder1_scaleConstraint1.csx" "bot_bodyRN.phl[623]";
-connectAttr "pCylinder1_scaleConstraint1.csy" "bot_bodyRN.phl[624]";
-connectAttr "pCylinder1_scaleConstraint1.csz" "bot_bodyRN.phl[625]";
-connectAttr "pCube12_parentConstraint1.ctx" "bot_bodyRN.phl[626]";
-connectAttr "pCube12_parentConstraint1.cty" "bot_bodyRN.phl[627]";
-connectAttr "pCube12_parentConstraint1.ctz" "bot_bodyRN.phl[628]";
-connectAttr "pCube12_parentConstraint1.crx" "bot_bodyRN.phl[629]";
-connectAttr "pCube12_parentConstraint1.cry" "bot_bodyRN.phl[630]";
-connectAttr "pCube12_parentConstraint1.crz" "bot_bodyRN.phl[631]";
-connectAttr "bot_bodyRN.phl[632]" "pCube12_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[633]" "pCube12_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[634]" "pCube12_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[635]" "pCube12_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[636]" "pCube12_parentConstraint1.crt";
-connectAttr "pCube12_scaleConstraint1.csx" "bot_bodyRN.phl[637]";
-connectAttr "pCube12_scaleConstraint1.csy" "bot_bodyRN.phl[638]";
-connectAttr "pCube12_scaleConstraint1.csz" "bot_bodyRN.phl[639]";
-connectAttr "polySurface10_parentConstraint1.ctx" "bot_bodyRN.phl[640]";
-connectAttr "polySurface10_parentConstraint1.cty" "bot_bodyRN.phl[641]";
-connectAttr "polySurface10_parentConstraint1.ctz" "bot_bodyRN.phl[642]";
-connectAttr "polySurface10_parentConstraint1.crx" "bot_bodyRN.phl[643]";
-connectAttr "polySurface10_parentConstraint1.cry" "bot_bodyRN.phl[644]";
-connectAttr "polySurface10_parentConstraint1.crz" "bot_bodyRN.phl[645]";
-connectAttr "bot_bodyRN.phl[646]" "polySurface10_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[647]" "polySurface10_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[648]" "polySurface10_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[649]" "polySurface10_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[650]" "polySurface10_parentConstraint1.crt";
-connectAttr "polySurface10_scaleConstraint1.csx" "bot_bodyRN.phl[651]";
-connectAttr "polySurface10_scaleConstraint1.csy" "bot_bodyRN.phl[652]";
-connectAttr "polySurface10_scaleConstraint1.csz" "bot_bodyRN.phl[653]";
-connectAttr "polySurface11_parentConstraint1.ctx" "bot_bodyRN.phl[654]";
-connectAttr "polySurface11_parentConstraint1.cty" "bot_bodyRN.phl[655]";
-connectAttr "polySurface11_parentConstraint1.ctz" "bot_bodyRN.phl[656]";
-connectAttr "polySurface11_parentConstraint1.crx" "bot_bodyRN.phl[657]";
-connectAttr "polySurface11_parentConstraint1.cry" "bot_bodyRN.phl[658]";
-connectAttr "polySurface11_parentConstraint1.crz" "bot_bodyRN.phl[659]";
-connectAttr "bot_bodyRN.phl[660]" "polySurface11_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[661]" "polySurface11_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[662]" "polySurface11_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[663]" "polySurface11_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[664]" "polySurface11_parentConstraint1.crt";
-connectAttr "polySurface11_scaleConstraint1.csx" "bot_bodyRN.phl[665]";
-connectAttr "polySurface11_scaleConstraint1.csy" "bot_bodyRN.phl[666]";
-connectAttr "polySurface11_scaleConstraint1.csz" "bot_bodyRN.phl[667]";
-connectAttr "polySurface12_parentConstraint1.ctx" "bot_bodyRN.phl[668]";
-connectAttr "polySurface12_parentConstraint1.cty" "bot_bodyRN.phl[669]";
-connectAttr "polySurface12_parentConstraint1.ctz" "bot_bodyRN.phl[670]";
-connectAttr "polySurface12_parentConstraint1.crx" "bot_bodyRN.phl[671]";
-connectAttr "polySurface12_parentConstraint1.cry" "bot_bodyRN.phl[672]";
-connectAttr "polySurface12_parentConstraint1.crz" "bot_bodyRN.phl[673]";
-connectAttr "bot_bodyRN.phl[674]" "polySurface12_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[675]" "polySurface12_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[676]" "polySurface12_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[677]" "polySurface12_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[678]" "polySurface12_parentConstraint1.crt";
-connectAttr "polySurface12_scaleConstraint1.csx" "bot_bodyRN.phl[679]";
-connectAttr "polySurface12_scaleConstraint1.csy" "bot_bodyRN.phl[680]";
-connectAttr "polySurface12_scaleConstraint1.csz" "bot_bodyRN.phl[681]";
-connectAttr "bot_bodyRN.phl[682]" "skinCluster4.orggeom[0]";
-connectAttr "bot_bodyRN.phl[683]" "skinCluster4.ip[0].ig";
-connectAttr "polySurface14_parentConstraint1.ctx" "bot_bodyRN.phl[684]";
-connectAttr "polySurface14_parentConstraint1.cty" "bot_bodyRN.phl[685]";
-connectAttr "polySurface14_parentConstraint1.ctz" "bot_bodyRN.phl[686]";
-connectAttr "polySurface14_parentConstraint1.crx" "bot_bodyRN.phl[687]";
-connectAttr "polySurface14_parentConstraint1.cry" "bot_bodyRN.phl[688]";
-connectAttr "polySurface14_parentConstraint1.crz" "bot_bodyRN.phl[689]";
-connectAttr "bot_bodyRN.phl[690]" "polySurface14_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[691]" "polySurface14_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[692]" "polySurface14_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[693]" "polySurface14_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[694]" "polySurface14_parentConstraint1.crt";
-connectAttr "polySurface14_scaleConstraint1.csx" "bot_bodyRN.phl[695]";
-connectAttr "polySurface14_scaleConstraint1.csy" "bot_bodyRN.phl[696]";
-connectAttr "polySurface14_scaleConstraint1.csz" "bot_bodyRN.phl[697]";
-connectAttr "bot_bodyRN.phl[698]" "skinCluster3.orggeom[0]";
-connectAttr "bot_bodyRN.phl[699]" "tweak2.ip[0].ig";
-connectAttr "pCube13_parentConstraint1.ctx" "bot_bodyRN.phl[700]";
-connectAttr "pCube13_parentConstraint1.cty" "bot_bodyRN.phl[701]";
-connectAttr "pCube13_parentConstraint1.ctz" "bot_bodyRN.phl[702]";
-connectAttr "pCube13_parentConstraint1.crx" "bot_bodyRN.phl[703]";
-connectAttr "pCube13_parentConstraint1.cry" "bot_bodyRN.phl[704]";
-connectAttr "pCube13_parentConstraint1.crz" "bot_bodyRN.phl[705]";
-connectAttr "bot_bodyRN.phl[706]" "pCube13_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[707]" "pCube13_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[708]" "pCube13_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[709]" "pCube13_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[710]" "pCube13_parentConstraint1.crt";
-connectAttr "pCube13_scaleConstraint1.csx" "bot_bodyRN.phl[711]";
-connectAttr "pCube13_scaleConstraint1.csy" "bot_bodyRN.phl[712]";
-connectAttr "pCube13_scaleConstraint1.csz" "bot_bodyRN.phl[713]";
-connectAttr "polySurface4_parentConstraint1.ctx" "bot_bodyRN.phl[714]";
-connectAttr "polySurface4_parentConstraint1.cty" "bot_bodyRN.phl[715]";
-connectAttr "polySurface4_parentConstraint1.ctz" "bot_bodyRN.phl[716]";
-connectAttr "polySurface4_parentConstraint1.crx" "bot_bodyRN.phl[717]";
-connectAttr "polySurface4_parentConstraint1.cry" "bot_bodyRN.phl[718]";
-connectAttr "polySurface4_parentConstraint1.crz" "bot_bodyRN.phl[719]";
-connectAttr "bot_bodyRN.phl[720]" "polySurface4_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[721]" "polySurface4_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[722]" "polySurface4_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[723]" "polySurface4_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[724]" "polySurface4_parentConstraint1.crt";
-connectAttr "polySurface4_scaleConstraint1.csx" "bot_bodyRN.phl[725]";
-connectAttr "polySurface4_scaleConstraint1.csy" "bot_bodyRN.phl[726]";
-connectAttr "polySurface4_scaleConstraint1.csz" "bot_bodyRN.phl[727]";
-connectAttr "pPlane41_parentConstraint1.ctx" "bot_bodyRN.phl[728]";
-connectAttr "pPlane41_parentConstraint1.cty" "bot_bodyRN.phl[729]";
-connectAttr "pPlane41_parentConstraint1.ctz" "bot_bodyRN.phl[730]";
-connectAttr "pPlane41_parentConstraint1.crx" "bot_bodyRN.phl[731]";
-connectAttr "pPlane41_parentConstraint1.cry" "bot_bodyRN.phl[732]";
-connectAttr "pPlane41_parentConstraint1.crz" "bot_bodyRN.phl[733]";
-connectAttr "bot_bodyRN.phl[734]" "pPlane41_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[735]" "pPlane41_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[736]" "pPlane41_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[737]" "pPlane41_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[738]" "pPlane41_parentConstraint1.crt";
-connectAttr "pPlane41_scaleConstraint1.csx" "bot_bodyRN.phl[739]";
-connectAttr "pPlane41_scaleConstraint1.csy" "bot_bodyRN.phl[740]";
-connectAttr "pPlane41_scaleConstraint1.csz" "bot_bodyRN.phl[741]";
-connectAttr "Shoulder_clav_parentConstraint1.ctx" "bot_bodyRN.phl[742]";
-connectAttr "Shoulder_clav_parentConstraint1.cty" "bot_bodyRN.phl[743]";
-connectAttr "Shoulder_clav_parentConstraint1.ctz" "bot_bodyRN.phl[744]";
-connectAttr "Shoulder_clav_parentConstraint1.crx" "bot_bodyRN.phl[745]";
-connectAttr "Shoulder_clav_parentConstraint1.cry" "bot_bodyRN.phl[746]";
-connectAttr "Shoulder_clav_parentConstraint1.crz" "bot_bodyRN.phl[747]";
-connectAttr "bot_bodyRN.phl[748]" "Shoulder_clav_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[749]" "Shoulder_clav_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[750]" "Shoulder_clav_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[751]" "Shoulder_clav_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[752]" "Shoulder_clav_parentConstraint1.crt";
-connectAttr "Shoulder_clav_scaleConstraint1.csx" "bot_bodyRN.phl[753]";
-connectAttr "Shoulder_clav_scaleConstraint1.csy" "bot_bodyRN.phl[754]";
-connectAttr "Shoulder_clav_scaleConstraint1.csz" "bot_bodyRN.phl[755]";
-connectAttr "L_Shold_Pist_Base_parentConstraint2.ctx" "bot_bodyRN.phl[756]";
-connectAttr "L_Shold_Pist_Base_parentConstraint2.cty" "bot_bodyRN.phl[757]";
-connectAttr "L_Shold_Pist_Base_parentConstraint2.ctz" "bot_bodyRN.phl[758]";
-connectAttr "L_Shold_Pist_Base_parentConstraint2.crx" "bot_bodyRN.phl[759]";
-connectAttr "L_Shold_Pist_Base_parentConstraint2.cry" "bot_bodyRN.phl[760]";
-connectAttr "L_Shold_Pist_Base_parentConstraint2.crz" "bot_bodyRN.phl[761]";
-connectAttr "bot_bodyRN.phl[762]" "L_Shold_Pist_Base_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[763]" "L_Shold_Pist_Base_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[764]" "L_Shold_Pist_Base_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[765]" "L_Shold_Pist_Base_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[766]" "L_Shold_Pist_Base_parentConstraint2.crt";
-connectAttr "L_Shold_Pist_Base_scaleConstraint2.csx" "bot_bodyRN.phl[767]";
-connectAttr "L_Shold_Pist_Base_scaleConstraint2.csy" "bot_bodyRN.phl[768]";
-connectAttr "L_Shold_Pist_Base_scaleConstraint2.csz" "bot_bodyRN.phl[769]";
-connectAttr "L_Clav_Pist_Base_parentConstraint2.ctx" "bot_bodyRN.phl[770]";
-connectAttr "L_Clav_Pist_Base_parentConstraint2.cty" "bot_bodyRN.phl[771]";
-connectAttr "L_Clav_Pist_Base_parentConstraint2.ctz" "bot_bodyRN.phl[772]";
-connectAttr "L_Clav_Pist_Base_parentConstraint2.crx" "bot_bodyRN.phl[773]";
-connectAttr "L_Clav_Pist_Base_parentConstraint2.cry" "bot_bodyRN.phl[774]";
-connectAttr "L_Clav_Pist_Base_parentConstraint2.crz" "bot_bodyRN.phl[775]";
-connectAttr "bot_bodyRN.phl[776]" "L_Clav_Pist_Base_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[777]" "L_Clav_Pist_Base_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[778]" "L_Clav_Pist_Base_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[779]" "L_Clav_Pist_Base_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[780]" "L_Clav_Pist_Base_parentConstraint2.crt";
-connectAttr "L_Clav_Pist_Base_scaleConstraint2.csx" "bot_bodyRN.phl[781]";
-connectAttr "L_Clav_Pist_Base_scaleConstraint2.csy" "bot_bodyRN.phl[782]";
-connectAttr "L_Clav_Pist_Base_scaleConstraint2.csz" "bot_bodyRN.phl[783]";
-connectAttr "pCylinder22_parentConstraint2.ctx" "bot_bodyRN.phl[784]";
-connectAttr "pCylinder22_parentConstraint2.cty" "bot_bodyRN.phl[785]";
-connectAttr "pCylinder22_parentConstraint2.ctz" "bot_bodyRN.phl[786]";
-connectAttr "pCylinder22_parentConstraint2.crx" "bot_bodyRN.phl[787]";
-connectAttr "pCylinder22_parentConstraint2.cry" "bot_bodyRN.phl[788]";
-connectAttr "pCylinder22_parentConstraint2.crz" "bot_bodyRN.phl[789]";
-connectAttr "bot_bodyRN.phl[790]" "pCylinder22_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[791]" "pCylinder22_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[792]" "pCylinder22_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[793]" "pCylinder22_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[794]" "pCylinder22_parentConstraint2.crt";
-connectAttr "pCylinder22_scaleConstraint2.csx" "bot_bodyRN.phl[795]";
-connectAttr "pCylinder22_scaleConstraint2.csy" "bot_bodyRN.phl[796]";
-connectAttr "pCylinder22_scaleConstraint2.csz" "bot_bodyRN.phl[797]";
-connectAttr "bot_bodyRN.phl[798]" "|bot_bodyRNfosterParent1|pCylinder22ShapeTag.i"
+connectAttr "pCylinder30_parentConstraint1.ctx" "bot_bodyRN.phl[598]";
+connectAttr "pCylinder30_parentConstraint1.cty" "bot_bodyRN.phl[599]";
+connectAttr "pCylinder30_parentConstraint1.ctz" "bot_bodyRN.phl[600]";
+connectAttr "pCylinder30_parentConstraint1.crx" "bot_bodyRN.phl[601]";
+connectAttr "pCylinder30_parentConstraint1.cry" "bot_bodyRN.phl[602]";
+connectAttr "pCylinder30_parentConstraint1.crz" "bot_bodyRN.phl[603]";
+connectAttr "bot_bodyRN.phl[604]" "pCylinder30_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[605]" "pCylinder30_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[606]" "pCylinder30_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[607]" "pCylinder30_parentConstraint1.crt";
+connectAttr "pCylinder31_parentConstraint1.ctx" "bot_bodyRN.phl[608]";
+connectAttr "pCylinder31_parentConstraint1.cty" "bot_bodyRN.phl[609]";
+connectAttr "pCylinder31_parentConstraint1.ctz" "bot_bodyRN.phl[610]";
+connectAttr "pCylinder31_parentConstraint1.crx" "bot_bodyRN.phl[611]";
+connectAttr "pCylinder31_parentConstraint1.cry" "bot_bodyRN.phl[612]";
+connectAttr "pCylinder31_parentConstraint1.crz" "bot_bodyRN.phl[613]";
+connectAttr "bot_bodyRN.phl[614]" "pCylinder31_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[615]" "pCylinder31_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[616]" "pCylinder31_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[617]" "pCylinder31_parentConstraint1.crt";
+connectAttr "pCylinder32_parentConstraint1.ctx" "bot_bodyRN.phl[618]";
+connectAttr "pCylinder32_parentConstraint1.cty" "bot_bodyRN.phl[619]";
+connectAttr "pCylinder32_parentConstraint1.ctz" "bot_bodyRN.phl[620]";
+connectAttr "pCylinder32_parentConstraint1.crx" "bot_bodyRN.phl[621]";
+connectAttr "pCylinder32_parentConstraint1.cry" "bot_bodyRN.phl[622]";
+connectAttr "pCylinder32_parentConstraint1.crz" "bot_bodyRN.phl[623]";
+connectAttr "bot_bodyRN.phl[624]" "pCylinder32_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[625]" "pCylinder32_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[626]" "pCylinder32_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[627]" "pCylinder32_parentConstraint1.crt";
+connectAttr "pCylinder33_parentConstraint1.ctx" "bot_bodyRN.phl[628]";
+connectAttr "pCylinder33_parentConstraint1.cty" "bot_bodyRN.phl[629]";
+connectAttr "pCylinder33_parentConstraint1.ctz" "bot_bodyRN.phl[630]";
+connectAttr "pCylinder33_parentConstraint1.crx" "bot_bodyRN.phl[631]";
+connectAttr "pCylinder33_parentConstraint1.cry" "bot_bodyRN.phl[632]";
+connectAttr "pCylinder33_parentConstraint1.crz" "bot_bodyRN.phl[633]";
+connectAttr "bot_bodyRN.phl[634]" "pCylinder33_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[635]" "pCylinder33_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[636]" "pCylinder33_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[637]" "pCylinder33_parentConstraint1.crt";
+connectAttr "polySurface5_parentConstraint1.ctx" "bot_bodyRN.phl[638]";
+connectAttr "polySurface5_parentConstraint1.cty" "bot_bodyRN.phl[639]";
+connectAttr "polySurface5_parentConstraint1.ctz" "bot_bodyRN.phl[640]";
+connectAttr "polySurface5_parentConstraint1.crx" "bot_bodyRN.phl[641]";
+connectAttr "polySurface5_parentConstraint1.cry" "bot_bodyRN.phl[642]";
+connectAttr "polySurface5_parentConstraint1.crz" "bot_bodyRN.phl[643]";
+connectAttr "bot_bodyRN.phl[644]" "polySurface5_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[645]" "polySurface5_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[646]" "polySurface5_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[647]" "polySurface5_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[648]" "polySurface5_parentConstraint1.crt";
+connectAttr "polySurface5_scaleConstraint1.csx" "bot_bodyRN.phl[649]";
+connectAttr "polySurface5_scaleConstraint1.csy" "bot_bodyRN.phl[650]";
+connectAttr "polySurface5_scaleConstraint1.csz" "bot_bodyRN.phl[651]";
+connectAttr "pCylinder1_parentConstraint1.ctx" "bot_bodyRN.phl[652]";
+connectAttr "pCylinder1_parentConstraint1.cty" "bot_bodyRN.phl[653]";
+connectAttr "pCylinder1_parentConstraint1.ctz" "bot_bodyRN.phl[654]";
+connectAttr "pCylinder1_parentConstraint1.crx" "bot_bodyRN.phl[655]";
+connectAttr "pCylinder1_parentConstraint1.cry" "bot_bodyRN.phl[656]";
+connectAttr "pCylinder1_parentConstraint1.crz" "bot_bodyRN.phl[657]";
+connectAttr "bot_bodyRN.phl[658]" "pCylinder1_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[659]" "pCylinder1_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[660]" "pCylinder1_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[661]" "pCylinder1_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[662]" "pCylinder1_parentConstraint1.crt";
+connectAttr "pCylinder1_scaleConstraint1.csx" "bot_bodyRN.phl[663]";
+connectAttr "pCylinder1_scaleConstraint1.csy" "bot_bodyRN.phl[664]";
+connectAttr "pCylinder1_scaleConstraint1.csz" "bot_bodyRN.phl[665]";
+connectAttr "pCube12_parentConstraint1.ctx" "bot_bodyRN.phl[666]";
+connectAttr "pCube12_parentConstraint1.cty" "bot_bodyRN.phl[667]";
+connectAttr "pCube12_parentConstraint1.ctz" "bot_bodyRN.phl[668]";
+connectAttr "pCube12_parentConstraint1.crx" "bot_bodyRN.phl[669]";
+connectAttr "pCube12_parentConstraint1.cry" "bot_bodyRN.phl[670]";
+connectAttr "pCube12_parentConstraint1.crz" "bot_bodyRN.phl[671]";
+connectAttr "bot_bodyRN.phl[672]" "pCube12_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[673]" "pCube12_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[674]" "pCube12_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[675]" "pCube12_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[676]" "pCube12_parentConstraint1.crt";
+connectAttr "pCube12_scaleConstraint1.csx" "bot_bodyRN.phl[677]";
+connectAttr "pCube12_scaleConstraint1.csy" "bot_bodyRN.phl[678]";
+connectAttr "pCube12_scaleConstraint1.csz" "bot_bodyRN.phl[679]";
+connectAttr "polySurface10_parentConstraint1.ctx" "bot_bodyRN.phl[680]";
+connectAttr "polySurface10_parentConstraint1.cty" "bot_bodyRN.phl[681]";
+connectAttr "polySurface10_parentConstraint1.ctz" "bot_bodyRN.phl[682]";
+connectAttr "polySurface10_parentConstraint1.crx" "bot_bodyRN.phl[683]";
+connectAttr "polySurface10_parentConstraint1.cry" "bot_bodyRN.phl[684]";
+connectAttr "polySurface10_parentConstraint1.crz" "bot_bodyRN.phl[685]";
+connectAttr "bot_bodyRN.phl[686]" "polySurface10_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[687]" "polySurface10_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[688]" "polySurface10_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[689]" "polySurface10_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[690]" "polySurface10_parentConstraint1.crt";
+connectAttr "polySurface10_scaleConstraint1.csx" "bot_bodyRN.phl[691]";
+connectAttr "polySurface10_scaleConstraint1.csy" "bot_bodyRN.phl[692]";
+connectAttr "polySurface10_scaleConstraint1.csz" "bot_bodyRN.phl[693]";
+connectAttr "polySurface11_parentConstraint1.ctx" "bot_bodyRN.phl[694]";
+connectAttr "polySurface11_parentConstraint1.cty" "bot_bodyRN.phl[695]";
+connectAttr "polySurface11_parentConstraint1.ctz" "bot_bodyRN.phl[696]";
+connectAttr "polySurface11_parentConstraint1.crx" "bot_bodyRN.phl[697]";
+connectAttr "polySurface11_parentConstraint1.cry" "bot_bodyRN.phl[698]";
+connectAttr "polySurface11_parentConstraint1.crz" "bot_bodyRN.phl[699]";
+connectAttr "bot_bodyRN.phl[700]" "polySurface11_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[701]" "polySurface11_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[702]" "polySurface11_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[703]" "polySurface11_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[704]" "polySurface11_parentConstraint1.crt";
+connectAttr "polySurface11_scaleConstraint1.csx" "bot_bodyRN.phl[705]";
+connectAttr "polySurface11_scaleConstraint1.csy" "bot_bodyRN.phl[706]";
+connectAttr "polySurface11_scaleConstraint1.csz" "bot_bodyRN.phl[707]";
+connectAttr "polySurface12_parentConstraint1.ctx" "bot_bodyRN.phl[708]";
+connectAttr "polySurface12_parentConstraint1.cty" "bot_bodyRN.phl[709]";
+connectAttr "polySurface12_parentConstraint1.ctz" "bot_bodyRN.phl[710]";
+connectAttr "polySurface12_parentConstraint1.crx" "bot_bodyRN.phl[711]";
+connectAttr "polySurface12_parentConstraint1.cry" "bot_bodyRN.phl[712]";
+connectAttr "polySurface12_parentConstraint1.crz" "bot_bodyRN.phl[713]";
+connectAttr "bot_bodyRN.phl[714]" "polySurface12_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[715]" "polySurface12_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[716]" "polySurface12_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[717]" "polySurface12_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[718]" "polySurface12_parentConstraint1.crt";
+connectAttr "polySurface12_scaleConstraint1.csx" "bot_bodyRN.phl[719]";
+connectAttr "polySurface12_scaleConstraint1.csy" "bot_bodyRN.phl[720]";
+connectAttr "polySurface12_scaleConstraint1.csz" "bot_bodyRN.phl[721]";
+connectAttr "bot_bodyRN.phl[722]" "skinCluster4.ip[0].ig";
+connectAttr "bot_bodyRN.phl[723]" "skinCluster4.orggeom[0]";
+connectAttr "polySurface14_parentConstraint1.ctx" "bot_bodyRN.phl[724]";
+connectAttr "polySurface14_parentConstraint1.cty" "bot_bodyRN.phl[725]";
+connectAttr "polySurface14_parentConstraint1.ctz" "bot_bodyRN.phl[726]";
+connectAttr "polySurface14_parentConstraint1.crx" "bot_bodyRN.phl[727]";
+connectAttr "polySurface14_parentConstraint1.cry" "bot_bodyRN.phl[728]";
+connectAttr "polySurface14_parentConstraint1.crz" "bot_bodyRN.phl[729]";
+connectAttr "bot_bodyRN.phl[730]" "polySurface14_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[731]" "polySurface14_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[732]" "polySurface14_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[733]" "polySurface14_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[734]" "polySurface14_parentConstraint1.crt";
+connectAttr "polySurface14_scaleConstraint1.csx" "bot_bodyRN.phl[735]";
+connectAttr "polySurface14_scaleConstraint1.csy" "bot_bodyRN.phl[736]";
+connectAttr "polySurface14_scaleConstraint1.csz" "bot_bodyRN.phl[737]";
+connectAttr "bot_bodyRN.phl[738]" "tweak2.ip[0].ig";
+connectAttr "bot_bodyRN.phl[739]" "skinCluster3.orggeom[0]";
+connectAttr "pCube13_parentConstraint1.ctx" "bot_bodyRN.phl[740]";
+connectAttr "pCube13_parentConstraint1.cty" "bot_bodyRN.phl[741]";
+connectAttr "pCube13_parentConstraint1.ctz" "bot_bodyRN.phl[742]";
+connectAttr "pCube13_parentConstraint1.crx" "bot_bodyRN.phl[743]";
+connectAttr "pCube13_parentConstraint1.cry" "bot_bodyRN.phl[744]";
+connectAttr "pCube13_parentConstraint1.crz" "bot_bodyRN.phl[745]";
+connectAttr "bot_bodyRN.phl[746]" "pCube13_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[747]" "pCube13_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[748]" "pCube13_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[749]" "pCube13_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[750]" "pCube13_parentConstraint1.crt";
+connectAttr "pCube13_scaleConstraint1.csx" "bot_bodyRN.phl[751]";
+connectAttr "pCube13_scaleConstraint1.csy" "bot_bodyRN.phl[752]";
+connectAttr "pCube13_scaleConstraint1.csz" "bot_bodyRN.phl[753]";
+connectAttr "polySurface4_parentConstraint1.ctx" "bot_bodyRN.phl[754]";
+connectAttr "polySurface4_parentConstraint1.cty" "bot_bodyRN.phl[755]";
+connectAttr "polySurface4_parentConstraint1.ctz" "bot_bodyRN.phl[756]";
+connectAttr "polySurface4_parentConstraint1.crx" "bot_bodyRN.phl[757]";
+connectAttr "polySurface4_parentConstraint1.cry" "bot_bodyRN.phl[758]";
+connectAttr "polySurface4_parentConstraint1.crz" "bot_bodyRN.phl[759]";
+connectAttr "bot_bodyRN.phl[760]" "polySurface4_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[761]" "polySurface4_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[762]" "polySurface4_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[763]" "polySurface4_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[764]" "polySurface4_parentConstraint1.crt";
+connectAttr "polySurface4_scaleConstraint1.csx" "bot_bodyRN.phl[765]";
+connectAttr "polySurface4_scaleConstraint1.csy" "bot_bodyRN.phl[766]";
+connectAttr "polySurface4_scaleConstraint1.csz" "bot_bodyRN.phl[767]";
+connectAttr "pPlane41_parentConstraint1.ctx" "bot_bodyRN.phl[768]";
+connectAttr "pPlane41_parentConstraint1.cty" "bot_bodyRN.phl[769]";
+connectAttr "pPlane41_parentConstraint1.ctz" "bot_bodyRN.phl[770]";
+connectAttr "pPlane41_parentConstraint1.crx" "bot_bodyRN.phl[771]";
+connectAttr "pPlane41_parentConstraint1.cry" "bot_bodyRN.phl[772]";
+connectAttr "pPlane41_parentConstraint1.crz" "bot_bodyRN.phl[773]";
+connectAttr "bot_bodyRN.phl[774]" "pPlane41_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[775]" "pPlane41_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[776]" "pPlane41_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[777]" "pPlane41_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[778]" "pPlane41_parentConstraint1.crt";
+connectAttr "pPlane41_scaleConstraint1.csx" "bot_bodyRN.phl[779]";
+connectAttr "pPlane41_scaleConstraint1.csy" "bot_bodyRN.phl[780]";
+connectAttr "pPlane41_scaleConstraint1.csz" "bot_bodyRN.phl[781]";
+connectAttr "Shoulder_clav_parentConstraint1.ctx" "bot_bodyRN.phl[782]";
+connectAttr "Shoulder_clav_parentConstraint1.cty" "bot_bodyRN.phl[783]";
+connectAttr "Shoulder_clav_parentConstraint1.ctz" "bot_bodyRN.phl[784]";
+connectAttr "Shoulder_clav_parentConstraint1.crx" "bot_bodyRN.phl[785]";
+connectAttr "Shoulder_clav_parentConstraint1.cry" "bot_bodyRN.phl[786]";
+connectAttr "Shoulder_clav_parentConstraint1.crz" "bot_bodyRN.phl[787]";
+connectAttr "bot_bodyRN.phl[788]" "Shoulder_clav_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[789]" "Shoulder_clav_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[790]" "Shoulder_clav_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[791]" "Shoulder_clav_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[792]" "Shoulder_clav_parentConstraint1.crt";
+connectAttr "Shoulder_clav_scaleConstraint1.csx" "bot_bodyRN.phl[793]";
+connectAttr "Shoulder_clav_scaleConstraint1.csy" "bot_bodyRN.phl[794]";
+connectAttr "Shoulder_clav_scaleConstraint1.csz" "bot_bodyRN.phl[795]";
+connectAttr "L_Shold_Pist_Base_parentConstraint2.ctx" "bot_bodyRN.phl[796]";
+connectAttr "L_Shold_Pist_Base_parentConstraint2.cty" "bot_bodyRN.phl[797]";
+connectAttr "L_Shold_Pist_Base_parentConstraint2.ctz" "bot_bodyRN.phl[798]";
+connectAttr "L_Shold_Pist_Base_parentConstraint2.crx" "bot_bodyRN.phl[799]";
+connectAttr "L_Shold_Pist_Base_parentConstraint2.cry" "bot_bodyRN.phl[800]";
+connectAttr "L_Shold_Pist_Base_parentConstraint2.crz" "bot_bodyRN.phl[801]";
+connectAttr "bot_bodyRN.phl[802]" "L_Shold_Pist_Base_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[803]" "L_Shold_Pist_Base_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[804]" "L_Shold_Pist_Base_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[805]" "L_Shold_Pist_Base_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[806]" "L_Shold_Pist_Base_parentConstraint2.crt";
+connectAttr "L_Shold_Pist_Base_scaleConstraint2.csx" "bot_bodyRN.phl[807]";
+connectAttr "L_Shold_Pist_Base_scaleConstraint2.csy" "bot_bodyRN.phl[808]";
+connectAttr "L_Shold_Pist_Base_scaleConstraint2.csz" "bot_bodyRN.phl[809]";
+connectAttr "L_Clav_Pist_Base_parentConstraint2.ctx" "bot_bodyRN.phl[810]";
+connectAttr "L_Clav_Pist_Base_parentConstraint2.cty" "bot_bodyRN.phl[811]";
+connectAttr "L_Clav_Pist_Base_parentConstraint2.ctz" "bot_bodyRN.phl[812]";
+connectAttr "L_Clav_Pist_Base_parentConstraint2.crx" "bot_bodyRN.phl[813]";
+connectAttr "L_Clav_Pist_Base_parentConstraint2.cry" "bot_bodyRN.phl[814]";
+connectAttr "L_Clav_Pist_Base_parentConstraint2.crz" "bot_bodyRN.phl[815]";
+connectAttr "bot_bodyRN.phl[816]" "L_Clav_Pist_Base_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[817]" "L_Clav_Pist_Base_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[818]" "L_Clav_Pist_Base_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[819]" "L_Clav_Pist_Base_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[820]" "L_Clav_Pist_Base_parentConstraint2.crt";
+connectAttr "L_Clav_Pist_Base_scaleConstraint2.csx" "bot_bodyRN.phl[821]";
+connectAttr "L_Clav_Pist_Base_scaleConstraint2.csy" "bot_bodyRN.phl[822]";
+connectAttr "L_Clav_Pist_Base_scaleConstraint2.csz" "bot_bodyRN.phl[823]";
+connectAttr "pCylinder22_parentConstraint2.ctx" "bot_bodyRN.phl[824]";
+connectAttr "pCylinder22_parentConstraint2.cty" "bot_bodyRN.phl[825]";
+connectAttr "pCylinder22_parentConstraint2.ctz" "bot_bodyRN.phl[826]";
+connectAttr "pCylinder22_parentConstraint2.crx" "bot_bodyRN.phl[827]";
+connectAttr "pCylinder22_parentConstraint2.cry" "bot_bodyRN.phl[828]";
+connectAttr "pCylinder22_parentConstraint2.crz" "bot_bodyRN.phl[829]";
+connectAttr "bot_bodyRN.phl[830]" "pCylinder22_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[831]" "pCylinder22_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[832]" "pCylinder22_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[833]" "pCylinder22_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[834]" "pCylinder22_parentConstraint2.crt";
+connectAttr "pCylinder22_scaleConstraint2.csx" "bot_bodyRN.phl[835]";
+connectAttr "pCylinder22_scaleConstraint2.csy" "bot_bodyRN.phl[836]";
+connectAttr "pCylinder22_scaleConstraint2.csz" "bot_bodyRN.phl[837]";
+connectAttr "bot_bodyRN.phl[838]" "|bot_bodyRNfosterParent1|pCylinder22ShapeTag.i"
 		;
-connectAttr "pCylinder23_parentConstraint2.ctx" "bot_bodyRN.phl[799]";
-connectAttr "pCylinder23_parentConstraint2.cty" "bot_bodyRN.phl[800]";
-connectAttr "pCylinder23_parentConstraint2.ctz" "bot_bodyRN.phl[801]";
-connectAttr "pCylinder23_parentConstraint2.crx" "bot_bodyRN.phl[802]";
-connectAttr "pCylinder23_parentConstraint2.cry" "bot_bodyRN.phl[803]";
-connectAttr "pCylinder23_parentConstraint2.crz" "bot_bodyRN.phl[804]";
-connectAttr "bot_bodyRN.phl[805]" "pCylinder23_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[806]" "pCylinder23_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[807]" "pCylinder23_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[808]" "pCylinder23_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[809]" "pCylinder23_parentConstraint2.crt";
-connectAttr "pCylinder23_scaleConstraint2.csx" "bot_bodyRN.phl[810]";
-connectAttr "pCylinder23_scaleConstraint2.csy" "bot_bodyRN.phl[811]";
-connectAttr "pCylinder23_scaleConstraint2.csz" "bot_bodyRN.phl[812]";
-connectAttr "bot_bodyRN.phl[813]" "|bot_bodyRNfosterParent1|pCylinder23ShapeTag.i"
+connectAttr "pCylinder23_parentConstraint2.ctx" "bot_bodyRN.phl[839]";
+connectAttr "pCylinder23_parentConstraint2.cty" "bot_bodyRN.phl[840]";
+connectAttr "pCylinder23_parentConstraint2.ctz" "bot_bodyRN.phl[841]";
+connectAttr "pCylinder23_parentConstraint2.crx" "bot_bodyRN.phl[842]";
+connectAttr "pCylinder23_parentConstraint2.cry" "bot_bodyRN.phl[843]";
+connectAttr "pCylinder23_parentConstraint2.crz" "bot_bodyRN.phl[844]";
+connectAttr "bot_bodyRN.phl[845]" "pCylinder23_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[846]" "pCylinder23_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[847]" "pCylinder23_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[848]" "pCylinder23_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[849]" "pCylinder23_parentConstraint2.crt";
+connectAttr "pCylinder23_scaleConstraint2.csx" "bot_bodyRN.phl[850]";
+connectAttr "pCylinder23_scaleConstraint2.csy" "bot_bodyRN.phl[851]";
+connectAttr "pCylinder23_scaleConstraint2.csz" "bot_bodyRN.phl[852]";
+connectAttr "bot_bodyRN.phl[853]" "|bot_bodyRNfosterParent1|pCylinder23ShapeTag.i"
 		;
-connectAttr "pCylinder24_parentConstraint2.ctx" "bot_bodyRN.phl[814]";
-connectAttr "pCylinder24_parentConstraint2.cty" "bot_bodyRN.phl[815]";
-connectAttr "pCylinder24_parentConstraint2.ctz" "bot_bodyRN.phl[816]";
-connectAttr "pCylinder24_parentConstraint2.crx" "bot_bodyRN.phl[817]";
-connectAttr "pCylinder24_parentConstraint2.cry" "bot_bodyRN.phl[818]";
-connectAttr "pCylinder24_parentConstraint2.crz" "bot_bodyRN.phl[819]";
-connectAttr "bot_bodyRN.phl[820]" "pCylinder24_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[821]" "pCylinder24_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[822]" "pCylinder24_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[823]" "pCylinder24_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[824]" "pCylinder24_parentConstraint2.crt";
-connectAttr "pCylinder24_scaleConstraint2.csx" "bot_bodyRN.phl[825]";
-connectAttr "pCylinder24_scaleConstraint2.csy" "bot_bodyRN.phl[826]";
-connectAttr "pCylinder24_scaleConstraint2.csz" "bot_bodyRN.phl[827]";
-connectAttr "bot_bodyRN.phl[828]" "|bot_bodyRNfosterParent1|pCylinder24ShapeTag.i"
+connectAttr "pCylinder24_parentConstraint2.ctx" "bot_bodyRN.phl[854]";
+connectAttr "pCylinder24_parentConstraint2.cty" "bot_bodyRN.phl[855]";
+connectAttr "pCylinder24_parentConstraint2.ctz" "bot_bodyRN.phl[856]";
+connectAttr "pCylinder24_parentConstraint2.crx" "bot_bodyRN.phl[857]";
+connectAttr "pCylinder24_parentConstraint2.cry" "bot_bodyRN.phl[858]";
+connectAttr "pCylinder24_parentConstraint2.crz" "bot_bodyRN.phl[859]";
+connectAttr "bot_bodyRN.phl[860]" "pCylinder24_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[861]" "pCylinder24_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[862]" "pCylinder24_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[863]" "pCylinder24_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[864]" "pCylinder24_parentConstraint2.crt";
+connectAttr "pCylinder24_scaleConstraint2.csx" "bot_bodyRN.phl[865]";
+connectAttr "pCylinder24_scaleConstraint2.csy" "bot_bodyRN.phl[866]";
+connectAttr "pCylinder24_scaleConstraint2.csz" "bot_bodyRN.phl[867]";
+connectAttr "bot_bodyRN.phl[868]" "|bot_bodyRNfosterParent1|pCylinder24ShapeTag.i"
 		;
-connectAttr "pCylinder25_parentConstraint2.ctx" "bot_bodyRN.phl[829]";
-connectAttr "pCylinder25_parentConstraint2.cty" "bot_bodyRN.phl[830]";
-connectAttr "pCylinder25_parentConstraint2.ctz" "bot_bodyRN.phl[831]";
-connectAttr "pCylinder25_parentConstraint2.crx" "bot_bodyRN.phl[832]";
-connectAttr "pCylinder25_parentConstraint2.cry" "bot_bodyRN.phl[833]";
-connectAttr "pCylinder25_parentConstraint2.crz" "bot_bodyRN.phl[834]";
-connectAttr "bot_bodyRN.phl[835]" "pCylinder25_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[836]" "pCylinder25_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[837]" "pCylinder25_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[838]" "pCylinder25_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[839]" "pCylinder25_parentConstraint2.crt";
-connectAttr "pCylinder25_scaleConstraint2.csx" "bot_bodyRN.phl[840]";
-connectAttr "pCylinder25_scaleConstraint2.csy" "bot_bodyRN.phl[841]";
-connectAttr "pCylinder25_scaleConstraint2.csz" "bot_bodyRN.phl[842]";
-connectAttr "bot_bodyRN.phl[843]" "|bot_bodyRNfosterParent1|pCylinder25ShapeTag.i"
+connectAttr "pCylinder25_parentConstraint2.ctx" "bot_bodyRN.phl[869]";
+connectAttr "pCylinder25_parentConstraint2.cty" "bot_bodyRN.phl[870]";
+connectAttr "pCylinder25_parentConstraint2.ctz" "bot_bodyRN.phl[871]";
+connectAttr "pCylinder25_parentConstraint2.crx" "bot_bodyRN.phl[872]";
+connectAttr "pCylinder25_parentConstraint2.cry" "bot_bodyRN.phl[873]";
+connectAttr "pCylinder25_parentConstraint2.crz" "bot_bodyRN.phl[874]";
+connectAttr "bot_bodyRN.phl[875]" "pCylinder25_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[876]" "pCylinder25_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[877]" "pCylinder25_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[878]" "pCylinder25_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[879]" "pCylinder25_parentConstraint2.crt";
+connectAttr "pCylinder25_scaleConstraint2.csx" "bot_bodyRN.phl[880]";
+connectAttr "pCylinder25_scaleConstraint2.csy" "bot_bodyRN.phl[881]";
+connectAttr "pCylinder25_scaleConstraint2.csz" "bot_bodyRN.phl[882]";
+connectAttr "bot_bodyRN.phl[883]" "|bot_bodyRNfosterParent1|pCylinder25ShapeTag.i"
 		;
-connectAttr "pCylinder26_parentConstraint2.ctx" "bot_bodyRN.phl[844]";
-connectAttr "pCylinder26_parentConstraint2.cty" "bot_bodyRN.phl[845]";
-connectAttr "pCylinder26_parentConstraint2.ctz" "bot_bodyRN.phl[846]";
-connectAttr "pCylinder26_parentConstraint2.crx" "bot_bodyRN.phl[847]";
-connectAttr "pCylinder26_parentConstraint2.cry" "bot_bodyRN.phl[848]";
-connectAttr "pCylinder26_parentConstraint2.crz" "bot_bodyRN.phl[849]";
-connectAttr "bot_bodyRN.phl[850]" "pCylinder26_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[851]" "pCylinder26_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[852]" "pCylinder26_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[853]" "pCylinder26_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[854]" "pCylinder26_parentConstraint2.crt";
-connectAttr "pCylinder26_scaleConstraint2.csx" "bot_bodyRN.phl[855]";
-connectAttr "pCylinder26_scaleConstraint2.csy" "bot_bodyRN.phl[856]";
-connectAttr "pCylinder26_scaleConstraint2.csz" "bot_bodyRN.phl[857]";
-connectAttr "bot_bodyRN.phl[858]" "|bot_bodyRNfosterParent1|pCylinder26ShapeTag.i"
+connectAttr "pCylinder26_parentConstraint2.ctx" "bot_bodyRN.phl[884]";
+connectAttr "pCylinder26_parentConstraint2.cty" "bot_bodyRN.phl[885]";
+connectAttr "pCylinder26_parentConstraint2.ctz" "bot_bodyRN.phl[886]";
+connectAttr "pCylinder26_parentConstraint2.crx" "bot_bodyRN.phl[887]";
+connectAttr "pCylinder26_parentConstraint2.cry" "bot_bodyRN.phl[888]";
+connectAttr "pCylinder26_parentConstraint2.crz" "bot_bodyRN.phl[889]";
+connectAttr "bot_bodyRN.phl[890]" "pCylinder26_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[891]" "pCylinder26_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[892]" "pCylinder26_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[893]" "pCylinder26_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[894]" "pCylinder26_parentConstraint2.crt";
+connectAttr "pCylinder26_scaleConstraint2.csx" "bot_bodyRN.phl[895]";
+connectAttr "pCylinder26_scaleConstraint2.csy" "bot_bodyRN.phl[896]";
+connectAttr "pCylinder26_scaleConstraint2.csz" "bot_bodyRN.phl[897]";
+connectAttr "bot_bodyRN.phl[898]" "|bot_bodyRNfosterParent1|pCylinder26ShapeTag.i"
 		;
-connectAttr "pCylinder27_parentConstraint2.ctx" "bot_bodyRN.phl[859]";
-connectAttr "pCylinder27_parentConstraint2.cty" "bot_bodyRN.phl[860]";
-connectAttr "pCylinder27_parentConstraint2.ctz" "bot_bodyRN.phl[861]";
-connectAttr "pCylinder27_parentConstraint2.crx" "bot_bodyRN.phl[862]";
-connectAttr "pCylinder27_parentConstraint2.cry" "bot_bodyRN.phl[863]";
-connectAttr "pCylinder27_parentConstraint2.crz" "bot_bodyRN.phl[864]";
-connectAttr "bot_bodyRN.phl[865]" "pCylinder27_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[866]" "pCylinder27_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[867]" "pCylinder27_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[868]" "pCylinder27_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[869]" "pCylinder27_parentConstraint2.crt";
-connectAttr "pCylinder27_scaleConstraint2.csx" "bot_bodyRN.phl[870]";
-connectAttr "pCylinder27_scaleConstraint2.csy" "bot_bodyRN.phl[871]";
-connectAttr "pCylinder27_scaleConstraint2.csz" "bot_bodyRN.phl[872]";
-connectAttr "bot_bodyRN.phl[873]" "|bot_bodyRNfosterParent1|pCylinder27ShapeTag.i"
+connectAttr "pCylinder27_parentConstraint2.ctx" "bot_bodyRN.phl[899]";
+connectAttr "pCylinder27_parentConstraint2.cty" "bot_bodyRN.phl[900]";
+connectAttr "pCylinder27_parentConstraint2.ctz" "bot_bodyRN.phl[901]";
+connectAttr "pCylinder27_parentConstraint2.crx" "bot_bodyRN.phl[902]";
+connectAttr "pCylinder27_parentConstraint2.cry" "bot_bodyRN.phl[903]";
+connectAttr "pCylinder27_parentConstraint2.crz" "bot_bodyRN.phl[904]";
+connectAttr "bot_bodyRN.phl[905]" "pCylinder27_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[906]" "pCylinder27_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[907]" "pCylinder27_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[908]" "pCylinder27_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[909]" "pCylinder27_parentConstraint2.crt";
+connectAttr "pCylinder27_scaleConstraint2.csx" "bot_bodyRN.phl[910]";
+connectAttr "pCylinder27_scaleConstraint2.csy" "bot_bodyRN.phl[911]";
+connectAttr "pCylinder27_scaleConstraint2.csz" "bot_bodyRN.phl[912]";
+connectAttr "bot_bodyRN.phl[913]" "|bot_bodyRNfosterParent1|pCylinder27ShapeTag.i"
 		;
-connectAttr "pCylinder28_parentConstraint2.ctx" "bot_bodyRN.phl[874]";
-connectAttr "pCylinder28_parentConstraint2.cty" "bot_bodyRN.phl[875]";
-connectAttr "pCylinder28_parentConstraint2.ctz" "bot_bodyRN.phl[876]";
-connectAttr "pCylinder28_parentConstraint2.crx" "bot_bodyRN.phl[877]";
-connectAttr "pCylinder28_parentConstraint2.cry" "bot_bodyRN.phl[878]";
-connectAttr "pCylinder28_parentConstraint2.crz" "bot_bodyRN.phl[879]";
-connectAttr "bot_bodyRN.phl[880]" "pCylinder28_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[881]" "pCylinder28_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[882]" "pCylinder28_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[883]" "pCylinder28_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[884]" "pCylinder28_parentConstraint2.crt";
-connectAttr "pCylinder28_scaleConstraint2.csx" "bot_bodyRN.phl[885]";
-connectAttr "pCylinder28_scaleConstraint2.csy" "bot_bodyRN.phl[886]";
-connectAttr "pCylinder28_scaleConstraint2.csz" "bot_bodyRN.phl[887]";
-connectAttr "bot_bodyRN.phl[888]" "|bot_bodyRNfosterParent1|pCylinder28ShapeTag.i"
+connectAttr "pCylinder28_parentConstraint2.ctx" "bot_bodyRN.phl[914]";
+connectAttr "pCylinder28_parentConstraint2.cty" "bot_bodyRN.phl[915]";
+connectAttr "pCylinder28_parentConstraint2.ctz" "bot_bodyRN.phl[916]";
+connectAttr "pCylinder28_parentConstraint2.crx" "bot_bodyRN.phl[917]";
+connectAttr "pCylinder28_parentConstraint2.cry" "bot_bodyRN.phl[918]";
+connectAttr "pCylinder28_parentConstraint2.crz" "bot_bodyRN.phl[919]";
+connectAttr "bot_bodyRN.phl[920]" "pCylinder28_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[921]" "pCylinder28_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[922]" "pCylinder28_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[923]" "pCylinder28_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[924]" "pCylinder28_parentConstraint2.crt";
+connectAttr "pCylinder28_scaleConstraint2.csx" "bot_bodyRN.phl[925]";
+connectAttr "pCylinder28_scaleConstraint2.csy" "bot_bodyRN.phl[926]";
+connectAttr "pCylinder28_scaleConstraint2.csz" "bot_bodyRN.phl[927]";
+connectAttr "bot_bodyRN.phl[928]" "|bot_bodyRNfosterParent1|pCylinder28ShapeTag.i"
 		;
-connectAttr "pCylinder29_parentConstraint2.ctx" "bot_bodyRN.phl[889]";
-connectAttr "pCylinder29_parentConstraint2.cty" "bot_bodyRN.phl[890]";
-connectAttr "pCylinder29_parentConstraint2.ctz" "bot_bodyRN.phl[891]";
-connectAttr "pCylinder29_parentConstraint2.crx" "bot_bodyRN.phl[892]";
-connectAttr "pCylinder29_parentConstraint2.cry" "bot_bodyRN.phl[893]";
-connectAttr "pCylinder29_parentConstraint2.crz" "bot_bodyRN.phl[894]";
-connectAttr "bot_bodyRN.phl[895]" "pCylinder29_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[896]" "pCylinder29_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[897]" "pCylinder29_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[898]" "pCylinder29_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[899]" "pCylinder29_parentConstraint2.crt";
-connectAttr "pCylinder29_scaleConstraint2.csx" "bot_bodyRN.phl[900]";
-connectAttr "pCylinder29_scaleConstraint2.csy" "bot_bodyRN.phl[901]";
-connectAttr "pCylinder29_scaleConstraint2.csz" "bot_bodyRN.phl[902]";
-connectAttr "bot_bodyRN.phl[903]" "|bot_bodyRNfosterParent1|pCylinder29ShapeTag.i"
+connectAttr "pCylinder29_parentConstraint2.ctx" "bot_bodyRN.phl[929]";
+connectAttr "pCylinder29_parentConstraint2.cty" "bot_bodyRN.phl[930]";
+connectAttr "pCylinder29_parentConstraint2.ctz" "bot_bodyRN.phl[931]";
+connectAttr "pCylinder29_parentConstraint2.crx" "bot_bodyRN.phl[932]";
+connectAttr "pCylinder29_parentConstraint2.cry" "bot_bodyRN.phl[933]";
+connectAttr "pCylinder29_parentConstraint2.crz" "bot_bodyRN.phl[934]";
+connectAttr "bot_bodyRN.phl[935]" "pCylinder29_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[936]" "pCylinder29_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[937]" "pCylinder29_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[938]" "pCylinder29_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[939]" "pCylinder29_parentConstraint2.crt";
+connectAttr "pCylinder29_scaleConstraint2.csx" "bot_bodyRN.phl[940]";
+connectAttr "pCylinder29_scaleConstraint2.csy" "bot_bodyRN.phl[941]";
+connectAttr "pCylinder29_scaleConstraint2.csz" "bot_bodyRN.phl[942]";
+connectAttr "bot_bodyRN.phl[943]" "|bot_bodyRNfosterParent1|pCylinder29ShapeTag.i"
 		;
-connectAttr "polySurface5_parentConstraint2.ctx" "bot_bodyRN.phl[904]";
-connectAttr "polySurface5_parentConstraint2.cty" "bot_bodyRN.phl[905]";
-connectAttr "polySurface5_parentConstraint2.ctz" "bot_bodyRN.phl[906]";
-connectAttr "polySurface5_parentConstraint2.crx" "bot_bodyRN.phl[907]";
-connectAttr "polySurface5_parentConstraint2.cry" "bot_bodyRN.phl[908]";
-connectAttr "polySurface5_parentConstraint2.crz" "bot_bodyRN.phl[909]";
-connectAttr "bot_bodyRN.phl[910]" "polySurface5_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[911]" "polySurface5_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[912]" "polySurface5_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[913]" "polySurface5_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[914]" "polySurface5_parentConstraint2.crt";
-connectAttr "polySurface5_scaleConstraint2.csx" "bot_bodyRN.phl[915]";
-connectAttr "polySurface5_scaleConstraint2.csy" "bot_bodyRN.phl[916]";
-connectAttr "polySurface5_scaleConstraint2.csz" "bot_bodyRN.phl[917]";
-connectAttr "pCylinder1_parentConstraint2.ctx" "bot_bodyRN.phl[918]";
-connectAttr "pCylinder1_parentConstraint2.cty" "bot_bodyRN.phl[919]";
-connectAttr "pCylinder1_parentConstraint2.ctz" "bot_bodyRN.phl[920]";
-connectAttr "pCylinder1_parentConstraint2.crx" "bot_bodyRN.phl[921]";
-connectAttr "pCylinder1_parentConstraint2.cry" "bot_bodyRN.phl[922]";
-connectAttr "pCylinder1_parentConstraint2.crz" "bot_bodyRN.phl[923]";
-connectAttr "bot_bodyRN.phl[924]" "pCylinder1_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[925]" "pCylinder1_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[926]" "pCylinder1_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[927]" "pCylinder1_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[928]" "pCylinder1_parentConstraint2.crt";
-connectAttr "pCylinder1_scaleConstraint2.csx" "bot_bodyRN.phl[929]";
-connectAttr "pCylinder1_scaleConstraint2.csy" "bot_bodyRN.phl[930]";
-connectAttr "pCylinder1_scaleConstraint2.csz" "bot_bodyRN.phl[931]";
-connectAttr "pCube12_parentConstraint2.ctx" "bot_bodyRN.phl[932]";
-connectAttr "pCube12_parentConstraint2.cty" "bot_bodyRN.phl[933]";
-connectAttr "pCube12_parentConstraint2.ctz" "bot_bodyRN.phl[934]";
-connectAttr "pCube12_parentConstraint2.crx" "bot_bodyRN.phl[935]";
-connectAttr "pCube12_parentConstraint2.cry" "bot_bodyRN.phl[936]";
-connectAttr "pCube12_parentConstraint2.crz" "bot_bodyRN.phl[937]";
-connectAttr "bot_bodyRN.phl[938]" "pCube12_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[939]" "pCube12_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[940]" "pCube12_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[941]" "pCube12_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[942]" "pCube12_parentConstraint2.crt";
-connectAttr "pCube12_scaleConstraint2.csx" "bot_bodyRN.phl[943]";
-connectAttr "pCube12_scaleConstraint2.csy" "bot_bodyRN.phl[944]";
-connectAttr "pCube12_scaleConstraint2.csz" "bot_bodyRN.phl[945]";
-connectAttr "polySurface15_parentConstraint1.ctx" "bot_bodyRN.phl[946]";
-connectAttr "polySurface15_parentConstraint1.cty" "bot_bodyRN.phl[947]";
-connectAttr "polySurface15_parentConstraint1.ctz" "bot_bodyRN.phl[948]";
-connectAttr "polySurface15_parentConstraint1.crx" "bot_bodyRN.phl[949]";
-connectAttr "polySurface15_parentConstraint1.cry" "bot_bodyRN.phl[950]";
-connectAttr "polySurface15_parentConstraint1.crz" "bot_bodyRN.phl[951]";
-connectAttr "bot_bodyRN.phl[952]" "polySurface15_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[953]" "polySurface15_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[954]" "polySurface15_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[955]" "polySurface15_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[956]" "polySurface15_parentConstraint1.crt";
-connectAttr "polySurface15_scaleConstraint1.csx" "bot_bodyRN.phl[957]";
-connectAttr "polySurface15_scaleConstraint1.csy" "bot_bodyRN.phl[958]";
-connectAttr "polySurface15_scaleConstraint1.csz" "bot_bodyRN.phl[959]";
-connectAttr "polySurface16_parentConstraint1.ctx" "bot_bodyRN.phl[960]";
-connectAttr "polySurface16_parentConstraint1.cty" "bot_bodyRN.phl[961]";
-connectAttr "polySurface16_parentConstraint1.ctz" "bot_bodyRN.phl[962]";
-connectAttr "polySurface16_parentConstraint1.crx" "bot_bodyRN.phl[963]";
-connectAttr "polySurface16_parentConstraint1.cry" "bot_bodyRN.phl[964]";
-connectAttr "polySurface16_parentConstraint1.crz" "bot_bodyRN.phl[965]";
-connectAttr "bot_bodyRN.phl[966]" "polySurface16_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[967]" "polySurface16_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[968]" "polySurface16_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[969]" "polySurface16_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[970]" "polySurface16_parentConstraint1.crt";
-connectAttr "polySurface16_scaleConstraint1.csx" "bot_bodyRN.phl[971]";
-connectAttr "polySurface16_scaleConstraint1.csy" "bot_bodyRN.phl[972]";
-connectAttr "polySurface16_scaleConstraint1.csz" "bot_bodyRN.phl[973]";
-connectAttr "polySurface17_parentConstraint1.ctx" "bot_bodyRN.phl[974]";
-connectAttr "polySurface17_parentConstraint1.cty" "bot_bodyRN.phl[975]";
-connectAttr "polySurface17_parentConstraint1.ctz" "bot_bodyRN.phl[976]";
-connectAttr "polySurface17_parentConstraint1.crx" "bot_bodyRN.phl[977]";
-connectAttr "polySurface17_parentConstraint1.cry" "bot_bodyRN.phl[978]";
-connectAttr "polySurface17_parentConstraint1.crz" "bot_bodyRN.phl[979]";
-connectAttr "bot_bodyRN.phl[980]" "polySurface17_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[981]" "polySurface17_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[982]" "polySurface17_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[983]" "polySurface17_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[984]" "polySurface17_parentConstraint1.crt";
-connectAttr "polySurface17_scaleConstraint1.csx" "bot_bodyRN.phl[985]";
-connectAttr "polySurface17_scaleConstraint1.csy" "bot_bodyRN.phl[986]";
-connectAttr "polySurface17_scaleConstraint1.csz" "bot_bodyRN.phl[987]";
-connectAttr "bot_bodyRN.phl[988]" "skinCluster6.orggeom[0]";
-connectAttr "bot_bodyRN.phl[989]" "skinCluster6.ip[0].ig";
-connectAttr "polySurface19_parentConstraint1.ctx" "bot_bodyRN.phl[990]";
-connectAttr "polySurface19_parentConstraint1.cty" "bot_bodyRN.phl[991]";
-connectAttr "polySurface19_parentConstraint1.ctz" "bot_bodyRN.phl[992]";
-connectAttr "polySurface19_parentConstraint1.crx" "bot_bodyRN.phl[993]";
-connectAttr "polySurface19_parentConstraint1.cry" "bot_bodyRN.phl[994]";
-connectAttr "polySurface19_parentConstraint1.crz" "bot_bodyRN.phl[995]";
-connectAttr "bot_bodyRN.phl[996]" "polySurface19_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[997]" "polySurface19_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[998]" "polySurface19_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[999]" "polySurface19_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1000]" "polySurface19_parentConstraint1.crt";
-connectAttr "polySurface19_scaleConstraint1.csx" "bot_bodyRN.phl[1001]";
-connectAttr "polySurface19_scaleConstraint1.csy" "bot_bodyRN.phl[1002]";
-connectAttr "polySurface19_scaleConstraint1.csz" "bot_bodyRN.phl[1003]";
-connectAttr "bot_bodyRN.phl[1004]" "skinCluster5.orggeom[0]";
-connectAttr "bot_bodyRN.phl[1005]" "tweak3.ip[0].ig";
-connectAttr "pCube13_parentConstraint2.ctx" "bot_bodyRN.phl[1006]";
-connectAttr "pCube13_parentConstraint2.cty" "bot_bodyRN.phl[1007]";
-connectAttr "pCube13_parentConstraint2.ctz" "bot_bodyRN.phl[1008]";
-connectAttr "pCube13_parentConstraint2.crx" "bot_bodyRN.phl[1009]";
-connectAttr "pCube13_parentConstraint2.cry" "bot_bodyRN.phl[1010]";
-connectAttr "pCube13_parentConstraint2.crz" "bot_bodyRN.phl[1011]";
-connectAttr "bot_bodyRN.phl[1012]" "pCube13_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1013]" "pCube13_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1014]" "pCube13_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1015]" "pCube13_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1016]" "pCube13_parentConstraint2.crt";
-connectAttr "pCube13_scaleConstraint2.csx" "bot_bodyRN.phl[1017]";
-connectAttr "pCube13_scaleConstraint2.csy" "bot_bodyRN.phl[1018]";
-connectAttr "pCube13_scaleConstraint2.csz" "bot_bodyRN.phl[1019]";
-connectAttr "polySurface4_parentConstraint2.ctx" "bot_bodyRN.phl[1020]";
-connectAttr "polySurface4_parentConstraint2.cty" "bot_bodyRN.phl[1021]";
-connectAttr "polySurface4_parentConstraint2.ctz" "bot_bodyRN.phl[1022]";
-connectAttr "polySurface4_parentConstraint2.crx" "bot_bodyRN.phl[1023]";
-connectAttr "polySurface4_parentConstraint2.cry" "bot_bodyRN.phl[1024]";
-connectAttr "polySurface4_parentConstraint2.crz" "bot_bodyRN.phl[1025]";
-connectAttr "bot_bodyRN.phl[1026]" "polySurface4_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1027]" "polySurface4_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1028]" "polySurface4_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1029]" "polySurface4_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1030]" "polySurface4_parentConstraint2.crt";
-connectAttr "polySurface4_scaleConstraint2.csx" "bot_bodyRN.phl[1031]";
-connectAttr "polySurface4_scaleConstraint2.csy" "bot_bodyRN.phl[1032]";
-connectAttr "polySurface4_scaleConstraint2.csz" "bot_bodyRN.phl[1033]";
-connectAttr "pPlane41_parentConstraint2.ctx" "bot_bodyRN.phl[1034]";
-connectAttr "pPlane41_parentConstraint2.cty" "bot_bodyRN.phl[1035]";
-connectAttr "pPlane41_parentConstraint2.ctz" "bot_bodyRN.phl[1036]";
-connectAttr "pPlane41_parentConstraint2.crx" "bot_bodyRN.phl[1037]";
-connectAttr "pPlane41_parentConstraint2.cry" "bot_bodyRN.phl[1038]";
-connectAttr "pPlane41_parentConstraint2.crz" "bot_bodyRN.phl[1039]";
-connectAttr "bot_bodyRN.phl[1040]" "pPlane41_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1041]" "pPlane41_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1042]" "pPlane41_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1043]" "pPlane41_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1044]" "pPlane41_parentConstraint2.crt";
-connectAttr "pPlane41_scaleConstraint2.csx" "bot_bodyRN.phl[1045]";
-connectAttr "pPlane41_scaleConstraint2.csy" "bot_bodyRN.phl[1046]";
-connectAttr "pPlane41_scaleConstraint2.csz" "bot_bodyRN.phl[1047]";
-connectAttr "Shoulder_clav_parentConstraint2.ctx" "bot_bodyRN.phl[1048]";
-connectAttr "Shoulder_clav_parentConstraint2.cty" "bot_bodyRN.phl[1049]";
-connectAttr "Shoulder_clav_parentConstraint2.ctz" "bot_bodyRN.phl[1050]";
-connectAttr "Shoulder_clav_parentConstraint2.crx" "bot_bodyRN.phl[1051]";
-connectAttr "Shoulder_clav_parentConstraint2.cry" "bot_bodyRN.phl[1052]";
-connectAttr "Shoulder_clav_parentConstraint2.crz" "bot_bodyRN.phl[1053]";
-connectAttr "bot_bodyRN.phl[1054]" "Shoulder_clav_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1055]" "Shoulder_clav_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1056]" "Shoulder_clav_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1057]" "Shoulder_clav_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1058]" "Shoulder_clav_parentConstraint2.crt";
-connectAttr "Shoulder_clav_scaleConstraint2.csx" "bot_bodyRN.phl[1059]";
-connectAttr "Shoulder_clav_scaleConstraint2.csy" "bot_bodyRN.phl[1060]";
-connectAttr "Shoulder_clav_scaleConstraint2.csz" "bot_bodyRN.phl[1061]";
-connectAttr "pCylinder6_parentConstraint1.ctx" "bot_bodyRN.phl[1062]";
-connectAttr "pCylinder6_parentConstraint1.cty" "bot_bodyRN.phl[1063]";
-connectAttr "pCylinder6_parentConstraint1.ctz" "bot_bodyRN.phl[1064]";
-connectAttr "pCylinder6_parentConstraint1.crx" "bot_bodyRN.phl[1065]";
-connectAttr "pCylinder6_parentConstraint1.cry" "bot_bodyRN.phl[1066]";
-connectAttr "pCylinder6_parentConstraint1.crz" "bot_bodyRN.phl[1067]";
-connectAttr "bot_bodyRN.phl[1068]" "pCylinder6_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1069]" "pCylinder6_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1070]" "pCylinder6_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1071]" "pCylinder6_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1072]" "pCylinder6_parentConstraint1.crt";
-connectAttr "pCylinder6_scaleConstraint1.csx" "bot_bodyRN.phl[1073]";
-connectAttr "pCylinder6_scaleConstraint1.csy" "bot_bodyRN.phl[1074]";
-connectAttr "pCylinder6_scaleConstraint1.csz" "bot_bodyRN.phl[1075]";
-connectAttr "polySurface9_parentConstraint1.ctx" "bot_bodyRN.phl[1076]";
-connectAttr "polySurface9_parentConstraint1.cty" "bot_bodyRN.phl[1077]";
-connectAttr "polySurface9_parentConstraint1.ctz" "bot_bodyRN.phl[1078]";
-connectAttr "polySurface9_parentConstraint1.crx" "bot_bodyRN.phl[1079]";
-connectAttr "polySurface9_parentConstraint1.cry" "bot_bodyRN.phl[1080]";
-connectAttr "polySurface9_parentConstraint1.crz" "bot_bodyRN.phl[1081]";
-connectAttr "bot_bodyRN.phl[1082]" "polySurface9_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1083]" "polySurface9_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1084]" "polySurface9_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1085]" "polySurface9_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1086]" "polySurface9_parentConstraint1.crt";
-connectAttr "polySurface9_scaleConstraint1.csx" "bot_bodyRN.phl[1087]";
-connectAttr "polySurface9_scaleConstraint1.csy" "bot_bodyRN.phl[1088]";
-connectAttr "polySurface9_scaleConstraint1.csz" "bot_bodyRN.phl[1089]";
-connectAttr "bot_bodyRN.phl[1090]" "polySurfaceShape17Tag.i";
-connectAttr "pCylinder9_parentConstraint1.ctx" "bot_bodyRN.phl[1091]";
-connectAttr "pCylinder9_parentConstraint1.cty" "bot_bodyRN.phl[1092]";
-connectAttr "pCylinder9_parentConstraint1.ctz" "bot_bodyRN.phl[1093]";
-connectAttr "pCylinder9_parentConstraint1.crx" "bot_bodyRN.phl[1094]";
-connectAttr "pCylinder9_parentConstraint1.cry" "bot_bodyRN.phl[1095]";
-connectAttr "pCylinder9_parentConstraint1.crz" "bot_bodyRN.phl[1096]";
-connectAttr "bot_bodyRN.phl[1097]" "pCylinder9_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1098]" "pCylinder9_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1099]" "pCylinder9_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1100]" "pCylinder9_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1101]" "pCylinder9_parentConstraint1.crt";
-connectAttr "pCylinder9_scaleConstraint1.csx" "bot_bodyRN.phl[1102]";
-connectAttr "pCylinder9_scaleConstraint1.csy" "bot_bodyRN.phl[1103]";
-connectAttr "pCylinder9_scaleConstraint1.csz" "bot_bodyRN.phl[1104]";
-connectAttr "polySurface8_parentConstraint1.ctx" "bot_bodyRN.phl[1105]";
-connectAttr "polySurface8_parentConstraint1.cty" "bot_bodyRN.phl[1106]";
-connectAttr "polySurface8_parentConstraint1.ctz" "bot_bodyRN.phl[1107]";
-connectAttr "polySurface8_parentConstraint1.crx" "bot_bodyRN.phl[1108]";
-connectAttr "polySurface8_parentConstraint1.cry" "bot_bodyRN.phl[1109]";
-connectAttr "polySurface8_parentConstraint1.crz" "bot_bodyRN.phl[1110]";
-connectAttr "bot_bodyRN.phl[1111]" "polySurface8_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1112]" "polySurface8_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1113]" "polySurface8_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1114]" "polySurface8_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1115]" "polySurface8_parentConstraint1.crt";
-connectAttr "polySurface8_scaleConstraint1.csx" "bot_bodyRN.phl[1116]";
-connectAttr "polySurface8_scaleConstraint1.csy" "bot_bodyRN.phl[1117]";
-connectAttr "polySurface8_scaleConstraint1.csz" "bot_bodyRN.phl[1118]";
-connectAttr "bot_bodyRN.phl[1119]" "polySurfaceShape16Tag.i";
-connectAttr "pCube23_parentConstraint1.ctx" "bot_bodyRN.phl[1120]";
-connectAttr "pCube23_parentConstraint1.cty" "bot_bodyRN.phl[1121]";
-connectAttr "pCube23_parentConstraint1.ctz" "bot_bodyRN.phl[1122]";
-connectAttr "pCube23_parentConstraint1.crx" "bot_bodyRN.phl[1123]";
-connectAttr "pCube23_parentConstraint1.cry" "bot_bodyRN.phl[1124]";
-connectAttr "pCube23_parentConstraint1.crz" "bot_bodyRN.phl[1125]";
-connectAttr "bot_bodyRN.phl[1126]" "pCube23_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1127]" "pCube23_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1128]" "pCube23_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1129]" "pCube23_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1130]" "pCube23_parentConstraint1.crt";
-connectAttr "pCube23_scaleConstraint1.csx" "bot_bodyRN.phl[1131]";
-connectAttr "pCube23_scaleConstraint1.csy" "bot_bodyRN.phl[1132]";
-connectAttr "pCube23_scaleConstraint1.csz" "bot_bodyRN.phl[1133]";
-connectAttr "pCylinder7_parentConstraint1.ctx" "bot_bodyRN.phl[1134]";
-connectAttr "pCylinder7_parentConstraint1.cty" "bot_bodyRN.phl[1135]";
-connectAttr "pCylinder7_parentConstraint1.ctz" "bot_bodyRN.phl[1136]";
-connectAttr "pCylinder7_parentConstraint1.crx" "bot_bodyRN.phl[1137]";
-connectAttr "pCylinder7_parentConstraint1.cry" "bot_bodyRN.phl[1138]";
-connectAttr "pCylinder7_parentConstraint1.crz" "bot_bodyRN.phl[1139]";
-connectAttr "bot_bodyRN.phl[1140]" "pCylinder7_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1141]" "pCylinder7_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1142]" "pCylinder7_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1143]" "pCylinder7_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1144]" "pCylinder7_parentConstraint1.crt";
-connectAttr "pCylinder7_scaleConstraint1.csx" "bot_bodyRN.phl[1145]";
-connectAttr "pCylinder7_scaleConstraint1.csy" "bot_bodyRN.phl[1146]";
-connectAttr "pCylinder7_scaleConstraint1.csz" "bot_bodyRN.phl[1147]";
-connectAttr "bot_bodyRN.phl[1148]" "pCylinderShape7Deformed.i";
-connectAttr "pCube24_parentConstraint1.ctx" "bot_bodyRN.phl[1149]";
-connectAttr "pCube24_parentConstraint1.cty" "bot_bodyRN.phl[1150]";
-connectAttr "pCube24_parentConstraint1.ctz" "bot_bodyRN.phl[1151]";
-connectAttr "pCube24_parentConstraint1.crx" "bot_bodyRN.phl[1152]";
-connectAttr "pCube24_parentConstraint1.cry" "bot_bodyRN.phl[1153]";
-connectAttr "pCube24_parentConstraint1.crz" "bot_bodyRN.phl[1154]";
-connectAttr "bot_bodyRN.phl[1155]" "pCube24_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1156]" "pCube24_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1157]" "pCube24_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1158]" "pCube24_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1159]" "pCube24_parentConstraint1.crt";
-connectAttr "pCube24_scaleConstraint1.csx" "bot_bodyRN.phl[1160]";
-connectAttr "pCube24_scaleConstraint1.csy" "bot_bodyRN.phl[1161]";
-connectAttr "pCube24_scaleConstraint1.csz" "bot_bodyRN.phl[1162]";
-connectAttr "polySurface6_parentConstraint1.ctx" "bot_bodyRN.phl[1163]";
-connectAttr "polySurface6_parentConstraint1.cty" "bot_bodyRN.phl[1164]";
-connectAttr "polySurface6_parentConstraint1.ctz" "bot_bodyRN.phl[1165]";
-connectAttr "polySurface6_parentConstraint1.crx" "bot_bodyRN.phl[1166]";
-connectAttr "polySurface6_parentConstraint1.cry" "bot_bodyRN.phl[1167]";
-connectAttr "polySurface6_parentConstraint1.crz" "bot_bodyRN.phl[1168]";
-connectAttr "bot_bodyRN.phl[1169]" "polySurface6_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1170]" "polySurface6_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1171]" "polySurface6_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1172]" "polySurface6_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1173]" "polySurface6_parentConstraint1.crt";
-connectAttr "polySurface6_scaleConstraint1.csx" "bot_bodyRN.phl[1174]";
-connectAttr "polySurface6_scaleConstraint1.csy" "bot_bodyRN.phl[1175]";
-connectAttr "polySurface6_scaleConstraint1.csz" "bot_bodyRN.phl[1176]";
-connectAttr "bot_bodyRN.phl[1177]" "polySurfaceShape14Tag.i";
-connectAttr "pCylinder8_parentConstraint1.ctx" "bot_bodyRN.phl[1178]";
-connectAttr "pCylinder8_parentConstraint1.cty" "bot_bodyRN.phl[1179]";
-connectAttr "pCylinder8_parentConstraint1.ctz" "bot_bodyRN.phl[1180]";
-connectAttr "pCylinder8_parentConstraint1.crx" "bot_bodyRN.phl[1181]";
-connectAttr "pCylinder8_parentConstraint1.cry" "bot_bodyRN.phl[1182]";
-connectAttr "pCylinder8_parentConstraint1.crz" "bot_bodyRN.phl[1183]";
-connectAttr "bot_bodyRN.phl[1184]" "pCylinder8_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1185]" "pCylinder8_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1186]" "pCylinder8_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1187]" "pCylinder8_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1188]" "pCylinder8_parentConstraint1.crt";
-connectAttr "pCylinder8_scaleConstraint1.csx" "bot_bodyRN.phl[1189]";
-connectAttr "pCylinder8_scaleConstraint1.csy" "bot_bodyRN.phl[1190]";
-connectAttr "pCylinder8_scaleConstraint1.csz" "bot_bodyRN.phl[1191]";
-connectAttr "bot_bodyRN.phl[1192]" "pCylinderShape8Deformed.i";
-connectAttr "pCube25_parentConstraint1.ctx" "bot_bodyRN.phl[1193]";
-connectAttr "pCube25_parentConstraint1.cty" "bot_bodyRN.phl[1194]";
-connectAttr "pCube25_parentConstraint1.ctz" "bot_bodyRN.phl[1195]";
-connectAttr "pCube25_parentConstraint1.crx" "bot_bodyRN.phl[1196]";
-connectAttr "pCube25_parentConstraint1.cry" "bot_bodyRN.phl[1197]";
-connectAttr "pCube25_parentConstraint1.crz" "bot_bodyRN.phl[1198]";
-connectAttr "bot_bodyRN.phl[1199]" "pCube25_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1200]" "pCube25_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1201]" "pCube25_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1202]" "pCube25_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1203]" "pCube25_parentConstraint1.crt";
-connectAttr "pCube25_scaleConstraint1.csx" "bot_bodyRN.phl[1204]";
-connectAttr "pCube25_scaleConstraint1.csy" "bot_bodyRN.phl[1205]";
-connectAttr "pCube25_scaleConstraint1.csz" "bot_bodyRN.phl[1206]";
-connectAttr "pPlane45_parentConstraint1.crx" "bot_bodyRN.phl[1207]";
-connectAttr "pPlane45_parentConstraint1.cry" "bot_bodyRN.phl[1208]";
-connectAttr "pPlane45_parentConstraint1.crz" "bot_bodyRN.phl[1209]";
-connectAttr "pPlane45_parentConstraint1.ctx" "bot_bodyRN.phl[1210]";
-connectAttr "pPlane45_parentConstraint1.cty" "bot_bodyRN.phl[1211]";
-connectAttr "pPlane45_parentConstraint1.ctz" "bot_bodyRN.phl[1212]";
-connectAttr "bot_bodyRN.phl[1213]" "pPlane45_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1214]" "pPlane45_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1215]" "pPlane45_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1216]" "pPlane45_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1217]" "pPlane45_parentConstraint1.crt";
-connectAttr "pPlane45_scaleConstraint1.csx" "bot_bodyRN.phl[1218]";
-connectAttr "pPlane45_scaleConstraint1.csy" "bot_bodyRN.phl[1219]";
-connectAttr "pPlane45_scaleConstraint1.csz" "bot_bodyRN.phl[1220]";
-connectAttr "pCube22_parentConstraint1.ctx" "bot_bodyRN.phl[1221]";
-connectAttr "pCube22_parentConstraint1.cty" "bot_bodyRN.phl[1222]";
-connectAttr "pCube22_parentConstraint1.ctz" "bot_bodyRN.phl[1223]";
-connectAttr "pCube22_parentConstraint1.crx" "bot_bodyRN.phl[1224]";
-connectAttr "pCube22_parentConstraint1.cry" "bot_bodyRN.phl[1225]";
-connectAttr "pCube22_parentConstraint1.crz" "bot_bodyRN.phl[1226]";
-connectAttr "bot_bodyRN.phl[1227]" "pCube22_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1228]" "pCube22_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1229]" "pCube22_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1230]" "pCube22_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1231]" "pCube22_parentConstraint1.crt";
-connectAttr "pCube22_scaleConstraint1.csx" "bot_bodyRN.phl[1232]";
-connectAttr "pCube22_scaleConstraint1.csy" "bot_bodyRN.phl[1233]";
-connectAttr "pCube22_scaleConstraint1.csz" "bot_bodyRN.phl[1234]";
-connectAttr "pCylinder4_parentConstraint3.ctx" "bot_bodyRN.phl[1235]";
-connectAttr "pCylinder4_parentConstraint3.cty" "bot_bodyRN.phl[1236]";
-connectAttr "pCylinder4_parentConstraint3.ctz" "bot_bodyRN.phl[1237]";
-connectAttr "pCylinder4_parentConstraint3.crx" "bot_bodyRN.phl[1238]";
-connectAttr "pCylinder4_parentConstraint3.cry" "bot_bodyRN.phl[1239]";
-connectAttr "pCylinder4_parentConstraint3.crz" "bot_bodyRN.phl[1240]";
-connectAttr "bot_bodyRN.phl[1241]" "pCylinder4_parentConstraint3.cro";
-connectAttr "bot_bodyRN.phl[1242]" "pCylinder4_parentConstraint3.cpim";
-connectAttr "bot_bodyRN.phl[1243]" "pCylinder4_scaleConstraint3.cpim";
-connectAttr "bot_bodyRN.phl[1244]" "pCylinder4_parentConstraint3.crp";
-connectAttr "bot_bodyRN.phl[1245]" "pCylinder4_parentConstraint3.crt";
-connectAttr "pCylinder4_scaleConstraint3.csx" "bot_bodyRN.phl[1246]";
-connectAttr "pCylinder4_scaleConstraint3.csy" "bot_bodyRN.phl[1247]";
-connectAttr "pCylinder4_scaleConstraint3.csz" "bot_bodyRN.phl[1248]";
-connectAttr "pCylinder5_parentConstraint1.ctx" "bot_bodyRN.phl[1249]";
-connectAttr "pCylinder5_parentConstraint1.cty" "bot_bodyRN.phl[1250]";
-connectAttr "pCylinder5_parentConstraint1.ctz" "bot_bodyRN.phl[1251]";
-connectAttr "pCylinder5_parentConstraint1.crx" "bot_bodyRN.phl[1252]";
-connectAttr "pCylinder5_parentConstraint1.cry" "bot_bodyRN.phl[1253]";
-connectAttr "pCylinder5_parentConstraint1.crz" "bot_bodyRN.phl[1254]";
-connectAttr "bot_bodyRN.phl[1255]" "pCylinder5_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1256]" "pCylinder5_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1257]" "pCylinder5_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1258]" "pCylinder5_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1259]" "pCylinder5_parentConstraint1.crt";
-connectAttr "pCylinder5_scaleConstraint1.csx" "bot_bodyRN.phl[1260]";
-connectAttr "pCylinder5_scaleConstraint1.csy" "bot_bodyRN.phl[1261]";
-connectAttr "pCylinder5_scaleConstraint1.csz" "bot_bodyRN.phl[1262]";
-connectAttr "pCube21_parentConstraint1.ctx" "bot_bodyRN.phl[1263]";
-connectAttr "pCube21_parentConstraint1.cty" "bot_bodyRN.phl[1264]";
-connectAttr "pCube21_parentConstraint1.ctz" "bot_bodyRN.phl[1265]";
-connectAttr "pCube21_parentConstraint1.crx" "bot_bodyRN.phl[1266]";
-connectAttr "pCube21_parentConstraint1.cry" "bot_bodyRN.phl[1267]";
-connectAttr "pCube21_parentConstraint1.crz" "bot_bodyRN.phl[1268]";
-connectAttr "bot_bodyRN.phl[1269]" "pCube21_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1270]" "pCube21_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1271]" "pCube21_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1272]" "pCube21_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1273]" "pCube21_parentConstraint1.crt";
-connectAttr "pCube21_scaleConstraint1.csx" "bot_bodyRN.phl[1274]";
-connectAttr "pCube21_scaleConstraint1.csy" "bot_bodyRN.phl[1275]";
-connectAttr "pCube21_scaleConstraint1.csz" "bot_bodyRN.phl[1276]";
-connectAttr "pCylinder3_parentConstraint1.ctx" "bot_bodyRN.phl[1277]";
-connectAttr "pCylinder3_parentConstraint1.cty" "bot_bodyRN.phl[1278]";
-connectAttr "pCylinder3_parentConstraint1.ctz" "bot_bodyRN.phl[1279]";
-connectAttr "pCylinder3_parentConstraint1.crx" "bot_bodyRN.phl[1280]";
-connectAttr "pCylinder3_parentConstraint1.cry" "bot_bodyRN.phl[1281]";
-connectAttr "pCylinder3_parentConstraint1.crz" "bot_bodyRN.phl[1282]";
-connectAttr "bot_bodyRN.phl[1283]" "pCylinder3_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1284]" "pCylinder3_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1285]" "pCylinder3_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1286]" "pCylinder3_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1287]" "pCylinder3_parentConstraint1.crt";
-connectAttr "pCylinder3_scaleConstraint1.csx" "bot_bodyRN.phl[1288]";
-connectAttr "pCylinder3_scaleConstraint1.csy" "bot_bodyRN.phl[1289]";
-connectAttr "pCylinder3_scaleConstraint1.csz" "bot_bodyRN.phl[1290]";
-connectAttr "pCylinder2_parentConstraint1.ctx" "bot_bodyRN.phl[1291]";
-connectAttr "pCylinder2_parentConstraint1.cty" "bot_bodyRN.phl[1292]";
-connectAttr "pCylinder2_parentConstraint1.ctz" "bot_bodyRN.phl[1293]";
-connectAttr "pCylinder2_parentConstraint1.crx" "bot_bodyRN.phl[1294]";
-connectAttr "pCylinder2_parentConstraint1.cry" "bot_bodyRN.phl[1295]";
-connectAttr "pCylinder2_parentConstraint1.crz" "bot_bodyRN.phl[1296]";
-connectAttr "bot_bodyRN.phl[1297]" "pCylinder2_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1298]" "pCylinder2_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1299]" "pCylinder2_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1300]" "pCylinder2_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1301]" "pCylinder2_parentConstraint1.crt";
-connectAttr "pCylinder2_scaleConstraint1.csx" "bot_bodyRN.phl[1302]";
-connectAttr "pCylinder2_scaleConstraint1.csy" "bot_bodyRN.phl[1303]";
-connectAttr "pCylinder2_scaleConstraint1.csz" "bot_bodyRN.phl[1304]";
-connectAttr "pCube20_parentConstraint1.ctx" "bot_bodyRN.phl[1305]";
-connectAttr "pCube20_parentConstraint1.cty" "bot_bodyRN.phl[1306]";
-connectAttr "pCube20_parentConstraint1.ctz" "bot_bodyRN.phl[1307]";
-connectAttr "pCube20_parentConstraint1.crx" "bot_bodyRN.phl[1308]";
-connectAttr "pCube20_parentConstraint1.cry" "bot_bodyRN.phl[1309]";
-connectAttr "pCube20_parentConstraint1.crz" "bot_bodyRN.phl[1310]";
-connectAttr "bot_bodyRN.phl[1311]" "pCube20_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1312]" "pCube20_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1313]" "pCube20_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1314]" "pCube20_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1315]" "pCube20_parentConstraint1.crt";
-connectAttr "pCube20_scaleConstraint1.csx" "bot_bodyRN.phl[1316]";
-connectAttr "pCube20_scaleConstraint1.csy" "bot_bodyRN.phl[1317]";
-connectAttr "pCube20_scaleConstraint1.csz" "bot_bodyRN.phl[1318]";
-connectAttr "pSuperShape1_parentConstraint1.ctx" "bot_bodyRN.phl[1319]";
-connectAttr "pSuperShape1_parentConstraint1.cty" "bot_bodyRN.phl[1320]";
-connectAttr "pSuperShape1_parentConstraint1.ctz" "bot_bodyRN.phl[1321]";
-connectAttr "pSuperShape1_parentConstraint1.crx" "bot_bodyRN.phl[1322]";
-connectAttr "pSuperShape1_parentConstraint1.cry" "bot_bodyRN.phl[1323]";
-connectAttr "pSuperShape1_parentConstraint1.crz" "bot_bodyRN.phl[1324]";
-connectAttr "bot_bodyRN.phl[1325]" "pSuperShape1_parentConstraint1.cro";
-connectAttr "bot_bodyRN.phl[1326]" "pSuperShape1_parentConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1327]" "pSuperShape1_scaleConstraint1.cpim";
-connectAttr "bot_bodyRN.phl[1328]" "pSuperShape1_parentConstraint1.crp";
-connectAttr "bot_bodyRN.phl[1329]" "pSuperShape1_parentConstraint1.crt";
-connectAttr "pSuperShape1_scaleConstraint1.csx" "bot_bodyRN.phl[1330]";
-connectAttr "pSuperShape1_scaleConstraint1.csy" "bot_bodyRN.phl[1331]";
-connectAttr "pSuperShape1_scaleConstraint1.csz" "bot_bodyRN.phl[1332]";
-connectAttr "pCylinder6_parentConstraint2.ctx" "bot_bodyRN.phl[1333]";
-connectAttr "pCylinder6_parentConstraint2.cty" "bot_bodyRN.phl[1334]";
-connectAttr "pCylinder6_parentConstraint2.ctz" "bot_bodyRN.phl[1335]";
-connectAttr "pCylinder6_parentConstraint2.crx" "bot_bodyRN.phl[1336]";
-connectAttr "pCylinder6_parentConstraint2.cry" "bot_bodyRN.phl[1337]";
-connectAttr "pCylinder6_parentConstraint2.crz" "bot_bodyRN.phl[1338]";
-connectAttr "bot_bodyRN.phl[1339]" "pCylinder6_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1340]" "pCylinder6_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1341]" "pCylinder6_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1342]" "pCylinder6_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1343]" "pCylinder6_parentConstraint2.crt";
-connectAttr "pCylinder6_scaleConstraint2.csx" "bot_bodyRN.phl[1344]";
-connectAttr "pCylinder6_scaleConstraint2.csy" "bot_bodyRN.phl[1345]";
-connectAttr "pCylinder6_scaleConstraint2.csz" "bot_bodyRN.phl[1346]";
-connectAttr "polySurface9_parentConstraint2.ctx" "bot_bodyRN.phl[1347]";
-connectAttr "polySurface9_parentConstraint2.cty" "bot_bodyRN.phl[1348]";
-connectAttr "polySurface9_parentConstraint2.ctz" "bot_bodyRN.phl[1349]";
-connectAttr "polySurface9_parentConstraint2.crx" "bot_bodyRN.phl[1350]";
-connectAttr "polySurface9_parentConstraint2.cry" "bot_bodyRN.phl[1351]";
-connectAttr "polySurface9_parentConstraint2.crz" "bot_bodyRN.phl[1352]";
-connectAttr "bot_bodyRN.phl[1353]" "polySurface9_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1354]" "polySurface9_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1355]" "polySurface9_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1356]" "polySurface9_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1357]" "polySurface9_parentConstraint2.crt";
-connectAttr "polySurface9_scaleConstraint2.csx" "bot_bodyRN.phl[1358]";
-connectAttr "polySurface9_scaleConstraint2.csy" "bot_bodyRN.phl[1359]";
-connectAttr "polySurface9_scaleConstraint2.csz" "bot_bodyRN.phl[1360]";
-connectAttr "pCylinder9_parentConstraint2.ctx" "bot_bodyRN.phl[1361]";
-connectAttr "pCylinder9_parentConstraint2.cty" "bot_bodyRN.phl[1362]";
-connectAttr "pCylinder9_parentConstraint2.ctz" "bot_bodyRN.phl[1363]";
-connectAttr "pCylinder9_parentConstraint2.crx" "bot_bodyRN.phl[1364]";
-connectAttr "pCylinder9_parentConstraint2.cry" "bot_bodyRN.phl[1365]";
-connectAttr "pCylinder9_parentConstraint2.crz" "bot_bodyRN.phl[1366]";
-connectAttr "bot_bodyRN.phl[1367]" "pCylinder9_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1368]" "pCylinder9_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1369]" "pCylinder9_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1370]" "pCylinder9_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1371]" "pCylinder9_parentConstraint2.crt";
-connectAttr "pCylinder9_scaleConstraint2.csx" "bot_bodyRN.phl[1372]";
-connectAttr "pCylinder9_scaleConstraint2.csy" "bot_bodyRN.phl[1373]";
-connectAttr "pCylinder9_scaleConstraint2.csz" "bot_bodyRN.phl[1374]";
-connectAttr "polySurface8_parentConstraint2.ctx" "bot_bodyRN.phl[1375]";
-connectAttr "polySurface8_parentConstraint2.cty" "bot_bodyRN.phl[1376]";
-connectAttr "polySurface8_parentConstraint2.ctz" "bot_bodyRN.phl[1377]";
-connectAttr "polySurface8_parentConstraint2.crx" "bot_bodyRN.phl[1378]";
-connectAttr "polySurface8_parentConstraint2.cry" "bot_bodyRN.phl[1379]";
-connectAttr "polySurface8_parentConstraint2.crz" "bot_bodyRN.phl[1380]";
-connectAttr "bot_bodyRN.phl[1381]" "polySurface8_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1382]" "polySurface8_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1383]" "polySurface8_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1384]" "polySurface8_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1385]" "polySurface8_parentConstraint2.crt";
-connectAttr "polySurface8_scaleConstraint2.csx" "bot_bodyRN.phl[1386]";
-connectAttr "polySurface8_scaleConstraint2.csy" "bot_bodyRN.phl[1387]";
-connectAttr "polySurface8_scaleConstraint2.csz" "bot_bodyRN.phl[1388]";
-connectAttr "pCube23_parentConstraint2.ctx" "bot_bodyRN.phl[1389]";
-connectAttr "pCube23_parentConstraint2.cty" "bot_bodyRN.phl[1390]";
-connectAttr "pCube23_parentConstraint2.ctz" "bot_bodyRN.phl[1391]";
-connectAttr "pCube23_parentConstraint2.crx" "bot_bodyRN.phl[1392]";
-connectAttr "pCube23_parentConstraint2.cry" "bot_bodyRN.phl[1393]";
-connectAttr "pCube23_parentConstraint2.crz" "bot_bodyRN.phl[1394]";
-connectAttr "bot_bodyRN.phl[1395]" "pCube23_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1396]" "pCube23_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1397]" "pCube23_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1398]" "pCube23_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1399]" "pCube23_parentConstraint2.crt";
-connectAttr "pCube23_scaleConstraint2.csx" "bot_bodyRN.phl[1400]";
-connectAttr "pCube23_scaleConstraint2.csy" "bot_bodyRN.phl[1401]";
-connectAttr "pCube23_scaleConstraint2.csz" "bot_bodyRN.phl[1402]";
-connectAttr "pCylinder7_parentConstraint2.ctx" "bot_bodyRN.phl[1403]";
-connectAttr "pCylinder7_parentConstraint2.cty" "bot_bodyRN.phl[1404]";
-connectAttr "pCylinder7_parentConstraint2.ctz" "bot_bodyRN.phl[1405]";
-connectAttr "pCylinder7_parentConstraint2.crx" "bot_bodyRN.phl[1406]";
-connectAttr "pCylinder7_parentConstraint2.cry" "bot_bodyRN.phl[1407]";
-connectAttr "pCylinder7_parentConstraint2.crz" "bot_bodyRN.phl[1408]";
-connectAttr "bot_bodyRN.phl[1409]" "pCylinder7_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1410]" "pCylinder7_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1411]" "pCylinder7_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1412]" "pCylinder7_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1413]" "pCylinder7_parentConstraint2.crt";
-connectAttr "pCylinder7_scaleConstraint2.csx" "bot_bodyRN.phl[1414]";
-connectAttr "pCylinder7_scaleConstraint2.csy" "bot_bodyRN.phl[1415]";
-connectAttr "pCylinder7_scaleConstraint2.csz" "bot_bodyRN.phl[1416]";
-connectAttr "pCube24_parentConstraint2.ctx" "bot_bodyRN.phl[1417]";
-connectAttr "pCube24_parentConstraint2.cty" "bot_bodyRN.phl[1418]";
-connectAttr "pCube24_parentConstraint2.ctz" "bot_bodyRN.phl[1419]";
-connectAttr "pCube24_parentConstraint2.crx" "bot_bodyRN.phl[1420]";
-connectAttr "pCube24_parentConstraint2.cry" "bot_bodyRN.phl[1421]";
-connectAttr "pCube24_parentConstraint2.crz" "bot_bodyRN.phl[1422]";
-connectAttr "bot_bodyRN.phl[1423]" "pCube24_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1424]" "pCube24_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1425]" "pCube24_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1426]" "pCube24_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1427]" "pCube24_parentConstraint2.crt";
-connectAttr "pCube24_scaleConstraint2.csx" "bot_bodyRN.phl[1428]";
-connectAttr "pCube24_scaleConstraint2.csy" "bot_bodyRN.phl[1429]";
-connectAttr "pCube24_scaleConstraint2.csz" "bot_bodyRN.phl[1430]";
-connectAttr "polySurface6_parentConstraint2.ctx" "bot_bodyRN.phl[1431]";
-connectAttr "polySurface6_parentConstraint2.cty" "bot_bodyRN.phl[1432]";
-connectAttr "polySurface6_parentConstraint2.ctz" "bot_bodyRN.phl[1433]";
-connectAttr "polySurface6_parentConstraint2.crx" "bot_bodyRN.phl[1434]";
-connectAttr "polySurface6_parentConstraint2.cry" "bot_bodyRN.phl[1435]";
-connectAttr "polySurface6_parentConstraint2.crz" "bot_bodyRN.phl[1436]";
-connectAttr "bot_bodyRN.phl[1437]" "polySurface6_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1438]" "polySurface6_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1439]" "polySurface6_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1440]" "polySurface6_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1441]" "polySurface6_parentConstraint2.crt";
-connectAttr "polySurface6_scaleConstraint2.csx" "bot_bodyRN.phl[1442]";
-connectAttr "polySurface6_scaleConstraint2.csy" "bot_bodyRN.phl[1443]";
-connectAttr "polySurface6_scaleConstraint2.csz" "bot_bodyRN.phl[1444]";
-connectAttr "pCylinder8_parentConstraint2.ctx" "bot_bodyRN.phl[1445]";
-connectAttr "pCylinder8_parentConstraint2.cty" "bot_bodyRN.phl[1446]";
-connectAttr "pCylinder8_parentConstraint2.ctz" "bot_bodyRN.phl[1447]";
-connectAttr "pCylinder8_parentConstraint2.crx" "bot_bodyRN.phl[1448]";
-connectAttr "pCylinder8_parentConstraint2.cry" "bot_bodyRN.phl[1449]";
-connectAttr "pCylinder8_parentConstraint2.crz" "bot_bodyRN.phl[1450]";
-connectAttr "bot_bodyRN.phl[1451]" "pCylinder8_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1452]" "pCylinder8_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1453]" "pCylinder8_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1454]" "pCylinder8_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1455]" "pCylinder8_parentConstraint2.crt";
-connectAttr "pCylinder8_scaleConstraint2.csx" "bot_bodyRN.phl[1456]";
-connectAttr "pCylinder8_scaleConstraint2.csy" "bot_bodyRN.phl[1457]";
-connectAttr "pCylinder8_scaleConstraint2.csz" "bot_bodyRN.phl[1458]";
-connectAttr "pCube25_parentConstraint2.ctx" "bot_bodyRN.phl[1459]";
-connectAttr "pCube25_parentConstraint2.cty" "bot_bodyRN.phl[1460]";
-connectAttr "pCube25_parentConstraint2.ctz" "bot_bodyRN.phl[1461]";
-connectAttr "pCube25_parentConstraint2.crx" "bot_bodyRN.phl[1462]";
-connectAttr "pCube25_parentConstraint2.cry" "bot_bodyRN.phl[1463]";
-connectAttr "pCube25_parentConstraint2.crz" "bot_bodyRN.phl[1464]";
-connectAttr "bot_bodyRN.phl[1465]" "pCube25_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1466]" "pCube25_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1467]" "pCube25_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1468]" "pCube25_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1469]" "pCube25_parentConstraint2.crt";
-connectAttr "pCube25_scaleConstraint2.csx" "bot_bodyRN.phl[1470]";
-connectAttr "pCube25_scaleConstraint2.csy" "bot_bodyRN.phl[1471]";
-connectAttr "pCube25_scaleConstraint2.csz" "bot_bodyRN.phl[1472]";
-connectAttr "pPlane45_parentConstraint2.ctx" "bot_bodyRN.phl[1473]";
-connectAttr "pPlane45_parentConstraint2.cty" "bot_bodyRN.phl[1474]";
-connectAttr "pPlane45_parentConstraint2.ctz" "bot_bodyRN.phl[1475]";
-connectAttr "pPlane45_parentConstraint2.crx" "bot_bodyRN.phl[1476]";
-connectAttr "pPlane45_parentConstraint2.cry" "bot_bodyRN.phl[1477]";
-connectAttr "pPlane45_parentConstraint2.crz" "bot_bodyRN.phl[1478]";
-connectAttr "bot_bodyRN.phl[1479]" "pPlane45_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1480]" "pPlane45_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1481]" "pPlane45_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1482]" "pPlane45_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1483]" "pPlane45_parentConstraint2.crt";
-connectAttr "pPlane45_scaleConstraint2.csx" "bot_bodyRN.phl[1484]";
-connectAttr "pPlane45_scaleConstraint2.csy" "bot_bodyRN.phl[1485]";
-connectAttr "pPlane45_scaleConstraint2.csz" "bot_bodyRN.phl[1486]";
-connectAttr "pCube22_parentConstraint2.ctx" "bot_bodyRN.phl[1487]";
-connectAttr "pCube22_parentConstraint2.cty" "bot_bodyRN.phl[1488]";
-connectAttr "pCube22_parentConstraint2.ctz" "bot_bodyRN.phl[1489]";
-connectAttr "pCube22_parentConstraint2.crx" "bot_bodyRN.phl[1490]";
-connectAttr "pCube22_parentConstraint2.cry" "bot_bodyRN.phl[1491]";
-connectAttr "pCube22_parentConstraint2.crz" "bot_bodyRN.phl[1492]";
-connectAttr "bot_bodyRN.phl[1493]" "pCube22_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1494]" "pCube22_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1495]" "pCube22_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1496]" "pCube22_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1497]" "pCube22_parentConstraint2.crt";
-connectAttr "pCube22_scaleConstraint2.csx" "bot_bodyRN.phl[1498]";
-connectAttr "pCube22_scaleConstraint2.csy" "bot_bodyRN.phl[1499]";
-connectAttr "pCube22_scaleConstraint2.csz" "bot_bodyRN.phl[1500]";
-connectAttr "pCylinder4_parentConstraint2.ctx" "bot_bodyRN.phl[1501]";
-connectAttr "pCylinder4_parentConstraint2.cty" "bot_bodyRN.phl[1502]";
-connectAttr "pCylinder4_parentConstraint2.ctz" "bot_bodyRN.phl[1503]";
-connectAttr "pCylinder4_parentConstraint2.crx" "bot_bodyRN.phl[1504]";
-connectAttr "pCylinder4_parentConstraint2.cry" "bot_bodyRN.phl[1505]";
-connectAttr "pCylinder4_parentConstraint2.crz" "bot_bodyRN.phl[1506]";
-connectAttr "bot_bodyRN.phl[1507]" "pCylinder4_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1508]" "pCylinder4_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1509]" "pCylinder4_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1510]" "pCylinder4_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1511]" "pCylinder4_parentConstraint2.crt";
-connectAttr "pCylinder4_scaleConstraint2.csx" "bot_bodyRN.phl[1512]";
-connectAttr "pCylinder4_scaleConstraint2.csy" "bot_bodyRN.phl[1513]";
-connectAttr "pCylinder4_scaleConstraint2.csz" "bot_bodyRN.phl[1514]";
-connectAttr "pCylinder5_parentConstraint2.ctx" "bot_bodyRN.phl[1515]";
-connectAttr "pCylinder5_parentConstraint2.cty" "bot_bodyRN.phl[1516]";
-connectAttr "pCylinder5_parentConstraint2.ctz" "bot_bodyRN.phl[1517]";
-connectAttr "pCylinder5_parentConstraint2.crx" "bot_bodyRN.phl[1518]";
-connectAttr "pCylinder5_parentConstraint2.cry" "bot_bodyRN.phl[1519]";
-connectAttr "pCylinder5_parentConstraint2.crz" "bot_bodyRN.phl[1520]";
-connectAttr "bot_bodyRN.phl[1521]" "pCylinder5_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1522]" "pCylinder5_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1523]" "pCylinder5_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1524]" "pCylinder5_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1525]" "pCylinder5_parentConstraint2.crt";
-connectAttr "pCylinder5_scaleConstraint2.csx" "bot_bodyRN.phl[1526]";
-connectAttr "pCylinder5_scaleConstraint2.csy" "bot_bodyRN.phl[1527]";
-connectAttr "pCylinder5_scaleConstraint2.csz" "bot_bodyRN.phl[1528]";
-connectAttr "pCube21_parentConstraint2.ctx" "bot_bodyRN.phl[1529]";
-connectAttr "pCube21_parentConstraint2.cty" "bot_bodyRN.phl[1530]";
-connectAttr "pCube21_parentConstraint2.ctz" "bot_bodyRN.phl[1531]";
-connectAttr "pCube21_parentConstraint2.crx" "bot_bodyRN.phl[1532]";
-connectAttr "pCube21_parentConstraint2.cry" "bot_bodyRN.phl[1533]";
-connectAttr "pCube21_parentConstraint2.crz" "bot_bodyRN.phl[1534]";
-connectAttr "bot_bodyRN.phl[1535]" "pCube21_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1536]" "pCube21_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1537]" "pCube21_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1538]" "pCube21_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1539]" "pCube21_parentConstraint2.crt";
-connectAttr "pCube21_scaleConstraint2.csx" "bot_bodyRN.phl[1540]";
-connectAttr "pCube21_scaleConstraint2.csy" "bot_bodyRN.phl[1541]";
-connectAttr "pCube21_scaleConstraint2.csz" "bot_bodyRN.phl[1542]";
-connectAttr "pCylinder3_parentConstraint2.ctx" "bot_bodyRN.phl[1543]";
-connectAttr "pCylinder3_parentConstraint2.cty" "bot_bodyRN.phl[1544]";
-connectAttr "pCylinder3_parentConstraint2.ctz" "bot_bodyRN.phl[1545]";
-connectAttr "pCylinder3_parentConstraint2.crx" "bot_bodyRN.phl[1546]";
-connectAttr "pCylinder3_parentConstraint2.cry" "bot_bodyRN.phl[1547]";
-connectAttr "pCylinder3_parentConstraint2.crz" "bot_bodyRN.phl[1548]";
-connectAttr "bot_bodyRN.phl[1549]" "pCylinder3_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1550]" "pCylinder3_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1551]" "pCylinder3_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1552]" "pCylinder3_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1553]" "pCylinder3_parentConstraint2.crt";
-connectAttr "pCylinder3_scaleConstraint2.csx" "bot_bodyRN.phl[1554]";
-connectAttr "pCylinder3_scaleConstraint2.csy" "bot_bodyRN.phl[1555]";
-connectAttr "pCylinder3_scaleConstraint2.csz" "bot_bodyRN.phl[1556]";
-connectAttr "pCylinder2_parentConstraint2.ctx" "bot_bodyRN.phl[1557]";
-connectAttr "pCylinder2_parentConstraint2.cty" "bot_bodyRN.phl[1558]";
-connectAttr "pCylinder2_parentConstraint2.ctz" "bot_bodyRN.phl[1559]";
-connectAttr "pCylinder2_parentConstraint2.crx" "bot_bodyRN.phl[1560]";
-connectAttr "pCylinder2_parentConstraint2.cry" "bot_bodyRN.phl[1561]";
-connectAttr "pCylinder2_parentConstraint2.crz" "bot_bodyRN.phl[1562]";
-connectAttr "bot_bodyRN.phl[1563]" "pCylinder2_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1564]" "pCylinder2_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1565]" "pCylinder2_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1566]" "pCylinder2_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1567]" "pCylinder2_parentConstraint2.crt";
-connectAttr "pCylinder2_scaleConstraint2.csx" "bot_bodyRN.phl[1568]";
-connectAttr "pCylinder2_scaleConstraint2.csy" "bot_bodyRN.phl[1569]";
-connectAttr "pCylinder2_scaleConstraint2.csz" "bot_bodyRN.phl[1570]";
-connectAttr "pCube20_parentConstraint2.ctx" "bot_bodyRN.phl[1571]";
-connectAttr "pCube20_parentConstraint2.cty" "bot_bodyRN.phl[1572]";
-connectAttr "pCube20_parentConstraint2.ctz" "bot_bodyRN.phl[1573]";
-connectAttr "pCube20_parentConstraint2.crx" "bot_bodyRN.phl[1574]";
-connectAttr "pCube20_parentConstraint2.cry" "bot_bodyRN.phl[1575]";
-connectAttr "pCube20_parentConstraint2.crz" "bot_bodyRN.phl[1576]";
-connectAttr "bot_bodyRN.phl[1577]" "pCube20_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1578]" "pCube20_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1579]" "pCube20_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1580]" "pCube20_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1581]" "pCube20_parentConstraint2.crt";
-connectAttr "pCube20_scaleConstraint2.csx" "bot_bodyRN.phl[1582]";
-connectAttr "pCube20_scaleConstraint2.csy" "bot_bodyRN.phl[1583]";
-connectAttr "pCube20_scaleConstraint2.csz" "bot_bodyRN.phl[1584]";
-connectAttr "pSuperShape1_parentConstraint2.ctx" "bot_bodyRN.phl[1585]";
-connectAttr "pSuperShape1_parentConstraint2.cty" "bot_bodyRN.phl[1586]";
-connectAttr "pSuperShape1_parentConstraint2.ctz" "bot_bodyRN.phl[1587]";
-connectAttr "pSuperShape1_parentConstraint2.crx" "bot_bodyRN.phl[1588]";
-connectAttr "pSuperShape1_parentConstraint2.cry" "bot_bodyRN.phl[1589]";
-connectAttr "pSuperShape1_parentConstraint2.crz" "bot_bodyRN.phl[1590]";
-connectAttr "bot_bodyRN.phl[1591]" "pSuperShape1_parentConstraint2.cro";
-connectAttr "bot_bodyRN.phl[1592]" "pSuperShape1_parentConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1593]" "pSuperShape1_scaleConstraint2.cpim";
-connectAttr "bot_bodyRN.phl[1594]" "pSuperShape1_parentConstraint2.crp";
-connectAttr "bot_bodyRN.phl[1595]" "pSuperShape1_parentConstraint2.crt";
-connectAttr "pSuperShape1_scaleConstraint2.csx" "bot_bodyRN.phl[1596]";
-connectAttr "pSuperShape1_scaleConstraint2.csy" "bot_bodyRN.phl[1597]";
-connectAttr "pSuperShape1_scaleConstraint2.csz" "bot_bodyRN.phl[1598]";
+connectAttr "pCylinder34_parentConstraint1.ctx" "bot_bodyRN.phl[944]";
+connectAttr "pCylinder34_parentConstraint1.cty" "bot_bodyRN.phl[945]";
+connectAttr "pCylinder34_parentConstraint1.ctz" "bot_bodyRN.phl[946]";
+connectAttr "pCylinder34_parentConstraint1.crx" "bot_bodyRN.phl[947]";
+connectAttr "pCylinder34_parentConstraint1.cry" "bot_bodyRN.phl[948]";
+connectAttr "pCylinder34_parentConstraint1.crz" "bot_bodyRN.phl[949]";
+connectAttr "bot_bodyRN.phl[950]" "pCylinder34_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[951]" "pCylinder34_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[952]" "pCylinder34_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[953]" "pCylinder34_parentConstraint1.crt";
+connectAttr "pCylinder35_parentConstraint1.ctx" "bot_bodyRN.phl[954]";
+connectAttr "pCylinder35_parentConstraint1.cty" "bot_bodyRN.phl[955]";
+connectAttr "pCylinder35_parentConstraint1.ctz" "bot_bodyRN.phl[956]";
+connectAttr "pCylinder35_parentConstraint1.crx" "bot_bodyRN.phl[957]";
+connectAttr "pCylinder35_parentConstraint1.cry" "bot_bodyRN.phl[958]";
+connectAttr "pCylinder35_parentConstraint1.crz" "bot_bodyRN.phl[959]";
+connectAttr "bot_bodyRN.phl[960]" "pCylinder35_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[961]" "pCylinder35_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[962]" "pCylinder35_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[963]" "pCylinder35_parentConstraint1.crt";
+connectAttr "pCylinder36_parentConstraint1.ctx" "bot_bodyRN.phl[964]";
+connectAttr "pCylinder36_parentConstraint1.cty" "bot_bodyRN.phl[965]";
+connectAttr "pCylinder36_parentConstraint1.ctz" "bot_bodyRN.phl[966]";
+connectAttr "pCylinder36_parentConstraint1.crx" "bot_bodyRN.phl[967]";
+connectAttr "pCylinder36_parentConstraint1.cry" "bot_bodyRN.phl[968]";
+connectAttr "pCylinder36_parentConstraint1.crz" "bot_bodyRN.phl[969]";
+connectAttr "bot_bodyRN.phl[970]" "pCylinder36_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[971]" "pCylinder36_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[972]" "pCylinder36_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[973]" "pCylinder36_parentConstraint1.crt";
+connectAttr "pCylinder37_parentConstraint1.ctx" "bot_bodyRN.phl[974]";
+connectAttr "pCylinder37_parentConstraint1.cty" "bot_bodyRN.phl[975]";
+connectAttr "pCylinder37_parentConstraint1.ctz" "bot_bodyRN.phl[976]";
+connectAttr "pCylinder37_parentConstraint1.crx" "bot_bodyRN.phl[977]";
+connectAttr "pCylinder37_parentConstraint1.cry" "bot_bodyRN.phl[978]";
+connectAttr "pCylinder37_parentConstraint1.crz" "bot_bodyRN.phl[979]";
+connectAttr "bot_bodyRN.phl[980]" "pCylinder37_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[981]" "pCylinder37_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[982]" "pCylinder37_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[983]" "pCylinder37_parentConstraint1.crt";
+connectAttr "polySurface5_parentConstraint2.ctx" "bot_bodyRN.phl[984]";
+connectAttr "polySurface5_parentConstraint2.cty" "bot_bodyRN.phl[985]";
+connectAttr "polySurface5_parentConstraint2.ctz" "bot_bodyRN.phl[986]";
+connectAttr "polySurface5_parentConstraint2.crx" "bot_bodyRN.phl[987]";
+connectAttr "polySurface5_parentConstraint2.cry" "bot_bodyRN.phl[988]";
+connectAttr "polySurface5_parentConstraint2.crz" "bot_bodyRN.phl[989]";
+connectAttr "bot_bodyRN.phl[990]" "polySurface5_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[991]" "polySurface5_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[992]" "polySurface5_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[993]" "polySurface5_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[994]" "polySurface5_parentConstraint2.crt";
+connectAttr "polySurface5_scaleConstraint2.csx" "bot_bodyRN.phl[995]";
+connectAttr "polySurface5_scaleConstraint2.csy" "bot_bodyRN.phl[996]";
+connectAttr "polySurface5_scaleConstraint2.csz" "bot_bodyRN.phl[997]";
+connectAttr "pCylinder1_parentConstraint2.ctx" "bot_bodyRN.phl[998]";
+connectAttr "pCylinder1_parentConstraint2.cty" "bot_bodyRN.phl[999]";
+connectAttr "pCylinder1_parentConstraint2.ctz" "bot_bodyRN.phl[1000]";
+connectAttr "pCylinder1_parentConstraint2.crx" "bot_bodyRN.phl[1001]";
+connectAttr "pCylinder1_parentConstraint2.cry" "bot_bodyRN.phl[1002]";
+connectAttr "pCylinder1_parentConstraint2.crz" "bot_bodyRN.phl[1003]";
+connectAttr "bot_bodyRN.phl[1004]" "pCylinder1_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1005]" "pCylinder1_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1006]" "pCylinder1_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1007]" "pCylinder1_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1008]" "pCylinder1_parentConstraint2.crt";
+connectAttr "pCylinder1_scaleConstraint2.csx" "bot_bodyRN.phl[1009]";
+connectAttr "pCylinder1_scaleConstraint2.csy" "bot_bodyRN.phl[1010]";
+connectAttr "pCylinder1_scaleConstraint2.csz" "bot_bodyRN.phl[1011]";
+connectAttr "pCube12_parentConstraint2.ctx" "bot_bodyRN.phl[1012]";
+connectAttr "pCube12_parentConstraint2.cty" "bot_bodyRN.phl[1013]";
+connectAttr "pCube12_parentConstraint2.ctz" "bot_bodyRN.phl[1014]";
+connectAttr "pCube12_parentConstraint2.crx" "bot_bodyRN.phl[1015]";
+connectAttr "pCube12_parentConstraint2.cry" "bot_bodyRN.phl[1016]";
+connectAttr "pCube12_parentConstraint2.crz" "bot_bodyRN.phl[1017]";
+connectAttr "bot_bodyRN.phl[1018]" "pCube12_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1019]" "pCube12_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1020]" "pCube12_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1021]" "pCube12_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1022]" "pCube12_parentConstraint2.crt";
+connectAttr "pCube12_scaleConstraint2.csx" "bot_bodyRN.phl[1023]";
+connectAttr "pCube12_scaleConstraint2.csy" "bot_bodyRN.phl[1024]";
+connectAttr "pCube12_scaleConstraint2.csz" "bot_bodyRN.phl[1025]";
+connectAttr "polySurface15_parentConstraint1.ctx" "bot_bodyRN.phl[1026]";
+connectAttr "polySurface15_parentConstraint1.cty" "bot_bodyRN.phl[1027]";
+connectAttr "polySurface15_parentConstraint1.ctz" "bot_bodyRN.phl[1028]";
+connectAttr "polySurface15_parentConstraint1.crx" "bot_bodyRN.phl[1029]";
+connectAttr "polySurface15_parentConstraint1.cry" "bot_bodyRN.phl[1030]";
+connectAttr "polySurface15_parentConstraint1.crz" "bot_bodyRN.phl[1031]";
+connectAttr "bot_bodyRN.phl[1032]" "polySurface15_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1033]" "polySurface15_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1034]" "polySurface15_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1035]" "polySurface15_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1036]" "polySurface15_parentConstraint1.crt";
+connectAttr "polySurface15_scaleConstraint1.csx" "bot_bodyRN.phl[1037]";
+connectAttr "polySurface15_scaleConstraint1.csy" "bot_bodyRN.phl[1038]";
+connectAttr "polySurface15_scaleConstraint1.csz" "bot_bodyRN.phl[1039]";
+connectAttr "polySurface16_parentConstraint1.ctx" "bot_bodyRN.phl[1040]";
+connectAttr "polySurface16_parentConstraint1.cty" "bot_bodyRN.phl[1041]";
+connectAttr "polySurface16_parentConstraint1.ctz" "bot_bodyRN.phl[1042]";
+connectAttr "polySurface16_parentConstraint1.crx" "bot_bodyRN.phl[1043]";
+connectAttr "polySurface16_parentConstraint1.cry" "bot_bodyRN.phl[1044]";
+connectAttr "polySurface16_parentConstraint1.crz" "bot_bodyRN.phl[1045]";
+connectAttr "bot_bodyRN.phl[1046]" "polySurface16_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1047]" "polySurface16_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1048]" "polySurface16_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1049]" "polySurface16_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1050]" "polySurface16_parentConstraint1.crt";
+connectAttr "polySurface16_scaleConstraint1.csx" "bot_bodyRN.phl[1051]";
+connectAttr "polySurface16_scaleConstraint1.csy" "bot_bodyRN.phl[1052]";
+connectAttr "polySurface16_scaleConstraint1.csz" "bot_bodyRN.phl[1053]";
+connectAttr "polySurface17_parentConstraint1.ctx" "bot_bodyRN.phl[1054]";
+connectAttr "polySurface17_parentConstraint1.cty" "bot_bodyRN.phl[1055]";
+connectAttr "polySurface17_parentConstraint1.ctz" "bot_bodyRN.phl[1056]";
+connectAttr "polySurface17_parentConstraint1.crx" "bot_bodyRN.phl[1057]";
+connectAttr "polySurface17_parentConstraint1.cry" "bot_bodyRN.phl[1058]";
+connectAttr "polySurface17_parentConstraint1.crz" "bot_bodyRN.phl[1059]";
+connectAttr "bot_bodyRN.phl[1060]" "polySurface17_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1061]" "polySurface17_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1062]" "polySurface17_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1063]" "polySurface17_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1064]" "polySurface17_parentConstraint1.crt";
+connectAttr "polySurface17_scaleConstraint1.csx" "bot_bodyRN.phl[1065]";
+connectAttr "polySurface17_scaleConstraint1.csy" "bot_bodyRN.phl[1066]";
+connectAttr "polySurface17_scaleConstraint1.csz" "bot_bodyRN.phl[1067]";
+connectAttr "bot_bodyRN.phl[1068]" "skinCluster6.orggeom[0]";
+connectAttr "bot_bodyRN.phl[1069]" "skinCluster6.ip[0].ig";
+connectAttr "polySurface19_parentConstraint1.ctx" "bot_bodyRN.phl[1070]";
+connectAttr "polySurface19_parentConstraint1.cty" "bot_bodyRN.phl[1071]";
+connectAttr "polySurface19_parentConstraint1.ctz" "bot_bodyRN.phl[1072]";
+connectAttr "polySurface19_parentConstraint1.crx" "bot_bodyRN.phl[1073]";
+connectAttr "polySurface19_parentConstraint1.cry" "bot_bodyRN.phl[1074]";
+connectAttr "polySurface19_parentConstraint1.crz" "bot_bodyRN.phl[1075]";
+connectAttr "bot_bodyRN.phl[1076]" "polySurface19_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1077]" "polySurface19_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1078]" "polySurface19_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1079]" "polySurface19_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1080]" "polySurface19_parentConstraint1.crt";
+connectAttr "polySurface19_scaleConstraint1.csx" "bot_bodyRN.phl[1081]";
+connectAttr "polySurface19_scaleConstraint1.csy" "bot_bodyRN.phl[1082]";
+connectAttr "polySurface19_scaleConstraint1.csz" "bot_bodyRN.phl[1083]";
+connectAttr "bot_bodyRN.phl[1084]" "skinCluster5.orggeom[0]";
+connectAttr "bot_bodyRN.phl[1085]" "tweak3.ip[0].ig";
+connectAttr "pCube13_parentConstraint2.ctx" "bot_bodyRN.phl[1086]";
+connectAttr "pCube13_parentConstraint2.cty" "bot_bodyRN.phl[1087]";
+connectAttr "pCube13_parentConstraint2.ctz" "bot_bodyRN.phl[1088]";
+connectAttr "pCube13_parentConstraint2.crx" "bot_bodyRN.phl[1089]";
+connectAttr "pCube13_parentConstraint2.cry" "bot_bodyRN.phl[1090]";
+connectAttr "pCube13_parentConstraint2.crz" "bot_bodyRN.phl[1091]";
+connectAttr "bot_bodyRN.phl[1092]" "pCube13_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1093]" "pCube13_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1094]" "pCube13_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1095]" "pCube13_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1096]" "pCube13_parentConstraint2.crt";
+connectAttr "pCube13_scaleConstraint2.csx" "bot_bodyRN.phl[1097]";
+connectAttr "pCube13_scaleConstraint2.csy" "bot_bodyRN.phl[1098]";
+connectAttr "pCube13_scaleConstraint2.csz" "bot_bodyRN.phl[1099]";
+connectAttr "polySurface4_parentConstraint2.ctx" "bot_bodyRN.phl[1100]";
+connectAttr "polySurface4_parentConstraint2.cty" "bot_bodyRN.phl[1101]";
+connectAttr "polySurface4_parentConstraint2.ctz" "bot_bodyRN.phl[1102]";
+connectAttr "polySurface4_parentConstraint2.crx" "bot_bodyRN.phl[1103]";
+connectAttr "polySurface4_parentConstraint2.cry" "bot_bodyRN.phl[1104]";
+connectAttr "polySurface4_parentConstraint2.crz" "bot_bodyRN.phl[1105]";
+connectAttr "bot_bodyRN.phl[1106]" "polySurface4_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1107]" "polySurface4_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1108]" "polySurface4_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1109]" "polySurface4_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1110]" "polySurface4_parentConstraint2.crt";
+connectAttr "polySurface4_scaleConstraint2.csx" "bot_bodyRN.phl[1111]";
+connectAttr "polySurface4_scaleConstraint2.csy" "bot_bodyRN.phl[1112]";
+connectAttr "polySurface4_scaleConstraint2.csz" "bot_bodyRN.phl[1113]";
+connectAttr "pPlane41_parentConstraint2.ctx" "bot_bodyRN.phl[1114]";
+connectAttr "pPlane41_parentConstraint2.cty" "bot_bodyRN.phl[1115]";
+connectAttr "pPlane41_parentConstraint2.ctz" "bot_bodyRN.phl[1116]";
+connectAttr "pPlane41_parentConstraint2.crx" "bot_bodyRN.phl[1117]";
+connectAttr "pPlane41_parentConstraint2.cry" "bot_bodyRN.phl[1118]";
+connectAttr "pPlane41_parentConstraint2.crz" "bot_bodyRN.phl[1119]";
+connectAttr "bot_bodyRN.phl[1120]" "pPlane41_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1121]" "pPlane41_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1122]" "pPlane41_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1123]" "pPlane41_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1124]" "pPlane41_parentConstraint2.crt";
+connectAttr "pPlane41_scaleConstraint2.csx" "bot_bodyRN.phl[1125]";
+connectAttr "pPlane41_scaleConstraint2.csy" "bot_bodyRN.phl[1126]";
+connectAttr "pPlane41_scaleConstraint2.csz" "bot_bodyRN.phl[1127]";
+connectAttr "Shoulder_clav_parentConstraint2.ctx" "bot_bodyRN.phl[1128]";
+connectAttr "Shoulder_clav_parentConstraint2.cty" "bot_bodyRN.phl[1129]";
+connectAttr "Shoulder_clav_parentConstraint2.ctz" "bot_bodyRN.phl[1130]";
+connectAttr "Shoulder_clav_parentConstraint2.crx" "bot_bodyRN.phl[1131]";
+connectAttr "Shoulder_clav_parentConstraint2.cry" "bot_bodyRN.phl[1132]";
+connectAttr "Shoulder_clav_parentConstraint2.crz" "bot_bodyRN.phl[1133]";
+connectAttr "bot_bodyRN.phl[1134]" "Shoulder_clav_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1135]" "Shoulder_clav_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1136]" "Shoulder_clav_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1137]" "Shoulder_clav_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1138]" "Shoulder_clav_parentConstraint2.crt";
+connectAttr "Shoulder_clav_scaleConstraint2.csx" "bot_bodyRN.phl[1139]";
+connectAttr "Shoulder_clav_scaleConstraint2.csy" "bot_bodyRN.phl[1140]";
+connectAttr "Shoulder_clav_scaleConstraint2.csz" "bot_bodyRN.phl[1141]";
+connectAttr "pCylinder6_parentConstraint1.ctx" "bot_bodyRN.phl[1142]";
+connectAttr "pCylinder6_parentConstraint1.cty" "bot_bodyRN.phl[1143]";
+connectAttr "pCylinder6_parentConstraint1.ctz" "bot_bodyRN.phl[1144]";
+connectAttr "pCylinder6_parentConstraint1.crx" "bot_bodyRN.phl[1145]";
+connectAttr "pCylinder6_parentConstraint1.cry" "bot_bodyRN.phl[1146]";
+connectAttr "pCylinder6_parentConstraint1.crz" "bot_bodyRN.phl[1147]";
+connectAttr "bot_bodyRN.phl[1148]" "pCylinder6_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1149]" "pCylinder6_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1150]" "pCylinder6_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1151]" "pCylinder6_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1152]" "pCylinder6_parentConstraint1.crt";
+connectAttr "pCylinder6_scaleConstraint1.csx" "bot_bodyRN.phl[1153]";
+connectAttr "pCylinder6_scaleConstraint1.csy" "bot_bodyRN.phl[1154]";
+connectAttr "pCylinder6_scaleConstraint1.csz" "bot_bodyRN.phl[1155]";
+connectAttr "polySurface9_parentConstraint1.ctx" "bot_bodyRN.phl[1156]";
+connectAttr "polySurface9_parentConstraint1.cty" "bot_bodyRN.phl[1157]";
+connectAttr "polySurface9_parentConstraint1.ctz" "bot_bodyRN.phl[1158]";
+connectAttr "polySurface9_parentConstraint1.crx" "bot_bodyRN.phl[1159]";
+connectAttr "polySurface9_parentConstraint1.cry" "bot_bodyRN.phl[1160]";
+connectAttr "polySurface9_parentConstraint1.crz" "bot_bodyRN.phl[1161]";
+connectAttr "bot_bodyRN.phl[1162]" "polySurface9_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1163]" "polySurface9_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1164]" "polySurface9_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1165]" "polySurface9_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1166]" "polySurface9_parentConstraint1.crt";
+connectAttr "polySurface9_scaleConstraint1.csx" "bot_bodyRN.phl[1167]";
+connectAttr "polySurface9_scaleConstraint1.csy" "bot_bodyRN.phl[1168]";
+connectAttr "polySurface9_scaleConstraint1.csz" "bot_bodyRN.phl[1169]";
+connectAttr "bot_bodyRN.phl[1170]" "polySurfaceShape17Tag.i";
+connectAttr "pCylinder9_parentConstraint1.ctx" "bot_bodyRN.phl[1171]";
+connectAttr "pCylinder9_parentConstraint1.cty" "bot_bodyRN.phl[1172]";
+connectAttr "pCylinder9_parentConstraint1.ctz" "bot_bodyRN.phl[1173]";
+connectAttr "pCylinder9_parentConstraint1.crx" "bot_bodyRN.phl[1174]";
+connectAttr "pCylinder9_parentConstraint1.cry" "bot_bodyRN.phl[1175]";
+connectAttr "pCylinder9_parentConstraint1.crz" "bot_bodyRN.phl[1176]";
+connectAttr "bot_bodyRN.phl[1177]" "pCylinder9_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1178]" "pCylinder9_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1179]" "pCylinder9_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1180]" "pCylinder9_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1181]" "pCylinder9_parentConstraint1.crt";
+connectAttr "pCylinder9_scaleConstraint1.csx" "bot_bodyRN.phl[1182]";
+connectAttr "pCylinder9_scaleConstraint1.csy" "bot_bodyRN.phl[1183]";
+connectAttr "pCylinder9_scaleConstraint1.csz" "bot_bodyRN.phl[1184]";
+connectAttr "polySurface8_parentConstraint1.ctx" "bot_bodyRN.phl[1185]";
+connectAttr "polySurface8_parentConstraint1.cty" "bot_bodyRN.phl[1186]";
+connectAttr "polySurface8_parentConstraint1.ctz" "bot_bodyRN.phl[1187]";
+connectAttr "polySurface8_parentConstraint1.crx" "bot_bodyRN.phl[1188]";
+connectAttr "polySurface8_parentConstraint1.cry" "bot_bodyRN.phl[1189]";
+connectAttr "polySurface8_parentConstraint1.crz" "bot_bodyRN.phl[1190]";
+connectAttr "bot_bodyRN.phl[1191]" "polySurface8_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1192]" "polySurface8_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1193]" "polySurface8_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1194]" "polySurface8_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1195]" "polySurface8_parentConstraint1.crt";
+connectAttr "polySurface8_scaleConstraint1.csx" "bot_bodyRN.phl[1196]";
+connectAttr "polySurface8_scaleConstraint1.csy" "bot_bodyRN.phl[1197]";
+connectAttr "polySurface8_scaleConstraint1.csz" "bot_bodyRN.phl[1198]";
+connectAttr "bot_bodyRN.phl[1199]" "polySurfaceShape16Tag.i";
+connectAttr "pCube23_parentConstraint1.ctx" "bot_bodyRN.phl[1200]";
+connectAttr "pCube23_parentConstraint1.cty" "bot_bodyRN.phl[1201]";
+connectAttr "pCube23_parentConstraint1.ctz" "bot_bodyRN.phl[1202]";
+connectAttr "pCube23_parentConstraint1.crx" "bot_bodyRN.phl[1203]";
+connectAttr "pCube23_parentConstraint1.cry" "bot_bodyRN.phl[1204]";
+connectAttr "pCube23_parentConstraint1.crz" "bot_bodyRN.phl[1205]";
+connectAttr "bot_bodyRN.phl[1206]" "pCube23_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1207]" "pCube23_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1208]" "pCube23_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1209]" "pCube23_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1210]" "pCube23_parentConstraint1.crt";
+connectAttr "pCube23_scaleConstraint1.csx" "bot_bodyRN.phl[1211]";
+connectAttr "pCube23_scaleConstraint1.csy" "bot_bodyRN.phl[1212]";
+connectAttr "pCube23_scaleConstraint1.csz" "bot_bodyRN.phl[1213]";
+connectAttr "pCylinder7_parentConstraint1.ctx" "bot_bodyRN.phl[1214]";
+connectAttr "pCylinder7_parentConstraint1.cty" "bot_bodyRN.phl[1215]";
+connectAttr "pCylinder7_parentConstraint1.ctz" "bot_bodyRN.phl[1216]";
+connectAttr "pCylinder7_parentConstraint1.crx" "bot_bodyRN.phl[1217]";
+connectAttr "pCylinder7_parentConstraint1.cry" "bot_bodyRN.phl[1218]";
+connectAttr "pCylinder7_parentConstraint1.crz" "bot_bodyRN.phl[1219]";
+connectAttr "bot_bodyRN.phl[1220]" "pCylinder7_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1221]" "pCylinder7_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1222]" "pCylinder7_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1223]" "pCylinder7_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1224]" "pCylinder7_parentConstraint1.crt";
+connectAttr "pCylinder7_scaleConstraint1.csx" "bot_bodyRN.phl[1225]";
+connectAttr "pCylinder7_scaleConstraint1.csy" "bot_bodyRN.phl[1226]";
+connectAttr "pCylinder7_scaleConstraint1.csz" "bot_bodyRN.phl[1227]";
+connectAttr "bot_bodyRN.phl[1228]" "pCylinderShape7Deformed.i";
+connectAttr "pCube24_parentConstraint1.ctx" "bot_bodyRN.phl[1229]";
+connectAttr "pCube24_parentConstraint1.cty" "bot_bodyRN.phl[1230]";
+connectAttr "pCube24_parentConstraint1.ctz" "bot_bodyRN.phl[1231]";
+connectAttr "pCube24_parentConstraint1.crx" "bot_bodyRN.phl[1232]";
+connectAttr "pCube24_parentConstraint1.cry" "bot_bodyRN.phl[1233]";
+connectAttr "pCube24_parentConstraint1.crz" "bot_bodyRN.phl[1234]";
+connectAttr "bot_bodyRN.phl[1235]" "pCube24_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1236]" "pCube24_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1237]" "pCube24_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1238]" "pCube24_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1239]" "pCube24_parentConstraint1.crt";
+connectAttr "pCube24_scaleConstraint1.csx" "bot_bodyRN.phl[1240]";
+connectAttr "pCube24_scaleConstraint1.csy" "bot_bodyRN.phl[1241]";
+connectAttr "pCube24_scaleConstraint1.csz" "bot_bodyRN.phl[1242]";
+connectAttr "polySurface6_parentConstraint1.ctx" "bot_bodyRN.phl[1243]";
+connectAttr "polySurface6_parentConstraint1.cty" "bot_bodyRN.phl[1244]";
+connectAttr "polySurface6_parentConstraint1.ctz" "bot_bodyRN.phl[1245]";
+connectAttr "polySurface6_parentConstraint1.crx" "bot_bodyRN.phl[1246]";
+connectAttr "polySurface6_parentConstraint1.cry" "bot_bodyRN.phl[1247]";
+connectAttr "polySurface6_parentConstraint1.crz" "bot_bodyRN.phl[1248]";
+connectAttr "bot_bodyRN.phl[1249]" "polySurface6_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1250]" "polySurface6_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1251]" "polySurface6_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1252]" "polySurface6_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1253]" "polySurface6_parentConstraint1.crt";
+connectAttr "polySurface6_scaleConstraint1.csx" "bot_bodyRN.phl[1254]";
+connectAttr "polySurface6_scaleConstraint1.csy" "bot_bodyRN.phl[1255]";
+connectAttr "polySurface6_scaleConstraint1.csz" "bot_bodyRN.phl[1256]";
+connectAttr "bot_bodyRN.phl[1257]" "polySurfaceShape14Tag.i";
+connectAttr "pCylinder8_parentConstraint1.ctx" "bot_bodyRN.phl[1258]";
+connectAttr "pCylinder8_parentConstraint1.cty" "bot_bodyRN.phl[1259]";
+connectAttr "pCylinder8_parentConstraint1.ctz" "bot_bodyRN.phl[1260]";
+connectAttr "pCylinder8_parentConstraint1.crx" "bot_bodyRN.phl[1261]";
+connectAttr "pCylinder8_parentConstraint1.cry" "bot_bodyRN.phl[1262]";
+connectAttr "pCylinder8_parentConstraint1.crz" "bot_bodyRN.phl[1263]";
+connectAttr "bot_bodyRN.phl[1264]" "pCylinder8_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1265]" "pCylinder8_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1266]" "pCylinder8_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1267]" "pCylinder8_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1268]" "pCylinder8_parentConstraint1.crt";
+connectAttr "pCylinder8_scaleConstraint1.csx" "bot_bodyRN.phl[1269]";
+connectAttr "pCylinder8_scaleConstraint1.csy" "bot_bodyRN.phl[1270]";
+connectAttr "pCylinder8_scaleConstraint1.csz" "bot_bodyRN.phl[1271]";
+connectAttr "bot_bodyRN.phl[1272]" "pCylinderShape8Deformed.i";
+connectAttr "pCube25_parentConstraint1.ctx" "bot_bodyRN.phl[1273]";
+connectAttr "pCube25_parentConstraint1.cty" "bot_bodyRN.phl[1274]";
+connectAttr "pCube25_parentConstraint1.ctz" "bot_bodyRN.phl[1275]";
+connectAttr "pCube25_parentConstraint1.crx" "bot_bodyRN.phl[1276]";
+connectAttr "pCube25_parentConstraint1.cry" "bot_bodyRN.phl[1277]";
+connectAttr "pCube25_parentConstraint1.crz" "bot_bodyRN.phl[1278]";
+connectAttr "bot_bodyRN.phl[1279]" "pCube25_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1280]" "pCube25_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1281]" "pCube25_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1282]" "pCube25_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1283]" "pCube25_parentConstraint1.crt";
+connectAttr "pCube25_scaleConstraint1.csx" "bot_bodyRN.phl[1284]";
+connectAttr "pCube25_scaleConstraint1.csy" "bot_bodyRN.phl[1285]";
+connectAttr "pCube25_scaleConstraint1.csz" "bot_bodyRN.phl[1286]";
+connectAttr "pPlane45_parentConstraint1.crx" "bot_bodyRN.phl[1287]";
+connectAttr "pPlane45_parentConstraint1.cry" "bot_bodyRN.phl[1288]";
+connectAttr "pPlane45_parentConstraint1.crz" "bot_bodyRN.phl[1289]";
+connectAttr "pPlane45_parentConstraint1.ctx" "bot_bodyRN.phl[1290]";
+connectAttr "pPlane45_parentConstraint1.cty" "bot_bodyRN.phl[1291]";
+connectAttr "pPlane45_parentConstraint1.ctz" "bot_bodyRN.phl[1292]";
+connectAttr "bot_bodyRN.phl[1293]" "pPlane45_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1294]" "pPlane45_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1295]" "pPlane45_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1296]" "pPlane45_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1297]" "pPlane45_parentConstraint1.crt";
+connectAttr "pPlane45_scaleConstraint1.csx" "bot_bodyRN.phl[1298]";
+connectAttr "pPlane45_scaleConstraint1.csy" "bot_bodyRN.phl[1299]";
+connectAttr "pPlane45_scaleConstraint1.csz" "bot_bodyRN.phl[1300]";
+connectAttr "pCube22_parentConstraint1.ctx" "bot_bodyRN.phl[1301]";
+connectAttr "pCube22_parentConstraint1.cty" "bot_bodyRN.phl[1302]";
+connectAttr "pCube22_parentConstraint1.ctz" "bot_bodyRN.phl[1303]";
+connectAttr "pCube22_parentConstraint1.crx" "bot_bodyRN.phl[1304]";
+connectAttr "pCube22_parentConstraint1.cry" "bot_bodyRN.phl[1305]";
+connectAttr "pCube22_parentConstraint1.crz" "bot_bodyRN.phl[1306]";
+connectAttr "bot_bodyRN.phl[1307]" "pCube22_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1308]" "pCube22_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1309]" "pCube22_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1310]" "pCube22_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1311]" "pCube22_parentConstraint1.crt";
+connectAttr "pCube22_scaleConstraint1.csx" "bot_bodyRN.phl[1312]";
+connectAttr "pCube22_scaleConstraint1.csy" "bot_bodyRN.phl[1313]";
+connectAttr "pCube22_scaleConstraint1.csz" "bot_bodyRN.phl[1314]";
+connectAttr "pCylinder4_parentConstraint3.ctx" "bot_bodyRN.phl[1315]";
+connectAttr "pCylinder4_parentConstraint3.cty" "bot_bodyRN.phl[1316]";
+connectAttr "pCylinder4_parentConstraint3.ctz" "bot_bodyRN.phl[1317]";
+connectAttr "pCylinder4_parentConstraint3.crx" "bot_bodyRN.phl[1318]";
+connectAttr "pCylinder4_parentConstraint3.cry" "bot_bodyRN.phl[1319]";
+connectAttr "pCylinder4_parentConstraint3.crz" "bot_bodyRN.phl[1320]";
+connectAttr "bot_bodyRN.phl[1321]" "pCylinder4_parentConstraint3.cro";
+connectAttr "bot_bodyRN.phl[1322]" "pCylinder4_scaleConstraint3.cpim";
+connectAttr "bot_bodyRN.phl[1323]" "pCylinder4_parentConstraint3.cpim";
+connectAttr "bot_bodyRN.phl[1324]" "pCylinder4_parentConstraint3.crp";
+connectAttr "bot_bodyRN.phl[1325]" "pCylinder4_parentConstraint3.crt";
+connectAttr "pCylinder4_scaleConstraint3.csx" "bot_bodyRN.phl[1326]";
+connectAttr "pCylinder4_scaleConstraint3.csy" "bot_bodyRN.phl[1327]";
+connectAttr "pCylinder4_scaleConstraint3.csz" "bot_bodyRN.phl[1328]";
+connectAttr "pCylinder5_parentConstraint1.ctx" "bot_bodyRN.phl[1329]";
+connectAttr "pCylinder5_parentConstraint1.cty" "bot_bodyRN.phl[1330]";
+connectAttr "pCylinder5_parentConstraint1.ctz" "bot_bodyRN.phl[1331]";
+connectAttr "pCylinder5_parentConstraint1.crx" "bot_bodyRN.phl[1332]";
+connectAttr "pCylinder5_parentConstraint1.cry" "bot_bodyRN.phl[1333]";
+connectAttr "pCylinder5_parentConstraint1.crz" "bot_bodyRN.phl[1334]";
+connectAttr "bot_bodyRN.phl[1335]" "pCylinder5_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1336]" "pCylinder5_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1337]" "pCylinder5_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1338]" "pCylinder5_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1339]" "pCylinder5_parentConstraint1.crt";
+connectAttr "pCylinder5_scaleConstraint1.csx" "bot_bodyRN.phl[1340]";
+connectAttr "pCylinder5_scaleConstraint1.csy" "bot_bodyRN.phl[1341]";
+connectAttr "pCylinder5_scaleConstraint1.csz" "bot_bodyRN.phl[1342]";
+connectAttr "pCube21_parentConstraint1.ctx" "bot_bodyRN.phl[1343]";
+connectAttr "pCube21_parentConstraint1.cty" "bot_bodyRN.phl[1344]";
+connectAttr "pCube21_parentConstraint1.ctz" "bot_bodyRN.phl[1345]";
+connectAttr "pCube21_parentConstraint1.crx" "bot_bodyRN.phl[1346]";
+connectAttr "pCube21_parentConstraint1.cry" "bot_bodyRN.phl[1347]";
+connectAttr "pCube21_parentConstraint1.crz" "bot_bodyRN.phl[1348]";
+connectAttr "bot_bodyRN.phl[1349]" "pCube21_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1350]" "pCube21_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1351]" "pCube21_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1352]" "pCube21_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1353]" "pCube21_parentConstraint1.crt";
+connectAttr "pCube21_scaleConstraint1.csx" "bot_bodyRN.phl[1354]";
+connectAttr "pCube21_scaleConstraint1.csy" "bot_bodyRN.phl[1355]";
+connectAttr "pCube21_scaleConstraint1.csz" "bot_bodyRN.phl[1356]";
+connectAttr "pCylinder3_parentConstraint1.ctx" "bot_bodyRN.phl[1357]";
+connectAttr "pCylinder3_parentConstraint1.cty" "bot_bodyRN.phl[1358]";
+connectAttr "pCylinder3_parentConstraint1.ctz" "bot_bodyRN.phl[1359]";
+connectAttr "pCylinder3_parentConstraint1.crx" "bot_bodyRN.phl[1360]";
+connectAttr "pCylinder3_parentConstraint1.cry" "bot_bodyRN.phl[1361]";
+connectAttr "pCylinder3_parentConstraint1.crz" "bot_bodyRN.phl[1362]";
+connectAttr "bot_bodyRN.phl[1363]" "pCylinder3_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1364]" "pCylinder3_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1365]" "pCylinder3_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1366]" "pCylinder3_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1367]" "pCylinder3_parentConstraint1.crt";
+connectAttr "pCylinder3_scaleConstraint1.csx" "bot_bodyRN.phl[1368]";
+connectAttr "pCylinder3_scaleConstraint1.csy" "bot_bodyRN.phl[1369]";
+connectAttr "pCylinder3_scaleConstraint1.csz" "bot_bodyRN.phl[1370]";
+connectAttr "pCylinder2_parentConstraint1.ctx" "bot_bodyRN.phl[1371]";
+connectAttr "pCylinder2_parentConstraint1.cty" "bot_bodyRN.phl[1372]";
+connectAttr "pCylinder2_parentConstraint1.ctz" "bot_bodyRN.phl[1373]";
+connectAttr "pCylinder2_parentConstraint1.crx" "bot_bodyRN.phl[1374]";
+connectAttr "pCylinder2_parentConstraint1.cry" "bot_bodyRN.phl[1375]";
+connectAttr "pCylinder2_parentConstraint1.crz" "bot_bodyRN.phl[1376]";
+connectAttr "bot_bodyRN.phl[1377]" "pCylinder2_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1378]" "pCylinder2_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1379]" "pCylinder2_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1380]" "pCylinder2_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1381]" "pCylinder2_parentConstraint1.crt";
+connectAttr "pCylinder2_scaleConstraint1.csx" "bot_bodyRN.phl[1382]";
+connectAttr "pCylinder2_scaleConstraint1.csy" "bot_bodyRN.phl[1383]";
+connectAttr "pCylinder2_scaleConstraint1.csz" "bot_bodyRN.phl[1384]";
+connectAttr "pCube20_parentConstraint1.ctx" "bot_bodyRN.phl[1385]";
+connectAttr "pCube20_parentConstraint1.cty" "bot_bodyRN.phl[1386]";
+connectAttr "pCube20_parentConstraint1.ctz" "bot_bodyRN.phl[1387]";
+connectAttr "pCube20_parentConstraint1.crx" "bot_bodyRN.phl[1388]";
+connectAttr "pCube20_parentConstraint1.cry" "bot_bodyRN.phl[1389]";
+connectAttr "pCube20_parentConstraint1.crz" "bot_bodyRN.phl[1390]";
+connectAttr "bot_bodyRN.phl[1391]" "pCube20_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1392]" "pCube20_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1393]" "pCube20_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1394]" "pCube20_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1395]" "pCube20_parentConstraint1.crt";
+connectAttr "pCube20_scaleConstraint1.csx" "bot_bodyRN.phl[1396]";
+connectAttr "pCube20_scaleConstraint1.csy" "bot_bodyRN.phl[1397]";
+connectAttr "pCube20_scaleConstraint1.csz" "bot_bodyRN.phl[1398]";
+connectAttr "pSuperShape1_parentConstraint1.ctx" "bot_bodyRN.phl[1399]";
+connectAttr "pSuperShape1_parentConstraint1.cty" "bot_bodyRN.phl[1400]";
+connectAttr "pSuperShape1_parentConstraint1.ctz" "bot_bodyRN.phl[1401]";
+connectAttr "pSuperShape1_parentConstraint1.crx" "bot_bodyRN.phl[1402]";
+connectAttr "pSuperShape1_parentConstraint1.cry" "bot_bodyRN.phl[1403]";
+connectAttr "pSuperShape1_parentConstraint1.crz" "bot_bodyRN.phl[1404]";
+connectAttr "bot_bodyRN.phl[1405]" "pSuperShape1_parentConstraint1.cro";
+connectAttr "bot_bodyRN.phl[1406]" "pSuperShape1_scaleConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1407]" "pSuperShape1_parentConstraint1.cpim";
+connectAttr "bot_bodyRN.phl[1408]" "pSuperShape1_parentConstraint1.crp";
+connectAttr "bot_bodyRN.phl[1409]" "pSuperShape1_parentConstraint1.crt";
+connectAttr "pSuperShape1_scaleConstraint1.csx" "bot_bodyRN.phl[1410]";
+connectAttr "pSuperShape1_scaleConstraint1.csy" "bot_bodyRN.phl[1411]";
+connectAttr "pSuperShape1_scaleConstraint1.csz" "bot_bodyRN.phl[1412]";
+connectAttr "pCylinder6_parentConstraint2.ctx" "bot_bodyRN.phl[1413]";
+connectAttr "pCylinder6_parentConstraint2.cty" "bot_bodyRN.phl[1414]";
+connectAttr "pCylinder6_parentConstraint2.ctz" "bot_bodyRN.phl[1415]";
+connectAttr "pCylinder6_parentConstraint2.crx" "bot_bodyRN.phl[1416]";
+connectAttr "pCylinder6_parentConstraint2.cry" "bot_bodyRN.phl[1417]";
+connectAttr "pCylinder6_parentConstraint2.crz" "bot_bodyRN.phl[1418]";
+connectAttr "bot_bodyRN.phl[1419]" "pCylinder6_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1420]" "pCylinder6_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1421]" "pCylinder6_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1422]" "pCylinder6_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1423]" "pCylinder6_parentConstraint2.crt";
+connectAttr "pCylinder6_scaleConstraint2.csx" "bot_bodyRN.phl[1424]";
+connectAttr "pCylinder6_scaleConstraint2.csy" "bot_bodyRN.phl[1425]";
+connectAttr "pCylinder6_scaleConstraint2.csz" "bot_bodyRN.phl[1426]";
+connectAttr "polySurface9_parentConstraint2.ctx" "bot_bodyRN.phl[1427]";
+connectAttr "polySurface9_parentConstraint2.cty" "bot_bodyRN.phl[1428]";
+connectAttr "polySurface9_parentConstraint2.ctz" "bot_bodyRN.phl[1429]";
+connectAttr "polySurface9_parentConstraint2.crx" "bot_bodyRN.phl[1430]";
+connectAttr "polySurface9_parentConstraint2.cry" "bot_bodyRN.phl[1431]";
+connectAttr "polySurface9_parentConstraint2.crz" "bot_bodyRN.phl[1432]";
+connectAttr "bot_bodyRN.phl[1433]" "polySurface9_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1434]" "polySurface9_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1435]" "polySurface9_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1436]" "polySurface9_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1437]" "polySurface9_parentConstraint2.crt";
+connectAttr "polySurface9_scaleConstraint2.csx" "bot_bodyRN.phl[1438]";
+connectAttr "polySurface9_scaleConstraint2.csy" "bot_bodyRN.phl[1439]";
+connectAttr "polySurface9_scaleConstraint2.csz" "bot_bodyRN.phl[1440]";
+connectAttr "pCylinder9_parentConstraint2.ctx" "bot_bodyRN.phl[1441]";
+connectAttr "pCylinder9_parentConstraint2.cty" "bot_bodyRN.phl[1442]";
+connectAttr "pCylinder9_parentConstraint2.ctz" "bot_bodyRN.phl[1443]";
+connectAttr "pCylinder9_parentConstraint2.crx" "bot_bodyRN.phl[1444]";
+connectAttr "pCylinder9_parentConstraint2.cry" "bot_bodyRN.phl[1445]";
+connectAttr "pCylinder9_parentConstraint2.crz" "bot_bodyRN.phl[1446]";
+connectAttr "bot_bodyRN.phl[1447]" "pCylinder9_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1448]" "pCylinder9_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1449]" "pCylinder9_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1450]" "pCylinder9_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1451]" "pCylinder9_parentConstraint2.crt";
+connectAttr "pCylinder9_scaleConstraint2.csx" "bot_bodyRN.phl[1452]";
+connectAttr "pCylinder9_scaleConstraint2.csy" "bot_bodyRN.phl[1453]";
+connectAttr "pCylinder9_scaleConstraint2.csz" "bot_bodyRN.phl[1454]";
+connectAttr "polySurface8_parentConstraint2.ctx" "bot_bodyRN.phl[1455]";
+connectAttr "polySurface8_parentConstraint2.cty" "bot_bodyRN.phl[1456]";
+connectAttr "polySurface8_parentConstraint2.ctz" "bot_bodyRN.phl[1457]";
+connectAttr "polySurface8_parentConstraint2.crx" "bot_bodyRN.phl[1458]";
+connectAttr "polySurface8_parentConstraint2.cry" "bot_bodyRN.phl[1459]";
+connectAttr "polySurface8_parentConstraint2.crz" "bot_bodyRN.phl[1460]";
+connectAttr "bot_bodyRN.phl[1461]" "polySurface8_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1462]" "polySurface8_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1463]" "polySurface8_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1464]" "polySurface8_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1465]" "polySurface8_parentConstraint2.crt";
+connectAttr "polySurface8_scaleConstraint2.csx" "bot_bodyRN.phl[1466]";
+connectAttr "polySurface8_scaleConstraint2.csy" "bot_bodyRN.phl[1467]";
+connectAttr "polySurface8_scaleConstraint2.csz" "bot_bodyRN.phl[1468]";
+connectAttr "pCube23_parentConstraint2.ctx" "bot_bodyRN.phl[1469]";
+connectAttr "pCube23_parentConstraint2.cty" "bot_bodyRN.phl[1470]";
+connectAttr "pCube23_parentConstraint2.ctz" "bot_bodyRN.phl[1471]";
+connectAttr "pCube23_parentConstraint2.crx" "bot_bodyRN.phl[1472]";
+connectAttr "pCube23_parentConstraint2.cry" "bot_bodyRN.phl[1473]";
+connectAttr "pCube23_parentConstraint2.crz" "bot_bodyRN.phl[1474]";
+connectAttr "bot_bodyRN.phl[1475]" "pCube23_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1476]" "pCube23_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1477]" "pCube23_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1478]" "pCube23_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1479]" "pCube23_parentConstraint2.crt";
+connectAttr "pCube23_scaleConstraint2.csx" "bot_bodyRN.phl[1480]";
+connectAttr "pCube23_scaleConstraint2.csy" "bot_bodyRN.phl[1481]";
+connectAttr "pCube23_scaleConstraint2.csz" "bot_bodyRN.phl[1482]";
+connectAttr "pCylinder7_parentConstraint2.ctx" "bot_bodyRN.phl[1483]";
+connectAttr "pCylinder7_parentConstraint2.cty" "bot_bodyRN.phl[1484]";
+connectAttr "pCylinder7_parentConstraint2.ctz" "bot_bodyRN.phl[1485]";
+connectAttr "pCylinder7_parentConstraint2.crx" "bot_bodyRN.phl[1486]";
+connectAttr "pCylinder7_parentConstraint2.cry" "bot_bodyRN.phl[1487]";
+connectAttr "pCylinder7_parentConstraint2.crz" "bot_bodyRN.phl[1488]";
+connectAttr "bot_bodyRN.phl[1489]" "pCylinder7_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1490]" "pCylinder7_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1491]" "pCylinder7_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1492]" "pCylinder7_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1493]" "pCylinder7_parentConstraint2.crt";
+connectAttr "pCylinder7_scaleConstraint2.csx" "bot_bodyRN.phl[1494]";
+connectAttr "pCylinder7_scaleConstraint2.csy" "bot_bodyRN.phl[1495]";
+connectAttr "pCylinder7_scaleConstraint2.csz" "bot_bodyRN.phl[1496]";
+connectAttr "pCube24_parentConstraint2.ctx" "bot_bodyRN.phl[1497]";
+connectAttr "pCube24_parentConstraint2.cty" "bot_bodyRN.phl[1498]";
+connectAttr "pCube24_parentConstraint2.ctz" "bot_bodyRN.phl[1499]";
+connectAttr "pCube24_parentConstraint2.crx" "bot_bodyRN.phl[1500]";
+connectAttr "pCube24_parentConstraint2.cry" "bot_bodyRN.phl[1501]";
+connectAttr "pCube24_parentConstraint2.crz" "bot_bodyRN.phl[1502]";
+connectAttr "bot_bodyRN.phl[1503]" "pCube24_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1504]" "pCube24_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1505]" "pCube24_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1506]" "pCube24_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1507]" "pCube24_parentConstraint2.crt";
+connectAttr "pCube24_scaleConstraint2.csx" "bot_bodyRN.phl[1508]";
+connectAttr "pCube24_scaleConstraint2.csy" "bot_bodyRN.phl[1509]";
+connectAttr "pCube24_scaleConstraint2.csz" "bot_bodyRN.phl[1510]";
+connectAttr "polySurface6_parentConstraint2.ctx" "bot_bodyRN.phl[1511]";
+connectAttr "polySurface6_parentConstraint2.cty" "bot_bodyRN.phl[1512]";
+connectAttr "polySurface6_parentConstraint2.ctz" "bot_bodyRN.phl[1513]";
+connectAttr "polySurface6_parentConstraint2.crx" "bot_bodyRN.phl[1514]";
+connectAttr "polySurface6_parentConstraint2.cry" "bot_bodyRN.phl[1515]";
+connectAttr "polySurface6_parentConstraint2.crz" "bot_bodyRN.phl[1516]";
+connectAttr "bot_bodyRN.phl[1517]" "polySurface6_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1518]" "polySurface6_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1519]" "polySurface6_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1520]" "polySurface6_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1521]" "polySurface6_parentConstraint2.crt";
+connectAttr "polySurface6_scaleConstraint2.csx" "bot_bodyRN.phl[1522]";
+connectAttr "polySurface6_scaleConstraint2.csy" "bot_bodyRN.phl[1523]";
+connectAttr "polySurface6_scaleConstraint2.csz" "bot_bodyRN.phl[1524]";
+connectAttr "pCylinder8_parentConstraint2.ctx" "bot_bodyRN.phl[1525]";
+connectAttr "pCylinder8_parentConstraint2.cty" "bot_bodyRN.phl[1526]";
+connectAttr "pCylinder8_parentConstraint2.ctz" "bot_bodyRN.phl[1527]";
+connectAttr "pCylinder8_parentConstraint2.crx" "bot_bodyRN.phl[1528]";
+connectAttr "pCylinder8_parentConstraint2.cry" "bot_bodyRN.phl[1529]";
+connectAttr "pCylinder8_parentConstraint2.crz" "bot_bodyRN.phl[1530]";
+connectAttr "bot_bodyRN.phl[1531]" "pCylinder8_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1532]" "pCylinder8_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1533]" "pCylinder8_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1534]" "pCylinder8_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1535]" "pCylinder8_parentConstraint2.crt";
+connectAttr "pCylinder8_scaleConstraint2.csx" "bot_bodyRN.phl[1536]";
+connectAttr "pCylinder8_scaleConstraint2.csy" "bot_bodyRN.phl[1537]";
+connectAttr "pCylinder8_scaleConstraint2.csz" "bot_bodyRN.phl[1538]";
+connectAttr "pCube25_parentConstraint2.ctx" "bot_bodyRN.phl[1539]";
+connectAttr "pCube25_parentConstraint2.cty" "bot_bodyRN.phl[1540]";
+connectAttr "pCube25_parentConstraint2.ctz" "bot_bodyRN.phl[1541]";
+connectAttr "pCube25_parentConstraint2.crx" "bot_bodyRN.phl[1542]";
+connectAttr "pCube25_parentConstraint2.cry" "bot_bodyRN.phl[1543]";
+connectAttr "pCube25_parentConstraint2.crz" "bot_bodyRN.phl[1544]";
+connectAttr "bot_bodyRN.phl[1545]" "pCube25_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1546]" "pCube25_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1547]" "pCube25_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1548]" "pCube25_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1549]" "pCube25_parentConstraint2.crt";
+connectAttr "pCube25_scaleConstraint2.csx" "bot_bodyRN.phl[1550]";
+connectAttr "pCube25_scaleConstraint2.csy" "bot_bodyRN.phl[1551]";
+connectAttr "pCube25_scaleConstraint2.csz" "bot_bodyRN.phl[1552]";
+connectAttr "pPlane45_parentConstraint2.ctx" "bot_bodyRN.phl[1553]";
+connectAttr "pPlane45_parentConstraint2.cty" "bot_bodyRN.phl[1554]";
+connectAttr "pPlane45_parentConstraint2.ctz" "bot_bodyRN.phl[1555]";
+connectAttr "pPlane45_parentConstraint2.crx" "bot_bodyRN.phl[1556]";
+connectAttr "pPlane45_parentConstraint2.cry" "bot_bodyRN.phl[1557]";
+connectAttr "pPlane45_parentConstraint2.crz" "bot_bodyRN.phl[1558]";
+connectAttr "bot_bodyRN.phl[1559]" "pPlane45_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1560]" "pPlane45_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1561]" "pPlane45_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1562]" "pPlane45_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1563]" "pPlane45_parentConstraint2.crt";
+connectAttr "pPlane45_scaleConstraint2.csx" "bot_bodyRN.phl[1564]";
+connectAttr "pPlane45_scaleConstraint2.csy" "bot_bodyRN.phl[1565]";
+connectAttr "pPlane45_scaleConstraint2.csz" "bot_bodyRN.phl[1566]";
+connectAttr "pCube22_parentConstraint2.ctx" "bot_bodyRN.phl[1567]";
+connectAttr "pCube22_parentConstraint2.cty" "bot_bodyRN.phl[1568]";
+connectAttr "pCube22_parentConstraint2.ctz" "bot_bodyRN.phl[1569]";
+connectAttr "pCube22_parentConstraint2.crx" "bot_bodyRN.phl[1570]";
+connectAttr "pCube22_parentConstraint2.cry" "bot_bodyRN.phl[1571]";
+connectAttr "pCube22_parentConstraint2.crz" "bot_bodyRN.phl[1572]";
+connectAttr "bot_bodyRN.phl[1573]" "pCube22_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1574]" "pCube22_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1575]" "pCube22_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1576]" "pCube22_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1577]" "pCube22_parentConstraint2.crt";
+connectAttr "pCube22_scaleConstraint2.csx" "bot_bodyRN.phl[1578]";
+connectAttr "pCube22_scaleConstraint2.csy" "bot_bodyRN.phl[1579]";
+connectAttr "pCube22_scaleConstraint2.csz" "bot_bodyRN.phl[1580]";
+connectAttr "pCylinder4_parentConstraint2.ctx" "bot_bodyRN.phl[1581]";
+connectAttr "pCylinder4_parentConstraint2.cty" "bot_bodyRN.phl[1582]";
+connectAttr "pCylinder4_parentConstraint2.ctz" "bot_bodyRN.phl[1583]";
+connectAttr "pCylinder4_parentConstraint2.crx" "bot_bodyRN.phl[1584]";
+connectAttr "pCylinder4_parentConstraint2.cry" "bot_bodyRN.phl[1585]";
+connectAttr "pCylinder4_parentConstraint2.crz" "bot_bodyRN.phl[1586]";
+connectAttr "bot_bodyRN.phl[1587]" "pCylinder4_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1588]" "pCylinder4_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1589]" "pCylinder4_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1590]" "pCylinder4_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1591]" "pCylinder4_parentConstraint2.crt";
+connectAttr "pCylinder4_scaleConstraint2.csx" "bot_bodyRN.phl[1592]";
+connectAttr "pCylinder4_scaleConstraint2.csy" "bot_bodyRN.phl[1593]";
+connectAttr "pCylinder4_scaleConstraint2.csz" "bot_bodyRN.phl[1594]";
+connectAttr "pCylinder5_parentConstraint2.ctx" "bot_bodyRN.phl[1595]";
+connectAttr "pCylinder5_parentConstraint2.cty" "bot_bodyRN.phl[1596]";
+connectAttr "pCylinder5_parentConstraint2.ctz" "bot_bodyRN.phl[1597]";
+connectAttr "pCylinder5_parentConstraint2.crx" "bot_bodyRN.phl[1598]";
+connectAttr "pCylinder5_parentConstraint2.cry" "bot_bodyRN.phl[1599]";
+connectAttr "pCylinder5_parentConstraint2.crz" "bot_bodyRN.phl[1600]";
+connectAttr "bot_bodyRN.phl[1601]" "pCylinder5_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1602]" "pCylinder5_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1603]" "pCylinder5_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1604]" "pCylinder5_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1605]" "pCylinder5_parentConstraint2.crt";
+connectAttr "pCylinder5_scaleConstraint2.csx" "bot_bodyRN.phl[1606]";
+connectAttr "pCylinder5_scaleConstraint2.csy" "bot_bodyRN.phl[1607]";
+connectAttr "pCylinder5_scaleConstraint2.csz" "bot_bodyRN.phl[1608]";
+connectAttr "pCube21_parentConstraint2.ctx" "bot_bodyRN.phl[1609]";
+connectAttr "pCube21_parentConstraint2.cty" "bot_bodyRN.phl[1610]";
+connectAttr "pCube21_parentConstraint2.ctz" "bot_bodyRN.phl[1611]";
+connectAttr "pCube21_parentConstraint2.crx" "bot_bodyRN.phl[1612]";
+connectAttr "pCube21_parentConstraint2.cry" "bot_bodyRN.phl[1613]";
+connectAttr "pCube21_parentConstraint2.crz" "bot_bodyRN.phl[1614]";
+connectAttr "bot_bodyRN.phl[1615]" "pCube21_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1616]" "pCube21_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1617]" "pCube21_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1618]" "pCube21_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1619]" "pCube21_parentConstraint2.crt";
+connectAttr "pCube21_scaleConstraint2.csx" "bot_bodyRN.phl[1620]";
+connectAttr "pCube21_scaleConstraint2.csy" "bot_bodyRN.phl[1621]";
+connectAttr "pCube21_scaleConstraint2.csz" "bot_bodyRN.phl[1622]";
+connectAttr "pCylinder3_parentConstraint2.ctx" "bot_bodyRN.phl[1623]";
+connectAttr "pCylinder3_parentConstraint2.cty" "bot_bodyRN.phl[1624]";
+connectAttr "pCylinder3_parentConstraint2.ctz" "bot_bodyRN.phl[1625]";
+connectAttr "pCylinder3_parentConstraint2.crx" "bot_bodyRN.phl[1626]";
+connectAttr "pCylinder3_parentConstraint2.cry" "bot_bodyRN.phl[1627]";
+connectAttr "pCylinder3_parentConstraint2.crz" "bot_bodyRN.phl[1628]";
+connectAttr "bot_bodyRN.phl[1629]" "pCylinder3_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1630]" "pCylinder3_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1631]" "pCylinder3_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1632]" "pCylinder3_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1633]" "pCylinder3_parentConstraint2.crt";
+connectAttr "pCylinder3_scaleConstraint2.csx" "bot_bodyRN.phl[1634]";
+connectAttr "pCylinder3_scaleConstraint2.csy" "bot_bodyRN.phl[1635]";
+connectAttr "pCylinder3_scaleConstraint2.csz" "bot_bodyRN.phl[1636]";
+connectAttr "pCylinder2_parentConstraint2.ctx" "bot_bodyRN.phl[1637]";
+connectAttr "pCylinder2_parentConstraint2.cty" "bot_bodyRN.phl[1638]";
+connectAttr "pCylinder2_parentConstraint2.ctz" "bot_bodyRN.phl[1639]";
+connectAttr "pCylinder2_parentConstraint2.crx" "bot_bodyRN.phl[1640]";
+connectAttr "pCylinder2_parentConstraint2.cry" "bot_bodyRN.phl[1641]";
+connectAttr "pCylinder2_parentConstraint2.crz" "bot_bodyRN.phl[1642]";
+connectAttr "bot_bodyRN.phl[1643]" "pCylinder2_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1644]" "pCylinder2_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1645]" "pCylinder2_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1646]" "pCylinder2_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1647]" "pCylinder2_parentConstraint2.crt";
+connectAttr "pCylinder2_scaleConstraint2.csx" "bot_bodyRN.phl[1648]";
+connectAttr "pCylinder2_scaleConstraint2.csy" "bot_bodyRN.phl[1649]";
+connectAttr "pCylinder2_scaleConstraint2.csz" "bot_bodyRN.phl[1650]";
+connectAttr "pCube20_parentConstraint2.ctx" "bot_bodyRN.phl[1651]";
+connectAttr "pCube20_parentConstraint2.cty" "bot_bodyRN.phl[1652]";
+connectAttr "pCube20_parentConstraint2.ctz" "bot_bodyRN.phl[1653]";
+connectAttr "pCube20_parentConstraint2.crx" "bot_bodyRN.phl[1654]";
+connectAttr "pCube20_parentConstraint2.cry" "bot_bodyRN.phl[1655]";
+connectAttr "pCube20_parentConstraint2.crz" "bot_bodyRN.phl[1656]";
+connectAttr "bot_bodyRN.phl[1657]" "pCube20_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1658]" "pCube20_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1659]" "pCube20_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1660]" "pCube20_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1661]" "pCube20_parentConstraint2.crt";
+connectAttr "pCube20_scaleConstraint2.csx" "bot_bodyRN.phl[1662]";
+connectAttr "pCube20_scaleConstraint2.csy" "bot_bodyRN.phl[1663]";
+connectAttr "pCube20_scaleConstraint2.csz" "bot_bodyRN.phl[1664]";
+connectAttr "pSuperShape1_parentConstraint2.ctx" "bot_bodyRN.phl[1665]";
+connectAttr "pSuperShape1_parentConstraint2.cty" "bot_bodyRN.phl[1666]";
+connectAttr "pSuperShape1_parentConstraint2.ctz" "bot_bodyRN.phl[1667]";
+connectAttr "pSuperShape1_parentConstraint2.crx" "bot_bodyRN.phl[1668]";
+connectAttr "pSuperShape1_parentConstraint2.cry" "bot_bodyRN.phl[1669]";
+connectAttr "pSuperShape1_parentConstraint2.crz" "bot_bodyRN.phl[1670]";
+connectAttr "bot_bodyRN.phl[1671]" "pSuperShape1_parentConstraint2.cro";
+connectAttr "bot_bodyRN.phl[1672]" "pSuperShape1_scaleConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1673]" "pSuperShape1_parentConstraint2.cpim";
+connectAttr "bot_bodyRN.phl[1674]" "pSuperShape1_parentConstraint2.crp";
+connectAttr "bot_bodyRN.phl[1675]" "pSuperShape1_parentConstraint2.crt";
+connectAttr "pSuperShape1_scaleConstraint2.csx" "bot_bodyRN.phl[1676]";
+connectAttr "pSuperShape1_scaleConstraint2.csy" "bot_bodyRN.phl[1677]";
+connectAttr "pSuperShape1_scaleConstraint2.csz" "bot_bodyRN.phl[1678]";
 connectAttr "Bones_Layer.di" "ROOT.do";
 connectAttr "ROOT.s" "Cog_Jnt.is";
 connectAttr "Bones_Layer.di" "Cog_Jnt.do";
@@ -42880,6 +43471,102 @@ connectAttr "R_RK_Arm_01_Jnt.s" "polySurface5_scaleConstraint2.tg[0].ts";
 connectAttr "R_RK_Arm_01_Jnt.pm" "polySurface5_scaleConstraint2.tg[0].tpm";
 connectAttr "polySurface5_scaleConstraint2.w0" "polySurface5_scaleConstraint2.tg[0].tw"
 		;
+connectAttr "R_Pist_Base_4.t" "pCylinder37_parentConstraint1.tg[0].tt";
+connectAttr "R_Pist_Base_4.rp" "pCylinder37_parentConstraint1.tg[0].trp";
+connectAttr "R_Pist_Base_4.rpt" "pCylinder37_parentConstraint1.tg[0].trt";
+connectAttr "R_Pist_Base_4.r" "pCylinder37_parentConstraint1.tg[0].tr";
+connectAttr "R_Pist_Base_4.ro" "pCylinder37_parentConstraint1.tg[0].tro";
+connectAttr "R_Pist_Base_4.s" "pCylinder37_parentConstraint1.tg[0].ts";
+connectAttr "R_Pist_Base_4.pm" "pCylinder37_parentConstraint1.tg[0].tpm";
+connectAttr "R_Pist_Base_4.jo" "pCylinder37_parentConstraint1.tg[0].tjo";
+connectAttr "R_Pist_Base_4.ssc" "pCylinder37_parentConstraint1.tg[0].tsc";
+connectAttr "R_Pist_Base_4.is" "pCylinder37_parentConstraint1.tg[0].tis";
+connectAttr "pCylinder37_parentConstraint1.w0" "pCylinder37_parentConstraint1.tg[0].tw"
+		;
+connectAttr "R_Pist_Shold_4.t" "pCylinder37_parentConstraint1.tg[1].tt";
+connectAttr "R_Pist_Shold_4.rp" "pCylinder37_parentConstraint1.tg[1].trp";
+connectAttr "R_Pist_Shold_4.rpt" "pCylinder37_parentConstraint1.tg[1].trt";
+connectAttr "R_Pist_Shold_4.r" "pCylinder37_parentConstraint1.tg[1].tr";
+connectAttr "R_Pist_Shold_4.ro" "pCylinder37_parentConstraint1.tg[1].tro";
+connectAttr "R_Pist_Shold_4.s" "pCylinder37_parentConstraint1.tg[1].ts";
+connectAttr "R_Pist_Shold_4.pm" "pCylinder37_parentConstraint1.tg[1].tpm";
+connectAttr "R_Pist_Shold_4.jo" "pCylinder37_parentConstraint1.tg[1].tjo";
+connectAttr "R_Pist_Shold_4.ssc" "pCylinder37_parentConstraint1.tg[1].tsc";
+connectAttr "R_Pist_Shold_4.is" "pCylinder37_parentConstraint1.tg[1].tis";
+connectAttr "pCylinder37_parentConstraint1.w1" "pCylinder37_parentConstraint1.tg[1].tw"
+		;
+connectAttr "R_Pist_Shold_3.t" "pCylinder36_parentConstraint1.tg[0].tt";
+connectAttr "R_Pist_Shold_3.rp" "pCylinder36_parentConstraint1.tg[0].trp";
+connectAttr "R_Pist_Shold_3.rpt" "pCylinder36_parentConstraint1.tg[0].trt";
+connectAttr "R_Pist_Shold_3.r" "pCylinder36_parentConstraint1.tg[0].tr";
+connectAttr "R_Pist_Shold_3.ro" "pCylinder36_parentConstraint1.tg[0].tro";
+connectAttr "R_Pist_Shold_3.s" "pCylinder36_parentConstraint1.tg[0].ts";
+connectAttr "R_Pist_Shold_3.pm" "pCylinder36_parentConstraint1.tg[0].tpm";
+connectAttr "R_Pist_Shold_3.jo" "pCylinder36_parentConstraint1.tg[0].tjo";
+connectAttr "R_Pist_Shold_3.ssc" "pCylinder36_parentConstraint1.tg[0].tsc";
+connectAttr "R_Pist_Shold_3.is" "pCylinder36_parentConstraint1.tg[0].tis";
+connectAttr "pCylinder36_parentConstraint1.w0" "pCylinder36_parentConstraint1.tg[0].tw"
+		;
+connectAttr "R_Pist_Base_3.t" "pCylinder36_parentConstraint1.tg[1].tt";
+connectAttr "R_Pist_Base_3.rp" "pCylinder36_parentConstraint1.tg[1].trp";
+connectAttr "R_Pist_Base_3.rpt" "pCylinder36_parentConstraint1.tg[1].trt";
+connectAttr "R_Pist_Base_3.r" "pCylinder36_parentConstraint1.tg[1].tr";
+connectAttr "R_Pist_Base_3.ro" "pCylinder36_parentConstraint1.tg[1].tro";
+connectAttr "R_Pist_Base_3.s" "pCylinder36_parentConstraint1.tg[1].ts";
+connectAttr "R_Pist_Base_3.pm" "pCylinder36_parentConstraint1.tg[1].tpm";
+connectAttr "R_Pist_Base_3.jo" "pCylinder36_parentConstraint1.tg[1].tjo";
+connectAttr "R_Pist_Base_3.ssc" "pCylinder36_parentConstraint1.tg[1].tsc";
+connectAttr "R_Pist_Base_3.is" "pCylinder36_parentConstraint1.tg[1].tis";
+connectAttr "pCylinder36_parentConstraint1.w1" "pCylinder36_parentConstraint1.tg[1].tw"
+		;
+connectAttr "R_Pist_Shold_2.t" "pCylinder35_parentConstraint1.tg[0].tt";
+connectAttr "R_Pist_Shold_2.rp" "pCylinder35_parentConstraint1.tg[0].trp";
+connectAttr "R_Pist_Shold_2.rpt" "pCylinder35_parentConstraint1.tg[0].trt";
+connectAttr "R_Pist_Shold_2.r" "pCylinder35_parentConstraint1.tg[0].tr";
+connectAttr "R_Pist_Shold_2.ro" "pCylinder35_parentConstraint1.tg[0].tro";
+connectAttr "R_Pist_Shold_2.s" "pCylinder35_parentConstraint1.tg[0].ts";
+connectAttr "R_Pist_Shold_2.pm" "pCylinder35_parentConstraint1.tg[0].tpm";
+connectAttr "R_Pist_Shold_2.jo" "pCylinder35_parentConstraint1.tg[0].tjo";
+connectAttr "R_Pist_Shold_2.ssc" "pCylinder35_parentConstraint1.tg[0].tsc";
+connectAttr "R_Pist_Shold_2.is" "pCylinder35_parentConstraint1.tg[0].tis";
+connectAttr "pCylinder35_parentConstraint1.w0" "pCylinder35_parentConstraint1.tg[0].tw"
+		;
+connectAttr "R_Pist_Base_2.t" "pCylinder35_parentConstraint1.tg[1].tt";
+connectAttr "R_Pist_Base_2.rp" "pCylinder35_parentConstraint1.tg[1].trp";
+connectAttr "R_Pist_Base_2.rpt" "pCylinder35_parentConstraint1.tg[1].trt";
+connectAttr "R_Pist_Base_2.r" "pCylinder35_parentConstraint1.tg[1].tr";
+connectAttr "R_Pist_Base_2.ro" "pCylinder35_parentConstraint1.tg[1].tro";
+connectAttr "R_Pist_Base_2.s" "pCylinder35_parentConstraint1.tg[1].ts";
+connectAttr "R_Pist_Base_2.pm" "pCylinder35_parentConstraint1.tg[1].tpm";
+connectAttr "R_Pist_Base_2.jo" "pCylinder35_parentConstraint1.tg[1].tjo";
+connectAttr "R_Pist_Base_2.ssc" "pCylinder35_parentConstraint1.tg[1].tsc";
+connectAttr "R_Pist_Base_2.is" "pCylinder35_parentConstraint1.tg[1].tis";
+connectAttr "pCylinder35_parentConstraint1.w1" "pCylinder35_parentConstraint1.tg[1].tw"
+		;
+connectAttr "R_Pist_Shold_1.t" "pCylinder34_parentConstraint1.tg[0].tt";
+connectAttr "R_Pist_Shold_1.rp" "pCylinder34_parentConstraint1.tg[0].trp";
+connectAttr "R_Pist_Shold_1.rpt" "pCylinder34_parentConstraint1.tg[0].trt";
+connectAttr "R_Pist_Shold_1.r" "pCylinder34_parentConstraint1.tg[0].tr";
+connectAttr "R_Pist_Shold_1.ro" "pCylinder34_parentConstraint1.tg[0].tro";
+connectAttr "R_Pist_Shold_1.s" "pCylinder34_parentConstraint1.tg[0].ts";
+connectAttr "R_Pist_Shold_1.pm" "pCylinder34_parentConstraint1.tg[0].tpm";
+connectAttr "R_Pist_Shold_1.jo" "pCylinder34_parentConstraint1.tg[0].tjo";
+connectAttr "R_Pist_Shold_1.ssc" "pCylinder34_parentConstraint1.tg[0].tsc";
+connectAttr "R_Pist_Shold_1.is" "pCylinder34_parentConstraint1.tg[0].tis";
+connectAttr "pCylinder34_parentConstraint1.w0" "pCylinder34_parentConstraint1.tg[0].tw"
+		;
+connectAttr "R_Pist_Base_1.t" "pCylinder34_parentConstraint1.tg[1].tt";
+connectAttr "R_Pist_Base_1.rp" "pCylinder34_parentConstraint1.tg[1].trp";
+connectAttr "R_Pist_Base_1.rpt" "pCylinder34_parentConstraint1.tg[1].trt";
+connectAttr "R_Pist_Base_1.r" "pCylinder34_parentConstraint1.tg[1].tr";
+connectAttr "R_Pist_Base_1.ro" "pCylinder34_parentConstraint1.tg[1].tro";
+connectAttr "R_Pist_Base_1.s" "pCylinder34_parentConstraint1.tg[1].ts";
+connectAttr "R_Pist_Base_1.pm" "pCylinder34_parentConstraint1.tg[1].tpm";
+connectAttr "R_Pist_Base_1.jo" "pCylinder34_parentConstraint1.tg[1].tjo";
+connectAttr "R_Pist_Base_1.ssc" "pCylinder34_parentConstraint1.tg[1].tsc";
+connectAttr "R_Pist_Base_1.is" "pCylinder34_parentConstraint1.tg[1].tis";
+connectAttr "pCylinder34_parentConstraint1.w1" "pCylinder34_parentConstraint1.tg[1].tw"
+		;
 connectAttr "|bot_bodyRNfosterParent1|pCylinder29ShapeTag.w" "|bot_bodyRNfosterParent1|pCylinder29ShapeDeformed.i"
 		;
 connectAttr "R_Pist_Base_4.t" "pCylinder29_parentConstraint2.tg[0].tt";
@@ -43240,6 +43927,102 @@ connectAttr "polySurface5_parentConstraint1.w0" "polySurface5_parentConstraint1.
 connectAttr "L_RK_Arm_01_Jnt.s" "polySurface5_scaleConstraint1.tg[0].ts";
 connectAttr "L_RK_Arm_01_Jnt.pm" "polySurface5_scaleConstraint1.tg[0].tpm";
 connectAttr "polySurface5_scaleConstraint1.w0" "polySurface5_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "L_Pist_Shold_4.t" "pCylinder33_parentConstraint1.tg[0].tt";
+connectAttr "L_Pist_Shold_4.rp" "pCylinder33_parentConstraint1.tg[0].trp";
+connectAttr "L_Pist_Shold_4.rpt" "pCylinder33_parentConstraint1.tg[0].trt";
+connectAttr "L_Pist_Shold_4.r" "pCylinder33_parentConstraint1.tg[0].tr";
+connectAttr "L_Pist_Shold_4.ro" "pCylinder33_parentConstraint1.tg[0].tro";
+connectAttr "L_Pist_Shold_4.s" "pCylinder33_parentConstraint1.tg[0].ts";
+connectAttr "L_Pist_Shold_4.pm" "pCylinder33_parentConstraint1.tg[0].tpm";
+connectAttr "L_Pist_Shold_4.jo" "pCylinder33_parentConstraint1.tg[0].tjo";
+connectAttr "L_Pist_Shold_4.ssc" "pCylinder33_parentConstraint1.tg[0].tsc";
+connectAttr "L_Pist_Shold_4.is" "pCylinder33_parentConstraint1.tg[0].tis";
+connectAttr "pCylinder33_parentConstraint1.w0" "pCylinder33_parentConstraint1.tg[0].tw"
+		;
+connectAttr "L_Pist_Base_4.t" "pCylinder33_parentConstraint1.tg[1].tt";
+connectAttr "L_Pist_Base_4.rp" "pCylinder33_parentConstraint1.tg[1].trp";
+connectAttr "L_Pist_Base_4.rpt" "pCylinder33_parentConstraint1.tg[1].trt";
+connectAttr "L_Pist_Base_4.r" "pCylinder33_parentConstraint1.tg[1].tr";
+connectAttr "L_Pist_Base_4.ro" "pCylinder33_parentConstraint1.tg[1].tro";
+connectAttr "L_Pist_Base_4.s" "pCylinder33_parentConstraint1.tg[1].ts";
+connectAttr "L_Pist_Base_4.pm" "pCylinder33_parentConstraint1.tg[1].tpm";
+connectAttr "L_Pist_Base_4.jo" "pCylinder33_parentConstraint1.tg[1].tjo";
+connectAttr "L_Pist_Base_4.ssc" "pCylinder33_parentConstraint1.tg[1].tsc";
+connectAttr "L_Pist_Base_4.is" "pCylinder33_parentConstraint1.tg[1].tis";
+connectAttr "pCylinder33_parentConstraint1.w1" "pCylinder33_parentConstraint1.tg[1].tw"
+		;
+connectAttr "L_Pist_Shold_3.t" "pCylinder32_parentConstraint1.tg[0].tt";
+connectAttr "L_Pist_Shold_3.rp" "pCylinder32_parentConstraint1.tg[0].trp";
+connectAttr "L_Pist_Shold_3.rpt" "pCylinder32_parentConstraint1.tg[0].trt";
+connectAttr "L_Pist_Shold_3.r" "pCylinder32_parentConstraint1.tg[0].tr";
+connectAttr "L_Pist_Shold_3.ro" "pCylinder32_parentConstraint1.tg[0].tro";
+connectAttr "L_Pist_Shold_3.s" "pCylinder32_parentConstraint1.tg[0].ts";
+connectAttr "L_Pist_Shold_3.pm" "pCylinder32_parentConstraint1.tg[0].tpm";
+connectAttr "L_Pist_Shold_3.jo" "pCylinder32_parentConstraint1.tg[0].tjo";
+connectAttr "L_Pist_Shold_3.ssc" "pCylinder32_parentConstraint1.tg[0].tsc";
+connectAttr "L_Pist_Shold_3.is" "pCylinder32_parentConstraint1.tg[0].tis";
+connectAttr "pCylinder32_parentConstraint1.w0" "pCylinder32_parentConstraint1.tg[0].tw"
+		;
+connectAttr "L_Pist_Base_3.t" "pCylinder32_parentConstraint1.tg[1].tt";
+connectAttr "L_Pist_Base_3.rp" "pCylinder32_parentConstraint1.tg[1].trp";
+connectAttr "L_Pist_Base_3.rpt" "pCylinder32_parentConstraint1.tg[1].trt";
+connectAttr "L_Pist_Base_3.r" "pCylinder32_parentConstraint1.tg[1].tr";
+connectAttr "L_Pist_Base_3.ro" "pCylinder32_parentConstraint1.tg[1].tro";
+connectAttr "L_Pist_Base_3.s" "pCylinder32_parentConstraint1.tg[1].ts";
+connectAttr "L_Pist_Base_3.pm" "pCylinder32_parentConstraint1.tg[1].tpm";
+connectAttr "L_Pist_Base_3.jo" "pCylinder32_parentConstraint1.tg[1].tjo";
+connectAttr "L_Pist_Base_3.ssc" "pCylinder32_parentConstraint1.tg[1].tsc";
+connectAttr "L_Pist_Base_3.is" "pCylinder32_parentConstraint1.tg[1].tis";
+connectAttr "pCylinder32_parentConstraint1.w1" "pCylinder32_parentConstraint1.tg[1].tw"
+		;
+connectAttr "L_Pist_Shold_2.t" "pCylinder31_parentConstraint1.tg[0].tt";
+connectAttr "L_Pist_Shold_2.rp" "pCylinder31_parentConstraint1.tg[0].trp";
+connectAttr "L_Pist_Shold_2.rpt" "pCylinder31_parentConstraint1.tg[0].trt";
+connectAttr "L_Pist_Shold_2.r" "pCylinder31_parentConstraint1.tg[0].tr";
+connectAttr "L_Pist_Shold_2.ro" "pCylinder31_parentConstraint1.tg[0].tro";
+connectAttr "L_Pist_Shold_2.s" "pCylinder31_parentConstraint1.tg[0].ts";
+connectAttr "L_Pist_Shold_2.pm" "pCylinder31_parentConstraint1.tg[0].tpm";
+connectAttr "L_Pist_Shold_2.jo" "pCylinder31_parentConstraint1.tg[0].tjo";
+connectAttr "L_Pist_Shold_2.ssc" "pCylinder31_parentConstraint1.tg[0].tsc";
+connectAttr "L_Pist_Shold_2.is" "pCylinder31_parentConstraint1.tg[0].tis";
+connectAttr "pCylinder31_parentConstraint1.w0" "pCylinder31_parentConstraint1.tg[0].tw"
+		;
+connectAttr "L_Pist_Base_2.t" "pCylinder31_parentConstraint1.tg[1].tt";
+connectAttr "L_Pist_Base_2.rp" "pCylinder31_parentConstraint1.tg[1].trp";
+connectAttr "L_Pist_Base_2.rpt" "pCylinder31_parentConstraint1.tg[1].trt";
+connectAttr "L_Pist_Base_2.r" "pCylinder31_parentConstraint1.tg[1].tr";
+connectAttr "L_Pist_Base_2.ro" "pCylinder31_parentConstraint1.tg[1].tro";
+connectAttr "L_Pist_Base_2.s" "pCylinder31_parentConstraint1.tg[1].ts";
+connectAttr "L_Pist_Base_2.pm" "pCylinder31_parentConstraint1.tg[1].tpm";
+connectAttr "L_Pist_Base_2.jo" "pCylinder31_parentConstraint1.tg[1].tjo";
+connectAttr "L_Pist_Base_2.ssc" "pCylinder31_parentConstraint1.tg[1].tsc";
+connectAttr "L_Pist_Base_2.is" "pCylinder31_parentConstraint1.tg[1].tis";
+connectAttr "pCylinder31_parentConstraint1.w1" "pCylinder31_parentConstraint1.tg[1].tw"
+		;
+connectAttr "L_Pist_Shold_1.t" "pCylinder30_parentConstraint1.tg[0].tt";
+connectAttr "L_Pist_Shold_1.rp" "pCylinder30_parentConstraint1.tg[0].trp";
+connectAttr "L_Pist_Shold_1.rpt" "pCylinder30_parentConstraint1.tg[0].trt";
+connectAttr "L_Pist_Shold_1.r" "pCylinder30_parentConstraint1.tg[0].tr";
+connectAttr "L_Pist_Shold_1.ro" "pCylinder30_parentConstraint1.tg[0].tro";
+connectAttr "L_Pist_Shold_1.s" "pCylinder30_parentConstraint1.tg[0].ts";
+connectAttr "L_Pist_Shold_1.pm" "pCylinder30_parentConstraint1.tg[0].tpm";
+connectAttr "L_Pist_Shold_1.jo" "pCylinder30_parentConstraint1.tg[0].tjo";
+connectAttr "L_Pist_Shold_1.ssc" "pCylinder30_parentConstraint1.tg[0].tsc";
+connectAttr "L_Pist_Shold_1.is" "pCylinder30_parentConstraint1.tg[0].tis";
+connectAttr "pCylinder30_parentConstraint1.w0" "pCylinder30_parentConstraint1.tg[0].tw"
+		;
+connectAttr "L_Pist_Base_1.t" "pCylinder30_parentConstraint1.tg[1].tt";
+connectAttr "L_Pist_Base_1.rp" "pCylinder30_parentConstraint1.tg[1].trp";
+connectAttr "L_Pist_Base_1.rpt" "pCylinder30_parentConstraint1.tg[1].trt";
+connectAttr "L_Pist_Base_1.r" "pCylinder30_parentConstraint1.tg[1].tr";
+connectAttr "L_Pist_Base_1.ro" "pCylinder30_parentConstraint1.tg[1].tro";
+connectAttr "L_Pist_Base_1.s" "pCylinder30_parentConstraint1.tg[1].ts";
+connectAttr "L_Pist_Base_1.pm" "pCylinder30_parentConstraint1.tg[1].tpm";
+connectAttr "L_Pist_Base_1.jo" "pCylinder30_parentConstraint1.tg[1].tjo";
+connectAttr "L_Pist_Base_1.ssc" "pCylinder30_parentConstraint1.tg[1].tsc";
+connectAttr "L_Pist_Base_1.is" "pCylinder30_parentConstraint1.tg[1].tis";
+connectAttr "pCylinder30_parentConstraint1.w1" "pCylinder30_parentConstraint1.tg[1].tw"
 		;
 connectAttr "|bot_bodyRNfosterParent1|fosterParent3|pCylinder29ShapeTag.w" "|bot_bodyRNfosterParent1|fosterParent2|pCylinder29ShapeDeformed.i"
 		;
